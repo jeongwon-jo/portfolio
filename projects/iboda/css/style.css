@@ -218,7 +218,7 @@
   display: inline-block;
   width: 22px;
   height: 22px;
-  background: url(../_img/common/icon_info.svg) no-repeat center center / contain;
+  background: url(../img/common/icon_info.svg) no-repeat center center / contain;
   position: absolute;
   left: 0;
   top: 0;

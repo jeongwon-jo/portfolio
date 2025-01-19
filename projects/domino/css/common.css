@@ -71,7 +71,7 @@ body {
   top: 50%;
   right: 40px;
   transform: translateY(-50%);
-  background: url(../_img/common/icon_home.svg) no-repeat center center / contain;
+  background: url(../img/common/icon_home.svg) no-repeat center center / contain;
 }
 
 /* Zoom */
@@ -91,11 +91,11 @@ body {
   height: 120px;
   border-radius: 50%;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.16);
-  background: url(../_img/common/zoom.png) no-repeat center center / contain;
+  background: url(../img/common/zoom.png) no-repeat center center / contain;
 }
 
 .zoom_screen .zoom.active {
-  background-image: url(../_img/common/zoom_out.png);
+  background-image: url(../img/common/zoom_out.png);
 }
 
 .zoom_screen .zoom img {
@@ -129,11 +129,11 @@ body {
 }
 
 .scroll__wrap::-webkit-scrollbar-button:start:decrement {
-  background: url(../_img/icon/icon_arrow_up.svg) no-repeat center center, linear-gradient(to bottom, #505050, #333333);
+  background: url(../img/icon/icon_arrow_up.svg) no-repeat center center, linear-gradient(to bottom, #505050, #333333);
 }
 
 .scroll__wrap::-webkit-scrollbar-button:end:increment {
-  background: url(../_img/icon/icon_arrow_down.svg) no-repeat center center, linear-gradient(to bottom, #505050, #333333);
+  background: url(../img/icon/icon_arrow_down.svg) no-repeat center center, linear-gradient(to bottom, #505050, #333333);
 }
 
 .scroll__wrap::-webkit-scrollbar-button:vertical:start:increment {
@@ -249,21 +249,21 @@ body {
 }
 
 .product__arrow .btn.btn_up {
-  background: url(../_img/icon/icon_product_up.svg) no-repeat center center / 28px 22px;
+  background: url(../img/icon/icon_product_up.svg) no-repeat center center / 28px 22px;
 }
 
 .product__arrow .btn.btn_up.disabled,
 .product__arrow .btn.btn_up:disabled {
-  background-image: url(../_img/icon/icon_product_up_disabled.svg);
+  background-image: url(../img/icon/icon_product_up_disabled.svg);
 }
 
 .product__arrow .btn.btn_down {
-  background: url(../_img/icon/icon_product_down.svg) no-repeat center center / 28px 22px;
+  background: url(../img/icon/icon_product_down.svg) no-repeat center center / 28px 22px;
 }
 
 .product__arrow .btn.btn_down.disabled,
 .product__arrow .btn.btn_down:disabled {
-  background-image: url(../_img/icon/icon_product_down_disabled.svg);
+  background-image: url(../img/icon/icon_product_down_disabled.svg);
 }
 
 /* 공통 장바구니 */
@@ -313,7 +313,7 @@ body {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  background: url(../_img/icon/icon_product_delete.svg) no-repeat center center / contain;
+  background: url(../img/icon/icon_product_delete.svg) no-repeat center center / contain;
 }
 
 .cart-product__info h3.cart-product__title {
@@ -344,7 +344,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  background: url(../_img/icon/icon_product_option.svg) no-repeat center center / contain;
+  background: url(../img/icon/icon_product_option.svg) no-repeat center center / contain;
 }
 
 .cart-product__options p,
@@ -375,21 +375,21 @@ body {
 }
 
 .cart-product__quantity .btn_decrease {
-  background: url(../_img/icon/icon_decrease.svg) no-repeat center center / contain;
+  background: url(../img/icon/icon_decrease.svg) no-repeat center center / contain;
 }
 
 .cart-product__quantity .btn_decrease.disabled,
 .cart-product__quantity .btn_decrease:disabled {
-  background-image: url(../_img/icon/icon_decrease_disabled.svg);
+  background-image: url(../img/icon/icon_decrease_disabled.svg);
 }
 
 .cart-product__quantity .btn_increase {
-  background: url(../_img/icon/icon_increase.svg) no-repeat center center / contain;
+  background: url(../img/icon/icon_increase.svg) no-repeat center center / contain;
 }
 
 .cart-product__quantity .btn_increase.disabled,
 .cart-product__quantity .btn_increase:disabled {
-  background-image: url(../_img/icon/icon_increase_disabled.svg);
+  background-image: url(../img/icon/icon_increase_disabled.svg);
 }
 
 h3.cart-product__price {
@@ -419,21 +419,21 @@ h3.cart-product__price {
 }
 
 .cart-product__arrow .btn.btn_up {
-  background: url(../_img/icon/icon_up.svg) no-repeat center center / contain;
+  background: url(../img/icon/icon_up.svg) no-repeat center center / contain;
 }
 
 .cart-product__arrow .btn.btn_up.disabled,
 .cart-product__arrow .btn.btn_up:disabled {
-  background-image: url(../_img/icon/icon_up_disabled.svg);
+  background-image: url(../img/icon/icon_up_disabled.svg);
 }
 
 .cart-product__arrow .btn.btn_down {
-  background: url(../_img/icon/icon_down.svg) no-repeat center center / contain;
+  background: url(../img/icon/icon_down.svg) no-repeat center center / contain;
 }
 
 .cart-product__arrow .btn.btn_down.disabled,
 .cart-product__arrow .btn.btn_down:disabled {
-  background-image: url(../_img/icon/icon_down_disabled.svg);
+  background-image: url(../img/icon/icon_down_disabled.svg);
 }
 
 /* 토핑추가 모달 상단 STEP */
@@ -473,7 +473,7 @@ h3.cart-product__price {
   width: 32px;
   height: 80px;
   border-bottom: 4px solid #DDDDDD;
-  background: url(../_img/icon/icon_step_arrow.svg) no-repeat center center / 32px 26px;
+  background: url(../img/icon/icon_step_arrow.svg) no-repeat center center / 32px 26px;
 }
 
 /* 공통 하단 버튼 */

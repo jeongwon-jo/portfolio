@@ -2,55 +2,39 @@
 
 html,
 body {
-  height: 100%;
-}
-
-body.fixed {
-  overflow-y: hidden;
-}
-
-.main {
   width: 100%;
   height: 100%;
-  padding-top: 92px;
+}
+
+body {
+  overflow: hidden;
 }
 
 #wrap {
   width: 100%;
+  height: 100%;
   min-height: 100%;
-  position: relative;
-  padding-bottom: 306px;
 }
 
-/* Header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 92px;
-  z-index: 101;
   background-color: #fff;
   border-bottom: 1px solid #E5E5EC;
-  transition: 0.35s;
 }
 
 .header__inner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 0 20px;
-  max-width: 1320px;
-  margin: 0 auto;
+  padding: 0 40px 0 24px;
+  align-items: center;
 }
 
-.header__inner .logo_gnb {
+.logo_gnb {
   display: flex;
   align-items: center;
-  height: 100%;
-  gap: 56px;
+  gap: 116px;
 }
 
 .header_logo {
@@ -187,94 +171,155 @@ ul.header_lang li.active {
   box-shadow: 0 4px 4px rgb(0, 0, 0, 0.12);
 }
 
-/* Footer */
-.footer {
+nav#sidebar_gnb ul li {
+  display: flex;
+  align-items: center;
   width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -306px;
-  height: 306px;
-  transform: translateY(-100%);
-  background-color: #050505;
+  height: 56px;
 }
 
-.footer__inner {
+nav#sidebar_gnb ul li a {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 40px;
+  position: relative;
+  padding-left: 52px;
 }
 
-.footer_logo {
+nav#sidebar_gnb ul li a:before {
+  content: '';
   display: inline-block;
-  width: 180px;
-  height: 44px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.footer_logo img {
+nav#sidebar_gnb ul li:nth-child(1) a:before {
+  background: url(../img/data/menu01.svg) no-repeat center center / contain;
+}
+
+nav#sidebar_gnb ul li:nth-child(2) a:before {
+  background: url(../img/data/menu02.svg) no-repeat center center / contain;
+}
+
+nav#sidebar_gnb ul li:nth-child(3) a:before {
+  background: url(../img/data/menu03.svg) no-repeat center center / contain;
+}
+
+nav#sidebar_gnb ul li.active a {
+  background-color: #EEF8F5;
+  border-right: 4px solid #0DA052;
+  color: #0DA052;
+  font-weight: 600;
+}
+
+nav#sidebar_gnb ul li.active:nth-child(1) a:before {
+  background: url(../img/data/menu01_active.svg) no-repeat center center / contain;
+}
+
+nav#sidebar_gnb ul li.active:nth-child(2) a:before {
+  background: url(../img/data/menu02_active.svg) no-repeat center center / contain;
+}
+
+nav#sidebar_gnb ul li.active:nth-child(3) a:before {
+  background: url(../img/data/menu03_active.svg) no-repeat center center / contain;
+}
+
+.sidebar__inner ul.header_lang li {
+  padding: 0 8px;
+  color: #999;
+  position: relative;
+}
+
+.sidebar__inner ul.header_lang li:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background-color: #E5E5EC;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar__inner ul.header_lang li:last-child:after {
+  content: none;
+}
+
+.wrap__inner {
   width: 100%;
+  height: calc(100% - 92px);
+  display: flex;
+}
+
+aside.gnb-sidebar {
+  width: 261px;
   height: 100%;
-  object-fit: contain;
 }
 
-.footer_company_info {
-  margin-top: 40px;
+.main {
+  width: calc(100% - 260px);
+  height: 100%;
+  overflow-y: auto;
+  background-color: #F6F8FA;
 }
 
-.footer_company_info p {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.footer_company_info p:last-child {
-  margin-bottom: 0;
-  color: #bbb;
-}
-
-.footer_copyright {
-  margin-top: 40px;
-}
-
-.footer_copyright p.copyright {
-  font-size: 13px;
-  line-height: 18px;
-  color: #505050;
-}
 
 /* Pad */
 @media screen and (min-width: 768px) and (max-width:1200px) {
-  .header__inner .logo_gnb,
+  .header__inner .logo_gnb {
+    gap: 56px;
+  }
+
   .header__inner .lang_contact {
     gap: 12px;
   }
-
-  .lang_contact .btn_contact {
-    display: none;
-  }
 }
+
 /* Mobile */
-@media screen and (max-width:767px) {
-  .main {
-    padding-top: 56px;
+@media screen and (max-width:900px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
   }
 
-  #wrap { 
-    padding-bottom: 324px;
+  .wrap__inner {
+    padding-top: 56px;
+    flex-direction: column;
   }
 
   .header {
+    width: 100%;
     height: 56px;
-    border-bottom: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1000;
+  }
+
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    width: 100%;
   }
 
   .header_logo {
+    padding: 0;
+  }
+
+  .header_logo img {
     width: 138px;
-    height: 32px;
+    height: 40px;
   }
 
   nav.gnb {
@@ -289,11 +334,17 @@ ul.header_lang li.active {
     display: inline-block;
     width: 28px;
     height: 28px;
-    background: url(../_img/common/icon_menu.svg) no-repeat center center / contain;
+    background: url(../img/common/icon_menu.svg) no-repeat center center / contain;
   }
 
-  .footer {
-    bottom: -324px;
-    height: 324px;
+  aside.gnb-sidebar {
+    display: none;
   }
+
+  .main {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  
 }

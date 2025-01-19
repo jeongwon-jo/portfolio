@@ -19,7 +19,7 @@
   right: 18px;
   top: 16px;
   z-index: 100;
-  background: url(../_img/common/icon_download.svg) no-repeat center center/ contain;
+  background: url(../img/common/icon_download.svg) no-repeat center center/ contain;
 }
 
 .graph_title {
@@ -105,15 +105,15 @@
 }
 
 .data_title h3.model:before {
-  background: url(../_img/data/menu01_active.svg) no-repeat center center / contain;
+  background: url(../img/data/menu01_active.svg) no-repeat center center / contain;
 }
 
 .data_title h3.ai:before {
-  background: url(../_img/data/menu02_active.svg) no-repeat center center / contain;
+  background: url(../img/data/menu02_active.svg) no-repeat center center / contain;
 }
 
 .data_title h3.energy:before {
-  background: url(../_img/data/menu03_active.svg) no-repeat center center / contain;
+  background: url(../img/data/menu03_active.svg) no-repeat center center / contain;
 }
 
 .data_title ul.lang {
@@ -730,43 +730,43 @@
 }
 
 .area_power_trade .trade_cnt.left .level_5:after {
-  background: url(../_img/data/level_5_left.svg) no-repeat center center / contain;
+  background: url(../img/data/level_5_left.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.left .level_4:after {
-  background: url(../_img/data/level_4_left.svg) no-repeat center center / contain;
+  background: url(../img/data/level_4_left.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.left .level_3:after {
-  background: url(../_img/data/level_3_left.svg) no-repeat center center / contain;
+  background: url(../img/data/level_3_left.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.left .level_2:after {
-  background: url(../_img/data/level_2_left.svg) no-repeat center center / contain;
+  background: url(../img/data/level_2_left.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.left .level_1:after {
-  background: url(../_img/data/level_1_left.svg) no-repeat center center / contain;
+  background: url(../img/data/level_1_left.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.right .level_5:after {
-  background: url(../_img/data/level_5_right.svg) no-repeat center center / contain;
+  background: url(../img/data/level_5_right.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.right .level_4:after {
-  background: url(../_img/data/level_4_right.svg) no-repeat center center / contain;
+  background: url(../img/data/level_4_right.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.right .level_3:after {
-  background: url(../_img/data/level_3_right.svg) no-repeat center center / contain;
+  background: url(../img/data/level_3_right.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.right .level_2:after {
-  background: url(../_img/data/level_2_right.svg) no-repeat center center / contain;
+  background: url(../img/data/level_2_right.svg) no-repeat center center / contain;
 }
 
 .area_power_trade .trade_cnt.right .level_1:after {
-  background: url(../_img/data/level_1_right.svg) no-repeat center center / contain;
+  background: url(../img/data/level_1_right.svg) no-repeat center center / contain;
 }
 
 .area_power_map_content {
@@ -1177,12 +1177,12 @@
 }
 
 .status_map .arrow.green {
-  background: url(../_img/data/arrow_green.png) no-repeat center left;
+  background: url(../img/data/arrow_green.png) no-repeat center left;
   background-size: 127px 14px;
 }
 
 .status_map .arrow.yellow {
-  background: url(../_img/data/arrow_yellow.png) no-repeat center left;
+  background: url(../img/data/arrow_yellow.png) no-repeat center left;
   background-size: 127px 14px;
 }
 
@@ -1204,7 +1204,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: url(../_img/data/arrow_stretch2.png) no-repeat center center;
+  background: url(../img/data/arrow_stretch2.png) no-repeat center center;
   background-size: 163px 18px;
   animation: arrowAnimationLong 2.4s linear infinite;
 }
@@ -1231,7 +1231,7 @@
 
 /* 문경계통현황 */
 .status_map.mungyeong {
-  background: url(../_img/data/status_mungyeong.png) no-repeat center center / 280px 222px;
+  background: url(../img/data/status_mungyeong.png) no-repeat center center / 280px 222px;
 }
 
 .status_map.mungyeong .top {
@@ -1373,7 +1373,7 @@
 
 /* 경주계통현황 */
 .status_map.gyeongju {
-  background: url(../_img/data/status_gyeongju.png) no-repeat center center / 280px 222px;
+  background: url(../img/data/status_gyeongju.png) no-repeat center center / 280px 222px;
 }
 
 .status_map.gyeongju .top {
@@ -1514,7 +1514,7 @@
 
 /* 제주계통현황 */
 .status_map.jeju {
-  background: url(../_img/data/status_jeju2.png) no-repeat center center / 228px 189px;
+  background: url(../img/data/status_jeju2.png) no-repeat center center / 228px 189px;
   background-position: 57px 79px;
 }
 
@@ -1616,7 +1616,7 @@
 
 /* 군산계통현황 */
 .status_map.gunsan {
-  background: url(../_img/data/status_gunsan.png) no-repeat center center / 191px 205px;
+  background: url(../img/data/status_gunsan.png) no-repeat center center / 191px 205px;
   background-position: 83px 71px;
 }
 

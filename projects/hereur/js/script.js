@@ -199,7 +199,7 @@ function showWinnerModal(result) {
   // 오늘의 행운코드 노출
   $('.luckyCode').text(luckyCode)
 
-  $('#winner_img').attr("src", `./_img/winner_${result.pz}.png`);
+  $('#winner_img').attr("src", `./img/winner_${result.pz}.png`);
 
   // 선착순 모달
   if (result.pz == "sb" || result.pz == "cv" || result.pz == "bv") {
