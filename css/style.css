@@ -299,7 +299,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: url(../_img/common/icon_download.svg) no-repeat center center / contain;
+    background: url(../img/common/icon_download.svg) no-repeat center center / contain;
 }
 
 .skills__wrap {
