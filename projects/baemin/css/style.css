@@ -1,0 +1,284 @@
+@import url(./reset.css);
+@import url(./header.css);
+@import url(./footer.css);
+
+:root {
+	--primary-color: rgb(42, 193, 188);
+}
+
+.scroll {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.main {
+	background-image: url(../images/bg1.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	animation: main_background 1s linear;
+}
+
+@keyframes main_background {
+	0% {
+		background-size: 150%;
+	}
+
+	100% {
+		background-size: 100%;
+	}
+}
+
+.main .rider {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.main .rider img {
+	width: 173px;
+}
+
+.main .main_content {
+	width: 50%;
+	height: 650px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 7px 18px;
+}
+
+.main .main_content>img {
+	width: 462px;
+}
+
+.main .download_area {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 35px;
+}
+
+.main .download_area h3 {
+	color: #fff;
+	font-size: 16px;
+}
+
+.main .download_area .downloads {
+	display: flex;
+}
+
+.main .download_area .downloads a {
+	margin-top: 12px;
+	display: inline-block;
+	width: 200px;
+	height: 70px;
+	background-color: #fff;
+	border-radius: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 140px;
+}
+
+.main .download_area .downloads a:nth-child(1) {
+	background-image: url(../images/appstore_btn.png);
+}
+
+.main .download_area .downloads a:nth-child(2) {
+	background-image: url(../images/google_btn.png);
+	margin-left: 10px;
+}
+
+.main .qr_code_download img {
+	width: 193px;
+	height: 193px;
+	margin-top: 10px;
+}
+
+.main .download_mobile {
+	display: none;
+}
+
+/* Main 반응형 */
+/* Pad */
+@media (min-width : 768px) and (max-width : 1400px) {
+	.main .rider img {
+		width: 109px;
+	}
+
+	.main .main_content>img {
+		width: 302px;
+	}
+
+	.main .main_content {
+		width: 90%;
+		top: 46%;
+	}
+
+	.app_store_download {
+		display: none;
+	}
+
+	.qr_code_download {
+		display: none;
+	}
+
+	.main .download_mobile {
+		display: block;
+		width: 310px;
+		height: 100px;
+		float: right;
+		transform: translateY(300px);
+	}
+
+	.main .download_mobile img {
+		width: 310px;
+		object-fit: fill;
+	}
+}
+
+.bg1,
+.bg2,
+.bg3,
+.bg4,
+.bg5,
+.bg6 {
+	background-color: var(--primary-color);
+}
+
+.content {
+	width: 50%;
+	height: 84%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 7px 18px;
+	display: flex;
+	margin-top: 30px;
+}
+
+.content .bg_area {
+	position: absolute;
+	bottom: -90px;
+	right: 0;
+	width: 635px;
+	height: 100%;
+	background-size: 635px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.content .title_area img {
+	width: 462px;
+}
+
+.content .title_area p {
+	color: #fff;
+	margin-top: 10px;
+}
+
+.content .title_area p span {
+	display: block;
+	margin-top: 10px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.664);
+}
+
+.content .title_area p span img {
+	margin-top: 10px;
+	width: 233px;
+}
+
+.bg1 .content {
+	width: 50%;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 7px 18px;
+	display: flex;
+	margin-top: 30px;
+}
+
+.bg1 .content .bg_area {
+	background-image: url(../images/bg2_bike.png);
+	width: 100%;
+	height: 800px;
+	bottom: 0px;
+	background-position: left 20px top 0px;
+	background-size: 700px;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.bg1 .content .bg_area img {
+	width: 700px;
+	position: absolute;
+	top: -58px;
+	left: -58px;
+}
+
+.bg2 .content .bg_area {
+	background-image: url(../images/bg3.png);
+}
+
+.bg3 .content .bg_area {
+	background-image: url(../images/bg4.png);
+}
+
+.bg4 .content .bg_area {
+	background-image: url(../images/bg5.png);
+}
+
+.bg5 .content .bg_area {
+	background-image: url(../images/bg6.png);
+}
+
+.bg6 .content .bg_area {
+	background-image: url(../images/bg7.png);
+}
+
+/* Navigation */
+#fp-nav {
+	display: none;
+}
+
+.navi {
+	position: absolute;
+	right: 100px;
+	top: 60%;
+	transform: translateY(-50%);
+	width: 100px;
+	height: 200px;
+	z-index: 20;
+}
+
+.navi li {
+	width: 20px;
+	height: 20px;
+	margin: 15px;
+}
+
+.navi li a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+.navi li a span {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-image: url(../images/dot.png);
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position: center;
+}
+
+.navi li a.active span {
+	background-image: url(../images/dot_active.png);
+}

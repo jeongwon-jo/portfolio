@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도미노피자 키오스크</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="도미노피자 키오스크" />
+  <meta property="og:description" content="도미노피자 키오스크" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/font.css">
+  <link rel="stylesheet" href="./_css/setting.css">
+  <link rel="stylesheet" href="./_css/common.css">
+  <link rel="stylesheet" href="./_css/sub.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+  <script src="./_js/zoom.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1 class="screen--out">주문내역</h1>
+    <div id="container" class="container">
+      <main id="main" class="main">
+        <header class="header">
+          <div class="header__inner">
+            <h3 class="header__title">주문내역</h3>
+            <a href="./index.html" class="btn_home"></a>
+          </div>
+        </header>
+        <section class="section_order_history">
+          <div class="order__list">
+            <h5 class="select__title">주문리스트</h5>
+            <div class="section_cart mt24">
+              <div class="order_cart">
+                <div class="cart-product__wrap">
+                  <!-- data-row: 화면에 보이는 상품 줄 수 -->
+                  <div class="cart-product__list" data-row="2">
+                    <!-- 첫번째 아이템에 active 추가 -->
+                    <div class="cart-product__item active">
+                      <div class="cart-product">
+                        <button type="button" class="btn_delete"></button>
+                        <div class="cart-product__info">
+                          <h3 class="cart-product__title">K-쌈장 채끝 스테이크+포테이토</h3>
+                          <div class="cart-product__options">
+                            <p>오리지널 슈퍼시드 화이버 함유 도우</p>
+                            <span class="optional_price">+3,000</span>
+                          </div>
+                          <div class="cart-product__options">
+                            <p>콩콩팥팥 크림 치즈 엣지 (NEW!)</p>
+                            <span class="optional_price">+3,000</span>
+                          </div>
+                          <div class="cart-product__options">
+                            <p>블랙타이거 슈림프 60g(4개) 외 <span class="count">5</span>건</p>
+                            <span class="optional_price">+10,000</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart-product__quantity">
+                        <button type="button" class="btn btn_decrease" disabled onclick="clickDecreaseBtn(event, 1)"></button>
+                        <p class="count">1</p>
+                        <button type="button" class="btn btn_increase" onclick="clickIncreaseBtn(event, 1)"></button>
+                      </div>
+                      <h3 class="cart-product__price">999,999</h3>
+                    </div>
+                    <div class="cart-product__item">
+                      <div class="cart-product">
+                        <button type="button" class="btn_delete"></button>
+                        <div class="cart-product__info">
+                          <h3 class="cart-product__title">콩콩팥팥 크림치즈스틱 콤보(코카콜라1.25L)</h3>
+                        </div>
+                      </div>
+                      <div class="cart-product__quantity">
+                        <button type="button" class="btn btn_decrease" disabled onclick="clickDecreaseBtn(event, 1)"></button>
+                        <p class="count">1</p>
+                        <button type="button" class="btn btn_increase" onclick="clickIncreaseBtn(event, 1)"></button>
+                      </div>
+                      <h3 class="cart-product__price">999,999</h3>
+                    </div>
+                    <div class="cart-product__item">
+                      <div class="cart-product">
+                        <button type="button" class="btn_delete"></button>
+                        <div class="cart-product__info">
+                          <h3 class="cart-product__title">K-쌈장 채끝 스테이크+포테이토</h3>
+                          <div class="cart-product__options">
+                            <p>오리지널 슈퍼시드 화이버 함유 도우</p>
+                            <span class="optional_price">+3,000</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart-product__quantity">
+                        <button type="button" class="btn btn_decrease" disabled onclick="clickDecreaseBtn(event, 1)"></button>
+                        <p class="count">1</p>
+                        <button type="button" class="btn btn_increase" onclick="clickIncreaseBtn(event, 1)"></button>
+                      </div>
+                      <h3 class="cart-product__price">999,999</h3>
+                    </div>
+                    <div class="cart-product__item">
+                      <div class="cart-product">
+                        <button type="button" class="btn_delete"></button>
+                        <div class="cart-product__info">
+                          <h3 class="cart-product__title">K-쌈장 채끝 스테이크+포테이토</h3>
+                          <div class="cart-product__options">
+                            <p>오리지널 슈퍼시드 화이버 함유 도우</p>
+                            <span class="optional_price">+3,000</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart-product__quantity">
+                        <button type="button" class="btn btn_decrease" disabled onclick="clickDecreaseBtn(event, 1)"></button>
+                        <p class="count">1</p>
+                        <button type="button" class="btn btn_increase" onclick="clickIncreaseBtn(event, 1)"></button>
+                      </div>
+                      <h3 class="cart-product__price">999,999</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-product__arrow">
+                  <button type="button" class="btn btn_up" disabled></button>
+                  <button type="button" class="btn btn_down"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="select_discount mt40">
+            <h5 class="select__title">할인선택</h5>
+            <div class="discount__info">
+              <p>
+                할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요. 할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 안내문구 영역입니다. 최대 5줄로 채워주세요.할인 별 특수 
+              </p>
+            </div>
+            <div class="select-type grid_4 mt24">
+              <div class="choose--typeA type--size type--pay">
+                <label for="discount1">
+                  <input type="radio" name="choose_discount" id="discount1" checked>
+                  <div class="choose__content">
+                    <div class="choose_img">
+                      <p>할인할인</p>
+                    </div>
+                    <p>방문포장 40%</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay" onclick="openModal('modal-telecom-discount')">
+                <label for="discount2">
+                  <input type="radio" name="choose_discount" id="discount2">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>KT 할인</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay" onclick="openModal('modal-telecom-discount')">
+                <label for="discount3">
+                  <input type="radio" name="choose_discount" id="discount3">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>SKT 할인</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay" onclick="openModal('modal-telecom-discount')">
+                <label for="discount4">
+                  <input type="radio" name="choose_discount" id="discount4">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>LG 할인</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay" onclick="openModal('modal-lsm-discount')">
+                <label for="discount5">
+                  <input type="radio" name="choose_discount" id="discount5">
+                  <div class="choose__content">
+                    <div class="choose_img">
+                      <p>할인할인</p>
+                    </div>
+                    <p>LSM 할인</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="affiliate_card_info mt40">
+              *제휴카드 사용시 결제하기로 넘어가서 선택해 주세요.
+            </div>
+          </div>
+        </section>
+        <section class="section_btn order_btn">
+          <div class="total_payment">
+            <ul>
+              <li>
+                <span>주문 금액</span>
+                <P>000개</P>
+              </li>
+              <li>
+                <span>할인 금액</span>
+                <p>000개</p>
+              </li>
+              <li>
+                <span>총 결제금액</span>
+                <h3>20,000원</h3>
+              </li>
+            </ul>
+          </div>
+          <div class="order_final_btns">
+            <div class="order__btns">
+              <a href="./list.html" class="btn btn_cancel">이전화면</a>
+              <a href="./payment.html" class="btn btn_order">결제하기</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <!-- 할인정보 모달 시작 -->
+  <div id="modal-telecom-discount" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_close_modal" onclick="closeModal('modal-telecom-discount')"></button>
+      </div>
+      <div class="modal__header header--blueType">
+        <h3>할인정보</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__content">
+          <div class="member-info__confirm">
+            <h3>회원정보 확인 후 할인 및 결제가 진행됩니다.</h3>
+            <div class="member-info__insert">
+              <div class="membership-num">
+                <div class="number__input">
+                  <input type="text" id="membershipInput" readonly value="">
+                  <button type="button" class="btn_confirm" onclick="openModal('modal-membership-reconfirm')">확인</button>
+                </div>
+                <div class="membership__num--delete">
+                  <button type="button" class="btn_clear">Clear</button>
+                  <button type="button" class="btn_delete"></button>
+                </div>
+                <div class="number-pad">
+                  <button type="button" class="btn_number" value="1">1</button>
+                  <button type="button" class="btn_number" value="2">2</button>
+                  <button type="button" class="btn_number" value="3">3</button>
+                  <button type="button" class="btn_number" value="4">4</button>
+                  <button type="button" class="btn_number" value="5">5</button>
+                  <button type="button" class="btn_number" value="6">6</button>
+                  <button type="button" class="btn_number" value="7">7</button>
+                  <button type="button" class="btn_number" value="8">8</button>
+                  <button type="button" class="btn_number" value="9">9</button>
+                  <button type="button" class="btn_number" value="0">0</button>
+                  <button type="button" class="btn_number" value="00">00</button>
+                  <button type="button" class="btn_number" value="000">000</button>
+                </div>
+              </div>
+              <div class="member-info">
+                <div class="show_barcode">
+                  <img src="./_img/barcode_img.png" alt="바코드이미지" width="220">
+                </div>
+                <ul class="inserted_info">
+                  <li>
+                    <span>멤버십 번호</span>
+                    <b>0000 0000 0000 0000</b>
+                  </li>
+                  <li>
+                    <span>이름</span>
+                    <b>도*노</b>
+                  </li>
+                  <li>
+                    <span>잔여 포인트</span>
+                    <b>000,000 P</b>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="membership_discount">
+              <div class="select-type grid_4 mt24">
+                <div class="choose--typeA type--size type--pay">
+                  <label for="membership1">
+                    <input type="radio" name="choose_membership" id="membership1">
+                    <div class="choose__content">
+                      <div class="choose_img"></div>
+                      <p>T-Day 50%</p>
+                    </div>
+                  </label>
+                </div>
+                <div class="choose--typeA type--size type--pay">
+                  <label for="membership2">
+                    <input type="radio" name="choose_membership" id="membership2">
+                    <div class="choose__content">
+                      <div class="choose_img"></div>
+                      <p>일반 할인</p>
+                    </div>
+                  </label>
+                </div>
+                <div class="choose--typeA type--size type--pay">
+                  <label for="membership3">
+                    <input type="radio" name="choose_membership" id="membership3">
+                    <div class="choose__content">
+                      <div class="choose_img"></div>
+                      <p>VIP 할인</p>
+                    </div>
+                  </label>
+                </div>
+                <div class="choose--typeA type--size type--pay">
+                  <label for="membership4">
+                    <input type="radio" name="choose_membership" id="membership4">
+                    <div class="choose__content">
+                      <div class="choose_img"></div>
+                      <p>VVIP 할인</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="discount__price">
+            <ul class="affiliate_amount">
+              <li>
+                <span>제휴대상금액</span>
+                <h4>20,000 원</h4>
+              </li>
+              <li class="mt20">
+                <span class="depth_2">사용포인트</span>
+                <p class="use">20,000 원</p>
+              </li>
+            </ul>
+            <div class="total__price">
+              <span>최종결제금액</span>
+              <h3>20,000 원</h3>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns">
+          <button type="button" class="btn-md btn_outlined_black" onclick="closeModal('modal-telecom-discount')">취소하기</button>
+          <button type="button" class="btn-md btn_blue">적용하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 할인정보 모달 끝 -->
+  <!-- 멤버십번호 재확인 모달 시작 -->
+  <div id="modal-membership-reconfirm" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/alert_img.png" alt="알럿 아이콘" width="160">
+        <h3 class="mt80">멤버십 번호 재확인 바랍니다!</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-lg btn_black" onclick="closeModal('modal-membership-reconfirm')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 멤버십번호 재확인 모달 끝 -->
+  <!-- LSM할인 모달 시작 -->
+  <div id="modal-lsm-discount" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_close_modal" onclick="closeModal('modal-lsm-discount')"></button>
+      </div>
+      <div class="modal__header header--blueType">
+        <h3>할인정보</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__content">
+          <div class="select-type grid_4 mt24 mb80">
+            <div class="choose--typeA type--size type--pay">
+              <label for="lsm1">
+                <input type="radio" name="choose_lsm" id="lsm1">
+                <div class="choose__content">
+                  <div class="choose_img"></div>
+                  <p>프리미엄 1+1</p>
+                </div>
+              </label>
+            </div>
+            <div class="choose--typeA type--size type--pay">
+              <label for="lsm2">
+                <input type="radio" name="choose_lsm" id="lsm2">
+                <div class="choose__content">
+                  <div class="choose_img"></div>
+                  <p>5,000원 1+1</p>
+                </div>
+              </label>
+            </div>
+            <div class="choose--typeA type--size type--pay">
+              <label for="lsm3">
+                <input type="radio" name="choose_lsm" id="lsm3">
+                <div class="choose__content">
+                  <div class="choose_img"></div>
+                  <p>토요일 40%</p>
+                </div>
+              </label>
+            </div>
+            <div class="choose--typeA type--size type--pay">
+              <label for="lsm4">
+                <input type="radio" name="choose_lsm" id="lsm4">
+                <div class="choose__content">
+                  <div class="choose_img"></div>
+                  <p>포장 50% 데이</p>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="discount__price">
+            <ul class="affiliate_amount">
+              <li>
+                <span>할인대상금액</span>
+                <h4>20,000 원</h4>
+              </li>
+              <li class="mt20">
+                <span class="depth_2">할인금액</span>
+                <p class="use">20,000 원</p>
+              </li>
+            </ul>
+            <div class="total__price">
+              <span>최종결제금액</span>
+              <h3>20,000 원</h3>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns">
+          <button type="button" class="btn-md btn_outlined_black"
+            onclick="closeModal('modal-lsm-discount')">취소하기</button>
+          <button type="button" class="btn-md btn_blue" onclick="openModal('modal-impossible-discount')">적용하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- LSM할인 모달 끝 -->
+  <!-- 사용할 수 없는 할인 모달 시작 -->
+  <div id="modal-impossible-discount" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/alert_img.png" alt="알럿 아이콘" width="160">
+        <h3 class="mt80">현재 주문 상품에<br>
+        사용할 수 없는 할인입니다.<br>
+        메뉴를 다시 확인해 주세요.</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-lg btn_black" onclick="closeModal('modal-impossible-discount')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 사용할 수 없는 할인 모달 끝 -->
+  <script>
+    let membershipNum = "";
+    $('.number-pad .btn_number').click(function() {
+      let clickNum = String($(this).val())
+      membershipNum = membershipNum+""+clickNum
+      $('#membershipInput').val(membershipNum)
+    })
+
+    $('.membership__num--delete .btn_clear').click(function() {
+      membershipNum = "";
+      $('#membershipInput').val("")
+    })
+
+    $('.membership__num--delete .btn_delete').click(function () {
+      membershipNum = membershipNum.slice(0, -1);
+      $('#membershipInput').val(membershipNum)
+    })
+  </script>
+</body>
+
+</html>

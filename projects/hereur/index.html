@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,interactive-widget=resizes-content, maximum-scale=1.0,user-scalable=0">
+  <title>히어유알</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.png">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="히어유알" />
+  <meta property="og:description" content="히어유알" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/style.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+</head>
+<body>
+  <div id="page-wrap">
+    <div id="contents-wrap">
+      <!-- 좌측 영역 -->
+      <section class="section_hereur_info">
+        <a href="https://hereur.kr/" target="_blank" class="logo_area">
+          <img src="./_img/common/logo.svg" alt="히어유알 로고">
+        </a>
+        <div class="hereur_text_info">
+          <div class="title">
+            <h2>모임관리 필수 앱 히어유알</h2>
+            <p>코드로 친구를 초대하고 즐겁게 모여보세요!</p>
+          </div>
+          <div class="hereur_icon_list">
+            <div class="hereur_icon">
+              <div class="icon">
+                <img src="./_img/info_icon1.png" alt="모임일정관리 아이콘">
+              </div>
+              <div class="desc">
+                <span>한눈에 보는 캘린더로</span>
+                <h5>모임 일정 관리</h5>
+              </div>
+            </div>
+            <div class="hereur_icon">
+              <div class="icon">
+                <img src="./_img/info_icon2.png" alt="디테일한 알림 아이콘">
+              </div>
+              <div class="desc">
+                <span>모임을 잊지 않도록</span>
+                <h5>디테일한 알림</h5>
+              </div>
+            </div>
+            <div class="hereur_icon">
+              <div class="icon">
+                <img src="./_img/info_icon3.png" alt="모임장소 추천 아이콘">
+              </div>
+              <div class="desc">
+                <span>어디갈까? 고민 해결!</span>
+                <h5>모임장소 추천</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hereur_app_info">
+          <div class="app_info">
+            <h5>히어유알 바로 시작하기</h5>
+            <div class="btns">
+              <button type="button" class="btn_app_link app_store" onclick="openModal('modal-qr')"><span>App Store</span></button>
+              <button type="button" class="btn_app_link google_play" onclick="openModal('modal-qr')"><span>Google Play</span></button>
+            </div>
+          </div>
+          <div class="app_info">
+            <h5>히어유알 더 알아보기</h5>
+            <div class="btns">
+              <a href="https://hereur.kr/" target="_blank" class="btn_app_link">홈페이지</a>
+              <a href="https://www.instagram.com/hereur_official/" target="_blank" class="btn_app_link">인스타그램</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 우측 콘텐츠 영역 -->
+      <div class="container">
+        <header id="header">
+          <div class="header__inner">
+            <a href="https://hereur.kr/" target="_blank" class="logo">
+              <img src="./_img/common/logo.svg" alt="히어유알 로고">
+            </a>
+            <div class="header_app_info">
+              <a href="https://hereur.kr" target="_blank" class="btn_company_info">히어유알 소개</a>
+              <button type="button" class="btn_app btn_app_store" onclick="downloadHereUR()">
+                <img src="./_img/common/icon_app_store.svg" alt="앱스토어 아이콘">
+              </button>
+              <button type="button" class="btn_app btn_google_play" onclick="downloadHereUR()">
+                <img src="./_img/common/icon_google_play.svg" alt="구글플레이 아이콘">
+              </button>
+            </div>
+          </div>
+        </header>
+        <main id="main">
+          <div class="hereur_home">
+            <div class="home_img">
+              <div class="top">
+                <img src="./_img/home_title_top_left.png" alt="" width="139">
+                <img src="./_img/home_title_top_right.png" alt="" width="73">
+              </div>
+              <div class="bottom">
+                <img src="./_img/home_title_bottom.png" alt="">
+              </div>
+            </div>
+            <div class="title">
+              <div class="bubble">
+                <img src="./_img/home_tit_bubble.png" alt="">
+              </div>
+              <h2>히어유알 그랜드 오픈 이벤트</h2>
+              <span class="date">2024. 09. 24 ~ 10. 14</span>
+            </div>
+            <ul class="info">
+              <li><span>·총 21일간</span> 매일 새로운 당첨 기회에 도전해 보세요!</li>
+              <li><span>·총 210개의</span> 스페셜 랜덤 추첨 경품!</li>
+              <li><span>·총 2100개의</span> 선착순 100% 당첨 경품!</li>
+            </ul>
+          </div>
+          <div class="hereur_event_1">
+            <div class="event_1_header">
+              <div class="title">
+                <span class="event_span">Event 1</span>
+                <h2>오늘의 행운 코드</h2>
+                <p>
+                  <span>매일 오전 10시 OPEN</span><br>
+                  최대 5만 원 경품 당첨의 기회!
+                </p>
+              </div>
+            </div>
+            <div class="event_input">
+              <div class="title">
+                <img src="./_img/icon_clover.svg" alt="">
+                <h5>나만의 초대 코드를 입력하고 행운의 코드를 발견해 보세요!</h5>
+                <img src="./_img/icon_clover.svg" alt="">
+              </div>
+              <div class="form_input_code">
+                <input type="hidden" id="eventId">
+                <input type="hidden" id="userId">
+                <input type="hidden" id="weekNumber">
+                <div class="input_field">
+                  <input id="code" type="text" placeholder="코드 입력하기" onkeyup="if(window.event.keyCode==13){confirmWinner()}">
+                  <button type="button" onclick="confirmWinner()">당첨 결과<br>확인하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hereur_event_step event1">
+            <h3>이벤트 참여 방법</h3>
+            <div class="event_steps">
+              <div class="event_step">
+                <div class="step_header">
+                  <span>STEP</span>
+                  <p>01</p>
+                </div>
+                <div class="step_body">
+                  <div class="step_text">
+                    <p>히어유알 앱에 접속해<br>
+                      <span class="active">‘친구 추가’ 탭을 클릭한다</span>
+                    </p>
+                  </div>
+                  <div class="step_img shadow">
+                    <img src="./_img/event_step01.png" alt="" width="255">
+                  </div>
+                </div>
+              </div>
+              <div class="event_step">
+                <div class="step_header">
+                  <span>STEP</span>
+                  <p>02</p>
+                </div>
+                <div class="step_body">
+                  <div class="step_text">
+                    <p>
+                      <span class="active">‘내 초대 코드’ 복사 하기</span><br>
+                      버튼을 클릭한다
+                    </p>
+                  </div>
+                  <div class="step_img shadow">
+                    <img src="./_img/event_step02.png" alt="" height="283">
+                  </div>
+                </div>
+              </div>
+              <div class="event_step step3">
+                <div class="step_header">
+                  <span>STEP</span>
+                  <p>03</p>
+                </div>
+                <div class="step_body">
+                  <div class="step_text">
+                    <p>이벤트 홈페이지에<br>
+                      <span class="active">코드를 입력하고</span>결과를 확인한다
+                    </p>
+                  </div>
+                  <div class="step_img">
+                    <img src="./_img/event_step03.png" alt="" width="345">
+                  </div>
+                  <div class="step_text sec">
+                    <p>내 초대 코드와 오늘의 행운 코드가<br>
+                      <span class="active">하나라도 일치하면 당첨!</span>
+                    </p>
+                  </div>
+                  <ul class="step_info">
+                    <li>*오늘의 행운 코드는 매일 오전 10시에 변경됩니다.</li>
+                    <li>*선착순 경품 소진 완료 시 경품 지급이 종료됩니다.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="insta_hereur">
+              <a href="https://hereur.kr/" class="btn_insta" target="_blank"><span>히어유알 알아보기</span></a>
+              <button type="button" class="btn_insta" onclick="downloadHereUR()"><span>히어유알 다운받기</span></button>
+            </div>
+          </div>
+          <div class="hereur_event_prize bdb">
+            <h3>이벤트 경품</h3>
+            <div class="prize_list--typeA">
+              <div class="prize_type">
+                <h4>매일 선착순 100명!</h4>
+                <div class="prize_content">
+                  <div class="tit">선착순 경품</div>
+                  <div class="prize_item--typeA item1">
+                    <div class="dim open">
+                      <h2>09. 24<br>OPEN</h2>
+                    </div>
+                    <div class="dim close">
+                      <h2>종료<br>되었습니다.</h2>
+                    </div>
+                    <div class="title">
+                      <h4>1주차</h4>
+                      <span class="date">09.24 ~ 09.30</span>
+                    </div>
+                    <div class="thum">
+                      <img src="./_img/event_prize01.png" alt="이벤트 경품 이미지">
+                    </div>
+                    <p class="name">CU 모바일 상품권 5,000원권</p>
+                  </div>
+
+                  <div class="prize_item--typeA item2">
+                    <div class="dim open">
+                      <h2>10. 01<br>OPEN</h2>
+                    </div>
+                    <div class="dim close">
+                      <h2>종료<br>되었습니다.</h2>
+                    </div>
+                    <div class="title">
+                      <h4>2주차</h4>
+                      <span class="date">10.01 ~ 10.07</span>
+                    </div>
+                    <div class="thum">
+                      <img src="./_img/event_prize02.png" alt="이벤트 경품 이미지">
+                    </div>
+                    <p class="name">스타벅스 아메리카노<br>Tall 사이즈 교환권</p>
+                  </div>
+
+                  <div class="prize_item--typeA item3">
+                    <div class="dim open">
+                      <h2>10. 08<br>OPEN</h2>
+                    </div>
+                    <div class="dim close">
+                      <h2>종료<br>되었습니다.</h2>
+                    </div>
+                    <div class="title">
+                      <h4>3주차</h4>
+                      <span class="date">10.08 ~ 10.14</span>
+                    </div>
+                    <div class="thum">
+                      <img src="./_img/event_prize03.png" alt="이벤트 경품 이미지">
+                    </div>
+                    <p class="name">배달의 민족 상품권 5,000원권</p>
+                  </div>
+                </div>
+              </div>
+              <div class="prize_type random">
+                <h4>매일 랜덤 8명!</h4>
+                <div class="prize_content">
+                  <div class="tit">스페셜 경품</div>
+                  <div class="prize_item--typeB">
+                    <div class="thum">
+                      <img src="./_img/event_prize04.png" height="163" alt="">
+                    </div>
+                    <p class="name">교촌치킨 반반오리지날 + 콜라SET</p>
+                  </div>
+                  <div class="prize_item--typeB">
+                    <div class="thum">
+                      <img src="./_img/event_prize05.png"  height="163" alt="">
+                    </div>
+                    <p class="name">배달의민족 상품권 50,000원권</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hereur_event_2">
+            <div class="event_2_header">
+              <div class="title">
+                <span class="event_span">Event 2</span>
+                <h2>우리 모임의 코드</h2>
+                <div class="event_2_img">
+                  <img src="./_img/event2_header_img.png" alt="">
+                </div>
+                <p>
+                  인스타그램에서 <span>‘우리 모임의 코드’</span> 자랑하면<br>
+                  히어유알이 총 50팀에게 <span>모임 지원금</span>을 드려요!
+                </p>
+              </div>
+              <ul class="event_2_info">
+                <li>
+                  <span>이벤트 기간</span>
+                  <p>2024. 09. 24 ~ 10. 14</p>
+                </li>
+                <li>
+                  <span>당첨자 발표</span>
+                  <p>2024. 10. 21</p>
+                </li>
+              </ul>
+            </div>
+            <div class="event_2_swiper">
+              <div class="swiper event-2-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="insta_image">
+                      <img src="./_img/insta_swiper_img01.png" alt="이벤트 이미지">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="insta_image">
+                      <img src="./_img/insta_swiper_img02.png" alt="이벤트 이미지">
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="insta_image">
+                      <img src="./_img/insta_swiper_img03.png" alt="이벤트 이미지">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hereur_event_step">
+            <h3>이벤트 참여 방법</h3>
+            <div class="event_steps">
+              <div class="event_step">
+                <div class="step_header">
+                  <span>STEP</span>
+                  <p>01</p>
+                </div>
+                <div class="step_body">
+                  <div class="step_text">
+                    <p>인스타그램 스토리에 접속해<br>
+                    자랑하고 싶은 모임 사진을 선택한다</p>
+                  </div>
+                  <div class="step_img">
+                    <img src="./_img/step01.png" alt="" height="283">
+                  </div>
+                </div>
+              </div>
+              <div class="event_step">
+                <div class="step_header">
+                  <span>STEP</span>
+                  <p>02</p>
+                </div>
+                <div class="step_body">
+                  <div class="step_text">
+                    <p>GIF 기능을 누르고<br>
+                      <span class="active">‘@hereur’을 검색한다</span></p>
+                  </div>
+                  <div class="step_img">
+                    <img src="./_img/step02.png" alt="" height="283">
+                  </div>
+                </div>
+              </div>
+              <div class="event_step">
+                <div class="step_header">
+                  <span>STEP</span>
+                  <p>03</p>
+                </div>
+                <div class="step_body">
+                  <div class="step_text">
+                    <p>이모지와 히어유알 스티커를 활용해<br>
+                      이미지를 꾸미고 업로드한다<br>
+                      <span class="active blue">히어유알 공식 계정 태그 필수!</span>
+                      <span class="insta_id">@hereur_official</span>
+                    </p>
+                  </div>
+                  <div class="step_img">
+                    <img src="./_img/step03.png" alt="" height="280">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="insta_hereur">
+              <a href="https://www.instagram.com/hereur_official/" class="btn_insta" target="_blank"><span>히어유알 인스타그램 바로가기</span></a>
+            </div>
+          </div>
+          <div class="hereur_event_prize">
+            <h3>이벤트 경품</h3>
+            <div class="prize_list--typeB">
+              <div class="prize_item--typeB">
+                <div class="thum">
+                  <div class="person_cnt">40명</div>
+                  <img src="./_img/prize01.png" alt="">
+                </div>
+                <p class="name">교촌치킨 반반오리지날 + 콜라SET</p>
+              </div>
+              <div class="prize_item--typeB">
+                <div class="thum">
+                  <div class="person_cnt">10명</div>
+                  <img src="./_img/prize02.png" alt="">
+                </div>
+                <p class="name">신세계상품권 10만원권</p>
+              </div>
+            </div>
+          </div>
+          <div class="hereur_notice">
+            <h4>유의 사항</h4>
+            <div class="event_notice">
+              <h5>&lt;EVENT1&gt;</h5>
+              <ul>
+                <li>매일 선착순 100명 지급 완료 시 이벤트가 조기 종료될 수 있습니다.</li>
+                <li>스페셜 경품은 랜덤한 확률로 지급되며, 경품 모두 소진 시 이벤트가 조기 종료될 수 있습니다.</li>
+                <li>경품 수량의 경우 매일 최대 1개 당첨 가능하며, 주차별 최대2개(선착순, 스페셜 경품 각 1개)로 제한됩니다.</li>
+                <li>당사 사정에 의하여 동일한 금액의 경품으로 대체 지급 될 수 있습니다.</li>
+                <li>모든 경품은 이벤트 종료 후 일괄 전송됩니다.</li>
+                <li>고객이 잘못 입력한 정보로 인한 혜택 미제공은 당사가 책임지지 않습니다.</li>
+                <li>모바일 상품권의 경우 유효기간 만료 후 재발송이 불가합니다.</li>
+                <li>중복/부정 참여 정황이 확인된 경우 당첨이 취소될 수 있습니다.</li>
+                <li>타인의 명의를 도용하여 부정인증을 시도한 경우 관련 법령에 따라 처벌(3년 이하의 징역형 또는 1천만 원 이하의 벌금형)을 받을 수 있습니다.</li>
+              </ul>
+            </div>
+            <div class="event_notice">
+              <h5>&lt;EVENT2&gt;</h5>
+              <ul>
+                <li>1인당 1개의 참여만 인정됩니다.</li>
+                <li>히어유알 계정을 태그하지 않은 경우 참여 목록에서 제외됩니다.</li>
+                <li>원활한 참여 확인을 위해 ‘비공개 계정’은 참여가 불가합니다</li>
+                <li>이미지 도용·AI 이미지 활용 등 부정 참여는 당첨이 취소될 수 있습니다.</li>
+                <li>당첨 결과는 히어유알 인스타그램 공식 계정을 통해 공지될 예정이며, 당첨자에게 개인 DM 발송 예정입니다</li>
+              </ul>
+            </div>
+          </div>
+          <footer id="footer">
+            <div class="footer__inner">
+              <h5>바움랩스(주)</h5>
+              <div class="company_info">
+                <ul>
+                  <li><span>대표이사</span><p>조우진</p></li>
+                  <li><span>사업자번호</span><p>442-86-03054</p></li>
+                  <li><span>주소</span><p>인천광역시 연수구 인천타워대로 323, A동 2507호, 2508호</p></li>
+                  <li><p>(송도동, 송도 센트로드)</p></li>
+                  <li><span>고객센터</span><p>cs-hereur@baumlabs.co.kr</p></li>
+                  <li><span>전화번호</span><p>02-1833-7033</p></li>
+                </ul>
+              </div>
+              <p class="copyright">©2023.바움랩스(주).All Rights Reserved.</p>
+            </div>
+          </footer>
+        </main>
+        <div class="fixed-btn">
+          <div class="fixed-btn__inner">
+            <button type="button" class="btn_share">
+              <img src="./_img/common/icon_share.svg" alt="공유하기 아이콘">
+              <span>공유하기</span>
+            </button>
+          </div>
+        </div>
+        <div class="fixed-btn_wrap">
+          <div class="fixed-btn-box">
+            <div class="share-modal-header">
+              <span></span>
+            </div>
+            <div class="share-modal-body">
+              <ul>
+                <li>
+                  <button class="link-copy" type="button" onclick="copyLink()">
+                    <img src="./_img/icon_copy.png" alt="링크복사하기">
+                    <span>링크 복사하기</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 우측하단 캐릭터 이미지 -->
+      <div class="bottom_img">
+        <img src="./_img/bottom_img.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- 당첨 모달 시작 -->
+  <div id="modal-code-winner" class="modal modal_code_result">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-code-winner')"></button>
+      </div>
+      <div class="modal__header">
+        <h3 class="blue">오늘의 행운 코드 :&nbsp;<span class="luckyCode"></span></h3>
+        <h3>
+          <p class="winner_tit"><span id="week">2</span>주차 행운의 경품 당첨</p><br>
+          오늘의 행운은 당신의 것!
+        </h3>
+      </div>
+      <div class="modal__content">
+        <div class="success_content">
+          <div class="code_result_img">
+            <img id="winner_img" src="./_img/winner_sb.png" alt="당첨 이미지">
+          </div>
+          <div class="winner_info">
+            <h4>정보 요청</h4>
+            <div class="tel_input">
+              <span>전화번호</span>
+              <input type="text" id="telNo" placeholder="01012345678" onkeyup="if(window.event.keyCode==13){submitTelNo()}">
+            </div>
+          </div>
+          <div class="winner_info">
+            <h4>동의 정보</h4>
+            <div class="agree_check">
+              <div class="checkbox--typeA">
+                <label for="chk">
+                  <input type="checkbox" id="chk"> <em></em> 만 14세 이상이며 개인정보 수집 및 이용에
+                  동의합니다. <span class="asterisk">*</span>
+                </label>
+              </div>
+              <button type="button" class="btn_show" onclick="openModal('modal-agree')">보기</button>
+            </div>
+            <div class="agree_check">
+              <div class="checkbox--typeA">
+                <label for="chk2">
+                  <input type="checkbox" id="chk2"> <em></em> 개인정보 제3자 제공에 동의합니다. <span class="asterisk">*</span>
+                </label>
+              </div>
+              <button type="button" class="btn_show" onclick="openModal('modal-agree2')">보기</button>
+            </div>
+            
+            <div class="agree_info">
+              <p>
+                입력하신 번호가 히어유알 회원이 아니거나 정확하지 않은 경우
+                경품을 받지 못하거나 당첩이 취소 될 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn-modal btn_cancel" onclick="submitTelNo()">제출하기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 당첨 모달 끝 -->
+  <!-- 낙첨 모달 시작 -->
+  <div id="modal-code-fail" class="modal modal_code_result fail">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-code-fail')"></button>
+      </div>
+      <div class="modal__header">
+        <h3 class="blue">오늘의 행운 코드 :&nbsp;<span class="luckyCode"></span></h3>
+        <h3>
+          <small>아쉽게도 당첨되지 않았어요</small>
+          내일 다시 도전해 보세요!
+        </h3>
+      </div>
+      <div class="modal__content">
+        <div class="fail_content">
+          <div class="code_result_img">
+            <img src="./_img/fail_img.png" alt="낙첨 이미지">
+          </div>
+          <div class="my_winner_list_content">
+            <div class="tit">
+              <img src="./_img/icon_present.svg" alt="선물 아이콘">
+              <h5>나의 당첨이력</h5>
+              <img src="./_img/icon_present.svg" alt="선물 아이콘">
+            </div>
+            <ul class="my_winner_list">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn-modal btn_cancel" onclick="closeModal('modal-code-fail')">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 낙첨 모달 끝 -->
+  <!-- 개인정보 동의 모달 시작 -->
+  <div id="modal-agree" class="modal modal_agree">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-agree')"></button>
+      </div>
+      <div class="modal__content">
+        <div class="agree_content">
+          <div class="agree">
+            <h3>1&#41;개인정보 수집ㆍ이용 동의 (필수)</h3>
+            <p class="cnts">
+              본 이벤트 참여 고객은 개인정보 수집 이용에 대한 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 이벤트 참여가 제한됩니다.
+            </p>
+            <ul>
+              <li>
+                1. 개인정보 수집 및 이용 목적<br>
+                -히어유알 코드의 발견 이벤트 운영 및 당첨자 발표, 경품 발송
+              </li>
+              <li>
+                2. 수집하는 개인정보 항목<br>
+                -이벤트 참여 기록, 히어유알 친구 초대 코드, 이름, 휴대전화 번호
+              </li>
+              <li>
+                3. 개인정보 보유 및 이용 기간<br>
+                -당첨자의 경품 수령 완료 30일 이후 즉시 파기
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn-modal btn_cancel" onclick="closeModal('modal-agree')">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 개인정보 동의 모달 끝 -->
+  <!-- 개인정보 동의 모달 시작 -->
+  <div id="modal-agree2" class="modal modal_agree">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-agree2')"></button>
+      </div>
+      <div class="modal__content">
+        <div class="agree_content">
+          <div class="agree">
+            <h3>2&#41;개인정보 제3자 제공에 대한 동의 (필수)</h3>
+            <p class="cnts">
+              본 이벤트 참여 고객은 개인정보 제3자 제공에 대한 동의에 대하여 동의를 거부할 권리가 있습니다. 그러나 동의를 거부할 경우 이벤트 참여가 제한됩니다.
+            </p>
+            <ul>
+              <li>
+                1. 제공받는자 : ㈜케이티알파
+              </li>
+              <li>
+                2. 제공 목적 : 이벤트 경품(상품권) 발송
+              </li>
+              <li>
+                3. 제공되는 개인정보 항목 : 이름, 전화번호
+              </li>
+              <li>
+                4. 개인정보 보유 및 이용기간 : 당첨자의 경품수령 완료 30일 이후 즉시파기
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn-modal btn_cancel" onclick="closeModal('modal-agree2')">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 개인정보 동의 모달 끝 -->
+  <!-- 정보입력 불일치 모달 시작 -->
+  <div id="modal-info-notcorrect" class="modal modal_not_correct">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-info-notcorrect')"></button>
+      </div>
+      <div class="modal__header">
+        <h3 class="not_correct_title"></h3>
+      </div>
+      <div class="modal__content">
+        <div class="info_cnts">
+          <p class="cnts">참여자 본인의 ‘히어유알 초대 코드’가 아닌 경우 응모가 불가합니다.</p>
+          <p class="cnts">히어유알 회원 가입 번호와 입력하신 정보가 일치하지 않는 경우 참여가 불가합니다.</p>
+        </div>
+      </div>
+      <div class="modal__btns" onclick="downloadHereUR()">
+        <button type="button" class="btn-modal btn_cancel">히어유알 다운받기</button>
+        <p class="btn_info">아직 히어유알 회원이 아니신가요?</p>
+      </div>
+    </div>
+  </div>
+  <!--정보입력 불일치 모달 끝 -->
+  <!-- QR 모달 시작 -->
+  <div id="modal-qr" class="modal modal_qr">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-qr')"></button>
+      </div>
+      <div class="modal__header">
+        <h3 class="blue">히어유알 다운로드</h3>
+        <h3>
+          휴대폰으로 스캔하면<br>
+          앱 다운로드 페이지로 이동합니다.
+        </h3>
+      </div>
+      <div class="modal__content">
+        <div class="qr_content">
+          <p>*스마트폰 카메라 및 모든 QR스캐너로 가능</p>
+          <div class="qr_img">
+            <img src="./_img/common/qr_img.png" alt="QR코드 이미지" width="95">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--QR 모달 끝 -->
+  <!-- 정보 제출 완료 모달 시작 -->
+  <div id="modal-info-confirm" class="modal modal_info_confirm">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-info-confirm')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>
+          정보 제출이 완료되었습니다.
+        </h3>
+      </div>
+      <div class="modal__content">
+        <div class="confirm_content">
+          <p class="confirm_txt">* 경품은 이벤트 종료 후 입력하신 연락처로 일괄 발송됩니다.</p>
+          <div class="my_winner_list_content">
+            <div class="tit">
+              <img src="./_img/icon_present.svg" alt="선물 아이콘">
+              <h5>나의 당첨이력</h5>
+              <img src="./_img/icon_present.svg" alt="선물 아이콘">
+            </div>
+            <ul class="my_winner_list">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn-modal btn_cancel" onclick="closeModal('modal-info-confirm')">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 정보 제출 완료 모달 끝 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script src="./_js/script.js"></script>
+</body>
+</html>

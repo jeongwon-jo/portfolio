@@ -1,0 +1,698 @@
+@charset "UTF-8";
+/* 메인 로딩 화면 */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100dvh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0vw;
+    height: 100dvh;
+    background-color: #fff;
+    animation: slideRight ease-out 2.2s;
+    animation-fill-mode: both;
+    animation-delay: 2.1s;
+}
+
+.loading .text_box {
+    overflow: hidden;
+}
+
+.loading .text_box h1 {
+    font-size: 100px;
+    font-weight: 800;
+    color: #fff;
+    transform: translateY(100%);
+    animation: showUp linear 0.5s;
+    animation-fill-mode: both;
+    mix-blend-mode: exclusion;
+}
+
+@keyframes showUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.sec__inner {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 첫번째 섹션 - 소개 */
+.section__greeting {
+    width: 100vw;
+    height: 100dvh;
+    background-color: #fff;
+    position: relative;
+}
+
+.sec1_title_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.section__greeting .text_box h1 {
+    font-size: 100px;
+    font-weight: 800;
+    color: #000;
+    text-align: center;
+}
+
+.section__greeting .images_box {
+    display: inline-block;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    height: 490px;
+    position: relative;
+    opacity: 0;
+    height: 0;
+}
+
+.section__greeting .images_box .img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section__greeting .images_box .img:not(:nth-child(1)) {
+    opacity: 0;
+}
+
+.section__greeting .images_box .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section__greeting .scroll_down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeInOutScrollDown 1.4s linear infinite;
+    animation-fill-mode: both;
+}
+
+.section__greeting .scroll_down span {
+    font-size: 16px;
+    color: #333;
+}
+
+@keyframes fadeInOutScrollDown {
+    0% {
+        opacity: 0;
+    }
+  
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 두번째 섹션 - 목표 */
+.section__dreaming {
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    text-align: center;
+    background-color: #fff;
+}
+  
+.section__dreaming span.top_bar {
+    display: inline-block;
+    width: 1px;
+    height: 30px;
+    background-color: #111;
+    margin-bottom: 36px;
+}
+
+.section__dreaming .title {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section__dreaming .title b {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 24px;
+}
+
+.section__dreaming .title p {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #111;
+}
+
+.my_experience_year {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 120px;
+}
+
+.my_experience_year h1 {
+    font-size: 130px;
+    font-weight: 700;
+}
+
+.my_experience_year span.bar {
+    display: inline-block;
+    width: 0px;
+    height: 10px;
+    transition: 1.3s;
+    background-color: #111;
+}
+
+.my_experience_year span.bar.active {
+    width: calc(100vw * (552 / 1800));
+}
+
+/* 세번째 섹션 - 경력 */
+.section__history {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+
+.history__title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.history__title h2 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.aboutme_container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.aboutme_container .text {
+    width: 100%;
+    flex: 1;
+}
+
+.aboutme_container .info_history {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.history__wrap h4,
+.skills__wrap h4 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.history__wrap .my_history {
+    margin-top: 24px;
+}
+
+.my_history li {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+    gap: 24px;
+}
+
+.my_history li span.history__date {
+    display: inline-block;
+    width: 80px;
+    margin-right: 18px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.my_history li p.history__cnts {
+    font-size: 18px;
+    font-weight: 500;
+} 
+
+.resume_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.resume_list a {
+    display: inline-block;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    padding-right: 22px;
+    margin-bottom: 8px;
+}
+
+.resume_list a.resume:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url(../_img/common/icon_download.svg) no-repeat center center / contain;
+}
+
+.skills__wrap {
+    margin-top: 40px;
+}
+
+.my_skills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.my_skills li {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+}
+
+.my_skills li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.aboutme_container .img {
+    width: 45%;
+    height: 550px;
+    overflow: hidden;
+}
+
+.aboutme_container .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 네번째 섹션 - 프로젝트 */
+.section__portfolio {
+    padding-top: 120px;
+    padding-bottom: 240px;
+}
+.portfolio__title {
+    text-align: center;
+}
+
+.portfolio__title h2 {
+    font-size: 56px;
+    font-weight: 600;
+}
+
+.portfolio__contents {
+    margin-top: 56px;
+}
+
+.portfolio__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(340px, auto));
+    gap: 24px;
+    row-gap: 40px;
+}
+
+.portfolio__item--card .portfolio__thum {
+    display: inline-block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio__item--card .portfolio__thum img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.35s linear;
+    -webkit-transition: 0.35s linear;
+    -moz-transition: 0.35s linear;
+    -ms-transition: 0.35s linear;
+    -o-transition: 0.35s linear;
+}
+
+.portfolio__item--card .portfolio__thum:hover img {
+    filter: blur(3px);
+    transform:scale(1.08);
+    -webkit-transform:scale(1.08);
+    -moz-transform:scale(1.08);
+    -ms-transform:scale(1.08);
+    -o-transform:scale(1.08);
+    -webkit-filter: blur(3px);
+}
+
+.portfolio__item--card .portfolio__thum .btn_go_detail {
+    opacity: 0;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 70px;
+    border-radius: 8px;
+    color: #222222;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    transition: 0.35s;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+.portfolio__item--card .portfolio__thum:hover .btn_go_detail {
+    opacity: 1;
+}
+
+.portfolio__item--card .portfolio__desc {
+    margin-top: 20px;
+}
+
+.portfolio_tit {
+    margin-bottom: 16px;
+}
+
+.portfolio_tit h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+p.portfolio_description {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+ul.portfolio__info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    row-gap: 8px;
+    margin: 8px 0;
+}
+
+ul.portfolio__info li {
+    font-size: 16px;
+    color: #505050;
+    text-decoration: underline;
+}
+
+ul.portfolio__info li:before {
+    content: '#';
+}
+
+.portfolio__work {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.portfolio__work p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.portfolio__work p b.work {
+    display: inline-block;
+    margin-left: 4px;
+    font-weight: 600;
+    color: var(--color_primary);
+}
+.portfolio__btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.portfolio__btns .btn {
+    width: auto;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 2px;
+    padding: 0 18px;
+    background-color: #505050;
+    color: #fff;
+}
+
+.portfolio__btns .btn.btn_go_site {
+    background-color: #111;
+    color: #fff;
+}
+
+/* Mobile */
+@media screen and (max-width:767px) {
+    .loading .text_box h1 {
+        font-size: 56px;
+        text-align: center;
+    }
+
+    /* 첫번째 섹션 - 소개 */
+    .section__greeting .text_box h1 {
+        font-size: 56px;
+        text-align: center;
+    }
+
+    .section__greeting .scroll_down {
+        bottom: 18px;
+    }
+
+    .section__greeting .scroll_down span {
+        font-size: 14px;
+    }
+
+    /* 두번째 섹션 - 목표 */
+    .section__dreaming {
+        padding: 80px 0;
+    }
+
+    .section__dreaming span.top_bar {
+        height: 22px;
+        margin-bottom: 20px;
+    }
+
+    .section__dreaming .title b {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .section__dreaming .title p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .my_experience_year {
+        margin-top: 80px;
+        gap: 20px;
+    }
+
+    .my_experience_year h1 {
+        font-size: 40px;
+    }
+
+    .my_experience_year span.bar {
+        height: 3px;
+    }
+
+    .my_experience_year span.bar.active {
+        width: 30px;
+    }
+
+    /* 세번째 섹션 - 경력 */
+    .section__history {
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+
+    .history__title {
+        margin-bottom: 40px;
+    }
+
+    .history__title h2 {
+        font-size: 28px;
+    }
+
+    .aboutme_container {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 24px;
+    }
+    
+    .aboutme_container .info_history {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .history__wrap h4,
+    .skills__wrap h4 {
+        font-size: 18px;
+    }
+
+    .history__wrap .my_history {
+        margin-top: 18px;
+    }
+
+    .my_history li {
+        margin-bottom: 8px;
+    }
+
+    .my_history li span.history__date {
+        font-size: 14px;
+        line-height: 20px;
+        margin-right: 8px;
+        width: 60px;
+    }
+
+    .my_history li p.history__cnts {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .resume_list a {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 4px;
+    }
+
+    .resume_list a.resume:after {
+        width: 14px;
+        height: 14px;
+    }
+
+    .skills__wrap {
+        margin-top: 20px;
+    }
+
+    .my_skills {
+        margin-top: 20px;
+        gap: 8px;
+    }
+
+    .my_skills li {
+        width: 30px;
+        height: 30px;
+    }
+
+    .aboutme_container .img {
+        width: 100%;
+        height: 240px;
+    }
+
+    /* 네번째 섹션 - 프로젝트 */
+    .section__portfolio {
+        padding-top: 48px;
+        padding-bottom: 60px;
+    }
+
+    .portfolio__title h2 {
+        font-size: 28px;
+    }
+
+    .portfolio__contents {
+        margin-top: 30px;
+    }
+
+    .portfolio__list {
+        grid-template-columns: repeat(1, minmax(300px, auto));
+        row-gap: 24px;
+    }
+
+    .portfolio__item--card .portfolio__thum .btn_go_detail {
+        font-size: 28px;
+    }
+
+    .portfolio__item--card .portfolio__desc {
+        margin-top: 12px;
+    }
+
+    .portfolio_tit {
+        margin-bottom: 12px;
+    }
+
+    .portfolio_tit h3 {
+        font-size: 18px;
+    }
+
+    p.portfolio_description {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    ul.portfolio__info {
+        margin: 8px 0;
+    }
+
+    ul.portfolio__info li {
+        font-size: 14px;
+    }
+    .portfolio__btns {
+        margin-top: 12px;
+    }
+
+    .portfolio__btns .btn {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 12px;
+    }
+
+}

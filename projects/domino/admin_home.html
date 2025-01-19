@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도미노피자 키오스크</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="도미노피자 키오스크" />
+  <meta property="og:description" content="도미노피자 키오스크" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/font.css">
+  <link rel="stylesheet" href="./_css/setting.css">
+  <link rel="stylesheet" href="./_css/common.css">
+  <link rel="stylesheet" href="./_css/sub.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+  <script src="./_js/zoom.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1 class="screen--out">관리자 페이지</h1>
+    <div id="container" class="container">
+      <main id="main" class="main">
+        <header class="header">
+          <div class="header__inner">
+            <div class="logo">
+              <img src="./_img/common/logo.png" alt="로고">
+            </div>
+            <a href="./index.html" class="btn_home"></a>
+          </div>
+        </header>
+        <section class="admin_section">
+          <div class="admin_header">
+            <h3>장치관리</h3>
+          </div>
+          <div class="admin_content">
+            <div class="admin_select-menu">
+              <h4>메뉴를 선택해 주세요.</h4>
+              <ul class="admin-menu">
+                <li>
+                  <a href="#">프린터 테스트</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" onclick="openModal('modal-admin-cardtest')">카드결제 테스트</a>
+                </li>
+                <li>
+                  <a href="#">바코드 테스트</a>
+                </li>
+                <li>
+                  <a href="#">TTS 테스트</a>
+                </li>
+                <li class="exit">
+                  <a href="#">키오스크 종료</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <!-- 카드결제 테스트 모달 시작 -->
+  <div id="modal-admin-cardtest" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_close_modal" onclick="closeModal('modal-admin-cardtest')"></button>
+      </div>
+      <div class="modal__header header--blueType">
+        <h3>카드결제 테스트</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__content">
+          <div class="card-test">
+            <div class="card-test__info">
+              <ul class="inserted_info">
+                <li>
+                  <span>금액</span>
+                  <b>
+                    <input type="text" id="card_price" class="insert_input" inputmode="none">
+                  </b>
+                </li>
+                <li>
+                  <span>승인일자</span>
+                  <b>
+                    <input type="text" class="datepicker" readonly>
+                  </b>
+                </li>
+                <li>
+                  <span>승인번호</span>
+                  <b>
+                    <input type="text" id="card_approval_num" class="insert_input" inputmode="none">
+                  </b>
+                </li>
+              </ul>
+              <button type="button" class="btn_blue btn_cancel" onclick="openModal('modal-admin-alert')">결제취소</button>
+            </div>
+            <div class="number-pad">
+              <button type="button" class="btn_number" value="1">1</button>
+              <button type="button" class="btn_number" value="2">2</button>
+              <button type="button" class="btn_number" value="3">3</button>
+              <button type="button" class="btn_number" value="4">4</button>
+              <button type="button" class="btn_number" value="5">5</button>
+              <button type="button" class="btn_number" value="6">6</button>
+              <button type="button" class="btn_number" value="7">7</button>
+              <button type="button" class="btn_number" value="8">8</button>
+              <button type="button" class="btn_number" value="9">9</button>
+              <button type="button" class="btn_number btn_clear">Clear</button>
+              <button type="button" class="btn_number" value="0">0</button>
+              <button type="button" class="btn_number btn_delete"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 카드결제 테스트 모달 끝 -->
+  <!-- 관리자 카드결제 알럿 모달 시작 -->
+  <div id="modal-admin-alert" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/alert_img.png" alt="알럿 아이콘" width="160">
+        <h3 class="mt80">현재 주문 상품에<br>
+          사용할 수 없는 할인입니다.(가칭)</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-lg btn_black" onclick="closeModal('modal-admin-alert')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 관리자 카드결제 모달 끝 -->
+  <script>
+    /* Datepicker */
+    $(".datepicker").datepicker({
+      dateFormat: "yy-mm-dd",
+      dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+      monthNames: [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월",
+        "11월",
+        "12월",
+      ],
+      monthNamesShort: [
+        "1월",
+        "2월",
+        "3월",
+        "4월",
+        "5월",
+        "6월",
+        "7월",
+        "8월",
+        "9월",
+        "10월",
+        "11월",
+        "12월",
+      ],
+    });
+
+    /* 모달 외부 닫기 */
+    const modalFixedOuter = document.querySelector(".modal");
+
+    window.onclick = function (event) {
+      if (event.target == modalFixedOuter) {
+        event.target.style.display = "none";
+      }
+    };
+
+    /* 번호 패드 */
+    let cardPrice = "";
+    let approvalNumber = "";
+    let currentFocus = 'card_price';
+
+    $('ul.inserted_info .insert_input').click(function() {
+      currentFocus = $(this)[0].id
+    })
+    
+    $('.number-pad .btn_number').click(function () {
+      if ($(this).val()) {
+        let clickNum = String($(this).val())
+        if(currentFocus == "card_price") {
+          cardPrice = cardPrice + "" + clickNum
+          $(`#${currentFocus}`).val(cardPrice)
+        } else {
+          approvalNumber = approvalNumber + "" + clickNum
+          $(`#${currentFocus}`).val(approvalNumber)
+        }
+        
+      } else {
+        return false;
+      }
+    })
+
+    $('.number-pad .btn_clear').click(function () {
+      if (currentFocus == "card_price") {
+        cardPrice = ""
+      } else {
+        approvalNumber = ""
+      }
+
+      $(`#${currentFocus}`).val("")
+    })
+
+    $('.number-pad .btn_delete').click(function () {
+      if (currentFocus == "card_price") {
+        cardPrice = cardPrice.slice(0, -1);
+        $(`#${currentFocus}`).val(cardPrice)
+      } else {
+        approvalNumber = approvalNumber.slice(0, -1);
+        $(`#${currentFocus}`).val(approvalNumber)
+      }
+      
+      
+    })
+  </script>
+</body>
+
+</html>

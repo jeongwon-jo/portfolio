@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDL</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GDL" />
+  <meta property="og:description" content="GDL" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- EChart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/element.css">
+  <link rel="stylesheet" href="./_css/layout.css">
+  <link rel="stylesheet" href="./_css/style.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="logo_gnb">
+          <a href="./index.html" class="header_logo">
+            <img src="./_img/common/logo.png" alt="로고">
+          </a>
+          <nav class="gnb">
+            <ul class="gnb_ul_1depth">
+              <li><a href="./service.html">회사소개</a></li>
+              <li><a href="./intro.html">관련기술 및 뉴스룸</a></li>
+              <li class="gnb_hover">
+                <a href="./data/resource_model.html">기술 및 서비스</a>
+                <ul class="gnb_ul_2depth">
+                  <div class="ul_2depth__inner">
+                    <li><a href="./data/resource_model.html">분산자원 예측모델</a></li>
+                    <li><a href="./data/ai_control.html">인공지능기반 최적제어 솔루션</a></li>
+                    <li><a href="./data/energy_simulation.html">에너지밸런싱 시뮬레이션</a></li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="lang_contact">
+          <ul class="header_lang">
+            <li class="active"><a href="#">KOR</a></li>
+            <li><a href="#">ENG</a></li>
+          </ul>
+          <a href="./contactus.html" class="btn_contact">문의하기</a>
+        </div>
+        <button type="button" class="header_mo_menu"></button>
+      </div>
+    </header>
+    <aside class="mobile_sidebar">
+      <button type="button" class="header_mo_close_menu"></button>
+      <div class="sidebar__inner">
+        <nav class="mobile_gnb">
+          <ul class="gnb_ul_1depth">
+            <li><a href="./service.html">회사소개</a></li>
+            <li><a href="./intro.html">관련기술 및 뉴스룸</a></li>
+            <li class="gnb_hover">
+              <a href="javascript:void(0);">기술 및 서비스</a>
+              <ul class="gnb_ul_2depth">
+                <div class="ul_2depth__inner">
+                  <li><a href="./data/resource_model.html">분산자원 예측모델</a></li>
+                  <li><a href="./data/ai_control.html">인공지능기반 최적제어 솔루션</a></li>
+                  <li><a href="./data/energy_simulation.html">에너지밸런싱 시뮬레이션</a></li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="./contactus.html">문의하기</a></li>
+          </ul>
+        </nav>
+        <ul class="header_lang">
+          <li class="active"><a href="#">KOR</a></li>
+          <li><a href="#">ENG</a></li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="intro__inner">
+        <div class="title">
+          <h1 class="menu_title">관련 기술 이력 및 뉴스룸</h1>
+        </div>
+        <div class="intro_contents">
+          <div class="related_tech">
+            <div class="ai_tech">
+              <h3 class="intro_title">GDL의 에너지 인공지능 기술</h3>
+              <div class="ai_tech_list">
+                <div class="ai_tech_item">
+                  <div class="icon">
+                    <img src="./_img/ai_tech_icon_01.png" alt="가동률 극대화">
+                  </div>
+                  <div class="desc">
+                    <h5>가동률 극대화</h5>
+                    <p>RTU & 인공지능 기반<br>
+                    실시간 이상탐지</p>
+                  </div>
+                </div>
+                <div class="ai_tech_item">
+                  <div class="icon">
+                    <img src="./_img/ai_tech_icon_02.png" alt="운영 비용 최소화">
+                  </div>
+                  <div class="desc">
+                    <h5>운영 비용 최소화</h5>
+                    <p>통합 데이터 관리 및<br>
+                    RPA 기반 운영 비용 절감</p>
+                  </div>
+                </div>
+                <div class="ai_tech_item">
+                  <div class="icon">
+                    <img src="./_img/ai_tech_icon_03.png" alt="매전 수익 극대화">
+                  </div>
+                  <div class="desc">
+                    <h5>매전 수익 극대화</h5>
+                    <p>인공지능 기반<br>
+                    거래 최적화</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 모바일에서 보이는 뉴스 슬라이드 -->
+            <div class="mo_news_slide">
+              <h3 class="intro_title">NEWS</h3>
+              <div class="news_slide">
+                <div class="swiper news_swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="#" class="news_item">
+                        <div class="thum">
+                          <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                        </div>
+                        <div class="desc">
+                          <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                          <p>
+                            - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                            PV-ESS
+                            based AI microgrid standard model on Bangkalan Island, Indonesia.
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#" class="news_item">
+                        <div class="thum">
+                          <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                        </div>
+                        <div class="desc">
+                          <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                          <p>
+                            - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                            PV-ESS
+                            based AI microgrid standard model on Bangkalan Island, Indonesia.
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="#" class="news_item">
+                        <div class="thum">
+                          <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                        </div>
+                        <div class="desc">
+                          <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                          <p>
+                            - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                            PV-ESS
+                            based AI microgrid standard model on Bangkalan Island, Indonesia.
+                          </p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="publication_list">
+              <h3 class="intro_title">대표 출간물</h3>
+              <ul class="publication_links">
+                <li><a href="#">Real-time Solar Power Estimation through RNN-based Attention Models</a></li>
+                <li><a href="#">Missing-insensitive Short-term Load Forecasting Leveraging Autoencoder and LSTM</a></li>
+                <li><a href="#">The ENERTALK Dataset, 15 Hz Electricity Consumption Data from 22 Houses in Korea</a></li>
+                <li><a href="#">Defining Virtual Control Group to Improve Customer Baseline Load Calculation of Residential Demand Response</a></li>
+                <li><a href="#">Convolutional Autoencoder based Feature Extraction and Clustering for Customer Load Analysis</a></li>
+                <li><a href="#">Subtask Gated Networks for Non-Intrusive Load Monitoring</a></li>
+                <li><a href="#">Practical Operation Strategies for Energy Storage System under Uncertainty</a></li>
+                <li><a href="#">Data Requirements for Applying Machine Learning to Energy Disaggregation</a></li>
+                <li><a href="#">Residential Load Profile Clustering via Deep Convolutional Autoencoder</a></li>
+                <li><a href="#">Assuring Explainability on Demand Response Targeting via Credit Scoring</a></li>
+                <li><a href="#">Improving the Energy Saving Process with High-Resolution Data: A Case Study in a University Building</a></li>
+                <li><a href="#">에너지 분석 사례집</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- PC에서 보이는 뉴스 리스트 -->
+          <div class="news_room">
+            <h3 class="intro_title">NEWS</h3>
+            <div class="news_list">
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+              <a href="#" class="news_item">
+                <div class="thum">
+                  <img src="./_img/news_thumnail.png" alt="뉴스 썸네일">
+                </div>
+                <div class="desc">
+                  <h5 class="tit">Encored Technologies Ventures into Indonesia</h5>
+                  <p>
+                    - Selected as Preferred Partner for UN-affiliated GGGI's BKCF Fund Initiative - Plans to develop and establish a
+                    PV-ESS
+                    based AI microgrid standard model on Bangkalan Island, Indonesia.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer_logo">
+          <img src="./_img/common/footer_logo.png" alt="">
+        </div>
+        <div class="footer_company_info">
+          <p>주소 : 경기도 성남시 분당구 새나리로 25 (25, Saenari-ro, Bundang-gu, Seongnam-si, Gyeonggi-do)</p>
+          <p>메일 : syublee@keti.re.kr</p>
+        </div>
+        <div class="footer_copyright">
+          <p class="copyright">Copyright ⓒ Grid Learning ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    var homeSwiper = new Swiper(".news_swiper", {
+      slidesPerView: 1.3,
+      centeredSlides: false,
+      spaceBetween: 24,
+      breakpoints: {
+        0: {
+          slidesPerView: 1.3
+        },
+        420: {
+          slidesPerView: 2
+        },
+        520: {
+          slidesPerView: 2.4
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

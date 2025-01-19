@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도미노피자 키오스크</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="도미노피자 키오스크" />
+  <meta property="og:description" content="도미노피자 키오스크" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/setting.css">
+  <link rel="stylesheet" href="./_css/common.css">
+  <link rel="stylesheet" href="./_css/sub.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+  <script src="./_js/zoom.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1 class="screen--out">시작화면</h1>
+    <div id="container" class="container">
+      <main id="main" class="main">
+        <section class="start_section">
+          <button type="button" id="moveAdminPage" class="move_admin_page"></button>
+          <div class="swiper adv_swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_01.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_02.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_03.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_04.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_05.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_06.jpg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="start_img">
+                  <img src="./_img/loading/loading_07.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+        <section class="touch_section">
+          <a href="./list.html" class="touch_link">
+            <img src="./_img/touch_img.png" alt="" width="64">
+            <h2>화면을 터치해 주세요</h2>
+            <p>CLICK ORDER HERE</p>
+          </a>
+          <div class="lang_section">
+            <div class="select_lang">
+              <button type="button" class="lang">
+                <img src="./_img/common/lang_kor.png" alt="한국어 아이콘">
+                <span>한국어</span>
+              </button>
+              <button type="button" class="lang">
+                <img src="./_img/common/lang_eng.png" alt="영어 아이콘">
+                <span>영어</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="zoom_screen">
+        <button type="button" id="btn_zoom" class="zoom" onclick="clickZoom()">
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- 관리자 비밀번호 입력 모달 시작 -->
+  <div id="modal-admin-password" class="modal">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_close_modal" onclick="closeModal('modal-admin-password')"></button>
+      </div>
+      <div class="modal__header header--blueType">
+        <h3>관리자 메뉴</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__content">
+          <div class="admin-password">
+            <h3>관리자 비밀번호를 입력하세요.</h3>
+            <div class="admin_password_input">
+              <div class="membership-num">
+                <div class="number__input">
+                  <input type="text" id="adminPassword" readonly value="">
+                </div>
+                <div class="number-pad">
+                  <button type="button" class="btn_number" value="1">1</button>
+                  <button type="button" class="btn_number" value="2">2</button>
+                  <button type="button" class="btn_number" value="3">3</button>
+                  <button type="button" class="btn_number" value="4">4</button>
+                  <button type="button" class="btn_number" value="5">5</button>
+                  <button type="button" class="btn_number" value="6">6</button>
+                  <button type="button" class="btn_number" value="7">7</button>
+                  <button type="button" class="btn_number" value="8">8</button>
+                  <button type="button" class="btn_number" value="9">9</button>
+                  <button type="button" class="btn_number btn_clear">Clear</button>
+                  <button type="button" class="btn_number" value="0">0</button>
+                  <button type="button" class="btn_number btn_delete"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns">
+          <button type="button" class="btn-md btn_gray"
+            onclick="closeModal('modal-admin-password')">취소</button>
+          <button type="button" class="btn-md btn_blue" onclick="openModal('modal-admin-alert')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 관리자 비밀번호 입력 모달 끝 -->
+  <!-- 관리자 비밀번호 알럿 모달 시작 -->
+  <div id="modal-admin-alert" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/alert_img.png" alt="알럿 아이콘" width="160">
+        <h3 class="mt80">현재 주문 상품에<br>
+        사용할 수 없는 할인입니다.(가칭)</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-lg btn_black" onclick="closeModal('modal-admin-alert')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 관리자 비밀번호 알럿 모달 끝 -->
+</body>
+<script>
+  var swiper = new Swiper(".adv_swiper", {
+    spaceBetween: 0,
+    centeredSlides: true,
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+      // 8초단위로 광고 바뀜
+      delay: 8000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+  let clickAdminPage = document.getElementById('moveAdminPage')
+
+  window.addEventListener('click', function (evt) {
+    if(evt.srcElement == clickAdminPage) {
+      if (evt.detail === 3) {
+        openModal('modal-admin-password')
+      }
+    }
+  });
+
+  function clickZoom() {
+    $('#btn_zoom').toggleClass('active')
+    if($('#btn_zoom').hasClass('active')) {
+      window.localStorage.setItem("zoom", true)
+    } else {
+      window.localStorage.setItem("zoom", false)
+    }
+    
+  }
+
+  let adminPassword = "";
+  $('.number-pad .btn_number').click(function () {
+    if($(this).val()) {
+      let clickNum = String($(this).val())
+      adminPassword = adminPassword + "" + clickNum
+      $('#adminPassword').val(adminPassword)
+    } else {
+      return false;
+    }
+    
+  })
+
+  $('.number-pad .btn_clear').click(function () {
+    adminPassword = "";
+    $('#adminPassword').val("")
+  })
+
+  $('.number-pad .btn_delete').click(function () {
+    adminPassword = adminPassword.slice(0, -1);
+    $('#adminPassword').val(adminPassword)
+  })
+</script>
+
+
+</html>

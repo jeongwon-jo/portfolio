@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>배달의민족 작업과정</title>
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- #### Work Process Custom CSS #### -->
+	<link rel="stylesheet" href="/css/work-process.css">
+	<!-- FeatherLight.js -->
+	<script src="/js/featherlight/featherlight.js"></script>
+	<!-- FeatherLight.css -->
+	<link rel="stylesheet" href="/js/featherlight/featherlight.css">
+	<!-- Favicon -->
+	<link rel="icon" href="/images/favicon.png">
+</head>
+
+<body>
+	<button class="go-back-history" onclick="history.back()">
+		<i class="bi bi-arrow-left"></i>
+	</button>
+	<div class="container">
+		<section class="top-info">
+			<div class="introduce-work-process">
+				<div class="thumbnail-list">
+					<div class="thum">
+						<img src="../../thumbnail.png" alt="썸네일">
+					</div>
+				</div>
+				<div class="work-process-desc">
+					<div class="title">
+						<h1>배달의 민족 메인페이지 클론코딩</h1>
+					</div>
+					<div class="clone-coding-desc">
+						<h2><b>fullpage.js</b>를 이용한 배달의 민족 메인페이지 구현</h2>
+						<p>fullpage.js를 학습하기 위해서 대표적인 사이트 "배달의 민족" 사이트를 그대로 구현하였습니다. fullpage.js 뿐만 아니라 이미지나 소개글등을 배치하고
+							스크립트를 이용해서
+							fullpage 페이지 마다 보여야 하는 기능들을 배치하는 연습을 하였습니다.</p>
+						<ul class="clone-coding-project-desc clearfix">
+							<li><span>작업기간</span> 9일</li>
+							<li><span>기여도</span> 100%</li>
+							<li><span>제작방식</span> HTML + CSS + jQuery</li>
+							<li><span>플러그인</span> fullpage.js</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="ui-and-coding-desc">
+			<h2>UI & 코드 간략 설명</h2>
+			<div class="ui-and-coding">
+				<div class="ui">
+					<img src="../../full-ui.png" alt="전체 UI">
+				</div>
+				<div class="coding-desc">
+					<div class="coding">
+						<p>사용전, 자바스크립트를 불러오고 , fullpage 스크립트를 불러왔습니다.</p>
+						<img src="./coding1.png" alt="코드 이미지">
+					</div>
+					<div class="coding">
+						<p>html의 구조는 다음과 같이 id 선택자 형태로 구현하였고, 속에 들어가는 콘텐츠는 section이라는 클래스로 구분하였습니다.</p>
+						<img src="./coding2.png" alt="코드 이미지">
+					</div>
+					<div class="coding">
+						<p>초기 설정 > 자바스크립트 > 제이쿼리 셋팅<br>
+							로드될때마다, 인덱스를 가져와서 보여야하는 요소들을 제어합니다.</p>
+						<img src="./coding3.png" alt="코드 이미지">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+
+</html>

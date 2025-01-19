@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>히어유알</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.png">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="히어유알" />
+  <meta property="og:description" content="히어유알" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/style.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+  <style>
+    .container {
+      width: 500px;
+      margin: 0 auto;
+      margin-top: 120px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner"></div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div>
+          <input type="text" id="code" placeholder="코드 입력하기">
+          <button type="button" onclick="confirmWinner()">당첨결과 확인하기</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script>
+    const CORS_URL = 'https://cors-anywhere.herokuapp.com/';
+    const SERVER_URL = 'https://hereur.app/api/v1/pm'
+    let luckyCode;
+    let userId;
+    let week;
+
+    // 당첨결과 확인하기
+    function confirmWinner() {
+      // 행운코드, 유저 아이디 초기화
+      luckyCode = '';
+      userId = '';
+
+      let code = $('#code').val()
+      
+      if(code) {
+        // 한글 입력 방지
+        const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+        if(korean.test(code)) {
+          alert('영문,숫자만 입력 가능합니다')
+          return false;
+        }
+
+        // 6자리 미만 입력시
+        if(code.length < 6) {
+          alert('정확한 초대코드를 입력해 주세요')
+          return false;
+        }
+
+        // 당첨 결과 확인하기 API 연동
+        axios({
+          method: 'post',
+          url: `./code.php`,
+          // url: `${CORS_URL}${SERVER_URL}`,
+          // header: { "Content-Type": "application/json", "Accept" : "application/json"},
+          data: { "inviteCode" : code }
+        })
+          .then(response => {
+            console.log(response.data);
+
+            // if(response.data.status == '200') {
+            //   luckyCode = result.luckyCode.join();
+            //   userId = response.data.result.userId;
+            //   week = response.data.result.week;
+
+            //   // 결과에 따른 모달 노출
+            //   if (response.data.result.isDrawn) {
+            //     showWinnerModal(response.data.result);
+            //   } else {
+            //     showFailedModal(response.data.result)
+            //   }
+            // } else {
+            //   // 초대코드가 없는 경우
+            //   // 이미 금주 모든 경품을 다 받은 경우
+            // }
+          })
+          .catch(error => {
+            console.log(error);
+          })
+      } else {
+        alert("코드를 입력해 주세요.")
+      }
+    }
+
+    // 당첨 모달 띄우기
+    function showWinnerModal(result) {
+      // 당첨 모달 띄우기
+
+      // 선착순 모달
+      if(result.pz == "sb" || result.pz == "cv" || result.pz == "bv") {
+        // 당첨 코드, 몇주차 타이틀 설정
+
+        // 당첨 이미지
+        if (result.pz == "sb") {
+          // 스타벅스
+        } else if (result.pz == "cv") {
+          // 편의점 상품권
+        } else {
+          // 배민 상품권
+        }
+        
+      }
+      // 스페셜 모달
+      else if (result.pz == "ck" || result.pz == "bg") {
+        // 당첨 코드, 몇주차 타이틀 설정
+
+        // 당첨 이미지
+        if (result.pz == "ck") {
+          // 치킨세트
+        } else if (result.pz == "bg") {
+          // 외식(배민) 상품권
+        } 
+      } else {
+        // 낙첨
+        return false;
+      }
+    }
+
+    // 낙첨 모달 띄우기
+    function showFailedModal(result) {
+      // 오늘의 행운코드 노출
+      
+      
+      // 나의 당첨 이력 노출
+      getWinnerList(result.userId)
+    }
+
+    function getWinnerList(userId) {
+      axios({
+        method: 'get',
+        url: `${CORS_URL}${SERVER_URL}/user/${userId}`,
+        header: { "Content-Type": "application/json", "Accept": "application/json" },
+      })
+        .then(response => {
+          console.log(response.data);
+          let winnerList = response.data.result
+          // 나의 당첨이력 리스트 노출
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+
+    // 전화번호 제출
+    function submitTelNo() {
+      let telNo = $('#telNo').val()
+      let eventId = $('#eventId').val()
+
+      axios({
+        method: 'patch',
+        url: `${CORS_URL}${SERVER_URL}/${eventId}/phone`,
+        header: { "Content-Type": "application/json", "Accept": "*/*" },
+        data: { "phone": telNo }
+      })
+        .then(response => {
+          console.log(response.data);
+
+          if(response.data.status == '200') {
+            // 정보제출완료 모달 띄우기
+            
+            // 나의 당첨 이력 노출
+            getWinnerList(result.userId)
+          } else {
+            // 회원정보 핸드폰 번호 맞지않는 모달 띄우기
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+
+  </script>
+</body>
+
+</html>

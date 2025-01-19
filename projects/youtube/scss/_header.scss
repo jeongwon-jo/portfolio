@@ -1,0 +1,143 @@
+header {
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+    .logo-area {
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .menu-bar {
+            width: 18px;
+            height: 12px;
+            position: relative;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: #000;
+
+                &:nth-child(1) {
+                    top: 0;
+                }
+
+                &:nth-child(2) {
+                    top: 50%;
+                }
+
+                &:nth-child(3) {
+                    top: 100%;
+                }
+
+            }
+        }
+
+        img {
+            height: 45%;
+            cursor: pointer;
+        }
+    }
+
+    .search-area {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input[type=text] {
+            width: 538px;
+            border: 1px solid #ddd;
+            padding: 9px;
+            padding-left: 35px;
+            background: url(../images/icon/search.svg) no-repeat left 10px center;
+            background-size: 19px;
+            outline: none;
+        }
+
+        button {
+            border: 1px solid #ddd;
+            width: 60px;
+            height: 35px;
+            box-sizing: border-box;
+
+            i {
+                font-size: 19px;
+            }
+        }
+
+        .mic-area {
+            background-color: #f8f8f8;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            margin-left: 10px;
+            padding: 12px;
+            position: relative;
+
+            img {
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+    }
+
+    .user-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        img {
+            width: 19px;
+        }
+
+        a:nth-child(2) img {
+            width: 17px;
+        }
+
+        i {
+            font-size: 23px;
+        }
+
+        .profile-image {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            a {
+                width: inherit;
+                height: inherit;
+
+                img {
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width : 768px) {
+    .search-area {
+        display: none !important;
+    }
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도미노피자 키오스크</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="도미노피자 키오스크" />
+  <meta property="og:description" content="도미노피자 키오스크" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/font.css">
+  <link rel="stylesheet" href="./_css/setting.css">
+  <link rel="stylesheet" href="./_css/common.css">
+  <link rel="stylesheet" href="./_css/sub.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+  <script src="./_js/zoom.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1 class="screen--out">결제하기</h1>
+    <div id="container" class="container">
+      <main id="main" class="main">
+        <header class="header">
+          <div class="header__inner">
+            <h3 class="header__title">결제하기</h3>
+            <a href="./index.html" class="btn_home"></a>
+          </div>
+        </header>
+        <section class="section_payment">
+          <div class="select-pay-type">
+            <h5 class="select__title">결제방식 선택</h5>
+            <div class="select-type grid_4 mt24">
+              <div class="choose--typeA type--size type--pay">
+                <label for="payment1">
+                  <input type="radio" name="choose_payment" id="payment1" checked>
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>현대 M 포인트</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay">
+                <label for="payment2">
+                  <input type="radio" name="choose_payment" id="payment2">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>A 포인트 카드</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay">
+                <label for="payment3">
+                  <input type="radio" name="choose_payment" id="payment3">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>국민카드 20%</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay">
+                <label for="payment4">
+                  <input type="radio" name="choose_payment" id="payment4">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>B카드 30%</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay">
+                <label for="payment5">
+                  <input type="radio" name="choose_payment" id="payment5">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>일반카드</p>
+                  </div>
+                </label>
+              </div>
+              <div class="choose--typeA type--size type--pay">
+                <label for="payment6">
+                  <input type="radio" name="choose_payment" id="payment6">
+                  <div class="choose__content">
+                    <div class="choose_img"></div>
+                    <p>삼성페이</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section_btn payment_btn">
+          <div class="total_payment">
+            <ul>
+              <li class="mt0">
+                <span>총 결제금액</span>
+                <h3>20,000원</h3>
+              </li>
+            </ul>
+          </div>
+          <div class="order_final_btns">
+            <div class="order__btns">
+              <a href="./list.html" class="btn btn_cancel">취소하기</a>
+              <button type="button" class="btn btn_order" onclick="openModal('modal-insert-card'); startTimer()">결제하기</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <!-- 카드 투입 모달 시작 -->
+  <div id="modal-insert-card" class="modal modal_insert_card">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <div class="remain_time">
+          <p>남은 시간: <span id="timerSeconds">30</span></p>
+        </div>
+        <div class="insert-card__title">
+          <h3>카드를 투입구에 넣어주세요.</h3>
+          <p>*결제가 완료될 때 까지 카드를 빼지 말아주세요.</p>
+        </div>
+      </div>
+      <div class="modal__body">
+        <div class="modal__content">
+          <div class="insert-card__method">
+            <div class="method">
+              <div class="method_img">
+                <img src="./_img/card_img.svg" width="169" alt="실물카드 결제방식">
+              </div>
+              <p>실물카드 결제방식</p>
+            </div>
+            <div class="method">
+              <div class="method_img">
+                <img src="./_img/mobile_card_img.png" width="180" alt="모바일카드 결제방식">
+              </div>
+              <p>모바일카드 결제방식</p>
+            </div>
+          </div>
+          <div class="inserted-card__info">
+            <ul>
+              <li>
+                <span class="info__tit">카드정보</span>
+                <p class="info__cnts">0000-****-****-0000</p>
+              </li>
+              <li>
+                <span class="info__tit">결제금액</span>
+                <p class="info__cnts">000,000원</p>
+              </li>
+              <li>
+                <span class="info__tit">결제승인여부</span>
+                <p class="info__cnts">정상</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal__btns center">
+          <button type="button" class="btn-md btn_black" onclick="closeModal('modal-insert-card')">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 카드 투입 모달 끝 -->
+  <!-- 리더기 서명 안내 모달 시작 -->
+  <div id="modal-reader-sign" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <h3>리더기에 서명해 주세요.</h3>
+        <p class="c_red">5만원 이상 결제시 서명이 필요합니다.</p>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-lg btn_black" onclick="closeModal('modal-reader-sign')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 리더기 서명 안내 모달 끝 -->
+  <!-- 결제 실패 모달 시작 -->
+  <div id="modal-pay-fail" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/pay_fail.png" alt="실패 아이콘" width="160">
+        <h3 class="mt80">결제 실패!</h3>
+        <p>결제에 실패했습니다. 다시 한번 확인해주세요.</p>
+        <p class="c_red">10초 뒤 자동으로 메인화면으로 넘어갑니다.</p>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-lg btn_black" onclick="closeModal('modal-pay-fail')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 결제 실패 모달 끝 -->
+  <!-- 결제 완료 모달 시작 -->
+  <div id="modal-pay-success" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/pay_success.png" alt="성공 아이콘" width="160">
+        <h2 class="mt80">결제 완료!</h2>
+        <h3 class="mt20">영수증을 출력하시겠습니까?</h3>
+        <p class="c_red">아니오 선택시 대기번호만 자동으로 출력됩니다.</p>
+      </div>
+      <div class="modal__body">
+        <div class="modal__btns center">
+          <button type="button" class="btn-sm btn_blue" onclick="closeModal('modal-pay-success'); openModal('modal-order-success')">예</button>
+          <button type="button" class="btn-sm btn_gray" onclick="closeModal('modal-pay-success'); openModal('modal-order-success')">아니오</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 결제 완료 모달 끝 -->
+  <!-- 주문 완료 모달 시작 -->
+  <div id="modal-order-success" class="modal modal--small">
+    <div class="modal__inner">
+      <div class="modal__header header--textType">
+        <img src="./_img/common/pay_success.png" alt="성공 아이콘" width="160">
+        <h3 class="mt40">주문이 완료되었습니다.<br>출력된 대기번호를 확인해 주세요.</h3>
+      </div>
+      <div class="modal__body">
+        <div class="modal__content">
+          <div class="wait_number">
+            <h3 class="number">대기번호 : 00 번</h3>
+            <p class="c_red mt20">10초 뒤 자동으로 메인화면으로 넘어갑니다.</p>
+          </div>
+        </div>
+        <div class="modal__btns center mt80">
+          <a href="./index.html" class="btn-lg btn_black">확인</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 주문 완료 모달 끝 -->
+  <script>
+    let timer = document.getElementById("timerSeconds");
+    let startSecond = 30;
+    let timerInterval;
+    function startTimer() {
+      startSecond = 30
+      timer.innerHTML = startSecond
+      clearInterval(timerInterval)
+      timerInterval = setInterval(intervalFunction, 1000);
+    }
+
+    function intervalFunction() {
+      if (startSecond == 0) {
+        clearInterval(timerInterval)
+        closeModal('modal-insert-card')
+      } else {
+        startSecond--;
+
+        timer.innerHTML = startSecond
+      }
+    }
+  </script>
+</body>
+
+</html>

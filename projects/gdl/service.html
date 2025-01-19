@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDL</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GDL" />
+  <meta property="og:description" content="GDL" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- EChart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/element.css">
+  <link rel="stylesheet" href="./_css/layout.css">
+  <link rel="stylesheet" href="./_css/style.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="logo_gnb">
+          <a href="./index.html" class="header_logo">
+            <img src="./_img/common/logo.png" alt="로고">
+          </a>
+          <nav class="gnb">
+            <ul class="gnb_ul_1depth">
+              <li><a href="./service.html">회사소개</a></li>
+              <li><a href="./intro.html">관련기술 및 뉴스룸</a></li>
+              <li class="gnb_hover">
+                <a href="./data/resource_model.html">기술 및 서비스</a>
+                <ul class="gnb_ul_2depth">
+                  <div class="ul_2depth__inner">
+                    <li><a href="./data/resource_model.html">분산자원 예측모델</a></li>
+                    <li><a href="./data/ai_control.html">인공지능기반 최적제어 솔루션</a></li>
+                    <li><a href="./data/energy_simulation.html">에너지밸런싱 시뮬레이션</a></li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="lang_contact">
+          <ul class="header_lang">
+            <li class="active"><a href="#">KOR</a></li>
+            <li><a href="#">ENG</a></li>
+          </ul>
+          <a href="./contactus.html" class="btn_contact">문의하기</a>
+        </div>
+        <button type="button" class="header_mo_menu"></button>
+      </div>
+    </header>
+    <aside class="mobile_sidebar">
+      <button type="button" class="header_mo_close_menu"></button>
+      <div class="sidebar__inner">
+        <nav class="mobile_gnb">
+          <ul class="gnb_ul_1depth">
+            <li><a href="./service.html">회사소개</a></li>
+            <li><a href="./intro.html">관련기술 및 뉴스룸</a></li>
+            <li class="gnb_hover">
+              <a href="javascript:void(0);">기술 및 서비스</a>
+              <ul class="gnb_ul_2depth">
+                <div class="ul_2depth__inner">
+                  <li><a href="./data/resource_model.html">분산자원 예측모델</a></li>
+                  <li><a href="./data/ai_control.html">인공지능기반 최적제어 솔루션</a></li>
+                  <li><a href="./data/energy_simulation.html">에너지밸런싱 시뮬레이션</a></li>
+                </div>
+              </ul>
+            </li>
+            <li><a href="./contactus.html">문의하기</a></li>
+          </ul>
+        </nav>
+        <ul class="header_lang">
+          <li class="active"><a href="#">KOR</a></li>
+          <li><a href="#">ENG</a></li>
+        </ul>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="service__inner">
+        <div class="title">
+          <h1 class="menu_title">팀소개 및 서비스 문의</h1>
+          <div class="sub_tit">
+            <h5>에너지 데이터 수집부터 거래까지</h5>
+            <p>GDL은 실리콘밸리의 투자로 시작된 에너지 전문 IT 기업으로<br>
+            에너지 데이터의 수집 및 DB 관리 기술, 인공지능을 활용한 분석 기술을 바탕으로<br>
+            신재생 분야에서 다양한 인공지능 기반 자동화 IT 솔루션을 제공하고 있습니다.</p>
+          </div>
+        </div>
+        <div class="service_member">
+          <h2>
+            GDL은 에너지, IT, 수학 전문가들과<br>
+            함께 혁신적인 서비스를 제공합니다.
+          </h2>
+          <div class="member_cnt">
+            <div class="member">
+              <h1><span id="k_member">35</span>명</h1>
+              <p>클라이언트 수</p>
+            </div>
+            <div class="member">
+              <h1><span id="g_member">80</span>개</h1>
+              <p>진행 중인 프로젝트 수</p>
+            </div>
+          </div>
+        </div>
+        <div class="member_list">
+          <div class="member_item">
+            <div class="thum">
+              <img src="./_img/member01.png" alt="멤버 썸네일">
+            </div>
+            <div class="desc">
+              <div class="info">
+                <h5 class="name">최종웅</h5>
+                <span class="dept">Founder, CEO</span>
+              </div>
+              <p>
+                전, LS 산전 사장<br>
+                충남대학교 컴퓨터 공학 박사
+              </p>
+            </div>
+          </div>
+          <div class="member_item">
+            <div class="thum">
+              <img src="./_img/member02.png" alt="멤버 썸네일">
+            </div>
+            <div class="desc">
+              <div class="info">
+                <h5 class="name">이효섭</h5>
+                <span class="dept">부사장</span>
+              </div>
+              <p>
+                전, Bell Labs, Seoul 연구원<br>
+                서울대학교 응용 수학 박사
+              </p>
+            </div>
+          </div>
+          <div class="member_item">
+            <div class="thum">
+              <img src="./_img/member03.png" alt="멤버 썸네일">
+            </div>
+            <div class="desc">
+              <div class="info">
+                <h5 class="name">조정현</h5>
+                <span class="dept">Head of Algorithms</span>
+              </div>
+              <p>
+                전, Private Equity 본부장<br>
+                홍익대학교 재무관리 석사
+              </p>
+            </div>
+          </div>
+          <div class="member_item">
+            <div class="thum">
+              <img src="./_img/member04.png" alt="멤버 썸네일">
+            </div>
+            <div class="desc">
+              <div class="info">
+                <h5 class="name">이세용</h5>
+                <span class="dept">Senior Data Scientist</span>
+              </div>
+              <p>
+                전, 효성중공업 해외영업 팀장<br>
+                연세대학교 기계공학 학사
+              </p>
+            </div>
+          </div>
+          <div class="member_item">
+            <div class="thum">
+              <img src="./_img/member05.png" alt="멤버 썸네일">
+            </div>
+            <div class="desc">
+              <div class="info">
+                <h5 class="name">임재륜</h5>
+                <span class="dept">개발 총괄</span>
+              </div>
+              <p>
+                전, Intel 코리아 개발 총괄<br>
+                연세대학교 전자공학 학사
+              </p>
+            </div>
+          </div>
+          <div class="member_item">
+            <div class="thum">
+              <img src="./_img/member06.png" alt="멤버 썸네일">
+            </div>
+            <div class="desc">
+              <div class="info">
+                <h5 class="name">이선정</h5>
+                <span class="dept">Head of Algorithms</span>
+              </div>
+              <p>
+                University of Toronto 컴퓨터 공학 학사<br>
+                서울대학교 계산 과학 학사
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer_logo">
+          <img src="./_img/common/footer_logo.png" alt="">
+        </div>
+        <div class="footer_company_info">
+          <p>주소 : 경기도 성남시 분당구 새나리로 25 (25, Saenari-ro, Bundang-gu, Seongnam-si, Gyeonggi-do)</p>
+          <p>메일 : syublee@keti.re.kr</p>
+        </div>
+        <div class="footer_copyright">
+          <p class="copyright">Copyright ⓒ Grid Learning ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    let k_member_cnt = 0;
+    let k_member_num = 35;
+    let g_member_cnt = 0;
+    let g_member_num = 80;
+
+    let counting1 = setInterval(function() {
+      if (k_member_cnt >= k_member_num) {
+        k_member_cnt = k_member_num;
+        clearInterval(counting1)
+      } else {
+        k_member_cnt += 6;
+      }
+
+      $('#k_member').text(k_member_cnt)
+    }, 80)
+
+    let counting2 = setInterval(function () {
+      if (g_member_cnt >= g_member_num) {
+        g_member_cnt = g_member_num;
+        clearInterval(counting2)
+      } else {
+        g_member_cnt += 6;
+      }
+
+      $('#g_member').text(g_member_cnt)
+    }, 80)
+  </script>
+</body>
+
+</html>
