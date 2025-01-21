@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽컴퍼니</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="픽컴퍼니" />
+  <meta property="og:description" content="고객의 비즈니스 성공이 우리의 성공입니다." />
+  <meta property="og:image" content="/img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="..//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- fullpage.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/setting.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/attribute.css">
+  <script src="../js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header_wrap">
+        <div class="header__inner">
+          <button type="button" class="btn_open_menu"></button>
+          <div class="header_logo_gnb">
+            <a href="../index.html#home" class="logo">
+              <img src="../img/common/logo.png" class="color" alt="로고">
+              <img src="../img/common/logo_white.png" class="white" alt="로고 화이트">
+            </a>
+            <nav class="gnb">
+              <ul>
+                <!-- 현재 화면인경우 gnb_li에 active 클래스 추가 -->
+                <li class="gnb_li">
+                  <a href="../index.html" class="link">Overview</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../index.html#purpose">Our Purpose</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#values">Values</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#work">How We Work</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../clients/whatwedo.html" class="link">For Clients</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../clients/whatwedo.html">What We Do</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting.html">Headhunting Procedure</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/industries.html">Industries</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting_reg.html">Request headhunting<br> service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../candidates/list.html" class="link">For Candidates</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../candidates/list.html">Recruitment</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../candidates/register.html">Register resume</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <span class="hidden_animate"></span>
+          <nav class="gnb right_gnb">
+            <ul>
+              <li class="gnb_li active">
+                <a href="../about/information.html" class="link">About</a>
+              </li>
+              <li class="gnb_li">
+                <a href="../contact/faq.html" class="link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <div class="header_bg"></div>
+    </header>
+    <aside class="header_sidebar">
+      <div class="sidebar__inner">
+        <button type="button" class="btn_close_sidebar"></button>
+        <div class="sidebar__logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <ul id="sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting<br>service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sidebar_about">
+          <li><a href="../about/information.html">About</a></li>
+          <li><a href="../contact/faq.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="mo_header_sidebar">
+      <div class="mo_sidebar__inner">
+        <button type="button" class="btn_close_mo_sidebar"></button>
+        <ul id="sidebar" class="mo_sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../about/information.html">About</a>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../contact/faq.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="main">
+      <div class="f_container">
+        <ul class="breadcrumb">
+          <li class="home"><span>HOME</span></li>
+          <li>About</li>
+          <li class="active">ESG</li>
+        </ul>
+        <div class="page_title">
+          <h1 class="tit">About</h1>
+          <ul class="page_tab_menu">
+            <li><a href="./information.html">Company<br class="mo_show"> Information</a></li>
+            <li><a href="./ci.html">CI</a></li>
+            <li class="active"><a href="./esg.html">ESG</a></li>
+          </ul>
+        </div>
+        <div class="full_bg">
+          <div class="full-bg__inner">
+            <div class="about__inner">
+              <div class="menu_title">
+                <h3>ESG</h3>
+              </div>
+              <div class="esg_content">
+                <div class="esg_wrap">
+                  <div class="esg_txt">
+                    <h5>1. 법과 윤리적 기준을 준수한다.</h5>
+                    <p>
+                      1.1. 개인의 존엄성과 다양성을 존중한다.<br>
+                      - 모든 사람의 기본적인 인권을 존중한다. 강제노동, 임금착취 및 어린이 노동 등은 어떠한 경우에도 허용하지 않는다. 고객, 임직원 등 모든 이해관계자에 대해 국적, 인종, 성별, 종교 등에 따른 차별을 하지
+                      않는다.<br><br>
+                  
+                      1.2. 법과 상도의에 따라 공정하게 경쟁한다.<br>
+                      국가와 지역사회의 각종 법규를 지키고, 시장경쟁질서를 존중하며 정당한 방법으로 경쟁한다. 상도의에 벗어난 부정한 방법으로 부당한 이득을 취하지 않는다. 사업활동에 있어서 대가성 선물이나 뇌물, 향응을 주고
+                      받지 않는다.<br><br>
+                  
+                      1.3. 정확한 회계기록을 통해 회계의 투명성을 유지한다.<br>
+                      모든 이해관계자들이 사업활동을 객관적으로 이해할 수 있도록 회사의 모든 거래를 정확하게 기록하고 관리한다. 각국의 회계관련 법규 및 국제적으로 통용되는 회계기준을 준수한다.<br>
+                      법이 정하는 바에 따라 회사의 재무적 변동 등 경영상의 주요사항 및 기업정보를 성실하게 공시한다.
+                    </p>
+                  </div>
+                  <div class="esg_txt">
+                    <h5>2.  깨끗한 조직 문화를 유지한다.</h5>
+                    <p>
+                      2.1. 모든 업무활동에서 공과 사를 엄격히 구분한다.<br>
+                      - 회사와 개인의 이해가 상충하는 경우, 회사의 합법적 이익을 우선으로 한다. 회사의 재산과 자신의 직위를 이용하여 사적인 이익을 도모하지 않으며, 회사 자산의 횡령, 유용 등 일체의 부정행위를 하지
+                      않는다.<br>
+                      직무상 취득한 정보를 이용하여 주식의 매매 등 유가증권에 관한 거래를 하지 않는다.<br><br>
+                  
+                      2.2. 회사와 타인의 지적 재산을 보호하고 존중한다.<br>
+                      - 내부의 지적 재산, 기밀 정보는 사전 허가나 승인없이 외부에 유출하지 않는다. 타인의 지적 재산을 존중하여 무단사용, 복제, 배포, 변경 등 일체의 침해 행위를 하지 않는다.<br><br>
+                  
+                      2.3. 건전한 조직 분위기를 조성한다.<br>
+                      성희롱이나 금전거래, 폭력 등 건전한 동료관계를 해치는 일체의 언행을 하지 않는다. 조직 내 위화감을 야기하는 파벌을 형성하거나 사조직을 결성하지 않는다.<br>
+                      상호 신뢰와 원활한 의사소통을 바탕으로 공존공영의 노사관계를 구축한다.
+                    </p>
+                  </div>
+                  <div class="esg_txt">
+                    <h5>3. 고객, 임직원을 존중한다.</h5>
+                    <p>
+                      3.1. 고객만족을 경영활동의 우선적 가치로 삼는다.<br>
+                         - 고객의 요구와 기대에 부응하는 제품과 서비스를 적기에 제공한다. 진실한 마음과 친절한 태도로 고객을 대하며, 고객의 제안과 불만을 겸허하게 수용한다. 고객의 명예와 정보를 존중하고
+                      보호한다.<br><br>
+                  
+                      3.2. 임직원의 ‘삶의 질’ 향상을 위해 노력한다.<br>
+                      - 모든 임직원에게 동등한 기회를 제공하고, 능력과 성과에 따라 공정하게 대우한다. 임직원들의 끊임없는 자기계발을 권장하며 업무수행상 필요한 역량 향상을 적극 지원한다.<br>
+                      자율적이고 창의적으로 일할 수 있는 근무환경을 조성한다.
+                    </p>
+                  </div>
+                  <div class="esg_txt">
+                    <h5>4. 환경·안전·건강을 중시한다.</h5>
+                    <p>
+                      4.1. 환경친화적 경영을 추구한다.<br>
+                      - 환경 보호와 관련된 국제 기준, 관계법령과 내부 규정을 준수한다. 개발, 제조, 영업 등 모든 사업 활동에서 환경 보호를 위해 지속적인 노력을 기울인다. 자원 재활용과 같은 자원의 효율적인 사용에 있어서
+                      솔선수범한다.<br><br>
+                  
+                      4.2. 인류의 안전과 건강을 중시한다.<br>
+                      - 안전과 관련된 국제기준, 관계법령, 내부규정 등을 준수한다. 안전수칙을 준수하고 쾌적한 근무환경을 조성하여 안전 사고를 예방한다. 인류의 건강과 안전에 해를 끼칠 수 있는 제품이나 서비스를 제공하지 않도록
+                      노력한다.
+                    </p>
+                  </div>
+                  <div class="esg_txt">
+                    <h5>5. 기업 시민으로서 사회적 책임을 다한다.</h5>
+                    <p>
+                      5.1. 기업시민으로서 지켜야 할 기본적 책무를 성실히 수행한다.<br>
+                      - 지역사회의 일원으로 책임과 의무를 다하여 회사에 대한 신뢰를 높이도록 노력한다. 안정적인 고용창출을 위해 노력하며, 조세납부의 책임을 성실하게 이행한다.<br><br>
+                  
+                      5.2. 사업 파트너와 공존공영의 관계를 구축한다.<br>
+                      - 사업 파트너와 상호 신뢰의 기반 위에서 호혜적인 관계를 형성하고 사업파트너를 전략적 동반자로 인식한다. 합법적 지원을 통해 협력업체의 경쟁력을 강화하고 공동의 발전을 추구한다.<br><br>
+                  
+                      5.3. 현지의 사회ㆍ문화적 특성을 존중하고 공동 경영(상생/협력)을 실천한다.<br>
+                      - 지역사회의 법, 문화와 가치관을 존중하고 지역주민의 삶의 질 향상에 기여한다. 학문과 예술, 문화, 체육 등 각 분야의 공익활동을 통해 건전한 사회발전을 도모한다. 자원봉사, 재난구호 등 사회봉사활동에
+                      적극 참여한다.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scrolltop"></div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <div class="footer_info">
+          <ul class="footer_company_link">
+            <li><a href="../about/information.html">About</a></li>
+            <li><a href="../contact/faq.html">Contact Us</a></li>
+          </ul>
+          <div class="footer_company_info">
+            <ul class="company_terms">
+              <li><a href="../terms.html">이용약관</a></li>
+              <li><a href="../privacy.html">개인정보처리방침</a></li>
+            </ul>
+            <ul class="company_info">
+              <li>
+                <span>회사명</span>
+                <b>(주)픽컴퍼니</b>
+              </li>
+              <li>
+                <span>대표명</span>
+                <b>유정현</b>
+              </li>
+              <li>
+                <span>주소</span>
+                <b>서울시 중구 을지로5길 16 삼화 타워 4층</b>
+              </li>
+              <li>
+                <span>사업자등록번호</span>
+                <b>574-86-03273</b>
+              </li>
+              <li>
+                <span>직업소개사업 등록번호</span>
+                <b>제 2023-3010202-14-05-00023호</b>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">©COPYRIGHT ALL RIGHT RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽컴퍼니</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="픽컴퍼니" />
+  <meta property="og:description" content="고객의 비즈니스 성공이 우리의 성공입니다." />
+  <meta property="og:image" content="./img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href=".//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- fullpage.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/setting.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/sub.css">
+  <link rel="stylesheet" href="./css/attribute.css">
+  <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+  <!-- 메인페이지에만 .wrap_fullpage 클래스 추가 -->
+  <div id="wrap" class="wrap_fullpage">
+    <header class="header main_header">
+      <div class="header_wrap">
+        <div class="header__inner">
+          <button type="button" class="btn_open_menu"></button>
+          <div class="header_logo_gnb">
+            <a href="./index.html#home" class="logo">
+              <img src="./img/common/logo.png" class="color" alt="로고">
+              <img src="./img/common/logo_white.png" class="white" alt="로고 화이트">
+            </a>
+            <nav class="gnb">
+              <ul>
+                <!-- 현재 화면인경우 gnb_li에 active 클래스 추가 -->
+                <li class="gnb_li active">
+                  <a href="./index.html" class="link">Overview</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="./index.html#purpose">Our Purpose</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="./index.html#values">Values</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="./index.html#work">How We Work</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="./clients/whatwedo.html" class="link">For Clients</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="./clients/whatwedo.html">What We Do</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="./clients/headhunting.html">Headhunting Procedure</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="./clients/industries.html">Industries</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="./clients/headhunting_reg.html">Request headhunting<br> service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="./candidates/list.html" class="link">For Candidates</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="./candidates/list.html">Recruitment</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="./candidates/register.html">Register resume</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <span class="hidden_animate"></span>
+          <nav class="gnb right_gnb">
+            <ul>
+              <li class="gnb_li">
+                <a href="./about/information.html" class="link">About</a>
+              </li>
+              <li class="gnb_li">
+                <a href="./contact/faq.html" class="link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <div class="header_bg"></div>
+    </header>
+    <!-- 메인페이지 첫 섹션에 나오는 햄버거 버튼 클릭시 나오는 사이드바 -->
+    <aside class="header_sidebar">
+      <div class="sidebar__inner">
+        <button type="button" class="btn_close_sidebar"></button>
+        <div class="sidebar__logo">
+          <img src="./img/common/logo.png" alt="로고">
+        </div>
+        <ul id="sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="./index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="./index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="./index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="./clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="./clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="./clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="./clients/headhunting_reg.html">Request headhunting<br>service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="./candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="./candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sidebar_about">
+          <li><a href="./about/information.html">About</a></li>
+          <li><a href="./contact/faq.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="mo_header_sidebar">
+      <div class="mo_sidebar__inner">
+        <button type="button" class="btn_close_mo_sidebar"></button>
+        <ul id="sidebar" class="mo_sidebar">
+          <li class="sidebar_1dpeth open">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="./index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="./index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="./index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="./clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="./clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="./clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="./clients/headhunting_reg.html">Request headhunting service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="./candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="./candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="./about/information.html">About</a>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="./contact/faq.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div id="fullpage">
+      <section class="section home_section">
+        <div class="video video1 on">
+          <video id="video1" class="bg-video__content" autoplay muted data-keepplaying playsinline>
+            <source src="./img/main_video_01.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video video2">
+          <video id="video2" class="bg-video__content" muted data-keepplaying playsinline>
+            <source src="./img/main_video_02.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video video3">
+          <video id="video3" class="bg-video__content" muted data-keepplaying playsinline>
+            <source src="./img/main_video_03.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video video4">
+          <video id="video4" class="bg-video__content" muted data-keepplaying playsinline>
+            <source src="./img/main_video_04.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video video5">
+          <video id="video5" class="bg-video__content" muted data-keepplaying playsinline>
+            <source src="./img/main_video_05.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video video6">
+          <video id="video6" class="bg-video__content" muted data-keepplaying playsinline>
+            <source src="./img/main_video_06.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="video_txt txt1 on">
+          <h1>HR partners<br class="mo_show"> for successful business</h1>
+        </div>
+        <div class="video_txt txt2">
+          <h1>고객의 비즈니스 성공이<br class="mo_show"> 우리의 성공입니다.</h1>
+        </div>
+        <div class="video_txt txt3">
+          <h1>HR서비스로<br class="mo_show"> 고객의 성공 비즈니스를 제안하고</h1>
+        </div>
+        <div class="video_txt txt4">
+          <h1>고객이 존경받는 기업으로<br class="mo_show"> 우뚝 설 수 있도록<br>최선을 다하고 있습니다.</h1>
+        </div>
+        <div class="video_txt txt5">
+          <h1>이것이<br class="mo_show"> FYC Company가 추구하는<br>경영 철학입니다.</h1>
+        </div>
+      </section>
+      <section class="section overview_section1">
+        <div class="bg"></div>
+        <div class="overview_sec1">
+          <div class="overview__inner">
+            <div class="sec1_txt">
+              <p class="overview_word" >Our Purpose</p>
+              <div class="overview_title">
+                <h1>
+                  뛰어난 리더십 팀을 구축하여<br class="mo_show"> 고객의<br class="pc_show">
+                  <b>성과를 변화시킵니다.</b>
+                </h1>
+                <p>
+                  우리의 목표는 간단합니다. 적재적소에 인재를 배치하여 고객의 지속 가능한 성공을 돕는 것입니다.<br>
+                  오늘날의 역동적인 세상에서 선두를 차지한다는 것은 그 어느 때보다 더 큰 위험과 미지의 문제를 야기합니다.<br>
+                  우리는 여러분이 직면한 리더십 과제를 수행할 준비를 갖추고 이를 유지할 수 있도록 도움을 드립니다.
+                </p>
+              </div>
+            </div>
+            <div class="sec1_img">
+              <img src="./img/overview/overview_sec1_img.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section overview_section2">
+        <div class="overview_sec2">
+          <div class="overview__inner">
+            <div class="sec2_txt">
+              <p class="overview_word">Values</p>
+              <div class="overview_title">
+                <h1>
+                  위대한 리더가 된다는 것은<br>
+                  <b>새로운 길을 탐구한다는 것을 의미합니다.</b>
+                </h1>
+                <p>
+                  이것이 바로 우리가 오늘과 미래의 리더를 발굴하고, 개발하고, 변화시키는 데 전념하는 이유입니다.<br>
+                  상호 신뢰에 기반한 장기적 관계를 구축함으로써 우리는 리더들이 변화를 받아들이고, 미래를 형성하고, 자신과 조직, 그리고 그 너머를 위해 지속 가능한 가치를 창출하도록 영감을 제공합니다. 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="sec2_accordion">
+            <div class="accordion active">
+              <span class="bg"><img src="./img/overview/accordion_1.png" alt="전문성" /></span>
+              <div class="accordion_cont">
+                <span class="accordion_tit">전문성</span>
+                <p>여러 산업과 지역을 넘나드는 하나의 회사로 협력하여 각 동료의 독특한 강점과 전문 지식을 활용해<br class="pc_show">
+                  모든 고객에게 서비스를 제공하고 지속적인 신뢰를 구축합니다.</p>
+              </div>
+              <em class="accordion_word">전문성</em>
+            </div>
+            <div class="accordion">
+              <span class="bg"><img src="./img/overview/accordion_2.png" alt="존중" /></span>
+              <div class="accordion_cont">
+                <span class="accordion_tit">존중</span>
+                <p>우리는 고객, 후보자 및 동료에게 권한을 부여하고 모든 사람을 존중합니다. 우리는 서로의 차이와 포용적 문화를 존중합니다.</p>
+              </div>
+              <em class="accordion_word">존중</em>
+            </div>
+            <div class="accordion">
+              <span class="bg"><img src="./img/overview/accordion_3.png" alt="시너지" /></span>
+              <div class="accordion_cont">
+                <span class="accordion_tit">시너지</span>
+                <p>우리는 하나의 팀으로서 일하며, 각 고객에게 서비스를 제공하는 모든 동료의 강점을 활용하고,
+                집단적 지식을 활용하여 효과적인 조언을 제공하고, 장기적인 신뢰를 구축합니다.</p>
+              </div>
+              <em class="accordion_word">시너지</em>
+            </div>
+            <div class="accordion">
+              <span class="bg"><img src="./img/overview/accordion_4.png" alt="고객만족" /></span>
+              <div class="accordion_cont">
+                <span class="accordion_tit">고객만족</span>
+                <p>우리는 심층적인 산업 지식에 인적 네트워크를 결합하여 미래의 잠재 리더가 적합한 포지션에 배치될 수 있도록 지원합니다.</p>
+              </div>
+              <em class="accordion_word">고객만족</em>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section overview_section3">
+        <div class="overview__inner">
+          <div class="howto_text">
+            <div class="how_title">
+              <p class="overview_word">How We Work</p>
+              <h1>우리가 일하는 방법</h1>
+            </div>
+            <ul class="how_tabs">
+              <li class="tabs__link on" data-tab="tab-1">고객사</li>
+              <li class="tabs__link" data-tab="tab-2">후보자</li>
+            </ul>
+            <div id="tab-1" class="how-tab__content on">
+              <h3>
+                우리는 조직에 올바른 인재를 배치하는 것의 중요성과<br>
+                이것이 가져올 수 있는 차이를 이해합니다.
+              </h3>
+              <p>당사의 인재 채용 전문가는 고객사에 적합한 최고의 인재를 찾기 위해 항상 최선의 노력을 다하고 있습니다.</p>
+            </div>
+            <div id="tab-2" class="how-tab__content">
+              <h3>커리어 여정의 다음 단계</h3>
+              <p>당사는 초기 지원 및 면접, 제안 및 배치부터 온보딩 및 지속적인 개발에 이르기까지 전체 채용 프로세스에 걸쳐
+                포괄적인 지원을 제공합니다.</p>
+            </div>
+          </div>
+          <div class="howto_animation">
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+            <div class="sqaure"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section footer_section fp-auto-height">
+        <div class="footer__inner">
+          <div class="logo">
+            <img src="./img/common/logo.png" alt="로고">
+          </div>
+          <div class="footer_info">
+            <ul class="footer_company_link">
+              <li><a href="./about/information.html">About</a></li>
+              <li><a href="./contact/faq.html">Contact Us</a></li>
+            </ul>
+            <div class="footer_company_info">
+              <ul class="company_terms">
+                <li><a href="./terms.html">이용약관</a></li>
+                <li><a href="./privacy.html">개인정보처리방침</a></li>
+              </ul>
+              <ul class="company_info">
+                <li>
+                  <span>회사명</span>
+                  <b>(주)픽컴퍼니</b>
+                </li>
+                <li>
+                  <span>대표명</span>
+                  <b>유정현</b>
+                </li>
+                <li>
+                  <span>주소</span>
+                  <b>서울시 중구 을지로5길 16 삼화 타워 4층</b>
+                </li>
+                <li>
+                  <span>사업자등록번호</span>
+                  <b>574-86-03273</b>
+                </li>
+                <li>
+                  <span>직업소개사업 등록번호</span>
+                  <b>제 2023-3010202-14-05-00023호</b>
+                </li>
+              </ul>
+            </div>
+            <p class="copyright">©COPYRIGHT ALL RIGHT RESERVED.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    // 비디오노출 & 텍스트 노출
+    let videoTotalLength = 0;
+    let currentTextIndex = 1;
+
+    var textInterval = setInterval(() => { interval() }, 5000);
+    $(function () {
+      $("#video1").bind("ended", function () {
+        $('.video1').removeClass('on')
+        $('.video2').addClass('on')
+        document.getElementById("video2").play();
+      });
+      $("#video2").bind("ended", function () {
+        $('.video2').removeClass('on')
+        $('.video3').addClass('on')
+        document.getElementById("video3").play();
+      });
+      $("#video3").bind("ended", function () {
+        $('.video3').removeClass('on')
+        $('.video4').addClass('on')
+        document.getElementById("video4").play();
+      });
+      $("#video4").bind("ended", function () {
+        $('.video4').removeClass('on')
+        $('.video5').addClass('on')
+        document.getElementById("video5").play();
+      });
+      $("#video5").bind("ended", function () {
+        $('.video5').removeClass('on')
+        $('.video6').addClass('on')
+        document.getElementById("video6").play();
+      });
+      $("#video6").bind("ended", function () {
+        $('.video6').removeClass('on')
+        $('.video1').addClass('on')
+        document.getElementById("video1").play();
+      });
+    })
+
+    function interval() {
+      
+      $(`.video_txt.txt${currentTextIndex}`).removeClass('on')
+      if (currentTextIndex == 5) {
+        currentTextIndex = 1
+      } else {
+        currentTextIndex++;
+      }
+      $(`.video_txt.txt${currentTextIndex}`).addClass('on')
+
+      
+    }
+
+    // 메인 풀페이지
+    $("#fullpage").fullpage({
+      autoScrolling: true,
+      scrollHorizontally: true,
+      slidesNavigation: true,
+      controlArrows: false,
+      navigation: false,
+      showActiveTooltip: false,
+      anchors: ['home', 'purpose', 'values', 'work', 'footer'],
+      afterLoad: function (anchorLink, index, destination) {
+        // 헤더 인터랙션
+        if(index == 1){
+          $('nav.gnb').fadeOut()
+          $('.header').addClass('main_header')
+        }
+        else {
+          $(".btn_open_menu").fadeIn();
+          $(".header_sidebar").removeClass("open");
+          
+          if ($('nav.gnb').css('display') == "none") {
+            $('nav.gnb').hide().delay(500).fadeIn();
+          }
+          $('.header').removeClass('main_header')
+        }
+
+        // 헤더 white, transparent 클래스
+        if(index == 4 || index == 5) {
+          $('header').addClass('white')
+          if(index == 4) {
+            $('.howto_animation').addClass('on')
+          }
+        } else {
+          $('header').removeClass('white')
+          $('.howto_animation').removeClass('on')
+        }
+
+        // section1 인터랙션
+        if(index == 2) {
+          $('.overview_sec1').addClass('active')
+        } else {
+          $('.overview_sec1').removeClass('active')
+        }
+
+        // section2 인터랙션
+        if (index == 3) {
+          $('.overview_sec2').addClass('active')
+        } else {
+          $('.overview_sec2').removeClass('active ')
+        }
+      },
+    });
+
+    $(function() {
+      // 두번째 섹션 아코디언
+      $(".sec2_accordion .accordion").click(function() {
+        $(".sec2_accordion .accordion").removeClass("active")
+        $(this).addClass("active")
+      })
+
+      // 세번째 섹션 탭
+      $('ul.how_tabs li.tabs__link').click(function () {
+        var tab_id = $(this).attr('data-tab');
+
+        $('ul.how_tabs li.tabs__link').removeClass('on');
+        $('.how-tab__content').removeClass('on');
+
+        $(this).addClass('on');
+        $("#" + tab_id).addClass('on');
+
+        $('.howto_animation').removeClass('on')
+        setTimeout(function() {
+          $('.howto_animation').addClass('on')
+        }, 100)
+      
+      })
+    })
+  </script>
+</body>
+
+</html>

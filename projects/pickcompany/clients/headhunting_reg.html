@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽컴퍼니</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="픽컴퍼니" />
+  <meta property="og:description" content="고객의 비즈니스 성공이 우리의 성공입니다." />
+  <meta property="og:image" content="/img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="..//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- fullpage.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/setting.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/attribute.css">
+  <script src="../js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header_wrap">
+        <div class="header__inner">
+          <button type="button" class="btn_open_menu"></button>
+          <div class="header_logo_gnb">
+            <a href="../index.html#home" class="logo">
+              <img src="../img/common/logo.png" class="color" alt="로고">
+              <img src="../img/common/logo_white.png" class="white" alt="로고 화이트">
+            </a>
+            <nav class="gnb">
+              <ul>
+                <!-- 현재 화면인경우 gnb_li에 active 클래스 추가 -->
+                <li class="gnb_li">
+                  <a href="../index.html" class="link">Overview</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../index.html#purpose">Our Purpose</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#values">Values</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#work">How We Work</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li active">
+                  <a href="../clients/whatwedo.html" class="link">For Clients</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../clients/whatwedo.html">What We Do</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting.html">Headhunting Procedure</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/industries.html">Industries</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting_reg.html">Request headhunting<br> service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../candidates/list.html" class="link">For Candidates</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../candidates/list.html">Recruitment</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../candidates/register.html">Register resume</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <span class="hidden_animate"></span>
+          <nav class="gnb right_gnb">
+            <ul>
+              <li class="gnb_li">
+                <a href="../about/information.html" class="link">About</a>
+              </li>
+              <li class="gnb_li">
+                <a href="../contact/faq.html" class="link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <div class="header_bg"></div>
+    </header>
+    <aside class="header_sidebar">
+      <div class="sidebar__inner">
+        <button type="button" class="btn_close_sidebar"></button>
+        <div class="sidebar__logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <ul id="sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting<br>service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sidebar_about">
+          <li><a href="../about/information.html">About</a></li>
+          <li><a href="../contact/faq.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="mo_header_sidebar">
+      <div class="mo_sidebar__inner">
+        <button type="button" class="btn_close_mo_sidebar"></button>
+        <ul id="sidebar" class="mo_sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth open">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../about/information.html">About</a>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../contact/faq.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="home"><span>HOME</span></li>
+          <li>For Clients</li>
+          <li class="active">Request headhunting service</li>
+        </ul>
+        <div class="page_title">
+          <h1 class="tit">Request headhunting service</h1>
+        </div>
+        <div class="candidates__inner">
+          <form action="" class="form_headhunting">
+            <fieldset>
+              <div class="headhunting-reg_content">
+                <h4 class="request_title">인사(채용)담당자</h4>
+                <div class="form_flex_box">
+                  <div class="form_input">
+                    <label for="" class="form_label">회사명</label>
+                    <div class="input_content">
+                      <input type="text" placeholder="회사명을 입력해 주세요.">
+                    </div>
+                  </div>
+                  <div class="form_input">
+                    <label for="" class="form_label">성명/직함</label>
+                    <div class="input_content">
+                      <input type="text" placeholder="성명/직함을 입력해 주세요.">
+                    </div>
+                  </div>
+                </div>
+                <div class="form_flex_box">
+                  <div class="form_input">
+                    <label for="" class="form_label">휴대폰번호</label>
+                    <div class="input_content">
+                      <div class="input_multiple">
+                        <select name="" id="" class="select--typeA">
+                          <option value="010">010</option>
+                          <option value="011">011</option>
+                        </select>
+                        <span>-</span>
+                        <input type="number">
+                        <span>-</span>
+                        <input type="number">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form_input">
+                    <label for="" class="form_label">이메일</label>
+                    <div class="input_content">
+                      <input type="email" placeholder="이메일을 입력해 주세요.">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="headhunting-reg_content">
+                <h4 class="request_title">채용 의뢰 내역</h4>
+                <div class="form_input">
+                  <label for="" class="form_label">포지션명</label>
+                  <div class="input_content">
+                    <input type="text" placeholder="포지션을 입력해 주세요.">
+                  </div>
+                </div>
+                <div class="form_input">
+                  <label for="" class="form_label">채용관련정보<span class="c_gray">(선택)</span></label>
+                  <div class="input_content">
+                    <textarea name="" id="" class="textarea--typeA" placeholder="내용을 입력해 주세요."></textarea>
+                  </div>
+                </div>
+                <div class="form_input">
+                  <label for="" class="form_label">첨부파일<span class="c_gray">(선택)</span></label>
+                  <div class="input_content">
+                    <div class="input_file">
+                      <div class="input_upload_name">
+                        <input class="file_name" value="" readonly>
+                        <button type="button" class="btn_delete_file"></button>
+                      </div>
+                      <label for="file1">파일 첨부</label>
+                      <input type="file" id="file1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="check_agree">
+                <div class="checkbox--typeA">
+                  <label for="agree">
+                    <input type="checkbox" id="agree"><em class="check"></em> <span class="txt"><span class="c_brand fw600">(필수)</span> 개인정보 수집 및 이용에 동의합니다.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="btn_area submit_btns">
+                <button type="button" class="btn_submit" onclick="clickSubmit()"><span>요청하기</span></button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="scrolltop"></div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <div class="footer_info">
+          <ul class="footer_company_link">
+            <li><a href="../about/information.html">About</a></li>
+            <li><a href="../contact/faq.html">Contact Us</a></li>
+          </ul>
+          <div class="footer_company_info">
+            <ul class="company_terms">
+              <li><a href="../terms.html">이용약관</a></li>
+              <li><a href="../privacy.html">개인정보처리방침</a></li>
+            </ul>
+            <ul class="company_info">
+              <li>
+                <span>회사명</span>
+                <b>(주)픽컴퍼니</b>
+              </li>
+              <li>
+                <span>대표명</span>
+                <b>유정현</b>
+              </li>
+              <li>
+                <span>주소</span>
+                <b>서울시 중구 을지로5길 16 삼화 타워 4층</b>
+              </li>
+              <li>
+                <span>사업자등록번호</span>
+                <b>574-86-03273</b>
+              </li>
+              <li>
+                <span>직업소개사업 등록번호</span>
+                <b>제 2023-3010202-14-05-00023호</b>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">©COPYRIGHT ALL RIGHT RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- 개인정보수집 동의 체크 모달 시작 -->
+  <div id="modal-request-agree" class="modal modal_request_complete">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-request-agree')"></button>
+      </div>
+      <div class="modal__header">
+        <div class="header_img">
+          <img src="../img/request_agree.png" alt="완료 이미지">
+        </div>
+        <h3>
+          개인정보수집 동의에 체크해주세요
+        </h3>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn btn-big btn-w100p btn_brand btn_confirm" onclick="closeModal('modal-request-agree')">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 개인정보수집 동의 체크 모달 끝 -->
+  <!-- 요청 완료 모달 시작 -->
+  <div id="modal-request-complete" class="modal modal_request_complete">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-request-complete')"></button>
+      </div>
+      <div class="modal__header">
+        <div class="header_img">
+          <img src="../img/request_complete.png" alt="완료 이미지">
+        </div>
+        <h3>
+          요청이 완료되었습니다.<br>
+          당사 담당자가 빠른시간안에<br class="mo_show"> 전화/이메일 회신 드리겠습니다.
+        </h3>
+      </div>
+      <div class="modal__btns">
+        <button type="button" class="btn btn-big btn-w100p btn_brand btn_confirm">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 요청 완료 모달 끝 -->
+  <script>
+    function clickSubmit() {
+      if($('#agree').is(':checked')) {
+        openModal('modal-request-complete')
+      } else {
+        openModal('modal-request-agree')
+      }
+    }
+
+    $(".input_file input[type=file]").on('change', function () {
+      var fileName = $(this).val();
+      $(this).siblings('.input_upload_name').children('.file_name').val(fileName);
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽컴퍼니</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="픽컴퍼니" />
+  <meta property="og:description" content="고객의 비즈니스 성공이 우리의 성공입니다." />
+  <meta property="og:image" content="/img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="..//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- fullpage.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/setting.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/attribute.css">
+  <script src="../js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header_wrap">
+        <div class="header__inner">
+          <button type="button" class="btn_open_menu"></button>
+          <div class="header_logo_gnb">
+            <a href="../index.html#home" class="logo">
+              <img src="../img/common/logo.png" class="color" alt="로고">
+              <img src="../img/common/logo_white.png" class="white" alt="로고 화이트">
+            </a>
+            <nav class="gnb">
+              <ul>
+                <!-- 현재 화면인경우 gnb_li에 active 클래스 추가 -->
+                <li class="gnb_li">
+                  <a href="../index.html" class="link">Overview</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../index.html#purpose">Our Purpose</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#values">Values</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#work">How We Work</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li active">
+                  <a href="../clients/whatwedo.html" class="link">For Clients</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../clients/whatwedo.html">What We Do</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting.html">Headhunting Procedure</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/industries.html">Industries</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting_reg.html">Request headhunting<br> service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../candidates/list.html" class="link">For Candidates</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../candidates/list.html">Recruitment</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../candidates/register.html">Register resume</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <span class="hidden_animate"></span>
+          <nav class="gnb right_gnb">
+            <ul>
+              <li class="gnb_li">
+                <a href="../about/information.html" class="link">About</a>
+              </li>
+              <li class="gnb_li">
+                <a href="../contact/faq.html" class="link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <div class="header_bg"></div>
+    </header>
+    <aside class="header_sidebar">
+      <div class="sidebar__inner">
+        <button type="button" class="btn_close_sidebar"></button>
+        <div class="sidebar__logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <ul id="sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting<br>service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sidebar_about">
+          <li><a href="../about/information.html">About</a></li>
+          <li><a href="../contact/faq.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="mo_header_sidebar">
+      <div class="mo_sidebar__inner">
+        <button type="button" class="btn_close_mo_sidebar"></button>
+        <ul id="sidebar" class="mo_sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth open">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../about/information.html">About</a>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../contact/faq.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="home"><span>HOME</span></li>
+          <li>For Clients</li>
+          <li class="active">Industries</li>
+        </ul>
+        <div class="page_title">
+          <div class="page_title_btns">
+            <h1 class="tit">For Clients</h1>
+            <a href="./headhunting_reg.html" class="btn_request"><span>Request headhunting service</span></a>
+          </div>
+          <ul class="page_tab_menu">
+            <li><a href="./whatwedo.html">What We Do</a></li>
+            <li><a href="./headhunting.html">Headhunting<br class="mo_show"> Procedure</a></li>
+            <li class="active"><a href="./industries.html">Industries</a></li>
+          </ul>
+        </div>
+        <div class="clients__inner">
+          <div class="menu_title">
+            <h3>Industries</h3>
+          </div>
+          <ul class="industries_tabs">
+            <li class="tabs__link on" data-tab="tab-1">Consumer & Retail</li>
+            <li class="tabs__link" data-tab="tab-2">Manufacturing</li>
+            <li class="tabs__link" data-tab="tab-3">Information Technology</li>
+            <li class="tabs__link" data-tab="tab-4">Medical & Healthcare</li>
+            <li class="tabs__link" data-tab="tab-5">Financial Services</li>
+          </ul>
+          <div id="tab-1" class="industries-tab__content">
+            <div class="industries_content">
+              <div class="industries_img">
+                <img src="../img/industries_img_01.png" alt="Consumer & Retail">
+              </div>
+              <div class="industries_info">
+                <div class="industries_top">
+                  <div class="title">
+                    <h3>Consumer & Retail</h3>
+                    <span>소비재</span>
+                  </div>
+                  <p class="cnts">
+                    불확실한 경제 상황, 원자재 가격의 급등, 고객의 기대치 상승으로 인해 소비재 산업에서 리더십을 갖춘 후보자를 찾는 것은 쉽지 않은 상황입니다.<br><br>
+                  
+                    식음료, 생활용품, 내구소비재, 가전제품, 화장품 산업 등에 대한 깊은 전문 지식을 갖춘 컨설턴트는 끊임없이 변화하는 소비재시장의 트렌드에 대한 심층적인 인사이트를 제공합니다.
+                  </p>
+                </div>
+                <div class="industries_field">
+                  <h5>당사 전문분야</h5>
+                  <ul>
+                    <li>-Advertisement</li>
+                    <li>-Food Services</li>
+                    <li>-Consumer Products</li>
+                    <li>-Hospitality & Leisure & Travel</li>
+                    <li>-Cosmetics</li>
+                    <li>-Media & Entertainment & Publishing</li>
+                    <li>-Distribution</li>
+                    <li>-Retail & Apparel</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ind_our_strengths">
+              <h5>해당분야의 당사강점</h5>
+              <p>당사의 소비재 시장 컨설턴트는 귀사의 조직을 위해 최고 수준의 인재를 유치, 개발 및 유지하는 데 도움을 드릴 수 있습니다. 소비자 산업에서 오랜 경험을 가진 컨설턴트가 클라이언트가 직면한 상황을 정확히 이해하고
+              있습니다. 우리는 온라인 경쟁, 사업 전환 또는 변화하는 소비자 취향에 대응할 리더십 있는 인재를 추천해드립니다.</p>
+            </div>
+          </div>
+          <div id="tab-2" class="industries-tab__content">
+            <div class="industries_content">
+              <div class="industries_img">
+                <img src="../img/industries_img_02.png" alt="Manufacturing">
+              </div>
+              <div class="industries_info">
+                <div class="industries_top">
+                  <div class="title">
+                    <h3>Manufacturing</h3>
+                    <span>제조업</span>
+                  </div>
+                  <p class="cnts">
+                    제조업 인재 격차를 해소하는 새로운 방법 창출
+                  </p>
+                </div>
+                <div class="industries_field">
+                  <h5>당사 전문분야</h5>
+                  <ul>
+                    <li>-Aerospace</li>
+                    <li>-Construction</li>
+                    <li>-Automotive</li>
+                    <li>-Electrics & Electronics</li>
+                    <li>-Chemicals</li>
+                    <li>-Energy & Renewable Energy</li>
+                    <li>-Component & Material</li>
+                    <li>-Engineering Construction & Infrastructure</li>
+                    <li class="w100p">-Machinery</li>
+                    <li class="w100p">-Shipbuilding</li>
+                    <li class="w100p">-Transportation & Logistics</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ind_our_strengths">
+              <h5>해당분야의 당사강점</h5>
+              <p>4차 산업 및 인공지능(AI)의 부상은 제조업 시장에 풍부한 기회를 제공하였습니다. 그러나 많은 조직은 여전히 ​​디지털이 진정으로 의미하는 바를 고심하고 있습니다.  새로운 비즈니스 모델과 구조, 새로운 유형의
+              인재, 지속적인 개선에 초점을 맞춘 새로운 조직 문화가 필요합니다. 당사의 산업 제조 컨설턴트는 클라이언트사의 조직을 위해 최고 수준의 인재를 유치하고, 개발하고, 유지하는 데 도움을 드릴 수 있습니다. </p>
+            </div>
+          </div>
+          <div id="tab-3" class="industries-tab__content">
+            <div class="industries_content">
+              <div class="industries_img">
+                <img src="../img/industries_img_03.png" alt="Information Technology">
+              </div>
+              <div class="industries_info">
+                <div class="industries_top">
+                  <div class="title">
+                    <h3>Information Technology</h3>
+                    <span>IT</span>
+                  </div>
+                  <p class="cnts">
+                    조직의 성공을 위한 인재와 전략 연결
+                  </p>
+                </div>
+                <div class="industries_field">
+                  <h5>당사 전문분야</h5>
+                  <ul>
+                    <li>-Bigdata & Analytics</li>
+                    <li>-Hardware System & Semiconductor</li>
+                    <li>-Cloud</li>
+                    <li>-IOT (Internet of Things)</li>
+                    <li>-Cyber Security</li>
+                    <li>-IT Services</li>
+                    <li>-Digital Convergence</li>
+                    <li>-Mobility</li>
+                    <li>-Network & Communication</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ind_our_strengths">
+              <h5>해당분야의 당사강점</h5>
+              <p>픽컴퍼니의 국내 네트워크는 모든 규모의 기업을 모든 부문에서 혁신하고 확장할 수 있는 입증된 인재와 잠재적 인재를 발견하는 데 있어 그 어느 때보다 중요합니다. 당사의 IT 전문 컨설턴트는 소위 “네카라베쿠＂로
+              일컬어지는 전문 IT기업부터, 글로벌 기업, 대기업 IT팀 그리고 강소 스타트업까지 포괄적인 경험을 자랑합니다.
+              <br><br>
+              픽컴퍼니의 IT 인재 채용 전문가는 심층적인 산업 지식과 광범위한 인맥을 활용하여 최고의 인재를 찾습니다. 우리는 AI 연구, 데이터 과학, 소프트웨어 개발 및 디지털 트랜스포메이션 등의 전문분야에서 클라이언트에게
+              가장 적합한 후보자를 찾는 데 중점을 둡니다. 또한 우리는 귀하의 조직의 고유한 문화와 특정 목표를 고려하여 가장 적합한 후보자를 찾아드립니다.
+              </p>
+            </div>
+          </div>
+          <div id="tab-4" class="industries-tab__content">
+            <div class="industries_content">
+              <div class="industries_img">
+                <img src="../img/industries_img_04.png" alt="Medical & Healthcare">
+              </div>
+              <div class="industries_info">
+                <div class="industries_top">
+                  <div class="title">
+                    <h3>Medical & Healthcare</h3>
+                    <span>제약, 헬스케어</span>
+                  </div>
+                  <p class="cnts">
+                    제약, 헬스케어와 같이 다양하고 복잡하며 끊임없이 진화하는 분야에서는 유능한 전문가를 고용하는 것이 가장 중요합니다. 이 분야의 전문가는 능숙해야 하고, 심층적인 기술 지식을 보유하고 있어야 하며, 지속적인 혁신과
+                    학습에 전념해야 합니다. 적합한 후보자를 고용하면 획기적인 연구에 도움이 되고 성공을 촉진할 수 있지만, 불일치는 회사의 개발과 발전을 방해할 수 있습니다.
+                  </p>
+                </div>
+                <div class="industries_field">
+                  <h5>당사 전문분야</h5>
+                  <ul>
+                    <li>-Biotechnology</li>
+                    <li>-Pharmaceuticals</li>
+                    <li class="w100p">-Healthcare Services</li>
+                    <li class="w100p">-Medical Device</li>
+                    <li class="w100p">-Life Science</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ind_our_strengths">
+              <h5>해당분야의 당사강점</h5>
+              <p>픽컴퍼니는 회사를 발전시킬 전문 기술을 가진 인재를 고용하는 것의 중요성을 잘 알고 있습니다. 우리는 학술 기관, 임상 연구 기관, 제약 회사를 포함하여 전국의 생명 과학 기관을 위해 성공적이고 효율적으로 최고의
+              인재를 모집한 명성을 쌓고 있습니다.<br><br>
+              
+              픽컴퍼니는 클라이언트가 산업에서 성과를 크게 높이고 리더가 되는 데 필요한 인재를 반드시 찾아드린다는 점에서 다른 제약, 바이오텍, 헬스케어 채용업체와 차별점을 지니고 있습니다.
+              </p>
+            </div>
+          </div>
+          <div id="tab-5" class="industries-tab__content">
+            <div class="industries_content">
+              <div class="industries_img">
+                <img src="../img/industries_img_05.png" alt="Financial Services">
+              </div>
+              <div class="industries_info">
+                <div class="industries_top">
+                  <div class="title">
+                    <h3>Financial Services</h3>
+                    <span>금융</span>
+                  </div>
+                  <p class="cnts">
+                    금융 산업은 금리가 급변하는 환경 속에서 규제 복잡성 해소부터 운영 및 시장 리스크 완화에 이르기까지 전례 없는 도전 과제를 직면해 있습니다. 이를 위해서는 민첩하고 적응력이 뛰어나야 하며, 도전 과제를 정면으로
+                    해결할 수 있는 인재가 필요합니다. 우리는 금융 조직이 대규모 변화에 대비하여 혁신과 지속 가능한 성장을 주도하여 끊임없이 진화하는 오늘날의 환경에 맞춰 인력을 조정할 수 있도록 지원합니다.
+                  </p>
+                </div>
+                <div class="industries_field">
+                  <h5>당사 전문분야</h5>
+                  <ul>
+                    <li>-Business to Business Financial Services</li>
+                    <li>-Insurance</li>
+                    <li>-Consumer Financial Services</li>
+                    <li>-Investment Management</li>
+                    <li>-Credit Rating</li>
+                    <li>-Property & Real Estate</li>
+                    <li>-Financial Technology</li>
+                    <li>-Securities</li>
+                    <li>-Private Equity</li>
+                    <li>-Venture Capital</li>
+                    <li>-Venture Capital</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ind_our_strengths">
+              <h5>해당분야의 당사강점</h5>
+              <p>채용 서비스는 클라이언트가 이상적인 인재의 채용이 확정되었을 때만 성공으로 간주할 수 있습니다. 따라서 우리는 항상 완벽한 지원자를 찾기 위해 노력합니다. 우리의 목표는 기술과 경험이 클라이언트의 비즈니스 요구에
+              부합하는 가장 적합한 지원자를 식별하는 것입니다. 간단히 말해, 우리는 각 클라이언트에게 서비스를 맞춤화하여 클라이언트의 비즈니스 성장을 지원합니다.<br><br>
+              저희는 클라이언트의 운영 요구 사항을 철저히 분석하여 적절한
+              인재 채용의 혜택을 받을 수 있는 분야를 정확히 파악하여 채용 절차를 시작합니다. 클라이언트의 요구 사항을 이해한 후에는 클라이언트가 금융 관리 업계에서 최고의 인재를 확보하고 유지할 수 있도록 지원하는 혁신적인
+              인력 솔루션을 제공합니다.<br><br>
+              우리 접근 방식의 필수적인 부분은 채용 과정 전반에 걸친 다양성과 포용성에 대한 확고한 노력입니다. 우리는 특히 금융 산업과 같이 역동적이고 다양한 산업에서 다양한 관점이 기업에 가져올
+              수 있는 이점을 중요하게 생각합니다. 지속적으로 변화하는 규제 요건, 데이터 분석의 영향력 증가, 시장 진입 장벽 약화에 따른 새로운 비즈니스 모델의 등장, 지속적인 지정학적 복잡성을 고려할 때, 픽컴퍼니의 깊은
+              전문성과 통합된 접근 방식은 금융 서비스 회사가 리더십 문제를 해결할 수 있는 위치에 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scrolltop"></div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <div class="footer_info">
+          <ul class="footer_company_link">
+            <li><a href="../about/information.html">About</a></li>
+            <li><a href="../contact/faq.html">Contact Us</a></li>
+          </ul>
+          <div class="footer_company_info">
+            <ul class="company_terms">
+              <li><a href="../terms.html">이용약관</a></li>
+              <li><a href="../privacy.html">개인정보처리방침</a></li>
+            </ul>
+            <ul class="company_info">
+              <li>
+                <span>회사명</span>
+                <b>(주)픽컴퍼니</b>
+              </li>
+              <li>
+                <span>대표명</span>
+                <b>유정현</b>
+              </li>
+              <li>
+                <span>주소</span>
+                <b>서울시 중구 을지로5길 16 삼화 타워 4층</b>
+              </li>
+              <li>
+                <span>사업자등록번호</span>
+                <b>574-86-03273</b>
+              </li>
+              <li>
+                <span>직업소개사업 등록번호</span>
+                <b>제 2023-3010202-14-05-00023호</b>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">©COPYRIGHT ALL RIGHT RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    $(function () {
+      $('.industries-tab__content').eq(0).show()
+      $('ul.industries_tabs li.tabs__link').click(function () {
+        var tab_id = $(this).attr('data-tab');
+
+        $('ul.industries_tabs li.tabs__link').removeClass('on');
+        $('.industries-tab__content').hide();
+
+        $(this).addClass('on');
+        $("#" + tab_id).fadeIn("slow")
+      })
+    })
+  </script>
+</body>
+
+</html>

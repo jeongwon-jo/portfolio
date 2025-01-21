@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+}
+
+.login__inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.login_form_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+form.form_login {
+  width: 100%;
+  text-align: center;
+  max-width: 590px;
+  padding: 0 20px;
+}
+
+.login_logo {
+  margin-bottom: 90px;
+  position: relative;
+}
+
+.login_logo .btn_back {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/icon/icon_back.svg) no-repeat center center / contain;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form_login .login_input {
+  margin-bottom: 20px;
+}
+
+.form_login .select-primary {
+  height: 52px;
+  line-height: 52px;
+}
+
+.form_login .select-primary span.current,
+.form_login .select-primary .option {
+  font-family: 'Pretendard';
+  font-size: 16px;
+}
+
+.form_login .login_input input {
+  border: 1px solid #E5E5EC;
+  height: 52px;
+  font-size: 16px;
+  font-family: 'Pretendard';
+}
+
+.form_login .login_input input::placeholder {
+  font-family: 'Pretendard';
+}
+
+.form_login .login_input .login_label {
+  font-family: 'Pretendard';
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.form_login .login_input .login_info {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: left;
+  color: #FFC0B7;
+}
+
+.form_login .login_remember {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.login_remember .checkbox--typeA span.txt {
+  color: #fff;
+}
+
+.form_login .login_btn {
+  margin-top: 40px;
+}
+
+.form_login .find_info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.form_login .find_info li {
+  padding: 0 10px;
+  border-right: 1px solid #E5E5EC;
+  font-weight: 500;
+  color: #505050;
+  font-family: 'Pretendard';
+}
+
+.form_login .find_info li button {
+  font-family: 'Pretendard';
+}
+
+.form_login .find_info li:first-child {
+  padding-left: 0px;
+}
+
+.form_login .find_info li:last-child {
+  padding-right: 0px;
+  border-right: none;
+}
+
+.form_login .login_btn .btn_login {
+  height: 52px;
+  line-height: 52px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Pretendard';
+}
+
+.form_login .login_btn .btn_initial {
+  background-color: #2A040D;
+  color: #fff;
+}
+
+.login_img_area {
+  flex: 1.35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #53212D, #800E28);
+}
+
+.login_img_area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 아이디 찾기 모달 */
+#modal-find-id .modal__inner {
+  max-width: 700px;
+}
+
+#modal-change-pw .modal__inner {
+  max-width: 700px;
+}
+
+#modal-find-pw .modal__inner {
+  max-width: 700px;
+}
+
+/* 최초 로그인 */
+.initial-login__inner {
+  max-width: 550px;
+}
+
+.account_info_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.account_info_box .account_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.account_info_box .account_info:last-child {
+  margin-bottom: 0px;
+}
+
+.account_info_box .account_info span {
+  display: inline-block;
+  width: 37px;
+  flex-shrink: 0;
+  font-weight: 500;
+  color: #767676;
+}
+
+.account_info_box .account_info b {
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.form_initial-login .btn_confirm {
+  width: 202px;
+  font-weight: 700;
+}
+
+@media screen and (max-width:1600px) {
+  .login_img_area {
+    display: none;
+  }
+}

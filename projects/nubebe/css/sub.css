@@ -1,0 +1,497 @@
+@charset "UTF-8";
+
+/* 일일 보고 */
+.daily-settlement__inner {
+  margin-top: 4px;
+}
+
+.daily_tit {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.daily_tit .select-primary {
+  width: 237px;
+}
+
+.branch_check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form_search .btn_report {
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid var(--color-main);
+  height: 36px;
+  line-height: 36px;
+  padding: 0 14px;
+}
+
+.form_search .btn_report span {
+  font-weight: 700;
+  color: var(--color-main);
+  padding-left: 27px;
+  position: relative;
+}
+
+.form_search .btn_report span:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../img/icon/icon_pencil.svg) no-repeat center center / contain;
+}
+
+.daily-settlement__inner .btn_area .btn {
+  width: 105px;
+  font-weight: 700;
+}
+
+/* 일일 보고 조회 */
+#modal-modify-report .modal__inner {
+  max-width: 1000px;
+}
+
+/* 지점별 일일보고 */
+.branch-daily_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tbl_branch_daily_report {
+  border: none;
+}
+
+.tbl_branch_daily_report .table_border {
+  border: 1px solid #EEEEEE;
+  border-radius: 10px;
+}
+
+.tbl_branch_daily_report thead th {
+  padding: 0px 2px;
+}
+
+.tbl_branch_daily_report tbody td {
+  padding: 10px 2px;
+}
+
+.branch_daily_note .textarea--typeA {
+  min-height: 100px;
+}
+
+.branch-daily-report .btn_area .btn {
+  width: 105px;
+}
+
+.completed_date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.completed_date .select-primary {
+  width: 144px;
+}
+
+.completed_date .select-primary:after {
+  right: 1px;
+}
+
+#modal-branch-daily-report .modal__inner {
+  max-width: 1400px;
+}
+
+/* 일일 보고서 */
+.daily-report_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.daily-report_title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.daily-report_title span.date {
+  color: #767676;
+}
+
+.daily-report_summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.daily-report_summary .summary {
+  display: flex;
+  align-items: center;
+  padding: 14px 30px 10px 30px;
+  border-radius: 10px;
+  border: 2px solid #DDDDDD;
+}
+
+.daily-report_summary .summary .tit {
+  padding-right: 18px;
+  margin-right: 18px;
+  position: relative;
+}
+
+.daily-report_summary .summary .tit:after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 42px;
+  background-color: #E0E0E0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.daily-report_summary .summary .tit>span {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-black);
+}
+
+.daily-report_summary .summary .tit>h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-black);
+}
+
+.daily-report_summary .result h1 {
+  font-family: 'Gmarket Sans';
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-sub);
+  margin-top: 8px;
+}
+
+.daily-report_summary .result .percent {
+  font-family: 'Gmarket Sans';
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-sub);
+}
+
+.daily-report_summary .result_reserv {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.daily-report_summary .result_reserv .last_week {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.daily-report_summary .result_reserv .last_week:before {
+  content: '/';
+  font-size: 24px;
+  font-weight: 300;
+  color: #767676;
+  word-spacing: -0.04em;
+  letter-spacing: -0.04em;
+  position: absolute;
+  bottom: 0;
+  left: -16px;
+}
+
+.daily-report_summary .result_reserv .last_week span {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #66953D;
+  width: 44px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 50px;
+  background-color: #EBFFD9;
+  text-align: center;
+}
+
+.daily-report_summary .result_reserv .last_week h2 {
+  font-size: 24px;
+  font-weight: 700;
+  word-spacing: -0.04em;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+  font-family: 'Gmarket Sans';
+  margin-left: 3px;
+  margin-top: 6px;
+}
+
+#modal-branch-issue .modal__inner {
+  max-width: 600px;
+}
+
+#modal-branch-issue .textarea--typeA {
+  min-height: 68px;
+}
+
+/* 주간 보고서 */
+.daily-report_chart .chart_content canvas {
+  height: 606px !important;
+}
+
+.report_area {
+  width: 852px;
+}
+
+.report_area .btn_download {
+  width: 210px;
+}
+
+.report_area .btn_download span {
+  padding-left: 30px;
+  position: relative;
+}
+
+.report_area .btn_download span::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../img/icon/icon_download.svg) no-repeat center center / contain;
+}
+
+.report_area .btn_save {
+  width: 120px;
+}
+
+#modal-register-report-name .modal__inner {
+  max-width: 700px;
+}
+
+/* 데이터 통계 조회 */
+.statistics-tab ul.tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statistics-tab .tabs__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 48px;
+  padding: 0 20px;
+  background-color: #fff;
+  border: 1px solid #E5E5EC;
+  border-radius: 100px;
+  font-weight: 500;
+  color: #505050;
+}
+
+.statistics-tab .tabs__link.on {
+  background-color: var(--color-main);
+  color: #fff;
+  font-weight: 700;
+}
+
+.statistics-tab__content {
+  display: none;
+  margin-top: 20px;
+}
+
+.statistics-tab__content.on {
+  display: block;
+}
+
+.daily-report_head.center {
+  align-items: center;
+}
+
+/* 일일 처리건수 순위 */
+.setting_search {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 24px;
+  background-color: #F5F5F5;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.setting_search p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--color-black);
+}
+
+/* 일정 등록 */
+#modal-select-member .modal__inner {
+  max-width: 700px;
+}
+
+.form_select_member .search__inner {
+  gap: 10px;
+}
+
+.form_select_member .btn_search {
+  height: 48px;
+  line-height: 48px;
+}
+
+/* 일정 조회 */
+.tbl_schdule_view tbody td {
+  height: 60px;
+}
+
+#modal-modify-notes .modal__inner {
+  max-width: 1000px;
+}
+
+/* 지점 & 포지션 관리 */
+.setting__inner .btn_area {
+  gap: 10px;
+}
+
+#modal-register-s_branch .modal__inner,
+#modal-register-s_position .modal__inner {
+  max-width: 600px;
+}
+
+/* 항목관리 */
+.setting-item__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.setting-item {
+  flex: 1;
+}
+
+.setting-item .item_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#modal-register-item .modal__inner {
+  max-width: 600px;
+}
+
+/* 사용자&관리자 계정관리 */
+.user-account_btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-account_btns .btn_group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-account_btns .btn {
+  padding: 0 30px;
+}
+
+.register_auth {
+  padding-top: 24px;
+  margin-top: 24px;
+  border-top: 1px solid #DDDDDD;
+}
+
+.register_auth .auth_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.register_auth .auth_box .btn {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.selected_branch {
+  width: 443px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.selected_branch p {
+  color: #767676;
+  line-height: 22px;
+  word-break: keep-all;
+}
+
+#modal-register-position .modal__inner{
+  max-width: 700px;
+}
+
+/* 회원정보 수정 */
+.modify-info__inner {
+  max-width: 550px;
+}
+
+.modify_content_tit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #555555;
+}
+
+.information_content li {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.information_content li>span {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+  font-weight: 500;
+  color: #767676;
+}
+
+.information_content li .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.information_content li .info b.info_txt {
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--color-black);
+}
+
+.modify-info__inner .btn_exit {
+  width: 120px;
+}

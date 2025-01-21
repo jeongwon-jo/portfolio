@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽컴퍼니</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="픽컴퍼니" />
+  <meta property="og:description" content="고객의 비즈니스 성공이 우리의 성공입니다." />
+  <meta property="og:image" content="/img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="..//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- fullpage.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/setting.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/attribute.css">
+  <script src="../js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header_wrap">
+        <div class="header__inner">
+          <button type="button" class="btn_open_menu"></button>
+          <div class="header_logo_gnb">
+            <a href="../index.html#home" class="logo">
+              <img src="../img/common/logo.png" class="color" alt="로고">
+              <img src="../img/common/logo_white.png" class="white" alt="로고 화이트">
+            </a>
+            <nav class="gnb">
+              <ul>
+                <!-- 현재 화면인경우 gnb_li에 active 클래스 추가 -->
+                <li class="gnb_li">
+                  <a href="../index.html" class="link">Overview</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../index.html#purpose">Our Purpose</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#values">Values</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#work">How We Work</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../clients/whatwedo.html" class="link">For Clients</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../clients/whatwedo.html">What We Do</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting.html">Headhunting Procedure</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/industries.html">Industries</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting_reg.html">Request headhunting<br> service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../candidates/list.html" class="link">For Candidates</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../candidates/list.html">Recruitment</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../candidates/register.html">Register resume</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <span class="hidden_animate"></span>
+          <nav class="gnb right_gnb">
+            <ul>
+              <li class="gnb_li ">
+                <a href="../about/information.html" class="link">About</a>
+              </li>
+              <li class="gnb_li active">
+                <a href="../contact/faq.html" class="link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <div class="header_bg"></div>
+    </header>
+    <aside class="header_sidebar">
+      <div class="sidebar__inner">
+        <button type="button" class="btn_close_sidebar"></button>
+        <div class="sidebar__logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <ul id="sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting<br>service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sidebar_about">
+          <li><a href="../about/information.html">About</a></li>
+          <li><a href="../contact/faq.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="mo_header_sidebar">
+      <div class="mo_sidebar__inner">
+        <button type="button" class="btn_close_mo_sidebar"></button>
+        <ul id="sidebar" class="mo_sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../about/information.html">About</a>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../contact/faq.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="home"><span>HOME</span></li>
+          <li>Contact Us</li>
+          <li class="active">FAQ</li>
+        </ul>
+        <div class="page_title">
+          <h1 class="tit">Contact Us</h1>
+          <ul class="page_tab_menu">
+            <li class="active"><a href="./faq.html">FAQ</a></li>
+            <li><a href="./contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="faq__inner">
+          <div class="menu_title">
+            <h3>FAQ</h3>
+          </div>
+          <div class="faq_content">
+            <h4 class="faq_title">구직자</h4>
+            <div class="faq_accordion">
+              <div class="faq">
+                <div class="question">
+                  <p>(주)픽컴퍼니의 서비스는 무엇이 다른가요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    저희 (주)픽컴퍼니는 산업별 전문 헤드헌터들로 구성된 헤드헌팅회사 입니다.<br><br>
+                    
+                    당사는 시스템에 의한 차별화된 대 고객서비스를 제공하고 있습니다.<br>
+                    당사에는 각개각층의 전문가가 있으며 최신화된 전산화 시스템에 의한 공동 협업체계로 보다 빠르고 정확하게 프리미엄 헤드헌팅 서비스를 제공하고 있습니다.<br>
+                    또한 저희는 우수인재들의 이직활동 및 커리어 컨설팅에 적극적으로 임하고 있으며, 이를 통해 차원 높은 서비스를 제공하고 있습니다.<br><br>
+                    
+                    언제든 저희 (주)픽컴퍼니의 문은 여러분을 향하여 열려 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>(주)픽컴퍼니 서비스 이용 시 비용은 얼마인가요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    당사는 구직자에게 일체의 수수료를 요구하지 않습니다.<br>
+                    헤드헌팅에 대한 수수료는 회사에서 고객사에 별도로 청구하여 지급을 받는것이기 때문에 구직자의 급여와는 아무 관련이 없습니다.<br>
+                    대형 서치펌인(주)픽컴퍼니의 질 높은 헤드헌터의 서비스는 언제나 무료로 열려 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>채용공고에 지원하려면 어떻게 해야 하나요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    지원절차에 따라 편안하게 지원하시면 됩니다. 최대한 빠르게 배정된 전담 헤드헌터가 연락드릴 수 있게 하겠습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>개인 정보 유출이 걱정됩니다.</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    (주)픽컴퍼니는 개개인의 정보를 소중하게 생각합니다. 또한 개인정보취급방침에 따라 철저하게 운영되며, 구인회사를 제외한 외부로 공개되지 않습니다.<br>
+                    회원에게는 전담 헤드헌터만 연락을 드리는 것을 원칙으로 하고 있으므로 개인 정보의 보안은 걱정하지 않아도 됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="faq_content">
+            <h4 class="faq_title">기업고객</h4>
+            <div class="faq_accordion">
+              <div class="faq">
+                <div class="question">
+                  <p>(주)픽컴퍼니의 헤드헌팅 서비스는 무엇이 다른가요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    저희 (주)픽컴퍼니는 대한민국 대형 서치펌 중에 하나로서, 10여명으로 구성된 중,소형 서치펌과는 분명 차원이 다른 서비스를 받으실 수 있습니다.<br>
+                    대한민국 최고의 전산 시스템을 바탕으로 한 산업별 전문가의 차원 높은 프리미엄 서비스를 경험해 보시기 바랍니다.<br>
+                    사업의 성패와 직결된 기업의 핵심요소인 인재발굴에 있어서 당사는 그 어떤 회사와는 차별화된 속도로서 인재를 추천드리겠습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>(주)픽컴퍼니 헤드헌팅 서비스 이용 시 비용은 얼마인가요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    답변채용 의뢰하시는 포지션 및 직급, 연봉에 따라 수수료율이 차이가 있습니다. 현재 업계 수수료율은 연봉 5,000만원 기준으로 미만은15%, 이상은 20%이며 연봉 7천만원 이상은 별도 협의에 의하여 25%정도
+                    입니다.<br>
+                    하지만 저희 (주)픽컴퍼니를 찾아 주신 고객사분들께는 최대한 사정을 고려하여 도움을 드리고자 노력하고 있습니다.<br>
+                    항상 준비된 서치펌(주)픽컴퍼니를 이용하신다면 합리적인 금액에 그 누구보다 빠른 인재추천 서비스를 이용하실 수 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>인재채용 의뢰는 어디로 해야 하는가요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    저희 홈 메인에서 for Clients 페이지를 방문하셔서 ＂Request headhunting service“ 에올려주시면 저희가 주도면밀하게 검토 이후 고객사의 업무와 관련하여 최고의 헤드헌터를 배정하여 연락을
+                    회신 드리겠습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>헤드헌팅 서비스 이용 시 후보자 추천까지 기간이 얼마나 걸리나요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    채용하고자 하는 직급 및 수준에 따라 추천 소요기간이 다르겠지만 저희 (주)픽컴퍼니는 추천의뢰 일로부터 7일을 기본으로 하고 있습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="faq">
+                <div class="question">
+                  <p>(주)픽컴퍼니 서비스 이용 시 반드시 회원가입을 하여야 하나요?</p>
+                </div>
+                <div class="answer">
+                  <p>
+                    기업회원의 회원가입이 필수사항은 아닙니다. 하지만 회원가입을 해주시면 보다 차원 높은 서비스를 제공해 드립니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scrolltop"></div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <div class="footer_info">
+          <ul class="footer_company_link">
+            <li><a href="../about/information.html">About</a></li>
+            <li><a href="../contact/faq.html">Contact Us</a></li>
+          </ul>
+          <div class="footer_company_info">
+            <ul class="company_terms">
+              <li><a href="../terms.html">이용약관</a></li>
+              <li><a href="../privacy.html">개인정보처리방침</a></li>
+            </ul>
+            <ul class="company_info">
+              <li>
+                <span>회사명</span>
+                <b>(주)픽컴퍼니</b>
+              </li>
+              <li>
+                <span>대표명</span>
+                <b>유정현</b>
+              </li>
+              <li>
+                <span>주소</span>
+                <b>서울시 중구 을지로5길 16 삼화 타워 4층</b>
+              </li>
+              <li>
+                <span>사업자등록번호</span>
+                <b>574-86-03273</b>
+              </li>
+              <li>
+                <span>직업소개사업 등록번호</span>
+                <b>제 2023-3010202-14-05-00023호</b>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">©COPYRIGHT ALL RIGHT RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    $(function() {
+      $('.faq .question').click(function() {
+        $(this).parents('.faq_accordion').find($('.faq .question')).not($(this)).removeClass("active")
+        $(this).toggleClass('active')
+        
+        $(this).parents('.faq_accordion').find($('.faq .answer')).not($(this).siblings()).slideUp()
+        $(this).siblings().slideToggle()
+      })
+
+      $('.faq_accordion .faq:first-child .question').addClass('active')
+      $('.faq_accordion .faq:first-child .answer').slideDown()
+    })
+  </script>
+</body>
+
+</html>

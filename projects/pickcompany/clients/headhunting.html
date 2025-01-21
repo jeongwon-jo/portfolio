@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽컴퍼니</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="픽컴퍼니" />
+  <meta property="og:description" content="고객의 비즈니스 성공이 우리의 성공입니다." />
+  <meta property="og:image" content="/img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- DateTimePicker -->
+  <link rel="stylesheet" href="..//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- fullpage.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/fullpage.js@2.9.4/dist/jquery.fullpage.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/setting.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/attribute.css">
+  <script src="../js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header_wrap">
+        <div class="header__inner">
+          <button type="button" class="btn_open_menu"></button>
+          <div class="header_logo_gnb">
+            <a href="../index.html#home" class="logo">
+              <img src="../img/common/logo.png" class="color" alt="로고">
+              <img src="../img/common/logo_white.png" class="white" alt="로고 화이트">
+            </a>
+            <nav class="gnb">
+              <ul>
+                <!-- 현재 화면인경우 gnb_li에 active 클래스 추가 -->
+                <li class="gnb_li">
+                  <a href="../index.html" class="link">Overview</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../index.html#purpose">Our Purpose</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#values">Values</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../index.html#work">How We Work</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li active">
+                  <a href="../clients/whatwedo.html" class="link">For Clients</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../clients/whatwedo.html">What We Do</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting.html">Headhunting Procedure</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/industries.html">Industries</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../clients/headhunting_reg.html">Request headhunting<br> service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="gnb_li">
+                  <a href="../candidates/list.html" class="link">For Candidates</a>
+                  <ul class="gnb_2depth">
+                    <li class="li_2depth">
+                      <a href="../candidates/list.html">Recruitment</a>
+                    </li>
+                    <li class="li_2depth">
+                      <a href="../candidates/register.html">Register resume</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <span class="hidden_animate"></span>
+          <nav class="gnb right_gnb">
+            <ul>
+              <li class="gnb_li">
+                <a href="../about/information.html" class="link">About</a>
+              </li>
+              <li class="gnb_li">
+                <a href="../contact/faq.html" class="link">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <div class="header_bg"></div>
+    </header>
+    <aside class="header_sidebar">
+      <div class="sidebar__inner">
+        <button type="button" class="btn_close_sidebar"></button>
+        <div class="sidebar__logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <ul id="sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting<br>service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sidebar_about">
+          <li><a href="../about/information.html">About</a></li>
+          <li><a href="../contact/faq.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </aside>
+    <aside class="mo_header_sidebar">
+      <div class="mo_sidebar__inner">
+        <button type="button" class="btn_close_mo_sidebar"></button>
+        <ul id="sidebar" class="mo_sidebar">
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">Overview</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../index.html#purpose">Our Purpose</a>
+              </li>
+              <li>
+                <a href="../index.html#values">Values</a>
+              </li>
+              <li>
+                <a href="../index.html#work">How We Work</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth open">
+            <a href="javascript:void(0);">For Clients</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../clients/whatwedo.html">What We Do</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting.html">Headhunting Procedure</a>
+              </li>
+              <li>
+                <a href="../clients/industries.html">Industries</a>
+              </li>
+              <li>
+                <a href="../clients/headhunting_reg.html">Request headhunting service</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth">
+            <a href="javascript:void(0);">For Candidates</a>
+            <ul class="sidebar_2depth">
+              <li>
+                <a href="../candidates/list.html">Recruitment</a>
+              </li>
+              <li>
+                <a href="../candidates/register.html">Register resume</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../about/information.html">About</a>
+          </li>
+          <li class="sidebar_1dpeth no_arrow">
+            <a href="../contact/faq.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="main">
+      <div class="f_container">
+        <ul class="breadcrumb">
+          <li class="home"><span>HOME</span></li>
+          <li>For Clients</li>
+          <li class="active">Headhunting Procedure</li>
+        </ul>
+        <div class="page_title">
+          <div class="page_title_btns">
+            <h1 class="tit">For Clients</h1>
+            <a href="./headhunting_reg.html" class="btn_request"><span>Request headhunting service</span></a>
+          </div>
+          <ul class="page_tab_menu">
+            <li><a href="./whatwedo.html">What We Do</a></li>
+            <li class="active"><a href="./headhunting.html">Headhunting<br class="mo_show"> Procedure</a></li>
+            <li><a href="./industries.html">Industries</a></li>
+          </ul>
+        </div>
+        <div class="clients__inner">
+          <div class="menu_title">
+            <h3>Headhunting Procedure</h3>
+          </div>
+          <div class="headhunting_content">
+            <div class="procedure_wrap">
+              <div class="procedure__list">
+                <div class="procedure__item left">
+                  <div class="item_wrap">
+                    <div class="procedure_info">
+                      <span class="num">01</span>
+                      <h3>헤드헌팅 구인의뢰</h3>
+                      <p>
+                        고객사에서 구인 필요인력 발생시 직무내용 및 필요사항이 기재된<br class="pc_show">
+                        Job Description 발송<br class="pc_show">
+                        당사 직무나 업종에 따라 전문 컨설턴트 배정 후 고객사 인사팀과 업무 협의
+                      </p>
+                    </div>
+                    <div class="procedure_arrow">
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_left.png" alt="" width="70">
+                      </div>
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure__item right">
+                  <div class="item_wrap">
+                    <div class="procedure_arrow">
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_right.png" alt="" width="70">
+                      </div>
+                    </div>
+                    <div class="procedure_info">
+                      <span class="num">02</span>
+                      <h3>계약 체결</h3>
+                      <p>
+                        고객사 방문 후 보안사항, 수수료, 보증기간 등을<br class="pc_show">
+                        포함한 계약서 체결<br class="pc_show">
+                        년 1회 계약을 체결하며, 3개월 전 별다른 이외 없으면 자동연장
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure__item left">
+                  <div class="item_wrap">
+                    <div class="procedure_info">
+                      <span class="num">03</span>
+                      <h3>후보자 발굴 및 추천</h3>
+                      <p>
+                        고객사의 JD에 부합하는 인재를 당사 DB 및 다양한 채널을 통해<br class="pc_show">
+                        적합한 후보자 발굴<br class="pc_show">
+                        발굴된 인재는 당사 사전 인터뷰를 통해 핵심인재를 선별하여 추천
+                      </p>
+                    </div>
+                    <div class="procedure_arrow">
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_left.png" alt="" width="70">
+                      </div>
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure__item right">
+                  <div class="item_wrap">
+                    <div class="procedure_arrow">
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_right.png" alt="" width="70">
+                      </div>
+                    </div>
+                    <div class="procedure_info">
+                      <span class="num">04</span>
+                      <h3>고객사 채용 전형</h3>
+                      <p>
+                        고객사에 추천 후 서류전형 합격자에 한해 채용 절차에 따라 인터뷰 주선<br class="pc_show">
+                        고개사의 요청 시 후보자에 대한 평판조회 서비스 실시<small class="c_gray">(형태에 따라 비용 산정)</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure__item left">
+                  <div class="item_wrap">
+                    <div class="procedure_info">
+                      <span class="num">05</span>
+                      <h3>채용 결정</h3>
+                      <p>
+                        고객사의 연봉 및 고용조건에 따라 후보자와 협상 조율<br class="pc_show">
+                        확정 후 고객사에서 후보자에게 공식적인 Offer Letter발행 / 최종 고용계약서 사인
+                      </p>
+                    </div>
+                    <div class="procedure_arrow">
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_left.png" alt="" width="70">
+                      </div>
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure__item right">
+                  <div class="item_wrap">
+                    <div class="procedure_arrow">
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_right.png" alt="" width="70">
+                      </div>
+                    </div>
+                    <div class="procedure_info">
+                      <span class="num">06</span>
+                      <h3>수수료 청구</h3>
+                      <p>
+                        후보자 입사 후 계약서에 근거 수수료 청구
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="procedure__item left">
+                  <div class="item_wrap">
+                    <div class="procedure_info">
+                      <span class="num">07</span>
+                      <h3>후보자 사후 관리</h3>
+                      <p>
+                        후보자가 정착할 수 있도록 지속적으로 지원<br class="pc_show">
+                        후보자가 보증기간 내 퇴사 시 무상 재추천
+                      </p>
+                    </div>
+                    <div class="procedure_arrow">
+                      <div class="arrow">
+                        <img src="../img/procedure_arrow_left.png" alt="" width="70">
+                      </div>
+                      <div class="dot_wrap">
+                        <span class="dot"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scrolltop"></div>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="../img/common/logo.png" alt="로고">
+        </div>
+        <div class="footer_info">
+          <ul class="footer_company_link">
+            <li><a href="../about/information.html">About</a></li>
+            <li><a href="../contact/faq.html">Contact Us</a></li>
+          </ul>
+          <div class="footer_company_info">
+            <ul class="company_terms">
+              <li><a href="../terms.html">이용약관</a></li>
+              <li><a href="../privacy.html">개인정보처리방침</a></li>
+            </ul>
+            <ul class="company_info">
+              <li>
+                <span>회사명</span>
+                <b>(주)픽컴퍼니</b>
+              </li>
+              <li>
+                <span>대표명</span>
+                <b>유정현</b>
+              </li>
+              <li>
+                <span>주소</span>
+                <b>서울시 중구 을지로5길 16 삼화 타워 4층</b>
+              </li>
+              <li>
+                <span>사업자등록번호</span>
+                <b>574-86-03273</b>
+              </li>
+              <li>
+                <span>직업소개사업 등록번호</span>
+                <b>제 2023-3010202-14-05-00023호</b>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">©COPYRIGHT ALL RIGHT RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const historyItem = gsap.utils.toArray(".procedure__item");
+    const historyItemLength = historyItem.length;
+    historyItem.forEach((obj, index) => {
+      var startPoint = index == historyItemLength - 1 ? "top 70%" : "top center";
+      ScrollTrigger.create({
+        trigger: obj,
+        start: startPoint,
+        end: "bottom center",
+        toggleClass: { targets: obj, className: "active" },
+      });
+    });
+  </script>
+</body>
+
+</html>
