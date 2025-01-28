@@ -7,7 +7,7 @@
     z-index: 100;
     width: 100vw;
     height: 100dvh;
-    background-color: #000;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +19,10 @@
     left: 0;
     width: 0vw;
     height: 100dvh;
-    background-color: #fff;
+    background-color: #111;
     animation: slideRight ease-out 2.2s;
     animation-fill-mode: both;
-    animation-delay: 2.1s;
+    animation-delay: 1.8s;
 }
 
 .loading .text_box {
@@ -30,7 +30,7 @@
 }
 
 .loading .text_box h1 {
-    font-size: 100px;
+    font-size: 96px;
     font-weight: 800;
     color: #fff;
     transform: translateY(100%);
@@ -38,7 +38,7 @@
     animation-fill-mode: both;
     mix-blend-mode: exclusion;
 }
-
+  
 @keyframes showUp {
   from {
     transform: translateY(100%);
@@ -61,16 +61,15 @@
 
 .sec__inner {
     width: 100%;
-    max-width: 1720px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 38px;
 }
 
 /* 첫번째 섹션 - 소개 */
 .section__greeting {
     width: 100vw;
     height: 100dvh;
-    background-color: #fff;
     position: relative;
 }
 
@@ -83,21 +82,175 @@
     height: 100%;
 }
 
+.section__greeting .text_box {
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
 .section__greeting .text_box h1 {
-    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 96px;
     font-weight: 800;
-    color: #000;
+    color: #fff;
     text-align: center;
+    letter-spacing: -0.05em;
+    width: 100%
+}
+
+.section__greeting .text_box .key.key_space {
+    padding-right: 16px;
+}
+
+.key:nth-child(1) {
+    animation: pressDown1 2s infinite;
+}
+
+.key:nth-child(2) {
+    animation: pressDown2 3s infinite;
+}
+
+.key:nth-child(3) {
+    animation: pressDown3 4s infinite;
+}
+
+.key:nth-child(4) {
+    animation: pressDown4 2.5s infinite;
+}
+
+.key:nth-child(5) {
+    animation: pressDown5 2.5s infinite;
+}
+
+.key:nth-child(6) {
+    animation: pressDown6 3.5s infinite;
+}
+
+.key:nth-child(7) {
+    animation: pressDown7 2.2s infinite;
+}
+
+.key:nth-child(8) {
+    animation: pressDown8 3.2s infinite;
+}
+
+
+.key:nth-child(9) {
+    animation: pressDown7 3.2s infinite;
+}
+
+.key:nth-child(10) {
+    animation: pressDown6 3.2s infinite;
+}
+
+.key:nth-child(11) {
+    animation: pressDown5 3.2s infinite;
+}
+
+.key:nth-child(12) {
+    animation: pressDown4 3.2s infinite;
+}
+
+
+@keyframes pressDown1 {
+    30%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+    35% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown2 {
+    70%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown3 {
+    30%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+    35% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown4 {
+    40%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+    45% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown5 {
+    20%,
+    30%,
+    100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown6 {
+    60%,
+    70%,
+    100% {
+        transform: translateY(0);
+    }
+    65% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown7 {
+    10%,
+    20%,
+    100% {
+        transform: translateY(0);
+    }
+    15% {
+        transform: translateY(6px);
+    }
+}
+
+@keyframes pressDown8 {
+    35%,
+    45%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
 }
 
 .section__greeting .images_box {
     display: inline-block;
     width: calc(100% - 40px);
-    max-width: 1000px;
+    max-width: 680px;
     height: 490px;
     position: relative;
     opacity: 0;
     height: 0;
+    filter: brightness(0.7);
 }
 
 .section__greeting .images_box .img {
@@ -129,7 +282,7 @@
 
 .section__greeting .scroll_down span {
     font-size: 16px;
-    color: #333;
+    color: #fff;
 }
 
 @keyframes fadeInOutScrollDown {
@@ -152,14 +305,13 @@
     height: auto;
     padding: 100px 0;
     text-align: center;
-    background-color: #fff;
 }
   
 .section__dreaming span.top_bar {
     display: inline-block;
     width: 1px;
     height: 30px;
-    background-color: #111;
+    background-color: #fff;
     margin-bottom: 36px;
 }
 
@@ -172,7 +324,7 @@
     display: inline-block;
     font-size: 30px;
     font-weight: 700;
-    color: #111;
+    color: #fff;
     margin-bottom: 24px;
 }
 
@@ -180,7 +332,7 @@
     font-size: 18px;
     line-height: 28px;
     font-weight: 400;
-    color: #111;
+    color: #fff;
 }
 
 .my_experience_year {
@@ -194,15 +346,36 @@
 .my_experience_year h1 {
     font-size: 130px;
     font-weight: 700;
+    color: #fff;
 }
 
 .my_experience_year span.bar {
     display: inline-block;
     width: 0px;
-    height: 10px;
+    height: 12px;
     transition: 1.3s;
-    background-color: #111;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
 }
+
+.my_experience_year span.bar .bar__inner {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #222222 20%, rgb(105, 105, 105) 40%, rgb(161, 161, 161) 60%, #222222 80%);
+    background-size: 200% auto;
+    animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+    to {
+      background-position: -400%;
+    }
+  }
 
 .my_experience_year span.bar.active {
     width: calc(100vw * (552 / 1800));
@@ -212,30 +385,33 @@
 .section__history {
     width: 100%;
     height: auto;
-    background-color: #fff;
     padding-top: 80px;
     padding-bottom: 120px;
 }
 
+.section__history .sec__inner {
+    max-width: 1320px;
+}
+
 .history__title {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 56px;
 }
 
 .history__title h2 {
     font-size: 56px;
     font-weight: 600;
+    color: #fff;
 }
 
 .aboutme_container {
     display: flex;
-    align-items: center;
-    gap: 48px;
+    align-items: flex-start;
+    gap: 120px;
 }
 
 .aboutme_container .text {
     width: 100%;
-    flex: 1;
 }
 
 .aboutme_container .info_history {
@@ -248,10 +424,11 @@
 .skills__wrap h4 {
     font-size: 24px;
     font-weight: 600;
+    color: #fff;
 }
 
 .history__wrap .my_history {
-    margin-top: 24px;
+    margin-top: 42px;
 }
 
 .my_history li {
@@ -259,6 +436,7 @@
     align-items: baseline;
     margin-bottom: 12px;
     gap: 24px;
+    color: #fff;
 }
 
 .my_history li span.history__date {
@@ -316,8 +494,8 @@
 
 .my_skills li {
     display: inline-block;
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     padding: 4px;
     overflow: hidden;
     border-radius: 8px;
@@ -331,15 +509,68 @@
 }
 
 .aboutme_container .img {
-    width: 45%;
-    height: 550px;
+    width: 320px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
-.aboutme_container .img img {
+.aboutme_container .img .my_name {
+    margin-bottom: 24px;
+}
+
+.aboutme_container .img .my_name h2 {
+    font-size: 34px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.aboutme_container .img .my_name h2 span {
+    font-size: 28px;
+    font-weight: 500;
+    margin-left: 12px;
+    display: inline-block;
+}
+
+.aboutme_container .img .profile_img {
+    width: 300px;
+    object-fit: contain;
+    aspect-ratio: 3 / 4;
+}
+
+.aboutme_container .profile_img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+.aboutme_container .my_strength {
+    width: 43%;
+}
+
+.strength__list {
+    transform: translateY(0px);
+}
+
+.strength__item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-top: 48px;
+}
+
+.strength__item h1.num {
+    font-size: 80px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.strength__item h4 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 48px;
 }
 
 /* 네번째 섹션 - 프로젝트 */
@@ -354,6 +585,7 @@
 .portfolio__title h2 {
     font-size: 56px;
     font-weight: 600;
+    color: #fff;
 }
 
 .portfolio__contents {
@@ -370,24 +602,20 @@
 .portfolio__item--card .portfolio__thum {
     display: inline-block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9.5;
     border-radius: 2px;
     overflow: hidden;
     position: relative;
+    transition: 0.4s ease-in-out;
 }
 
 .portfolio__item--card .portfolio__thum img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.35s linear;
-    -webkit-transition: 0.35s linear;
-    -moz-transition: 0.35s linear;
-    -ms-transition: 0.35s linear;
-    -o-transition: 0.35s linear;
 }
 
-.portfolio__item--card .portfolio__thum:hover img {
+/* .portfolio__item--card .portfolio__thum:hover img {
     filter: blur(3px);
     transform:scale(1.08);
     -webkit-transform:scale(1.08);
@@ -395,28 +623,52 @@
     -ms-transform:scale(1.08);
     -o-transform:scale(1.08);
     -webkit-filter: blur(3px);
+} */
+
+.portfolio__item--card .portfolio__thum:hover {
+    border-radius: 160px;
 }
 
-.portfolio__item--card .portfolio__thum .btn_go_detail {
+.portfolio__item--card .portfolio__thum:hover .portfolio__link {
+    opacity: 1;
+}
+
+.portfolio__link {
     opacity: 0;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    text-align: center;
-    font-weight: 600;
-    font-size: 50px;
-    line-height: 70px;
-    border-radius: 8px;
-    color: #222222;
+    cursor: pointer;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
-    transform: translate(-50%, -50%);
-    transition: 0.35s;
-    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffffd6;
 }
 
+.portfolio__link h2 {
+    text-align: center;
+    color: #111;
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+.portfolio__link ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.portfolio__link ul li {
+    color: #111;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: underline;
+}
 .portfolio__item--card .portfolio__thum:hover .btn_go_detail {
     opacity: 1;
 }
@@ -426,12 +678,13 @@
 }
 
 .portfolio_tit {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .portfolio_tit h3 {
     font-size: 24px;
     font-weight: 600;
+    color: #fff;
 }
 
 p.portfolio_description {
@@ -451,7 +704,7 @@ ul.portfolio__info {
 
 ul.portfolio__info li {
     font-size: 16px;
-    color: #505050;
+    color: #fff;
     text-decoration: underline;
 }
 
@@ -505,6 +758,10 @@ ul.portfolio__info li:before {
     .loading .text_box h1 {
         font-size: 56px;
         text-align: center;
+    }
+
+    .sec__inner {
+        padding: 0 20px;
     }
 
     /* 첫번째 섹션 - 소개 */

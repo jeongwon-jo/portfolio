@@ -3,8 +3,8 @@ $(function () {
 
 	SmoothScroll({
 		// Scrolling Core
-		animationTime: 800, // [ms]
-		stepSize: 60, // [px]
+		animationTime: 1000, // [ms]
+		stepSize: 50, // [px]
 
 		// Acceleration
 		accelerationDelta: 50, // 50

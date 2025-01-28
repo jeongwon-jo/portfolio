@@ -45,8 +45,7 @@ body {
   height: 80px;
   z-index: 99;
   transition: 0.35s;
-  background-color: #fff;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #222;
 }
 
 .header.hide {
@@ -86,11 +85,11 @@ body {
 
 .footer__title {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 80px;
 }
 
 .footer__title h1 {
-  color: #111;
+  color: #fff;
   font-size: 110px;
   font-weight: 800;
 }
@@ -99,12 +98,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
 }
 
 .footer__mylink li {
   font-size: 18px;
   font-weight: 500;
-  color: #111;
+  color: #fff;
 }
 
 .footer__mylink li .link {
@@ -130,6 +130,7 @@ body {
   display: inline-block; 
   width: max-content;
   font-weight: 800;
+  color: #fff;
 }
 
 .footer__slider .list > li:hover {
