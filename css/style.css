@@ -849,6 +849,20 @@ ul.portfolio__info li:before {
     }
 
     /* 첫번째 섹션 - 소개 */
+    .section__greeting:before {
+        top: 68px;
+        height: 2px;
+        left: 16px;
+    }
+
+    .section__greeting::after {
+        content: none;
+    }
+
+    .section__greeting.active:before {
+        width: 130px;
+    }
+
     .section__greeting .greeting-text h1 {
         font-size: 56px;
         text-align: center;
@@ -860,6 +874,18 @@ ul.portfolio__info li:before {
 
     .section__greeting .scroll_down span {
         font-size: 14px;
+    }
+
+    .aside_portfoilo {
+        bottom: 0px;
+    }
+
+    .section__greeting.active .aside_portfoilo {
+        left: 17px;
+    }
+
+    .aside_portfoilo h2 {
+        font-size: 18px;
     }
 
     /* 두번째 섹션 - 목표 */
@@ -1035,5 +1061,128 @@ ul.portfolio__info li:before {
         line-height: 32px;
         padding: 0 12px;
     }
+}
 
+/* #### contact.html #### */
+.contact__contents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}
+
+.contact__contents .greeting-text {
+    margin: 0;
+}
+
+.contact__contents .contact__info {
+    width: 0;
+    opacity: 0;
+    position: absolute;
+}
+
+.contact__list .contact__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    margin-bottom: 80px;
+    min-width: 240px;
+}
+
+.contact__list .contact__item:last-child {
+    margin-bottom: 0px;
+}
+
+.contact__item .icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.contact__item .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact__item .contact-info {
+    flex: 1;
+}
+
+.contact__item .contact-info h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.contact__item .contact-info p {
+    font-size: 18px;
+    line-height: 38px;
+    color: #fff;
+    width: 100%;
+}
+
+.contact__item .link_list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.contact__item .link_list .link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media screen and (max-width:767px) {
+    .contact__contents {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .contact__contents .greeting-text h1 {
+        font-size: 48px;
+    }
+
+    .contact__list {
+        padding-left: 36px;
+    }
+    
+    .contact__list .contact__item {
+        margin-bottom: 32px;
+        min-width: auto;
+        gap: 24px;
+    }
+
+    .contact__item .icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact__item .contact-info {
+        flex: none;
+    }
+
+    .contact__item .contact-info h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .contact__item .contact-info p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .contact__item .link_list {
+        gap: 12px;
+    }
+
+    .contact__item .link_list .link {
+        font-size: 14px;
+    }
 }

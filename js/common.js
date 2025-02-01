@@ -51,6 +51,11 @@ $(function () {
 
 	setFlowBanner();
 })
+let screenWidth=$(window).width();
+// 반응형 resize
+$(window).on("resize", function () {
+	screenWidth = $(window).width();
+});
 
 // 공통 헤더 메뉴버튼 클릭시 나오는 GNB 메뉴 애니메이션
 function toggleGnbMenu() {
@@ -61,27 +66,52 @@ function toggleGnbMenu() {
 		}
 	})
 
-	if (headerMenu.classList.contains('open')) {
-		headerTl
-			.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'hidden'})
-			.to($('.header_menu-bar .header_nav ul li'), { width: 32 }, 0.1)
-			.to($('.header_menu-bar .header_nav ul li.contact'), { top: -78, delay: 0.4}, 0.2)
-			.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: -78, delay: 0.4 }, 0.2)
-			.to($('.header_menu-bar .header_nav ul li.about'), { top: -78, delay: 0.4 }, 0.2)
-			.to($('.header_menu-bar .header_nav ul li.home'), { top: -78, delay: 0.4 }, 0.2)
-			.to($('.header_menu-bar .header_nav ul'), { opacity: 0, delay: 0.8 }, 0.1)
-		$('.header_menu-bar').removeClass('open')
+	if(screenWidth > 768) {
+		if (headerMenu.classList.contains('open')) {
+			headerTl
+				.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'hidden'})
+				.to($('.header_menu-bar .header_nav ul li'), { width: 32 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.contact'), { top: -78, delay: 0.4}, 0.2)
+				.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: -78, delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul li.about'), { top: -78, delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul li.home'), { top: -78, delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul'), { opacity: 0, delay: 0.8 }, 0.1)
+			$('.header_menu-bar').removeClass('open')
+		} else {
+			$('.header_menu-bar').addClass('open')
+			headerTl
+				.to($('.header_menu-bar .header_nav ul'), { opacity: 1 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.home'), { top: 0 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.about'), { top: 45 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: 90 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.contact'), { top: 135 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li'), { width: 'auto', delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'visible'})
+		}
 	} else {
-		$('.header_menu-bar').addClass('open')
-		headerTl
-			.to($('.header_menu-bar .header_nav ul'), { opacity: 1 }, 0.1)
-			.to($('.header_menu-bar .header_nav ul li.home'), { top: 0 }, 0.1)
-			.to($('.header_menu-bar .header_nav ul li.about'), { top: 45 }, 0.1)
-			.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: 90 }, 0.1)
-			.to($('.header_menu-bar .header_nav ul li.contact'), { top: 135 }, 0.1)
-			.to($('.header_menu-bar .header_nav ul li'), { width: 'auto', delay: 0.4 }, 0.2)
-			.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'visible'})
+		if (headerMenu.classList.contains('open')) {
+			headerTl
+				.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'hidden'})
+				.to($('.header_menu-bar .header_nav ul li'), { width: 24 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.contact'), { top: -54, delay: 0.4}, 0.2)
+				.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: -54, delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul li.about'), { top: -54, delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul li.home'), { top: -54, delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul'), { opacity: 0, delay: 0.8 }, 0.1)
+			$('.header_menu-bar').removeClass('open')
+		} else {
+			$('.header_menu-bar').addClass('open')
+			headerTl
+				.to($('.header_menu-bar .header_nav ul'), { opacity: 1 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.home'), { top: 0 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.about'), { top: 36 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: 72 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li.contact'), { top: 108 }, 0.1)
+				.to($('.header_menu-bar .header_nav ul li'), { width: 'auto', delay: 0.4 }, 0.2)
+				.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'visible'})
+		}
 	}
+	
 }
 
 function setFlowBanner() {
@@ -128,10 +158,7 @@ function setFlowBanner() {
 	}
 }
 
-// 반응형 resize
-$(window).on("resize", function () {
-  let width = $(window).width();
-});
+
 
 // 스크롤 헤더 숨김 표시
 let lastScrollTop = 0

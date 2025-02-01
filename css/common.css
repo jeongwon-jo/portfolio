@@ -235,6 +235,40 @@ body {
     height: 24px;
   }
 
+  .header_menu-bar {
+    gap: 12px;
+  }
+
+  .header_menu-bar .btn_resume {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+
+  .header_menu-bar .btn_menu {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header_menu-bar .header_nav {
+    top: 54px;
+  }
+
+  .header_menu-bar .header_nav ul {
+    row-gap: 0px;
+  }
+
+  .header_menu-bar .header_nav ul li {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    top: -54px;
+  }
+
+  .header_menu-bar.open .header_nav ul li {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
   .footer__title {
     margin-bottom: 32px;
   }
