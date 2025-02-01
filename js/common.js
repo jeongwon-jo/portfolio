@@ -52,6 +52,38 @@ $(function () {
 	setFlowBanner();
 })
 
+// 공통 헤더 메뉴버튼 클릭시 나오는 GNB 메뉴 애니메이션
+function toggleGnbMenu() {
+	let headerMenu = document.querySelector('.header_menu-bar');
+
+	const headerTl = gsap.timeline({
+		onComplete: () => {
+		}
+	})
+
+	if (headerMenu.classList.contains('open')) {
+		headerTl
+			.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'hidden'})
+			.to($('.header_menu-bar .header_nav ul li'), { width: 32 }, 0.1)
+			.to($('.header_menu-bar .header_nav ul li.contact'), { top: -78, delay: 0.4}, 0.2)
+			.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: -78, delay: 0.4 }, 0.2)
+			.to($('.header_menu-bar .header_nav ul li.about'), { top: -78, delay: 0.4 }, 0.2)
+			.to($('.header_menu-bar .header_nav ul li.home'), { top: -78, delay: 0.4 }, 0.2)
+			.to($('.header_menu-bar .header_nav ul'), { opacity: 0, delay: 0.8 }, 0.1)
+		$('.header_menu-bar').removeClass('open')
+	} else {
+		$('.header_menu-bar').addClass('open')
+		headerTl
+			.to($('.header_menu-bar .header_nav ul'), { opacity: 1 }, 0.1)
+			.to($('.header_menu-bar .header_nav ul li.home'), { top: 0 }, 0.1)
+			.to($('.header_menu-bar .header_nav ul li.about'), { top: 45 }, 0.1)
+			.to($('.header_menu-bar .header_nav ul li.portfolio'), { top: 90 }, 0.1)
+			.to($('.header_menu-bar .header_nav ul li.contact'), { top: 135 }, 0.1)
+			.to($('.header_menu-bar .header_nav ul li'), { width: 'auto', delay: 0.4 }, 0.2)
+			.to($('.header_menu-bar .header_nav ul li a'), { visibility: 'visible'})
+	}
+}
+
 function setFlowBanner() {
 	const $wrap = $('.footer__slider');
 	const $list = $('.footer__slider .list');
@@ -104,15 +136,18 @@ $(window).on("resize", function () {
 // 스크롤 헤더 숨김 표시
 let lastScrollTop = 0
 function scrollHeader() {
+	var _wrap = $('#wrap');
 	var _header = $('.header');
 	var currentPos = $(window).scrollTop();
 	var moveDistance = currentPos - lastScrollTop;
 	var scrollRange = -10;
 	if (moveDistance > 0) {
+		_wrap.addClass('header_hide');  
 		_header.addClass('hide');  
 	}
 	else {
 		if (moveDistance < scrollRange) {
+			_wrap.removeClass('header_hide');
 			_header.removeClass('hide');
 		}
 	}

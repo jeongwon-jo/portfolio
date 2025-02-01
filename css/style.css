@@ -25,11 +25,11 @@
     animation-delay: 1.8s;
 }
 
-.loading .text_box {
+.loading .loading-text {
     overflow: hidden;
 }
 
-.loading .text_box h1 {
+.loading .loading-text h1 {
     font-size: 96px;
     font-weight: 800;
     color: #fff;
@@ -73,7 +73,44 @@
     position: relative;
 }
 
-.sec1_title_box {
+.section__greeting:before {
+    content: '';
+    display: inline-block;
+    width: 0px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 104px;
+    left: 36px;
+    transition: 0.5s ease-in-out 0.5s;
+}
+
+#wrap.header_hide .section__greeting:before {
+    top: 36px;
+}
+
+.section__greeting::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 0px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 36px;
+    transition: 0.35s ease-in-out 0.8s;
+}
+
+.section__greeting.active:before {
+    width: 340px;
+}
+
+.section__greeting.active:after {
+    height: 90px;
+}
+
+.greeting__title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,12 +119,12 @@
     height: 100%;
 }
 
-.section__greeting .text_box {
+.section__greeting .greeting-text {
     padding: 0 20px;
     margin: 0 auto;
 }
 
-.section__greeting .text_box h1 {
+.section__greeting .greeting-text h1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,56 +137,55 @@
     width: 100%
 }
 
-.section__greeting .text_box .key.key_space {
+.section__greeting .greeting-text .txt.txt_space {
     padding-right: 16px;
 }
 
-.key:nth-child(1) {
+.greeting-text .txt:nth-child(1) {
     animation: pressDown1 2s infinite;
 }
 
-.key:nth-child(2) {
+.greeting-text .txt:nth-child(2) {
     animation: pressDown2 3s infinite;
 }
 
-.key:nth-child(3) {
+.greeting-text .txt:nth-child(3) {
     animation: pressDown3 4s infinite;
 }
 
-.key:nth-child(4) {
+.greeting-text .txt:nth-child(4) {
     animation: pressDown4 2.5s infinite;
 }
 
-.key:nth-child(5) {
+.greeting-text .txt:nth-child(5) {
     animation: pressDown5 2.5s infinite;
 }
 
-.key:nth-child(6) {
+.greeting-text .txt:nth-child(6) {
     animation: pressDown6 3.5s infinite;
 }
 
-.key:nth-child(7) {
+.greeting-text .txt:nth-child(7) {
     animation: pressDown7 2.2s infinite;
 }
 
-.key:nth-child(8) {
+.greeting-text .txt:nth-child(8) {
     animation: pressDown8 3.2s infinite;
 }
 
-
-.key:nth-child(9) {
+.greeting-text .txt:nth-child(9) {
     animation: pressDown7 3.2s infinite;
 }
 
-.key:nth-child(10) {
+.greeting-text .txt:nth-child(10) {
     animation: pressDown6 3.2s infinite;
 }
 
-.key:nth-child(11) {
+.greeting-text .txt:nth-child(11) {
     animation: pressDown5 3.2s infinite;
 }
 
-.key:nth-child(12) {
+.greeting-text .txt:nth-child(12) {
     animation: pressDown4 3.2s infinite;
 }
 
@@ -242,7 +278,7 @@
     }
 }
 
-.section__greeting .images_box {
+.section__greeting .greeting-images {
     display: inline-block;
     width: calc(100% - 40px);
     max-width: 680px;
@@ -253,7 +289,7 @@
     filter: brightness(0.7);
 }
 
-.section__greeting .images_box .img {
+.section__greeting .greeting-images .img {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -261,11 +297,11 @@
     left: 0;
 }
 
-.section__greeting .images_box .img:not(:nth-child(1)) {
+.section__greeting .greeting-images .img:not(:nth-child(1)) {
     opacity: 0;
 }
 
-.section__greeting .images_box .img img {
+.section__greeting .greeting-images .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -299,15 +335,78 @@
     }
 }
 
+.aside_portfoilo {
+    position: absolute;
+    bottom: 12px;
+    left: 56px;
+    transform: rotate(-90deg);
+    transform-origin: 0 0 ;
+    transition: 0.35s ease-in-out 0.2s;
+}
+
+.aside_portfoilo h2 {
+    font-family: "Noto Sans";
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 7px;
+}
+
+.section__greeting.active .aside_portfoilo {
+    left: 32px;
+}
+
+.contact_me {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 38px;
+    right: 38px;
+}
+
+.contact_me span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 4px 12px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 8px;
+    padding-left: 36px;
+    position: relative;
+}
+
+.contact_me span:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url(../img/common/icon_pointer.svg) no-repeat center center / contain;
+}
+
+.contact_me h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: right;
+    margin-top: 4px;
+}
+
 /* 두번째 섹션 - 목표 */
-.section__dreaming {
+.section__introduce {
     width: 100%;
     height: auto;
     padding: 100px 0;
     text-align: center;
 }
   
-.section__dreaming span.top_bar {
+.section__introduce span.top_bar {
     display: inline-block;
     width: 1px;
     height: 30px;
@@ -315,12 +414,12 @@
     margin-bottom: 36px;
 }
 
-.section__dreaming .title {
+.section__introduce .title {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section__dreaming .title b {
+.section__introduce .title b {
     display: inline-block;
     font-size: 30px;
     font-weight: 700;
@@ -328,7 +427,7 @@
     margin-bottom: 24px;
 }
 
-.section__dreaming .title p {
+.section__introduce .title p {
     font-size: 18px;
     line-height: 28px;
     font-weight: 400;
@@ -366,7 +465,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, #222222 20%, rgb(105, 105, 105) 40%, rgb(161, 161, 161) 60%, #222222 80%);
+    background: linear-gradient(to right, #222222 20%, rgb(57, 57, 57) 40%, rgb(114, 114, 114) 60%, #222222 100%);
     background-size: 200% auto;
     animation: shine 6s linear infinite;
 }
@@ -381,202 +480,10 @@
     width: calc(100vw * (552 / 1800));
 }
 
-/* 세번째 섹션 - 경력 */
-.section__history {
-    width: 100%;
-    height: auto;
-    padding-top: 80px;
-    padding-bottom: 120px;
-}
-
-.section__history .sec__inner {
-    max-width: 1320px;
-}
-
-.history__title {
-    text-align: center;
-    margin-bottom: 56px;
-}
-
-.history__title h2 {
-    font-size: 56px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.aboutme_container {
-    display: flex;
-    align-items: flex-start;
-    gap: 120px;
-}
-
-.aboutme_container .text {
-    width: 100%;
-}
-
-.aboutme_container .info_history {
-    display: flex;
-    align-items: flex-start;
-    gap: 80px;
-}
-
-.history__wrap h4,
-.skills__wrap h4 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.history__wrap .my_history {
-    margin-top: 42px;
-}
-
-.my_history li {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 12px;
-    gap: 24px;
-    color: #fff;
-}
-
-.my_history li span.history__date {
-    display: inline-block;
-    width: 80px;
-    margin-right: 18px;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.my_history li p.history__cnts {
-    font-size: 18px;
-    font-weight: 500;
-} 
-
-.resume_list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.resume_list a {
-    display: inline-block;
-    text-decoration: underline;
-    font-size: 18px;
-    font-weight: 500;
-    position: relative;
-    padding-right: 22px;
-    margin-bottom: 8px;
-}
-
-.resume_list a.resume:after {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background: url(../img/common/icon_download.svg) no-repeat center center / contain;
-}
-
-.skills__wrap {
-    margin-top: 40px;
-}
-
-.my_skills {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
-}
-
-.my_skills li {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    padding: 4px;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid #E0E0E0;
-}
-
-.my_skills li img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.aboutme_container .img {
-    width: 320px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.aboutme_container .img .my_name {
-    margin-bottom: 24px;
-}
-
-.aboutme_container .img .my_name h2 {
-    font-size: 34px;
-    color: #fff;
-    font-weight: 600;
-}
-
-.aboutme_container .img .my_name h2 span {
-    font-size: 28px;
-    font-weight: 500;
-    margin-left: 12px;
-    display: inline-block;
-}
-
-.aboutme_container .img .profile_img {
-    width: 300px;
-    object-fit: contain;
-    aspect-ratio: 3 / 4;
-}
-
-.aboutme_container .profile_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.aboutme_container .my_strength {
-    width: 43%;
-}
-
-.strength__list {
-    transform: translateY(0px);
-}
-
-.strength__item {
-    position: relative;
-    margin-bottom: 40px;
-    padding-top: 48px;
-}
-
-.strength__item h1.num {
-    font-size: 80px;
-    font-weight: 800;
-    color: rgba(0, 0, 0, 0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.strength__item h4 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #fff;
-    margin-left: 48px;
-}
-
-/* 네번째 섹션 - 프로젝트 */
+/* 세번째 섹션 - 프로젝트 */
 .section__portfolio {
     padding-top: 120px;
-    padding-bottom: 240px;
+    padding-bottom: 120px;
 }
 .portfolio__title {
     text-align: center;
@@ -615,20 +522,6 @@
     object-fit: cover;
 }
 
-/* .portfolio__item--card .portfolio__thum:hover img {
-    filter: blur(3px);
-    transform:scale(1.08);
-    -webkit-transform:scale(1.08);
-    -moz-transform:scale(1.08);
-    -ms-transform:scale(1.08);
-    -o-transform:scale(1.08);
-    -webkit-filter: blur(3px);
-} */
-
-.portfolio__item--card .portfolio__thum:hover {
-    border-radius: 160px;
-}
-
 .portfolio__item--card .portfolio__thum:hover .portfolio__link {
     opacity: 1;
 }
@@ -644,6 +537,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    transition: 0.35s;
     background-color: #ffffffd6;
 }
 
@@ -682,7 +576,7 @@
 }
 
 .portfolio_tit h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     color: #fff;
 }
@@ -703,7 +597,7 @@ ul.portfolio__info {
 }
 
 ul.portfolio__info li {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     text-decoration: underline;
 }
@@ -753,6 +647,196 @@ ul.portfolio__info li:before {
     color: #fff;
 }
 
+.view-more__portfolio {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-more__link {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    transition: 0.35s;
+}
+
+.view-more__link h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.button_circle {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_circle::before,
+.button_circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.button_circle::before {
+    border: 1px solid transparent;
+}
+
+.view-more__link:hover {
+    gap: 24px;
+}
+
+.view-more__link:hover .button_circle::before {
+    border-top-color: #fff;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+}
+
+.button_circle::after {
+    border: 0 solid transparent;
+}
+
+.view-more__link:hover .button_circle::after {
+    border-top: 1px solid #fff;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    transform: rotate(270deg);
+    transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+}
+
+.button_circle .arrow {
+    display: inline-block;
+    width: 36px;
+    height: 24px;
+    background: url(../img/common/more_arrow.png) no-repeat center center / contain;
+}
+
+/* 네번째 섹션 - 나의 Dream (study, side project) */
+.section__dreaming {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
+.section__dreaming .dreaming__txt {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 48px;
+}
+
+.section__dreaming .dreaming__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 120px;
+    position: relative;
+    height: 360px;
+}
+
+.section__dreaming .dreaming__title h1 {
+    font-size: 120px;
+    line-height: 120px;
+    font-weight: 700;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.section__dreaming .dreaming__title h1:nth-child(1) {
+    top: 0;
+    left: 30%;
+}
+
+.section__dreaming .dreaming__title h1:nth-child(2) {
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: #121212;
+    top: 120px;
+    left: 50%;
+}
+
+.section__dreaming .dreaming__title h1:nth-child(3) {
+    top: 240px;
+    left: 80%;
+}
+
+.study-project {
+    margin-top: 80px;
+    padding: 0 36px;
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+}
+
+.study-project__wrap {
+    overflow-y: hidden;
+}
+
+.study-project__list {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 100px;
+}
+
+.study-project__list .study-project__item {
+    width: 70vw;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.study-project__item .thum {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.study-project__item .thum img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.study-project__item .desc {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 24px;
+}
+
+.study-project__item .desc h3 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.study-project__item .desc ul {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.study-project__item .desc ul li {
+    padding: 4px 12px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
 /* Mobile */
 @media screen and (max-width:767px) {
     .loading .text_box h1 {
@@ -765,7 +849,7 @@ ul.portfolio__info li:before {
     }
 
     /* 첫번째 섹션 - 소개 */
-    .section__greeting .text_box h1 {
+    .section__greeting .greeting-text h1 {
         font-size: 56px;
         text-align: center;
     }
@@ -779,21 +863,21 @@ ul.portfolio__info li:before {
     }
 
     /* 두번째 섹션 - 목표 */
-    .section__dreaming {
+    .section__introduce {
         padding: 80px 0;
     }
 
-    .section__dreaming span.top_bar {
+    .section__introduce span.top_bar {
         height: 22px;
         margin-bottom: 20px;
     }
 
-    .section__dreaming .title b {
+    .section__introduce .title b {
         font-size: 18px;
         margin-bottom: 18px;
     }
 
-    .section__dreaming .title p {
+    .section__introduce .title p {
         font-size: 14px;
         line-height: 20px;
     }
