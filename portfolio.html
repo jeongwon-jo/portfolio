@@ -1,575 +1,538 @@
-<section class="section__portfolio">
-  <div class="sec__inner">
-    <div class="portfolio__title">
-      <h2>PROJECTS</h1>
-    </div>
-    <div class="portfolio__contents">
-      <div class="portfolio__list">
-        <!-- 누베베 대시보드 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/nubebe_screenshot.png" alt="누베베 대시보드" style="object-position: left;">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>누베베 대시보드</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              고정 해상도(1920 * 1080)에 따른 키오스크 퍼블리싱
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 20페이지</b></span>
-              <p>작업기간 <b class="work">5일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>시맨틱 마크업</li>
-              <li>관리자 레이아웃</li>
-              <li>chart.js</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/nubebe/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/nubebe" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- 이유씨앤씨 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/eucnc_screenshot.png" alt="이유씨앤씨">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>이유씨앤씨</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              고정 해상도(1920 * 1080)에 따른 키오스크 퍼블리싱
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 7페이지</b></span>
-              <p>작업기간 <b class="work">5일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>시맨틱 마크업</li>
-              <li>swiper</li>
-              <li>animation</li>
-              <li>aos</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="https://www.eucnc.co.kr/kr/index.php" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/eucnc" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조정원 포트폴리오</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./img/common/favicon.ico?">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/common/favicon.ico">
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Smooth Scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+  <!-- gsap & TWEENMAX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/attribute.css">
+  <script src="./js/common.js" defer></script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="cursor" class="cursor"></div>
+    <div class="container">
+      <header class="header">
+        <div class="header__inner">
+          <a href="./index.html" class="header_logo">
+            <img src="./img/common/logo_white.png" alt="로고">
+          </a>
+          <div class="header_menu-bar">
+            <a href="./file/resume_jjw.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
+            <button type="button" class="btn_menu" onclick="toggleGnbMenu()"></button>
+            <nav class="header_nav">
+              <ul>
+                <li class="home"><a href="./index.html">HOME</a></li>
+                <li class="about"><a href="./about.html">ABOUT</a></li>
+                <li class="portfolio"><a href="./portfolio.html">PORTFOLIO</a></li>
+                <li class="contact"><a href="./contact.html">CONTACT</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-        <!-- 픽컴퍼니 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/pickcompany_screenshot.png" alt="픽컴퍼니">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
+      </header>
+      <main class="main">
+        <div class="portfoilo">
+          <section class="section__greeting">
+            <div class="greeting-text">
+              <h1>
+                <span class="txt">P</span>
+                <span class="txt">O</span>
+                <span class="txt">R</span>
+                <span class="txt">T</span>
+                <span class="txt">F</span>
+                <span class="txt">O</span>
+                <span class="txt">L</span>
+                <span class="txt">I</span>
+                <span class="txt">O</span>
+              </h1>
+            </div>
+            <div class="scroll_down">
+              <span>SCROLL DOWN</span>
+            </div>
+            <aside class="aside_portfoilo">
+              <h2>jjeong1 portfolio</h2>
+            </aside>
+          </section>
+          <section class="section__portfolio">
+            <div class="sec__inner">
+              <div class="portfolio__contents">
+                <div class="portfolio__list">
+                  <!-- 이유씨앤씨 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/eucnc_screenshot.png" alt="이유씨앤씨">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>이유씨앤씨</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>시맨틱 마크업</li>
+                        <li>swiper</li>
+                        <li>animation</li>
+                        <li>aos</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 트위터 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/twitter_screenshot.png" alt="트위터">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="#">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>트위터</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>react</li>
+                        <li>typescript</li>
+                        <li>scss</li>
+                        <li>firebase auth</li>
+                        <li>firebase firestore</li>
+                        <li>클론코딩</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 돈드로우 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/dontdraw_screenshot.png" alt="돈드로우" style="object-position: left;">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>돈드로우</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>공통 css 작업</li>
+                        <li>반응형 PC & PAD & MO</li>
+                        <li>쇼핑몰 사이트</li>
+                        <li>bootstrap</li>
+                        <li>swiper</li>
+                        <li>grid & flex</li>
+                        <li>jQuery</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 도미노피자 키오스크 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/domino_screenshot.png" alt="도미노피자 키오스크">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>도미노피자 키오스크</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>시맨틱 마크업</li>
+                        <li>키오스크</li>
+                        <li>swiper</li>
+                        <li>jQuery</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 서울우유 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/seoul_milk_screenshot.png" alt="서울우유">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>서울우유</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>Figma</li>
+                        <li>Mobile Web</li>
+                        <li>UI Design</li>
+                        <li>Responsive</li>
+                        <li>CSS</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- CEK -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/cek_screenshot.png" alt="CEK">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>CEK</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>시맨틱 마크업</li>
+                        <li>Gsap</li>
+                        <li>Fullpage.js</li>
+                        <li>swiper</li>
+                        <li>jQuery</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- i보다 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/iboda_screenshot.png" alt="아이보다">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>i보다</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>Custom Bar Chart</li>
+                        <li>초등, 중등, 고등에 따른 결과지</li>
+                        <li>@media print</li>
+                        <li>jQuery</li>
+                        <li>animation</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 히어유알 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/hereur_screenshot.png" alt="히어유알">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>히어유알</h4>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>axios </li>
+                        <li>API 호출 & 분기처리</li>
+                        <li>Mobile Web</li>
+                        <li>swiper</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 닥터젠 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/doctagen_screenshot.png" alt="닥터젠">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>닥터젠</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>Vue.js</li>
+                        <li>vue-router</li>
+                        <li>flex</li>
+                        <li>반응형</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- GDL -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/gdl_screenshot.png" alt="GDL">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>GDL</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>EChart.js</li>
+                        <li>css</li>
+                        <li>SVG</li>
+                        <li>animation</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 누베베 대시보드 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/nubebe_screenshot.png" alt="누베베 대시보드" style="object-position: left;">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>누베베 대시보드</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>시맨틱 마크업</li>
+                        <li>관리자 레이아웃</li>
+                        <li>chart.js</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 픽컴퍼니 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/pickcompany_screenshot.png" alt="픽컴퍼니">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>픽컴퍼니</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>fullpage.js</li>
+                        <li>swiper</li>
+                        <li>animation</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 배달의 민족 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/baemin_screenshot.png" alt="배달의민족">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>배달의 민족</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>Fullpage.js</li>
+                        <li>css</li>
+                        <li>absolute</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Youtube -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/youtube_screenshot.png" alt="유튜브">
+                      <div onclick="location.href=''" class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="#">상세정보</a></li>
+                            <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
+                            <li><a href="#">GITHUB</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>YOUTUBE</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>Grid</li>
+                        <li>SCSS(SASS)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>픽컴퍼니</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              고정 해상도(1920 * 1080)에 따른 키오스크 퍼블리싱
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 14페이지</b></span>
-              <p>작업기간 <b class="work">5일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>fullpage.js</li>
-              <li>swiper</li>
-              <li>animation</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/pickcompany/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/pickcompany" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
+          </section>
         </div>
-        <!-- 도미노피자 키오스크 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/domino_screenshot.png" alt="도미노피자 키오스크">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__title">
+            <h1>&copy; JJEONG1.JO</h1>
           </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>도미노피자 키오스크</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              고정 해상도(1920 * 1080)에 따른 키오스크 퍼블리싱
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 7페이지</b></span>
-              <p>작업기간 <b class="work">5일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>시맨틱 마크업</li>
-              <li>키오스크</li>
-              <li>swiper</li>
-              <li>jQuery</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="https://ce-korea.com/" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/CEK" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
+          <ul class="footer__mylink">
+            <li>jjeong1.jo@gmail.com</li>
+            <li><a href="./file/resume_jjw.pdf" class="link resume">RESUME</a></li>
+            <li><a href="#" class="link notion">NOTION</a></li>
+            <li><a href="https://github.com/jeongwon-jo" class="link github" target="_blank">GITHUB</a></li>
+          </ul>
         </div>
-        <!-- 서울우유 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/seoul_milk_screenshot.png" alt="서울우유">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>서울우유</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              모바일 웹 디자인 및 퍼블리싱 업무를 수행하며 모바일 웹에 대한 이해도를 심화시켰으며, 모바일 해상도에 따른 반응형 구현 기술의 전문성을 강화하였습니다.
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">17페이지</b></span>
-              <p>작업기간 <b class="work">10일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>Figma</li>
-              <li>Mobile Web</li>
-              <li>UI Design</li>
-              <li>Responsive</li>
-              <li>CSS</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/seoul_milk/mobile-mockup/multiview.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="#" target="_blank" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- CEK -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/cek_screenshot.png" alt="CEK">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>CEK</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              풀페이지와 GSAP을 활용한 인터랙션에 중점을 두어 다양한 스크립트를 구현
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 22페이지</b></span>
-              <p>작업기간 <b class="work">12일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>시맨틱 마크업</li>
-              <li>Gsap</li>
-              <li>Fullpage.js</li>
-              <li>swiper</li>
-              <li>jQuery</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="https://ce-korea.com/" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/CEK" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- 돈드로우 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/dontdraw_screenshot.png" alt="돈드로우">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>돈드로우</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              변수를 활용하고, 공통된 기본 스타일을 이용하여 모듈화된 레이아웃, 컴포넌트화 하고, 부트스트랩을 이용한 관리자 페이지 작업
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 70페이지</b></span>
-              <p>작업기간 <b class="work">약 1달</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>공통 css 작업</li>
-              <li>반응형 PC & PAD & MO</li>
-              <li>쇼핑몰 사이트</li>
-              <li>bootstrap</li>
-              <li>swiper</li>
-              <li>grid & flex</li>
-              <li>jQuery</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="https://dontdrawtest.com/" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/dontdraw" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- i보다 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/iboda_screenshot.png" alt="아이보다">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>i보다</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              미술성향검사를 실시한 학생들의 결과지 작업. 다양한 차트와 프린트 출력을 위한 CSS 작업
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">약 4페이지</b></span>
-              <p>작업기간 <b class="work">약 5일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>Custom Bar Chart</li>
-              <li>초등, 중등, 고등에 따른 결과지</li>
-              <li>@media print</li>
-              <li>jQuery</li>
-              <li>animation</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/iboda/저학년/초_저학년_결과지.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/iboda" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- 커넥티드 -->
-        <!-- <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <button type="button" class="btn_go_detail">GO DETAIL</button>
-            <img src="./img/portfolio/connected_screenshot.png" alt="CONNECTED">
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>CONNECTED</h4>
-            </div>
-            <p class="portfolio_description">
-              직접 코드를 입력하여 당첨여부를 확인하고, 당첨결과에 따른 경품지급 & 개인정보 전송
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">20페이지</b></span>
-              <p>작업기간 <b class="work">약 10일</b></span>
-            </div>
-            <ul class="portfolio__info">
-              <li>axios </li>
-              <li>API 호출 & 분기처리</li>
-              <li>Mobile Web</li>
-              <li>swiper</li>
-            </ul>
-            <div class="portfolio__btns">
-              <a href="./projects/hereur/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/hereur" target="_blank" type="button" class="btn">GITHUB</a>
-            </div>
-          </div>
-        </div> -->
-        <!-- 히어유알 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/hereur_screenshot.png" alt="히어유알">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>히어유알</h4>
-            </div>
-            <!-- <p class="portfolio_description">
-              직접 코드를 입력하여 당첨여부를 확인하고, 당첨결과에 따른 경품지급 & 개인정보 전송
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">1페이지</b></span>
-              <p>작업기간 <b class="work">약 3일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>axios </li>
-              <li>API 호출 & 분기처리</li>
-              <li>Mobile Web</li>
-              <li>swiper</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/hereur/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/hereur" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- 닥터젠 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/doctagen_screenshot.png" alt="닥터젠">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>닥터젠</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              Vue.js와 Flexbox를 활용한 반응형 카드 리스트 퍼블리싱 작업
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">1페이지</b></span>
-              <p>작업기간 <b class="work">1일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>Vue.js</li>
-              <li>vue-router</li>
-              <li>flex</li>
-              <li>반응형</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="https://doctagen.com/" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="#" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- GDL -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/gdl_screenshot.png" alt="GDL">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>GDL</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              ECharts.js를 활용하여 다양한 차트를 구현하며, 조건에 따른 분기 처리를 통해 SVG 코드를 수정하였고, 조건에 따라서 애니메이션을 다르게 보이게끔 구현.
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">7페이지</b></span>
-              <p>작업기간 <b class="work">5일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>EChart.js</li>
-              <li>css</li>
-              <li>SVG</li>
-              <li>animation</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/gdl/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- 배달의 민족 -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/baemin_screenshot.png" alt="배달의민족">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>배달의 민족</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              배달의민족 플랫폼을 클론 코딩하는 과정을 통해 풀페이지를 구현
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">1페이지</b></span>
-              <p>작업기간 <b class="work">2일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>Fullpage.js</li>
-              <li>css</li>
-              <li>absolute</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/baemin/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="#" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
-        <!-- Youtube -->
-        <div class="portfolio__item--card">
-          <div class="portfolio__thum">
-            <img src="./img/portfolio/youtube_screenshot.png" alt="유튜브">
-            <div onclick="location.href=''" class="portfolio__link">
-              <div class="link__info">
-                <h2>이 프로젝트에 대한<br>
-                  상세 정보를 설명드릴게요.
-                </h2>
-                <ul>
-                  <li><a href="#">상세정보</a></li>
-                  <li><a href="./projects/nubebe/index.html">사이트보기</a></li>
-                  <li><a href="#">GITHUB</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="portfolio__desc">
-            <div class="portfolio_tit">
-              <h3>YOUTUBE</h3>
-            </div>
-            <!-- <p class="portfolio_description">
-              유튜브 플랫폼을 클론 코딩하는 과정을 통해 SCSS를 활용한 그리드 레이아웃을 구현
-            </p>
-            <div class="portfolio__work">
-              <p>기여도 <b class="work">100%</b></span>
-              <p>작업분량 <b class="work">1페이지</b></span>
-              <p>작업기간 <b class="work">2일</b></span>
-            </div> -->
-            <ul class="portfolio__info">
-              <li>Grid</li>
-              <li>SCSS(SASS)</li>
-            </ul>
-            <!-- <div class="portfolio__btns">
-              <a href="./projects/youtube/index.html" target="_blank" class="btn btn_go_site">GO SITE</a>
-              <a href="https://github.com/jeongwon-jo/CEK" target="_blank" type="button" class="btn">GITHUB</a>
-            </div> -->
-          </div>
-        </div>
+      </footer>
+      <div class="footer__slider">
+        <ul class="list">
+          <li>UI Developer</li>
+          <li>Web Publisher</li>
+          <li>Front-End Developer</li>
+          <li>UI Developer</li>
+          <li>Web Publisher</li>
+          <li>Front-End Developer</li>
+          <li>UI Developer</li>
+          <li>Web Publisher</li>
+          <li>Front-End Developer</li>
+          <li>UI Developer</li>
+          <li>Web Publisher</li>
+          <li>Front-End Developer</li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
+  <script>
+    setTimeout(() => {
+      $('body').css('overflow-y', 'scroll')
+      $('.section__greeting').addClass('active')
+    }, 200);
+  </script>
+</body>
+</html>
