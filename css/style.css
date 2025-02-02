@@ -1434,6 +1434,12 @@ ul.portfolio__info li:before {
         padding: 0 16px;
     }
     
+    .introduce__myself .star1 {
+        left: auto;
+        right: 36px;
+        top: 20px;
+    }
+    
     .introduce__text h1 {
         font-size: 48px;
         margin-bottom: 24px;
@@ -1502,6 +1508,12 @@ ul.portfolio__info li:before {
     .introduce__detail .sec__inner {
         flex-direction: column;
         gap: 48px;
+    }
+
+    .introduce__detail .star2 {
+        right: 40px;
+        width: 100px;
+        height: 100px;
     }
 
     .history__contents .flex_box {
