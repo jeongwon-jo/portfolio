@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지리산쌍계한의원</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="지리산쌍계한의원" />
+  <meta property="og:description" content="지리산쌍계한의원" />
+  <meta property="og:image" content="./img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/setting.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/sub.css">
+  <link rel="stylesheet" href="./css/attribute.css">
+  <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__top">
+        <div class="header__inner">
+          <div class="header__tel">
+            <span>대표번호</span>
+            <h2>02-3462-1075</h2>
+          </div>
+          <a href="./index.html" class="logo">
+            <img src="./img/common/logo.png" alt="지리산쌍계한의원">
+          </a>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <nav class="header__nav">
+        <div class="header__inner">
+          <ul class="nav_ul">
+            <li class="nav_li_depth1 " data-subMenuId="subMenu1">
+              <a href="./intro.html">한의원 소개</a>
+              <div id="subMenu1" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./intro.html">한의원 소개</a></h3>
+                    <p>지리산 청정수를 활용한 한약 치료와<br>
+                      최신 치료 기법을 접목한 효과적인 진료</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secIntro">지리산쌍계한의원 소개</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secDoctors">의료진 소개</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secLook">둘러보기</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secCometo">오시는 길</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu2">
+              <a href="./clinic1.html">통증 클리닉</a>
+              <div id="subMenu2" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic1.html">통증 클리닉</a></h3>
+                    <p>정확한 원인 진단으로 빠르게 통증을 해결</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic1">디스크, 협착(목, 허리)</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic2">오십견, 회전근개</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic3">퇴행성 무릎</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic4">엘보우, 손목, 발목 질환</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu3">
+              <a href="./clinic2.html">성장 클리닉</a>
+              <div id="subMenu3" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic2.html">성장 클리닉</a></h3>
+                    <p>개인별 성장 상태 분석으로<br> 최적의 성장 환경 조성</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic2.html?target=clinic1">성장</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic2.html?target=clinic2">비염</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic2.html?target=clinic3">소아 식욕 개선 클리닉</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu4">
+              <a href="./clinic3.html">여성 클리닉</a>
+              <div id="subMenu4" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic3.html">여성 클리닉</a></h3>
+                    <p>기혈 회복 및 어혈 제거,<br> 혈류 순환 개선 및 호르몬 밸런스 조절</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic1">산후 조리</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic2">생리통, 생리 불순</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic3">난임, 불임</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic4">갱년기 장애</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1 active" data-subMenuId="subMenu5">
+              <a href="./clinic4_1.html">교통사고 클리닉</a>
+              <div id="subMenu5" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic4_1.html">교통사고 클리닉</a></h3>
+                    <p>정확한 진찰과<br> 환자 개인 맞춤형 치료 진행</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic4_1.html">접수 방법, 치료 과정</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic4_2.html">약침, 추나 요법</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic4_3.html">어혈 탕약</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu6">
+              <a href="./clinic5.html">다이어트 클리닉</a>
+              <div id="subMenu6" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic5.html">다이어트 클리닉</a></h3>
+                    <p>불필요한 독소 배출,<br> 체질별 효과적인 체중 감량</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic5.html">다이어트 한약</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu7">
+              <a href="./clinic6_1.html">보약 · 치료한약 클리닉</a>
+              <div id="subMenu7" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic6_1.html">보약 · 치료한약 클리닉</a></h3>
+                    <p>개인 맞춤형 보약 처방,<br> 몸의 균형 및 활력 증진</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_1.html">기력 보약</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_2.html">과민성 장 증후군</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_3.html">두통, 어지럼증</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_4.html">공진단, 경옥고</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside class="mo_header_sidebar">
+      <div class="sidebar__inner">
+        <div class="sidebar__header">
+          <div class="logo">
+            <img src="./img/common/logo.png" alt="지리산쌍계한의원">
+          </div>
+        </div>
+        <div class="sidebar__contents">
+          <nav class="sidebar_gnb">
+            <ul class="sidebar_gnb--1depth">
+              <li>
+                <a href="javascript:void(0)">한의원 소개</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./intro.html?target=secIntro">지리산쌍계한의원 소개</a></li>
+                  <li><a href="./intro.html?target=secDoctors">의료진 소개</a></li>
+                  <li><a href="./intro.html?target=secLook">둘러보기</a></li>
+                  <li><a href="./intro.html?target=secCometo">오시는 길</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">통증 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic1.html?target=clinic1">디스크, 협착(목, 허리)</a></li>
+                  <li><a href="./clinic1.html?target=clinic2">오십견, 회전근개</a></li>
+                  <li><a href="./clinic1.html?target=clinic3">퇴행성 무릎</a></li>
+                  <li><a href="./clinic1.html?target=clinic4">엘보우, 손목, 발목 질환</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">성장 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic2.html?target=clinic1">성장</a></li>
+                  <li><a href="./clinic2.html?target=clinic2">비염</a></li>
+                  <li><a href="./clinic2.html?target=clinic3">소아 식욕 개선 클리닉</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">여성 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic3.html?target=clinic1">산후 조리</a></li>
+                  <li><a href="./clinic3.html?target=clinic2">생리통, 생리 불순</a></li>
+                  <li><a href="./clinic3.html?target=clinic3">난임, 불임</a></li>
+                  <li><a href="./clinic3.html?target=clinic4">갱년기 장애</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">교통사고 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic4_1.html">접수 방법, 치료 과정</a></li>
+                  <li><a href="./clinic4_2.html">약침, 추나 요법</a></li>
+                  <li><a href="./clinic4_3.html">어혈 탕약</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">다이어트 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic5.html">다이어트 한약</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">보약 · 치료한약 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic6_1.html">기력 보약</a></li>
+                  <li><a href="./clinic6_2.html">과민성 장 증후군</a></li>
+                  <li><a href="./clinic6_3.html">두통, 어지럼증</a></li>
+                  <li><a href="./clinic6_4.html">공진단, 경옥고</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="sidebar__list">
+            <a href="./intro.html?target=secCometo" class="sidebar__item">
+              <div class="icon">
+                <img src="./img/icon/icon_sidebar_loc.svg" alt="오시는 길 아이콘" width="40">
+              </div>
+              <h3 class="menu_nm">오시는 길</h3>
+            </a>
+            <a href="https://booking.naver.com/booking/13/bizes/1135781" target="_blank" class="sidebar__item">
+              <div class="icon">
+                <img src="./img/icon/icon_sidebar_naver.svg" alt="네이버예약 아이콘" width="40">
+              </div>
+              <h3 class="menu_nm">네이버 예약</h3>
+            </a>
+            <div class="sidebar__item">
+              <div class="icon">
+                <img src="./img/icon/icon_sidebar_kakao.svg" alt="카카오톡 상담 아이콘" width="40">
+              </div>
+              <h3 class="menu_nm">카카오톡 상담</h3>
+            </div>
+            <div class="sidebar__item item--call">
+              <span>대표번호</span>
+              <h3>02-3462-1075</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="page__header">
+        <div class="bg">
+          <img src="./img/background/clinic4_bg.png" alt="교통사고 클리닉">
+        </div>
+        <div class="container">
+          <div class="page__contents">
+            <div class="page__title">
+              <h1>교통사고 클리닉</h1>
+              <p>숙련된 한의사가 직접 시행하는 추나 요법과 약침 치료</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__tabs active_first">
+        <ul>
+          <li class="active"><a href="./clinic4_1.html">접수 방법 · 치료 과정</a></li>
+          <li><a href="./clinic4_2.html">약침 · 추나 요법</a></li>
+          <li><a href="./clinic4_3.html">어혈 탕약</a></li>
+        </ul>
+      </div>
+      <div class="clinic__inner">
+        <section class="accident_way">
+          <div class="container">
+            <div class="common_title">
+              <h3>교통사고 클리닉 접수 방법</h3>
+            </div>
+            <div class="accident-method">
+              <div class="accident-way__flow">
+                <div class="way">
+                  <div class="icon">
+                    <img src="./img/accident_way_01.svg" alt="사고 접수 번호 확인">
+                  </div>
+                  <p>사고 접수 번호 확인</p>
+                </div>
+                <div class="arrow"></div>
+                <div class="way">
+                  <div class="icon">
+                    <img src="./img/accident_way_02.svg" alt="내원 및 접수">
+                  </div>
+                  <p>사고 접수 번호 확인</p>
+                </div>
+                <div class="arrow"></div>
+                <div class="way">
+                  <div class="icon">
+                    <img src="./img/accident_way_03.svg" alt="보험사 확인 절차">
+                  </div>
+                  <p>보험사 확인 절차</p>
+                </div>
+                <div class="arrow"></div>
+                <div class="way">
+                  <div class="icon">
+                    <img src="./img/accident_way_04.svg" alt="치료">
+                  </div>
+                  <p>치료</p>
+                </div>
+              </div>
+              <div class="flow-detail">
+                <div class="flow-detail__item">
+                  <div class="title" style="background-color: #E3E4E6;">사고 접수 번호 확인</div>
+                  <div class="cnts">교통사고 발생 시, 보험사로부터 대인사고 접수번호를 받습니다.</div>
+                </div>
+                <div class="flow-detail__item">
+                  <div class="title" style="background-color: #B5B8BD;">내원 및 접수</div>
+                  <div class="cnts">한의원 방문 시, 대인사고 접수번호와 보험사 담당자 연락처를 제공합니다. 이를 통해 자동차 보험 적용 여부를 확인하고, 진료비 지불보증서를 발급받습니다.</div>
+                </div>
+                <div class="flow-detail__item">
+                  <div class="title" style="background-color: #9EA2A9;">보험사 확인 절차</div>
+                  <div class="cnts">한의원에서 보험사와 직접 연락하여 진료비 지불보증서를 수령합니다.</div>
+                </div>
+                <div class="flow-detail__item">
+                  <div class="title" style="background-color: #717781;">치료</div>
+                  <div class="cnts">정확한 진단과 치료 계획을 바탕으로 약침 치료를 통해 손상된 조직의 회복을 돕고, 염증을 줄이며, 신경 압박을 완화하여 빠른 회복을 유도합니다.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="accident_course">
+          <div class="container">
+            <div class="common_title">
+              <h3>교통사고 클리닉 치료 과정</h3>
+            </div>
+            <div class="step-box">
+              <div class="step-box__item">
+                <div class="step__title">
+                  <span class="no">STEP.1</span>
+                  <h3>초진 상담 및 검진</h3>
+                </div>
+                <div class="step__contents">
+                  <p>-한의사와의 상담을 통해 사고 경위와 현재 증상을 상세히 파악합니다.</p>
+                </div>
+              </div>
+              <div class="step-box__item">
+                <div class="step__title">
+                  <span class="no">STEP.2</span>
+                  <h3>치료 계획 수립</h3>
+                </div>
+                <div class="step__contents">
+                  <p>-진찰 결과를 바탕으로 환자 개인의 상태에 맞는 맞춤형 치료 계획을 수립합니다.</p>
+                </div>
+              </div>
+              <div class="step-box__item">
+                <div class="step__title">
+                  <span class="no">STEP.3</span>
+                  <h3>치료 진행</h3>
+                </div>
+                <div class="step__contents">
+                  <div class="step-progress">
+                    <div class="progress__item">
+                      <div class="progress_thum">
+                        <img src="./img/clinic_img_06.png" alt="약침 치료">
+                      </div>
+                      <div class="progress_desc">
+                        <h4>약침 치료</h4>
+                        <p>한약 성분을 정제한 약침액을
+                        통증 부위에 주입하여
+                        염증을 감소시키고,
+                        손상된 조직의 회복을 돕습니다.</p>
+                      </div>
+                    </div>
+                    <div class="progress__item">
+                      <div class="progress_thum">
+                        <img src="./img/clinic_img_03.png" alt="추나 치료">
+                      </div>
+                      <div class="progress_desc">
+                        <h4>추나 치료</h4>
+                        <p>숙련된 한의사가 손으로
+                        척추와 관절을 부드럽게 조정하여,
+                        흐트러진 균형을 바로잡고
+                        통증을 경감시킵니다.</p>
+                      </div>
+                    </div>
+                    <div class="progress__item">
+                      <div class="progress_thum">
+                        <img src="./img/clinic_img_05.png" alt="침 치료">
+                      </div>
+                      <div class="progress_desc">
+                        <h4>침 치료</h4>
+                        <p>경직된 근육과 인대를 이완시키고,
+                        혈액순환을 촉진하여
+                        통증을 완화합니다.</p>
+                      </div>
+                    </div>
+                    <div class="progress__item">
+                      <div class="progress_thum">
+                        <img src="./img/clinic_img_08.png" alt="물리 치료">
+                      </div>
+                      <div class="progress_desc">
+                        <h4>물리 치료</h4>
+                        <p>온열 요법, 전기 자극 등을 통해
+                        근육의 긴장을 완화하고,
+                        통증을 줄입니다.</p>
+                      </div>
+                    </div>
+                    <div class="progress__item">
+                      <div class="progress_thum">
+                        <img src="./img/clinic_img_01.png" alt="한약 치료">
+                      </div>
+                      <div class="progress_desc">
+                        <h4>한약 치료</h4>
+                        <p>환자의 상태에 맞는 한약을 처방하여,
+                        내부 장기의 기능을 강화하고,
+                        전반적인 건강 회복을 지원합니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-box__item">
+                <div class="step__title">
+                  <span class="no">STEP.4</span>
+                  <h3>치료 계획 수립</h3>
+                </div>
+                <div class="step__contents">
+                  <p>-치료 후 증상 개선 여부를 지속적으로 모니터링하며, 필요에 따라 치료 계획을 조정합니다.</p>
+                  <p>-교통사고 후유증은 초기 치료가 매우 중요합니다. 사고 후 증상이 경미하더라도, 빠른 시일 내에 내원하여 전문적인 진료를 받으시기 바랍니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <div class="sidebar__list">
+        <a href="./index.html?target=homeDoctors" class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_time.svg" alt="진료시간 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">진료시간</h3>
+        </a>
+        <a href="./intro.html?target=secCometo" class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_loc.svg" alt="오시는 길 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">오시는 길</h3>
+        </a>
+        <a href="https://booking.naver.com/booking/13/bizes/1135781" target="_blank" class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_naver.svg" alt="네이버예약 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">네이버 예약</h3>
+        </a>
+        <div class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_kakao.svg" alt="카카오톡 상담 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">카카오톡 상담</h3>
+        </div>
+        <div class="sidebar__item item--call">
+          <span>대표번호</span>
+          <h3>02-3462-1075</h3>
+        </div>
+      </div>
+    </aside>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="./img/common/footer_logo.png" alt="지리산쌍계한의원">
+        </div>
+        <div class="footer__info">
+          <h3>지리산쌍계한의원</h3>
+          <ul class="footer_sidebar">
+            <li><a href="#" class="fw700">개인정보취급방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">진료시간</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+          <div class="footer__company-info">
+            <ul class="company-info mo_show">
+              <li>
+                <span>병원명</span>
+                <b>지리산쌍계한의원</b>
+              </li>
+              <li>
+                <span>대표자</span>
+                <b>조영빈</b>
+              </li>
+            </ul>
+            <ul class="company-info">
+              <li>
+                <span>주소</span>
+                <b>서울특별시 강남구 선릉로 26 2층 지리산쌍계한의원</b>
+              </li>
+            </ul>
+            <ul class="company-info">
+              <li class="pc_show">
+                <span>대표자</span>
+                <b>조영빈</b>
+              </li>
+              <li>
+                <span>사업자 등록번호</span>
+                <b>605-94-17208</b>
+              </li>
+              <li>
+                <span>대표번호</span>
+                <b>02-3462-1075</b>
+              </li>
+              <li>
+                <span>FAX</span>
+                <b>02-3462-1075</b>
+              </li>
+            </ul>
+          </div>
+          <p class="footer__copyright">Copyright ⓒ 2024 지리산쌍계한의원 All right reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

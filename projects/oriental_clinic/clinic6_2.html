@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지리산쌍계한의원</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="지리산쌍계한의원" />
+  <meta property="og:description" content="지리산쌍계한의원" />
+  <meta property="og:image" content="./img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/setting.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/sub.css">
+  <link rel="stylesheet" href="./css/attribute.css">
+  <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__top">
+        <div class="header__inner">
+          <div class="header__tel">
+            <span>대표번호</span>
+            <h2>02-3462-1075</h2>
+          </div>
+          <a href="./index.html" class="logo">
+            <img src="./img/common/logo.png" alt="지리산쌍계한의원">
+          </a>
+          <button type="button" class="btn_mo_menu"></button>
+        </div>
+      </div>
+      <nav class="header__nav">
+        <div class="header__inner">
+          <ul class="nav_ul">
+            <li class="nav_li_depth1 " data-subMenuId="subMenu1">
+              <a href="./intro.html">한의원 소개</a>
+              <div id="subMenu1" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./intro.html">한의원 소개</a></h3>
+                    <p>지리산 청정수를 활용한 한약 치료와<br>
+                      최신 치료 기법을 접목한 효과적인 진료</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secIntro">지리산쌍계한의원 소개</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secDoctors">의료진 소개</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secLook">둘러보기</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./intro.html?target=secCometo">오시는 길</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu2">
+              <a href="./clinic1.html">통증 클리닉</a>
+              <div id="subMenu2" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic1.html">통증 클리닉</a></h3>
+                    <p>정확한 원인 진단으로 빠르게 통증을 해결</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic1">디스크, 협착(목, 허리)</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic2">오십견, 회전근개</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic3">퇴행성 무릎</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic1.html?target=clinic4">엘보우, 손목, 발목 질환</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu3">
+              <a href="./clinic2.html">성장 클리닉</a>
+              <div id="subMenu3" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic2.html">성장 클리닉</a></h3>
+                    <p>개인별 성장 상태 분석으로<br> 최적의 성장 환경 조성</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic2.html?target=clinic1">성장</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic2.html?target=clinic2">비염</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic2.html?target=clinic3">소아 식욕 개선 클리닉</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1" data-subMenuId="subMenu4">
+              <a href="./clinic3.html">여성 클리닉</a>
+              <div id="subMenu4" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic3.html">여성 클리닉</a></h3>
+                    <p>기혈 회복 및 어혈 제거,<br> 혈류 순환 개선 및 호르몬 밸런스 조절</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic1">산후 조리</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic2">생리통, 생리 불순</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic3">난임, 불임</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic3.html?target=clinic4">갱년기 장애</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1 " data-subMenuId="subMenu5">
+              <a href="./clinic4_1.html">교통사고 클리닉</a>
+              <div id="subMenu5" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic4_1.html">교통사고 클리닉</a></h3>
+                    <p>정확한 진찰과<br> 환자 개인 맞춤형 치료 진행</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic4_1.html">접수 방법, 치료 과정</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic4_2.html">약침, 추나 요법</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic4_3.html">어혈 탕약</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1 " data-subMenuId="subMenu6">
+              <a href="./clinic5.html">다이어트 클리닉</a>
+              <div id="subMenu6" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic5.html">다이어트 클리닉</a></h3>
+                    <p>불필요한 독소 배출,<br> 체질별 효과적인 체중 감량</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic5.html">다이어트 한약</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav_li_depth1 active" data-subMenuId="subMenu7">
+              <a href="./clinic6_1.html">보약 · 치료한약 클리닉</a>
+              <div id="subMenu7" class="sub-nav__section">
+                <div class="sub-nav__inner">
+                  <div class="sub-nav__title">
+                    <h3><a href="./clinic6_1.html">보약 · 치료한약 클리닉</a></h3>
+                    <p>개인 맞춤형 보약 처방,<br> 몸의 균형 및 활력 증진</p>
+                  </div>
+                  <div class="sub-nav__contents">
+                    <ul class="sub-nav_ul">
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_1.html">기력 보약</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_2.html">과민성 장 증후군</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_3.html">두통, 어지럼증</a>
+                      </li>
+                      <li class="nav_li_depth2">
+                        <a href="./clinic6_4.html">공진단, 경옥고</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <aside class="mo_header_sidebar">
+      <div class="sidebar__inner">
+        <div class="sidebar__header">
+          <div class="logo">
+            <img src="./img/common/logo.png" alt="지리산쌍계한의원">
+          </div>
+        </div>
+        <div class="sidebar__contents">
+          <nav class="sidebar_gnb">
+            <ul class="sidebar_gnb--1depth">
+              <li>
+                <a href="javascript:void(0)">한의원 소개</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./intro.html?target=secIntro">지리산쌍계한의원 소개</a></li>
+                  <li><a href="./intro.html?target=secDoctors">의료진 소개</a></li>
+                  <li><a href="./intro.html?target=secLook">둘러보기</a></li>
+                  <li><a href="./intro.html?target=secCometo">오시는 길</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">통증 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic1.html?target=clinic1">디스크, 협착(목, 허리)</a></li>
+                  <li><a href="./clinic1.html?target=clinic2">오십견, 회전근개</a></li>
+                  <li><a href="./clinic1.html?target=clinic3">퇴행성 무릎</a></li>
+                  <li><a href="./clinic1.html?target=clinic4">엘보우, 손목, 발목 질환</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">성장 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic2.html?target=clinic1">성장</a></li>
+                  <li><a href="./clinic2.html?target=clinic2">비염</a></li>
+                  <li><a href="./clinic2.html?target=clinic3">소아 식욕 개선 클리닉</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">여성 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic3.html?target=clinic1">산후 조리</a></li>
+                  <li><a href="./clinic3.html?target=clinic2">생리통, 생리 불순</a></li>
+                  <li><a href="./clinic3.html?target=clinic3">난임, 불임</a></li>
+                  <li><a href="./clinic3.html?target=clinic4">갱년기 장애</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">교통사고 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic4_1.html">접수 방법, 치료 과정</a></li>
+                  <li><a href="./clinic4_2.html">약침, 추나 요법</a></li>
+                  <li><a href="./clinic4_3.html">어혈 탕약</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">다이어트 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic5.html">다이어트 한약</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)">보약 · 치료한약 클리닉</a>
+                <ul class="sidebar_gnb--2depth">
+                  <li><a href="./clinic6_1.html">기력 보약</a></li>
+                  <li><a href="./clinic6_2.html">과민성 장 증후군</a></li>
+                  <li><a href="./clinic6_3.html">두통, 어지럼증</a></li>
+                  <li><a href="./clinic6_4.html">공진단, 경옥고</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="sidebar__list">
+            <a href="./intro.html?target=secCometo" class="sidebar__item">
+              <div class="icon">
+                <img src="./img/icon/icon_sidebar_loc.svg" alt="오시는 길 아이콘" width="40">
+              </div>
+              <h3 class="menu_nm">오시는 길</h3>
+            </a>
+            <a href="https://booking.naver.com/booking/13/bizes/1135781" target="_blank" class="sidebar__item">
+              <div class="icon">
+                <img src="./img/icon/icon_sidebar_naver.svg" alt="네이버예약 아이콘" width="40">
+              </div>
+              <h3 class="menu_nm">네이버 예약</h3>
+            </a>
+            <div class="sidebar__item">
+              <div class="icon">
+                <img src="./img/icon/icon_sidebar_kakao.svg" alt="카카오톡 상담 아이콘" width="40">
+              </div>
+              <h3 class="menu_nm">카카오톡 상담</h3>
+            </div>
+            <div class="sidebar__item item--call">
+              <span>대표번호</span>
+              <h3>02-3462-1075</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="page__header">
+        <div class="bg">
+          <img src="./img/background/clinic6_bg.png" alt="보약 · 치료한약 클리닉">
+        </div>
+        <div class="container">
+          <div class="page__contents">
+            <div class="page__title">
+              <h1>보약 · 치료한약 클리닉</h1>
+              <p>체질 분석을 통해 개개인 맞춤 기력 보약 및 치료한약</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__tabs">
+        <ul>
+          <li><a href="./clinic6_1.html">기력 보약</a></li>
+          <li  class="active"><a href="./clinic6_2.html">과민성 장 증후군</a></li>
+          <li><a href="./clinic6_3.html">두통 · 어지럼증</a></li>
+          <li><a href="./clinic6_4.html">공진단 · 경옥고</a></li>
+        </ul>
+      </div>
+      <div class="clinic__inner">
+        <section class="sec_diet">
+          <div class="container">
+            <div class="clinic__title">
+              <div class="common_title">
+                <h3>과민성 장 증후군</h3>
+              </div>
+              <p>과민성 장 증후군(IBS)은 복통, 설사·변비, 복부 팽만감이 반복되는 만성적인 소화 장애입니다.<br>
+              스트레스, 장내 미생물 불균형, 소화 기능 저하 등의 원인으로 발생하며, 시간이 지나면 면역력 저하와 만성 피로로 이어질 수도 있습니다.<br>
+              장 건강이 약해지면 단순한 소화 불편을 넘어 몸 전체의 컨디션이 저하될 수 있기 때문에 조기에 적절한 치료가 필요합니다.<br>
+              지리산쌍계한의원에서는 진맥 및 체질 분석을 통해 환자 한 분 한 분의 상태에 맞춘 한약을 처방합니다.<br>
+              특히, 지리산 청정수로 정성껏 달인 한약을 사용하여 몸에 부담을 주지 않으면서도 장 기능을 근본적으로 개선할 수 있도록 돕습니다.</p>
+            </div>
+            <div class="diet__feature">
+              <div class="common_title">
+                <h3>과민성 장 증후군 한약 치료 효과</h3>
+              </div>
+              <div class="feature__list">
+                <div class="feature__item">
+                  <div class="title">장 기능 강화</div>
+                  <div class="cnts">소화력을 높이고,<br>
+                  장 점막을 보호하여 속을 편안하게</div>
+                </div>
+                <div class="feature__item">
+                  <div class="title">배변 리듬 조절</div>
+                  <div class="cnts">설사와 변비를 조절해<br>
+                  자연스러운 배변 습관 형성</div>
+                </div>
+                <div class="feature__item">
+                  <div class="title">복부 팽만감 해소</div>
+                  <div class="cnts">장내 가스를 줄이고,<br>
+                  독소를 배출하여 편안한 장 환경 조성</div>
+                </div>
+                <div class="feature__item">
+                  <div class="title">스트레스 완화</div>
+                  <div class="cnts">신경성 장 트러블을 조절하여<br>
+                  장이 예민해지는 것을 방지</div>
+                </div>
+              </div>
+            </div>
+            <div class="diet__method">
+              <div class="method_title">
+                <h4>기력 보약 치료 과정</h4>
+              </div>
+              <div class="method__list">
+                <div class="method__item">
+                  <div class="thum">
+                    <img src="./img/clinic_img_04.png" alt="진맥 및 체질 분석">
+                  </div>
+                  <div class="desc">
+                    <h5>진맥 및 체질 분석</h5>
+                    <p>소화 기능, 장 건강 상태, 생활 습관 등을<br>
+                    종합적으로 진단</p>
+                  </div>
+                </div>
+                <div class="method__item">
+                  <div class="thum">
+                    <img src="./img/clinic_img_01.png" alt="맞춤형 한약 처방">
+                  </div>
+                  <div class="desc">
+                    <h5>맞춤형 한약 처방</h5>
+                    <p>지리산 청정수로 달인 한약을<br>
+                    통해 장 기능 회복</p>
+                  </div>
+                </div>
+                <div class="method__item">
+                  <div class="thum">
+                    <img src="./img/clinic_img_11.png" alt="생활 습관 관리">
+                  </div>
+                  <div class="desc">
+                    <h5>생활 습관 관리</h5>
+                    <p>식습관, 스트레스 관리 등 장 건강을 위한<br>
+                    생활 가이드 제공</p>
+                  </div>
+                </div>
+                <div class="method__item">
+                  <div class="thum">
+                    <img src="./img/clinic_img_12.png" alt="경과 모니터링">
+                  </div>
+                  <div class="desc">
+                    <h5>경과 모니터링</h5>
+                    <p>증상 개선 정도를 체크하며 필요 시 추가 처방</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="sec_clinic benefit">
+          <div class="container">
+            <div class="benefit__title">
+              <h3>이런 분들께 추천합니다!</h3>
+            </div>
+            <div class="benefit__list item_5">
+              <div class="benefit__item big">
+                <p>
+                  식사 후 복통이나<br>
+                  속 더부룩함이<br>
+                  자주 느껴지는 분
+                </p>
+              </div>
+              <div class="benefit__item big">
+                <p>
+                  설사와 변비가<br>
+                  번갈아 반복되어<br>
+                  장이 불편한 분
+                </p>
+              </div>
+              <div class="benefit__item big">
+                <p>
+                  면역력이 약해<br>
+                  감기나 잔병치레가<br>
+                  잦은 분
+                </p>
+              </div>
+              <div class="benefit__item big">
+                <p>
+                  장내 가스로<br>
+                  인해 복부<br>
+                  팽만감이 심한 분
+                </p>
+              </div>
+              <div class="benefit__item big">
+                <p>
+                  스트레스만 받으면<br>
+                  배가 아프거나<br>
+                  장이 예민해지는 분
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="sec_banner">
+          <div class="container">
+            <div class="clinic__banner">
+              <div class="bg">
+                <img src="./img/clinic_banner_bg4.png" alt="">
+              </div>
+              <div class="text">
+                <h3>지리산 청정 한약 + 개인 맞춤 처방으로 <span>건강한 장</span>을 되찾으세요!</span></h3>
+                <p>
+                  장 건강은 몸 전체의 컨디션을 좌우하는 중요한 요소입니다.<br>
+                  지리산쌍계한의원에서는 단순한 증상 완화가 아닌, 장 기능을 근본적으로 회복할 수 있도록 도와드립니다.<br>
+                  맞춤 한약을 통해 속 편한 하루를 시작해보세요!
+                </p>
+                <div class="contact_number">
+                  예약 및 상담 <h2>02-3462-1075</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <div class="sidebar__list">
+        <a href="./index.html?target=homeDoctors" class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_time.svg" alt="진료시간 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">진료시간</h3>
+        </a>
+        <a href="./intro.html?target=secCometo" class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_loc.svg" alt="오시는 길 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">오시는 길</h3>
+        </a>
+        <a href="https://booking.naver.com/booking/13/bizes/1135781" target="_blank" class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_naver.svg" alt="네이버예약 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">네이버 예약</h3>
+        </a>
+        <div class="sidebar__item">
+          <div class="icon">
+            <img src="./img/icon/icon_sidebar_kakao.svg" alt="카카오톡 상담 아이콘" width="40">
+          </div>
+          <h3 class="menu_nm">카카오톡 상담</h3>
+        </div>
+        <div class="sidebar__item item--call">
+          <span>대표번호</span>
+          <h3>02-3462-1075</h3>
+        </div>
+      </div>
+    </aside>
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="logo">
+          <img src="./img/common/footer_logo.png" alt="지리산쌍계한의원">
+        </div>
+        <div class="footer__info">
+          <h3>지리산쌍계한의원</h3>
+          <ul class="footer_sidebar">
+            <li><a href="#" class="fw700">개인정보취급방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">진료시간</a></li>
+            <li><a href="#">오시는길</a></li>
+          </ul>
+          <div class="footer__company-info">
+            <ul class="company-info mo_show">
+              <li>
+                <span>병원명</span>
+                <b>지리산쌍계한의원</b>
+              </li>
+              <li>
+                <span>대표자</span>
+                <b>조영빈</b>
+              </li>
+            </ul>
+            <ul class="company-info">
+              <li>
+                <span>주소</span>
+                <b>서울특별시 강남구 선릉로 26 2층 지리산쌍계한의원</b>
+              </li>
+            </ul>
+            <ul class="company-info">
+              <li class="pc_show">
+                <span>대표자</span>
+                <b>조영빈</b>
+              </li>
+              <li>
+                <span>사업자 등록번호</span>
+                <b>605-94-17208</b>
+              </li>
+              <li>
+                <span>대표번호</span>
+                <b>02-3462-1075</b>
+              </li>
+              <li>
+                <span>FAX</span>
+                <b>02-3462-1075</b>
+              </li>
+            </ul>
+          </div>
+          <p class="footer__copyright">Copyright ⓒ 2024 지리산쌍계한의원 All right reserved</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
