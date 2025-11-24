@@ -14,12 +14,27 @@ h3.h3_tit {
   font-weight: 600;
 }
 
+h4.h4_tit {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h5.h5_tit {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .portfolio__page>section {
   min-height: 100dvh;
+  padding: 80px 0;
+}
+
+.portfolio__page>section:nth-of-type(2n) {
+  background-color: #EEF1F7;
 }
 
 .portfolio__page>section .sec__inner {
-  max-width: 1620px;
+  max-width: 1520px;
   margin: 0 auto;
   width: 100%;
   min-height: 100dvh;
@@ -37,7 +52,7 @@ h3.h3_tit {
       rgba(155, 80, 255, 0.4) 0%,
       rgba(155, 80, 255, 0.1) 20%,
       transparent 60%),
-    #fff;
+    #000;
   background-size: 200% 200%;
   animation: gradientPulse 15s ease-in-out infinite;
 }
@@ -67,7 +82,7 @@ h3.h3_tit {
 .project__title .sec__inner .title h1.pj_title {
   font-size: 80px;
   font-weight: 800;
-  color: #111;
+  color: #fff;
   text-align: center;
 }
 
@@ -79,7 +94,7 @@ h3.h3_tit {
 }
 
 .project__title .scroll_down span {
-  color: #111;
+  color: #fff;
   font-family: "Outfit", serif;
   font-size: 24px;
   animation: blink 1.4s ease-in-out infinite;
@@ -99,6 +114,7 @@ h3.h3_tit {
 .project__header {
   position: relative;
   padding-top: 80px;
+  padding-left: 64px;
   margin-bottom: 32px;
 }
 
@@ -108,7 +124,7 @@ h3.h3_tit {
   font-weight: 800;
   position: absolute;
   top: 12px;
-  left: -50px;
+  left: -12px;
 }
 
 .project__info .sec__inner {
@@ -178,7 +194,7 @@ h3.h3_tit {
 .project_thumbnail .device .device_content img {
   width: 100%;
   object-fit: contain;
-  transition: transform 2s linear;
+  transition: transform 1.2s linear;
 }
 
 .project_thumbnail .thumbnail_main:hover .device_content img {
@@ -223,4 +239,161 @@ h3.h3_tit {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
+}
+
+/* 퍼블리싱 가이드 */
+.color_system {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.color_system li {
+  padding: 16px;
+  border: 1px solid #E5E5EC;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 8px;
+}
+
+.color_system .color span {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.color_system .color_text  {
+  text-align: center;
+}
+
+.color_system .color_text b {
+  display: block;
+  text-align: center;
+}
+
+.color_system.ey_theme li .color {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.font_system {
+  display: flex;
+  gap: 120px;
+  margin-top: 40px;
+}
+
+.font_system ul.fonts li {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.font_system .font_family {
+  background-color: #EEF1F7;
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.title_with_modal {
+  display: flex;
+  align-items: center;
+  gap: 12px ;
+}
+
+.title_with_modal h3.h3_tit {
+  cursor: pointer;
+}
+
+.title_with_modal span {
+  font-size: 18px;
+  color: #505050;
+}
+
+.publishing_css {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.tailwind_info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.tailwind_logo {
+  height: 50px;
+}
+
+.tailwind_logo img {
+  height: 100%;
+}
+
+.tailwind_info .version {
+  display: inline-block;
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background-color: #00889F;
+  color: #fff;
+  text-align: center;
+}
+
+.tailwindcss_list li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.component_text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.components_example {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 24px;
+  margin-top: 40px;
+}
+
+.components_example .example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: calc(50% - 12px);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #E5E5EC;
+  transition: 0.35s;
+  background-color: #fff;
+}
+
+.components_example .example:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.components_example .example .img {
+  max-width: 450px;
+}
+
+.components_example .example .img img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.components_example .example .text p {
+  line-height: 1.6;
+  margin-top: 8px;
 }

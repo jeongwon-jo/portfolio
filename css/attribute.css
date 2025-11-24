@@ -19,6 +19,7 @@
 .mt100 { margin-top: 100px; } 
 .mb0 { margin-bottom: 0px; } 
 .mb10 { margin-bottom: 10px; } 
+.mb16 { margin-bottom: 16px; } 
 .mb20 { margin-bottom: 20px; } 
 .mb30 { margin-bottom: 30px; } 
 .mb40 { margin-bottom: 40px; } 
@@ -89,6 +90,7 @@
 .tal {text-align: left;}
 .tac {text-align: center;}
 .tar {text-align: right;}
+.underline {text-decoration: underline;}
 .vertical { writing-mode: vertical-rl;}
 /* Mobile */
 @media screen and (max-width:767px) {

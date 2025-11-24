@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EY한영-모바일 내부 관리 시스템 구축</title>
   <!-- Favicon -->
-  <link rel="icon" href="./img/common/favicon.png">
+  <link rel="icon" href="./img/favicon.ico">
   <!-- OpenGraph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="EY한영" />
@@ -46,7 +46,7 @@
           <section class="project__title">
             <div class="sec__inner">
               <div class="project_logo">
-                <img src="./img/ey_logo.png" alt="ey한영 로고" height="300">
+                <img src="./img/ey_logo_w.png" alt="ey한영 로고" height="300">
               </div>
               <div class="title">
                 <h1 class="pj_title">모바일 내부 관리 시스템 구축</h1>
@@ -81,7 +81,7 @@
               <div>
                 <div class="project__header">
                   <span class="no">01</span>
-                  <h2 class="h2_tit">About the Project</h2>
+                  <h2 class="h2_tit">About Project</h2>
                 </div>
                 <ul class="project-info">
                   <li>
@@ -114,9 +114,16 @@
           </section>
           <section class="project__publishing">
             <div class="sec__inner">
-              <h2 class="h2_tit">퍼블리싱 가이드</h2>
-              <div class="color_guide">
-                <h3 class="h3_tit">Colors</h3>
+              <div class="project__header">
+                <span class="no">02</span>
+                <h2 class="h2_tit">Publishing Guide</h2>
+              </div>
+              <div class="color_guide mb60">
+                <div class="title_with_modal">
+                  <h3 class="h3_tit mb16" style="text-decoration: underline;">(1) Color System</h3>
+                   <span>(클릭하여 ThemeProvider 구현 방식 보기)</span>
+                </div>
+                <h5 class="h5_tit mb20">Theme Color</h5>
                 <ul class="color_system ey_theme">
                   <li>
                     <div class="color">
@@ -124,21 +131,21 @@
                       <span style="background-color: #FFF3B3;"></span>
                       <span style="background-color: #FFF9EB;"></span>
                     </div>
-                    <span class="color_text">Yellow (기본)</span>
+                    <span class="color_text">Yellow Theme(기본)</span>
                   </li>
                   <li>
                     <div class="color">
                       <span style="background-color: #FF4762;"></span>
                       <span style="background-color: #FFF4F5;"></span>
                     </div>
-                    <span class="color_text">Red</span>
+                    <span class="color_text">Red Theme</span>
                   </li>
                   <li>
                     <div class="color">
                       <span style="background-color: #FF6600;"></span>
                       <span style="background-color: #FFF3EB;"></span>
                     </div>
-                    <span class="color_text">Orange</span>
+                    <span class="color_text">Orange Theme</span>
                   </li>
                   <li>
                     <div class="color">
@@ -152,9 +159,10 @@
                       <span style="background-color: #02C43C;"></span>
                       <span style="background-color: #EBFBEF;"></span>
                     </div>
-                    <span class="color_text">Green</span>
+                    <span class="color_text">Green Theme</span>
                   </li>
                 </ul>
+                <h5 class="h5_tit mb20">Text/Line Color</h5>
                 <ul class="color_system">
                   <li>
                     <div class="color">
@@ -218,38 +226,130 @@
                   </li>
                 </ul>
               </div>
-              <div class="font_guide">
-                <h2 class="h2_tit">Typography</h2>
+              <div class="font_guide mb60">
+                <h3 class="h3_tit" style="text-decoration: underline;">(2) Typography</h2>
                 <div class="font_system">
-                  <h3 class="h3_tit">Pretendard</h3>
-                  <ul class="fonts">
-                    <li style="font-size: 18px;">This is text-lg</li>
-                    <li style="font-size: 16px;">This is text-base</li>
-                    <li style="font-size: 12px;">This is text-sm</li>
-                    <li style="font-weight: 400;">This is font-normal</li>
-                    <li style="font-weight: 500;">This is font-medium</li>
-                    <li style="font-weight: 600;">This is font-semibold</li>
-                    <li style="font-weight: 700;">This is font-bold</li>
+                  <h2 class="h2_tit font_family" style="font-family: 'Pretendard';">Pretendard</h2>
+                  <div>
+                    <h4 class="h4_tit mb20">Font Size Class</h5>
+                    <ul class="fonts">
+                      <li style="font-family: 'Pretendard'; font-size: 18px;">This is text-lg</li>
+                      <li style="font-family: 'Pretendard';font-size: 16px;">This is text-base</li>
+                      <li style="font-family: 'Pretendard'; font-size: 12px;">This is text-sm</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="h4_tit mb20">Font Weight Class</h5>
+                    <ul class="fonts">
+                      <li style="font-family: 'Pretendard'; font-weight: 400;">This is font-normal</li>
+                      <li style="font-family: 'Pretendard'; font-weight: 500;">This is font-medium</li>
+                      <li style="font-family: 'Pretendard'; font-weight: 600;">This is font-semibold</li>
+                      <li style="font-family: 'Pretendard'; font-weight: 700;">This is font-bold</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="publishing_guide mb60">
+                <h3 class="h3_tit" style="text-decoration: underline;">(3) Tailwind.css</h3>
+                <div class="publishing_css">
+                  <div class="tailwind_info">
+                    <div class="tailwind_logo">
+                      <img src="./img/tailwind_logo.png" alt="Tailwind CSS">
+                    </div>
+                    <div class="version">v 4.0</div>
+                  </div>
+                  <ul class="tailwindcss_list">
+                    <li><h4 class="h4_tit">Tailwind.css 사용 이유 & 구현 방식</h4></li>
+                    <li><b>Maintenance-friendly:</b> Tailwind.css는 클래스 유틸리티 기반이라 스타일 변경이 빠르고, 구조가 단순해 협업과 유지보수가 수월합니다.<br>특히 프로젝트 인수인계 과정에서 CSS 관련 설명이 거의 필요 없었을 만큼, Tailwind의 높은 유지보수성을 직접 경험했습니다.</li>
+                    <li><b>Consistent UI System:</b> 색상·여백·그리드 등 디자인 토큰을 코드로 통일하여 안정적인 디자인 시스템을 구축할 수 있습니다.</li>
+                    <li><b>경량화된 빌드:</b> 실제 사용하는 클래스만 남기므로 CSS 번들 크기가 작아 퍼포먼스도 우수합니다.</li>
+                    <li>Tailwind는 처음 접했을 때 완전하게 생소했지만, 기존 bootstrap 경험을 기반으로 <a href="https://www.inflearn.com/course/tailwind-css-%EA%B8%B0%EC%B4%88" target="_blank" class="underline">인프런 강의를 통해 독학</a>(기본 CSS뿐 아닌 반응형 & 인터랙션까지)하며 탄탄하게 다졌습니다.<br>이후 메인 페이지, 헤더/푸터/사이드바, 위젯, 테마 컬러링까지 모든 퍼블리싱 요소를 Tailwind로 구현하며 UI 전체를 유연하게 관리할 수 있는 구조로 구축하였습니다.</li>
                   </ul>
                 </div>
               </div>
-              <div class="publishing_guide">
-                <h3 class="h3_tit">Tailwind.css</h3>
-                <div>
-                  <p>tailwind.css의 장점 & 유지보수하기 쉽게 tailwind를 이용하여 퍼블리싱 / 테마도 tailwind로 진행 </p>
-                </div>
-              </div>
               <div class="component_guide">
-                <h3 class="h3_tit">Form 컴포넌트</h3>
-                <div>
-                  <p>/src/components/에 재사용 가능한 컴포넌트를 관리</p>
+                <h3 class="h3_tit" style="text-decoration: underline;">(4) Components</h3>
+                <div class="component_text mt20">
+                  <p>UI 요소를 <b>컴포넌트 단위로 분리</b>하는 것이 생산성과 유지보수성을 높이는 핵심입니다. 같은 Input이나 Table 구조를 여러 페이지에서 쓸 때도, 하나의 컴포넌트만 관리하면 전체 UI의 통일성이 자동으로 유지되고, 변경 사항이 빠르게 반영됩니다.</p>
+                  <p>저는 <b>퍼블리싱 단계에서 이러한 컴포넌트 기반 구조를 선제적으로 구축</b>하여, Input, Table, List, Button 등을 모두 재사용 가능한 형태로 제작했습니다.<br>
+                  덕분에 개발자들은 디자인을 맞추기 위해 HTML/CSS를 새로 작성할 필요 없이 미리 만들어둔 컴포넌트를 그대로 불러와 개발에 집중할 수 있었고, 실제로 개발 단계에서 UI 관련 작업 시간이 크게 단축되었습니다.</p>
+                </div>
+                <div class="components_example">
+                  <div class="example">
+                    <div class="img">
+                      <img src="./img/input.png" alt="Input Components" height="70">
+                    </div>
+                    <div class="text">
+                      <h4 class="h4_tit">Input 컴포넌트</h5>
+                      <p>
+                        <b>상태별 스타일 처리(disabled / readOnly)</b>: disabled, readOnly 상태일 때의 스타일을 분리하여 사용 불가 상태에서도 UI의 일관성을 유지하도록 구성.
+                      </p>
+                      <p>
+                        <b>입력값 전체 삭제 기능(onClear)</b>: Input 내부에 Delete(초기화) 버튼을 기본 제공하여 사용자가 입력한 값을 한 번에 지울 수 있음.
+                      </p>
+                      <p>
+                        <b>재사용성과 유지보수성 향상</b>: Input의 주요 속성(onChange, onFocus, onBlur 등)을 Prop으로 전달받도록 제작하여 어떠한 페이지나 폼에서도 동일한 컴포넌트를 그대로 사용할 수 있음.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="example">
+                    <div class="img">
+                      <img src="./img/button.png" alt="Button Components" height="70">
+                    </div>
+                    <div class="text">
+                      <h4 class="h4_tit">Button 컴포넌트</h5>
+                      <p>
+                        <b>일관된 디자인 시스템 유지</b>: 프로젝트 전반에서 버튼 스타일을 통일하기 위해 variant(색상/스타일), size(크기) 를 분리해 하나의 컴포넌트에서 관리할 수 있도록 구성.
+                      </p>
+                      <p>
+                        <b>테마(theme) 연동된 동적 스타일 처리</b>: ThemeProvider와 연동되어, 특정 테마(예: yellow theme)일 때는 primary 버튼의 텍스트 색상을 자동으로 조정하는 등 동적 스타일 적용 기능을 포함.
+                      </p>
+                      <p>
+                        <b>공통된 disabled 상태 처리</b>: 버튼 컴포넌트에 disabled:opacity-50, cursor-not-allowed 등 공통 스타일을 내장하여
+                        모든 버튼의 비활성화 UX를 일관되게 적용할 수 있도록 구현.
+                        각 화면에서 따로 CSS를 작성할 필요가 없어 개발 효율성을 높임.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="example">
+                    <div class="img">
+                      <img src="./img/search_period.png" alt="Search Period Components" height="232">
+                    </div>
+                    <div class="text">
+                      <h4 class="h4_tit">Search Period 컴포넌트</h5>
+                      <p>
+                        <b>빠른 기간 선택(7일·1개월·3개월) & 자동 날짜 계산 기능</b>
+                      </p>
+                      <p>
+                        <b>상세 기간 선택 기능 + DatePickerModal 연동</b>: 선택된 날짜는 그대로 SearchPeriod 내부 상태에 반영되며,
+start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕분에 재사용성이 높음.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="example">
+                    <div class="img">
+                      <img src="./img/tiime_picker.png" alt="Time Picker Components" height="232">
+                    </div>
+                    <div class="text">
+                      <h4 class="h4_tit">TimePicker 컴포넌트</h5>
+                      <p>
+                        <b>모바일 친화적인 시간 선택 UI 구현 (ScrollSelect 기반)</b>: TimePicker는 시간과 분(minute)을 스크롤 방식으로 선택할 수 있도록 구성하여
+                        모바일 환경에서도 직관적이고 사용하기 쉬운 네이티브 타임피커 같은 UX를 제공한다.<br>
+                        시간/분 리스트는 ScrollSelect 컴포넌트로 분리하여 관리하므로,
+                        선택값이 자연스럽게 중앙에 고정되는 스크롤 인터랙션을 구현할 수 있었다.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           <section class="project__develop">
             <div class="sec__inner">
-              <h2 class="h2_tit">개발 가이드 (프로젝트 폴더 구조 가이드 보기)</h2>
+              <div class="project__header">
+                <span class="no">03</span>
+                <h2 class="h2_tit">Development Guide</h2>
+              </div>
               <div>
                 <ul class="develop_stack">
                   <li>Next.js</li>
@@ -258,7 +358,7 @@
                   <li>Zustand</li>
                   <li>Tailwind CSS</li>
                 </ul>
-                <a href="https://www.notion.so/jjeong1jo/2b02c9ae108080b492dbfb6f0953499f?source=copy_link" class=""
+                <a href="https://www.notion.so/jjeong1jo/2b02c9ae108080b492dbfb6f0953499f?source=copy_link" class="underline"
                   target="_blank">노션으로 프로젝트 폴더 구조 가이드 보기</a>
               </div>
             </div>
