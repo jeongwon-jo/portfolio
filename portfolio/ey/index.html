@@ -94,7 +94,7 @@
                   </li>
                   <li>
                     <span>역할 (담당 업무): </span>
-                    <p>1. UI <b>퍼블리싱</b> 전반<br> 2. 다국어 <b>언어팩</b> 시스템 구축 <br> 3. <b>메인 페이지 및 전역 레이아웃</b>(헤더·푸터·사이드바) 개발 <br> 4. <b>급여
+                    <p>1. UI <b>퍼블리싱</b> 100%<br> 2. 다국어 <b>언어팩</b> 시스템 구축 <br> 3. <b>메인 페이지 및 전역 레이아웃</b>(헤더·푸터·사이드바) 개발 <br> 4. <b>급여
                         조회, 연말정산, 헬프데스크</b> 개발</p>
                   </li>
                   <li>
@@ -120,7 +120,7 @@
               </div>
               <div class="color_guide mb60">
                 <div class="title_with_modal">
-                  <h3 class="h3_tit mb16" style="text-decoration: underline;">(1) Color System</h3>
+                  <h3 class="h3_tit mb16"><a href="#developThemeLanguage" class="underline">(1) Color System</a></h3>
                    <span>(클릭하여 ThemeProvider 구현 방식 보기)</span>
                 </div>
                 <h5 class="h5_tit mb20">Theme Color</h5>
@@ -351,39 +351,125 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
                 <h2 class="h2_tit">Development Guide</h2>
               </div>
               <div>
-                <ul class="develop_stack">
-                  <li>Next.js</li>
-                  <li>Typescript</li>
-                  <li>TanStack Query</li>
-                  <li>Zustand</li>
-                  <li>Tailwind CSS</li>
-                </ul>
-                <a href="https://www.notion.so/jjeong1jo/2b02c9ae108080b492dbfb6f0953499f?source=copy_link" class="underline"
-                  target="_blank">노션으로 프로젝트 폴더 구조 가이드 보기</a>
+                <!-- 개발 스택 -->
+                <div class="develop_stack">
+                  <h3 class="h3_it">Development Stack</h3>
+                  <div class="stack">
+                    <h4 class="h4_tit">Frontend</h4>
+                    <ul class="develop-stack__list">
+                      <li><img src="./img/nextjs_logo.png" alt=""><span>Next.js</span></li>
+                      <li><img src="./img/typescript_logo.png" alt=""><span>Typescript</span></li>
+                      <li><img src="./img/tailwind_logo2.png" alt=""><span>Tailwind CSS</span></li>
+                    </ul>
+                  </div>
+                  <div class="stack">
+                    <h4 class="h4_tit">State</h4>
+                    <ul class="develop-stack__list">
+                      <li><span>TanStack Query</span></li>
+                      <li><span>Zustand</span></li>
+                    </ul>
+                  </div>
+                  <div class="stack">
+                    <h4 class="h4_tit">CI/CD</h4>
+                    <ul class="develop-stack__list">
+                      <li><span>GitHub</span></li>
+                    </ul>
+                  </div>
+                  <a href="https://www.notion.so/jjeong1jo/2b02c9ae108080b492dbfb6f0953499f?source=copy_link" class="underline"
+                    target="_blank">노션으로 프로젝트 폴더 구조 가이드 보기</a>
+                </div>
               </div>
             </div>
           </section>
           <!-- 메인 페이지 및 전역 레이아웃(헤더·푸터·사이드바) 개발 -->
           <section class="project__develop">
             <div class="sec__inner">
-              <!-- 메인페이지 썸네일 (모달 / 전체보기) -->
-              <div></div>
-              <!-- 메인페이지 설명 (백엔드 API중 어떤 데이터를 가지고 데이터 바인딩) -->
-              <!-- 헤더 로고 / 알림 -->
-              <!-- 사이드바 관리자 권한에 따른 메뉴 리스트 -->
-              <!-- 앱바 관리자 권한에 따른 앱바 리스트 -->
-              <!-- 설정 개발자와 협업하여 진행 -->
-              <div></div>
+              <h1 class="h1_tit">(1) 메인 페이지 및 전역 레이아웃(헤더·푸터·사이드바) 개발</h1>
+              <div class="develop_flex_box">
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/main_page.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_description">
+                  <!-- 메인페이지 설명 (백엔드 API중 어떤 데이터를 가지고 데이터 바인딩) -->
+                  <div>
+                    <h3>메인 API를 이용한 레이아웃 설계</h3>
+                    <ul>
+                      <li>메인 API에서 제공되는 <b>헤더 로고, 알림 수, GNB 메뉴, 메인 위젯 데이터</b>를 이용해 전체 레이아웃을 데이터 기반으로 설계.</li>
+                      <li>사용자 권한 값(allowedFormIds, ENV_SEQ_WIDGETS, groupEnabled)에 따라 <b>위젯 노출/비노출 규칙을 동적으로 구성</b>, 잘못된 formId 매핑은
+                        useMemo 최적화를 통해 렌더 성능
+                        개선.</li>
+                      <li>메인 API가 모든 데이터를 한 번에 제공하는 구조로 인해 페이지 단위 분리가 미흡하다고 판단하여, 설정 페이지 개발자와 협업해 설정 API와 메인 API를 결합하는 구조를 재정의.</li>
+                      <li>설정 API에서 <b>권한 및 위젯 설정(on/off)</b>을 먼저 검사하고 이후 메인 API 데이터를 바인딩하여 <b>정확한 권한 기반 메인 페이지 구성</b>을 구현</li>
+                      <li>설정 API의 바로가기(Shortcut) 설정을 메인 페이지에 반영</li>
+                    </ul>
+                  </div>
+                  <!-- 헤더 로고 / 알림 -->
+                  <div>
+                    <h3>Header 설계</h3>
+                    <ul>
+                      <li>메인 API의 로고 데이터를 동적으로 바인딩하여 기업별 커스터마이징 대응</li>
+                      <li>알림 API와 연동해 읽음/안읽음 상태를 UI에 반영</li>
+                      <li>GNB 메뉴명을 언어팩에 통합 적용하여 공통 번역 관리가 가능하도록 구조화</li>
+                    </ul>
+                  </div>
+                  <!-- 사이드바 관리자 권한에 따른 메뉴 리스트 -->
+                  <div>
+                    <h3>Sidebar 설계</h3>
+                    <ul>
+                      <li>사용자 사번 확인용 <b>UPC 형태의 바코드</b> 모달 기능 구현</li>
+                      <li>메인 API의 GNB 데이터를 기반으로 <b>권한별 사이드바 메뉴 목록</b>을 구성</li>
+                    </ul>
+                  </div>
+                  <!-- 앱바 관리자 권한에 따른 앱바 리스트 -->
+                  <div>
+                    <h3>Appbar 설계</h3>
+                    <ul>
+                      <li>설정 API의 Appbar 데이터를 바인딩하여 <b>사용자 맞춤형 앱바 구성</b> 구현</li>
+                      <li>설정 데이터를 localStorage에 저장하고, 값 변경을 감지해 <b>즉시 UI 업데이트</b>가 이루어지도록 설계</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <!-- 테마, 언어팩 개발 -->
-          <section class="project__develop">
+          <section id="developThemeLanguage" class="project__develop">
             <div class="sec__inner">
-              <!-- 테마 썸네일 (모달 / 전체보기) -->
-              <div></div>
-              <!-- 테마 Provider 설명 (css에서 어떻게 관리, Provider소개) -->
-              <!-- 언어 Provider 설명 (설정 > 언어설정, 설정 초기화, 메인페이지) -->
-              <div></div>
+              <h1 class="h1_tit">(2) 테마, 언어팩 개발</h1>
+              <div class="develop_flex_box">
+                <div class="develop_thumbnail">
+                  <img src="" alt="">
+                </div>
+                <div class="develop_description">
+                  <!-- 테마 Provider 설명 (css에서 어떻게 관리, Provider소개) -->
+                  <div>
+                    <h3>ThemeProvider</h3>
+                    <ul>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <!-- 언어 Provider 설명 (설정 > 언어설정, 설정 초기화, 메인페이지) -->
+                  <div>
+                    <h3>LanguageProvider</h3>
+                    <ul>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <!-- 급여 조회 개발 -->

@@ -397,3 +397,7 @@ h5.h5_tit {
   line-height: 1.6;
   margin-top: 8px;
 }
+
+.project__develop {
+  min-height: auto;
+}
