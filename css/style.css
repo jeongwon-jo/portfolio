@@ -27,6 +27,7 @@
 
 .loading .loading-text {
     overflow: hidden;
+    padding: 0 20px;
 }
 
 .loading .loading-text h1 {
@@ -342,6 +343,7 @@
     transform: rotate(-90deg);
     transform-origin: 0 0 ;
     transition: 0.35s ease-in-out 0.2s;
+    opacity: 0;
 }
 
 .aside_portfoilo h2 {
@@ -354,6 +356,7 @@
 
 .section__greeting.active .aside_portfoilo {
     left: 32px;
+    opacity: 1;
 }
 
 .contact_me {
@@ -842,6 +845,8 @@ ul.portfolio__info li:before {
 @media screen and (max-width:767px) {
     .loading .loading-text h1 {
         font-size: 56px;
+        text-align: center;
+        word-break: break-all;
     }
 
     .loading .text_box h1 {
@@ -855,6 +860,10 @@ ul.portfolio__info li:before {
 
     .contact_me {
         display: none;
+    }
+
+    .section__greeting .greeting-text .txt.txt_space {
+        padding-right: 10px;
     }
 
     /* 첫번째 섹션 - 소개 */
@@ -875,6 +884,7 @@ ul.portfolio__info li:before {
     .section__greeting .greeting-text h1 {
         font-size: 56px;
         text-align: center;
+        justify-content: center;
     }
 
     .section__greeting .scroll_down {
@@ -895,6 +905,7 @@ ul.portfolio__info li:before {
 
     .aside_portfoilo h2 {
         font-size: 18px;
+        color: #ffffffa8;
     }
 
     /* 두번째 섹션 - 목표 */
@@ -1170,6 +1181,7 @@ ul.portfolio__info li:before {
     overflow: hidden;
     padding: 0 8px;
     padding-bottom: 12px;
+    color: #fff;
 }
 
 .introduce__text h1:after {
@@ -1639,6 +1651,7 @@ ul.portfolio__info li:before {
     font-size: 42px;
     font-weight: 600;
     margin-bottom: 18px;
+    color: #fff;
 }
 
 .contact__item .contact-info p {

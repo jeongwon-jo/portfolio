@@ -230,6 +230,10 @@ body {
     top: -54px;
   }
 
+  .header__inner {
+    padding: 0 16px;
+  }
+
   .header_logo {
     width: 90px;
     height: 24px;
