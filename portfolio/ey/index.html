@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="../css/portfolio_style.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="/css/attribute.css">
   <script src="/js/common.js" defer></script>
   <script src="../js/portfolio_common.js" defer></script>
@@ -118,7 +119,7 @@
                 <span class="no">02</span>
                 <h2 class="h2_tit">Publishing Guide</h2>
               </div>
-              <div class="color_guide mb60">
+              <div class="color_guide mb80">
                 <div class="title_with_modal">
                   <h3 class="h3_tit mb16"><a href="#developThemeLanguage" class="underline">(1) Color System</a></h3>
                    <span>(클릭하여 ThemeProvider 구현 방식 보기)</span>
@@ -226,7 +227,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="font_guide mb60">
+              <div class="font_guide mb80">
                 <h3 class="h3_tit" style="text-decoration: underline;">(2) Typography</h2>
                 <div class="font_system">
                   <h2 class="h2_tit font_family" style="font-family: 'Pretendard';">Pretendard</h2>
@@ -249,7 +250,7 @@
                   </div>
                 </div>
               </div>
-              <div class="publishing_guide mb60">
+              <div class="publishing_guide mb80">
                 <h3 class="h3_tit" style="text-decoration: underline;">(3) Tailwind.css</h3>
                 <div class="publishing_css">
                   <div class="tailwind_info">
@@ -344,7 +345,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
               </div>
             </div>
           </section>
-          <section class="project__develop">
+          <section class="project__develop p80">
             <div class="sec__inner">
               <div class="project__header">
                 <span class="no">03</span>
@@ -353,7 +354,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
               <div>
                 <!-- 개발 스택 -->
                 <div class="develop_stack">
-                  <h3 class="h3_it">Development Stack</h3>
+                  <h3 class="h3_tit">Development Stack</h3>
                   <div class="stack">
                     <h4 class="h4_tit">Frontend</h4>
                     <ul class="develop-stack__list">
@@ -369,12 +370,6 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
                       <li><span>Zustand</span></li>
                     </ul>
                   </div>
-                  <div class="stack">
-                    <h4 class="h4_tit">CI/CD</h4>
-                    <ul class="develop-stack__list">
-                      <li><span>GitHub</span></li>
-                    </ul>
-                  </div>
                   <a href="https://www.notion.so/jjeong1jo/2b02c9ae108080b492dbfb6f0953499f?source=copy_link" class="underline"
                     target="_blank">노션으로 프로젝트 폴더 구조 가이드 보기</a>
                 </div>
@@ -384,7 +379,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
           <!-- 메인 페이지 및 전역 레이아웃(헤더·푸터·사이드바) 개발 -->
           <section class="project__develop">
             <div class="sec__inner">
-              <h1 class="h1_tit">(1) 메인 페이지 및 전역 레이아웃(헤더·푸터·사이드바) 개발</h1>
+              <h3 class="h3_tit">(1) 메인 페이지 및 전역 레이아웃(헤더·푸터·사이드바) 개발</h3>
               <div class="develop_flex_box">
                 <div class="develop_thumbnail">
                   <div class="thumbnail_main">
@@ -399,7 +394,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
                 <div class="develop_description">
                   <!-- 메인페이지 설명 (백엔드 API중 어떤 데이터를 가지고 데이터 바인딩) -->
                   <div>
-                    <h3>메인 API를 이용한 레이아웃 설계</h3>
+                    <h4 class="h4_tit">메인 API를 이용한 레이아웃 설계</h4>
                     <ul>
                       <li>메인 API에서 제공되는 <b>헤더 로고, 알림 수, GNB 메뉴, 메인 위젯 데이터</b>를 이용해 전체 레이아웃을 데이터 기반으로 설계.</li>
                       <li>사용자 권한 값(allowedFormIds, ENV_SEQ_WIDGETS, groupEnabled)에 따라 <b>위젯 노출/비노출 규칙을 동적으로 구성</b>, 잘못된 formId 매핑은
@@ -412,7 +407,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
                   </div>
                   <!-- 헤더 로고 / 알림 -->
                   <div>
-                    <h3>Header 설계</h3>
+                    <h4 class="h4_tit">Header 설계</h4>
                     <ul>
                       <li>메인 API의 로고 데이터를 동적으로 바인딩하여 기업별 커스터마이징 대응</li>
                       <li>알림 API와 연동해 읽음/안읽음 상태를 UI에 반영</li>
@@ -421,7 +416,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
                   </div>
                   <!-- 사이드바 관리자 권한에 따른 메뉴 리스트 -->
                   <div>
-                    <h3>Sidebar 설계</h3>
+                    <h4 class="h4_tit">Sidebar 설계</h4>
                     <ul>
                       <li>사용자 사번 확인용 <b>UPC 형태의 바코드</b> 모달 기능 구현</li>
                       <li>메인 API의 GNB 데이터를 기반으로 <b>권한별 사이드바 메뉴 목록</b>을 구성</li>
@@ -429,7 +424,7 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
                   </div>
                   <!-- 앱바 관리자 권한에 따른 앱바 리스트 -->
                   <div>
-                    <h3>Appbar 설계</h3>
+                    <h4 class="h4_tit">Appbar 설계</h4>
                     <ul>
                       <li>설정 API의 Appbar 데이터를 바인딩하여 <b>사용자 맞춤형 앱바 구성</b> 구현</li>
                       <li>설정 데이터를 localStorage에 저장하고, 값 변경을 감지해 <b>즉시 UI 업데이트</b>가 이루어지도록 설계</li>
@@ -442,30 +437,52 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
           <!-- 테마, 언어팩 개발 -->
           <section id="developThemeLanguage" class="project__develop">
             <div class="sec__inner">
-              <h1 class="h1_tit">(2) 테마, 언어팩 개발</h1>
+              <h3 class="h3_tit">(2) 테마, 언어팩 개발</h3>
               <div class="develop_flex_box">
                 <div class="develop_thumbnail">
-                  <img src="" alt="">
+                  <div class="thumbnail_main">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/theme_page.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main not_hover">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/language_page.png" alt="">
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="develop_description">
                   <!-- 테마 Provider 설명 (css에서 어떻게 관리, Provider소개) -->
                   <div>
-                    <h3>ThemeProvider</h3>
+                    <h4 class="h4_tit">ThemeProvider</h4>
                     <ul>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
+                      <li>ThemeProvider를 구성하여 <b>전역 테마 상태를 중앙에서 관리</b>하도록 설계</li>
+                      <li>테마 변경 값을 HTML 루트의 data-theme 속성에 반영하여 <b>CSS 변수 기반 테마 전환</b> 구현</li>
+                      <li>CSS Custom Properties를 활용해 <b>컴포넌트 수정 없이 전체 UI 컬러 일괄 변경</b> 가능하도록 구조화</li>
+                      <li>useTheme 훅을 제공해 <b>하위 컴포넌트에서 간편하게 테마 접근 및 제어</b> 가능하도록 설계</li>
                     </ul>
                   </div>
                   <!-- 언어 Provider 설명 (설정 > 언어설정, 설정 초기화, 메인페이지) -->
                   <div>
-                    <h3>LanguageProvider</h3>
+                    <h4 class="h4_tit">LanguageProvider</h4>
                     <ul>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
+                      <li>
+                        기존 언어팩과 메뉴명이 백엔드에서 변경될 수 있는 구조를 고려해,
+                        <b>초기 진입 시 서버 응답 기준으로 언어팩 워딩을 동적으로 보정</b>하여
+                        UI 불일치 및 재렌더링을 최소화
+                      </li>
+                      <li>LanguageProvider를 구성해 <b>전역 언어 상태 및 다국어 메시지 관리</b>를 중앙화</li>
+                      <li>초기 로딩 시 localStorage와 브라우저 언어를 기준으로 <b>기본 언어 자동 감지</b> 로직 구현</li>
+                      <li>메인 페이지에서 설정 API 응답을 기반으로 <b>서버 설정 우선 언어 적용</b> 처리</li>
+                      <li>기본 다국어 메시지와 동적 메뉴 데이터를 병합해 <b>런타임 다국어 메뉴 확장</b> 가능하도록 설계</li>
                     </ul>
                   </div>
                 </div>
@@ -475,41 +492,208 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
           <!-- 급여 조회 개발 -->
           <section class="project__develop">
             <div class="sec__inner">
-              <!-- 급여조회 썸네일 (모달 / 전체보기) -->
-              <div></div>
-              <!-- 급여조회 설명 (Round에 따른 급여조회) -->
-              <!-- 월급여대장 설명 (귀속기간에 따른 월급여조회) -->
-              <div></div>
+              <h3 class="h3_tit">(3) 메뉴 [급여조회] 개발</h3>
+              <div class="develop_flex_box">
+                <!-- 급여조회 썸네일 (모달 / 전체보기) -->
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/payroll_page.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/payroll_page2.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_description">
+                  <!-- 급여조회 설명 (Round에 따른 급여조회) -->
+                  <div>
+                    <h4 class="h4_tit">급여조회</h4>
+                    <ul>
+                      <li>급여 라운드(Round)로 <b>지급 회차 단위 급여명세 조회</b> 기능 구현</li>
+                      <li>진입 시 최신 라운드를 자동 조회하여 <b>기본 급여 기간 정보</b>를 즉시 표시</li>
+                      <li>ScrollSelect 컴포넌트 기반 라운드 선택 UI를 제공해 <b>과거 급여 회차 조회</b> 지원</li>
+                      <li>대상자 여부 및 급여 마감 여부 체크를 통해 <b>조회 가능 대상자만 급여 노출</b> 처리</li>
+                      <li>급여 총액·공제 총액·실지급액을 요약 테이블로 제공해 <b>급여 핵심 정보 강조</b></li>
+                      <li>RSA 공개키 기반 보안 파라미터를 적용해 <b>급여명세서 출력 보안 강화</b></li>
+                      <li>귀속월(YYYY.MM) 기준 급여명세서 조회 페이지를 구성해 <b>월 단위 급여 확인</b> 기능 제공</li>
+                      <li>사용자 정보 기반으로 조회 파라미터를 자동 세팅해 <b>개인별 급여 데이터 조회</b> 처리</li>
+                      <li>급여 마스터 데이터를 통해 <b>총지급액·공제액·과세/비과세 금액 요약</b> 제공</li>
+                    </ul>
+                  </div>
+                  <!-- 월급여대장 설명 (귀속기간에 따른 월급여조회) -->
+                  <div>
+                    <h4 class="h4_tit">월급여대장</h4>
+                    <ul>
+                      <li>사용자별 급여 내역 조회 UI 구현</li>
+                      <li>기간 선택 컴포넌트를 통해 <b>급여 귀속 월 범위 검색</b> 기능 제공</li>
+                      <li>마감 월 체크 API를 연동하여 <b>마감 이후 월 조회 및 출력 제한</b> 로직 구현</li>
+                      <li>급여 항목을 다중 행 테이블로 구성하여 <b>월별 급여 상세 내역 가독성</b> 강화</li>
+                      <li>급여대장 출력 요청 시 <b>보안이 적용된 리포트 출력</b> 구현</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <!-- 연말정산 개발 -->
           <section class="project__develop">
             <div class="sec__inner">
-              <!-- 연말정산 썸네일 (모달 / 전체보기) -->
-              <div></div>
-              <!-- 연말정산 검토사항 설명 () -->
-              <!-- 증빙서류 업로드 설명 (파일 업로드, 파일 다운로드, 삭제) -->
-              <!-- 연말정산 결과 설명 (PDF 다운로드, 검토결과 UI) -->
-              <div></div>
+              <h3 class="h3_tit">(4) 메뉴 [연말정산] 개발</h3>
+              <div class="">
+                <div class="develop_flex_box">
+                  <!-- 연말정산 썸네일 (모달 / 전체보기) -->
+                  <div class="develop_thumbnail">
+                    <div class="thumbnail_main">
+                      <div class="device">
+                        <img src="./img/device.png" alt="디바이스" width="300">
+                        <div class="device_content">
+                          <img src="./img/yearend_page.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="develop_thumbnail">
+                    <div class="thumbnail_main">
+                      <div class="device">
+                        <img src="./img/device.png" alt="디바이스" width="300">
+                        <div class="device_content">
+                          <img src="./img/yearend_page2.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="develop_thumbnail">
+                    <div class="thumbnail_main">
+                      <div class="device">
+                        <img src="./img/device.png" alt="디바이스" width="300">
+                        <div class="device_content">
+                          <img src="./img/yearend_page3.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_description mt50">
+                  <!-- 연말정산 검토사항 설명 () -->
+                  <div>
+                    <h4 class="h4_tit">연말정산 검토사항</h4>
+                    <ul>
+                      <li>연말정산 귀속년도 공통코드를 조회해 <b>회사별 연말정산 기준 연도 자동 결정</b> 처리</li>
+                      <li>연말정산 상태 조회를 통해 <b>해당 연도의 연말정산 진행 가능 여부</b>를 사전 판단</li>
+                      <li>연말정산 미대상 상태인 경우 검토 화면을 차단해 <b>잘못된 접근 방지</b></li>
+                      <li>검토사항 목록을 조회하여 <b>EY 검토 항목별 상세 내역</b>을 카드 형태로 제공</li>
+                      <li>미확인 항목이 있을 경우 해당 항목을 자동으로 펼쳐 <b>사용자 확인 흐름 유도</b></li>
+                      <li>검토 항목별 공제 항목·필요 서류·검토 의견을 명확히 분리해 <b>정보 전달력 강화</b></li>
+                      <li>검토 결과 데이터를 데이터셋 형식으로 변환해 <b>대량 저장 API와 연동</b></li>
+                    </ul>
+                  </div>
+                  <!-- 증빙서류 업로드 설명 (파일 업로드, 파일 다운로드, 삭제) -->
+                  <div>
+                    <h4 class="h4_tit">연말정산 증빙서류</h4>
+                    <ul>
+                      <li>증빙서류 유형 단위로 SupportingFileItem 컴포넌트를 구성해 <b>증빙 항목별 파일 관리</b> 구조 구현</li>
+                      <li>연말정산 상태 및 기간 정보에 따라 <b>업로드·삭제 가능 여부를 컴포넌트 단에서 제어</b></li>
+                      <li>파일 업로드 시 RSA 암호화 및 보안 헤더를 적용해 <b>증빙서류 전송 보안 강화</b></li>
+                      <li>증빙서류 목록을 표시하고 파일 다운로드 기능을 제공해 <b>제출 내역 확인</b> 지원</li>
+                      <li>파일 삭제 시 확인 모달을 거쳐 처리해 <b>실수로 인한 데이터 삭제 방지</b></li>
+                      <li>증빙 파일 미리보기 컴포넌트(ImagePreviewModal)을 제공해 <b>업로드 파일 즉시 확인</b> 가능</li>
+                      <li>증빙서류 설명 및 관련 문서 안내를 모달로 제공해 <b>제출 기준 이해도 향상</b></li>
+                    </ul>
+                  </div>
+                  <!-- 연말정산 결과 설명 (PDF 다운로드, 검토결과 UI) -->
+                  <div>
+                    <h4 class="h4_tit">연말정산 결과조회</h4>
+                    <ul>
+                      <li>연말정산 결과 데이터를 조회해 <b>환급/추징 여부 및 금액 요약 표시</b></li>
+                      <li>환급·추징 상태에 따라 <b>아이콘·색상·문구를 분기 처리</b>하여 가독성 강화</li>
+                      <li>연말정산 비교 출력 기능을 제공해 <b>1·2차 결과 비교 PDF 출력</b> 지원</li>
+                      <li>원천세율 설정이 가능한 경우 <b>원천징수 세율 선택 및 저장</b> 기능 제공</li>
+                      <li>분납 개월 수 및 원천세율 변경 시 <b>저장 API 호출로 사용자 설정 반영</b></li>
+                      <li>출력 가능한 연말정산 서식 목록을 조회해 <b>서식별 PDF 출력</b> 지원</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <!-- 헬프데스크 개발 -->
           <section class="project__develop">
             <div class="sec__inner">
-              <!-- 헬프데스크 썸네일 (모달 / 전체보기) -->
-              <div></div>
-              <!-- 헬프데스크 설명 (리스트 : 검색, 페이징) -->
-              <!-- 헬프데스크 설명 (상세) -->
-              <!-- 헬프데스크 설명 (등록 / 수정 : 에디터, 첨부파일 -> 컴포넌트로 뺌) -->
-              <!-- 헬프데스크 설명 (답변 : 에디터 -> 컴포넌트로 뺌) -->
-              <div></div>
-            </div>
-          </section>
-          <section class="project__issue">
-            <div class="sec__inner">
-              <h2 class="h2_tit">UI 개선 & 성능개선사례</h2>
-              <!-- 1. 언어팩(기존 언어팩과 메뉴명이 백엔드에서 바뀌는걸 고려해서 처음 접근시 언어팩 워딩을 변경) -->
-              <!-- 2.  -->
+              <h3 class="h3_tit">(4) 메뉴 [HELP DESK] 개발</h3>
+              <div class="develop_flex_box">
+                <!-- 연말정산 썸네일 (모달 / 전체보기) -->
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main not_hover">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/help_page.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main not_hover">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/help_page2.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="develop_thumbnail">
+                  <div class="thumbnail_main not_hover">
+                    <div class="device">
+                      <img src="./img/device.png" alt="디바이스" width="300">
+                      <div class="device_content">
+                        <img src="./img/help_page3.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="develop_description mt50">
+                <div>
+                  <!-- 헬프데스크 설명 (리스트 : 검색, 페이징) -->
+                  <h4 class="h4_tit">헬프데스크 리스트</h4>
+                  <ul>
+                    <li>게시판 설정 및 문의 유형 공통코드를 조회해 <b>Help Desk 카테고리 필터를 동적으로 구성</b></li>
+                    <li>제목/문의번호 기반 검색과 문의 유형 필터를 적용해 <b>Help Desk 목록을 조건별로 조회</b></li>
+                    <li>페이지네이션과 URL 쿼리(page)를 연동해 <b>목록 상태를 유지하며 페이지 이동</b> 처리</li>
+                  </ul>
+                </div>
+                <!-- 헬프데스크 설명 (상세) -->
+                <div>
+                  <h4 class="h4_tit">헬프데스크 상세페이지</h4>
+                  <ul>
+                    <li>Help Desk 상세 정보를 조회해 <b>문의 내용·작성자·상태를 단일 화면에서 확인</b> 가능하도록 구현</li>
+                    <li>첨부 파일 다운로드 및 이미지 미리보기를 지원해 <b>문의 자료를 즉시 확인</b>할 수 있도록 처리</li>
+                    <li>답변 여부를 사전 검증하여 <b>답변이 존재하는 문의는 삭제를 제한</b>하는 안전 로직 적용</li>
+                  </ul>
+                </div>
+                <!-- 헬프데스크 설명 (등록 / 수정 : 에디터, 첨부파일 -> 컴포넌트로 뺌) -->
+                <div>
+                  <h4 class="h4_tit">헬프데스크 등록 / 수정 / 답변</h4>
+                  <ul>
+                    <li>Help Desk <b>등록·수정·답변 화면에서 공통으로 사용하는 Form 컴포넌트</b>를 분리해 재사용성 강화</li>
+                    <li>CKEditor 기반 에디터와 첨부파일 업로드·미리보기를 컴포넌트 내부에서 통합 관리</li>
+                    <li>파일 확장자·용량 검증 및 업로드 실패 케이스를 처리해 <b>안정적인 파일 업로드 UX</b> 구현</li>
+                    <li>초기 데이터와 현재 입력값을 비교해 <b>변경 사항이 있을 때만 저장 가능하도록 Dirty 체크 로직 적용</b></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
         </div>
