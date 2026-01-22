@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="./home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link on" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li class="on"><a href="./home.html">홈</a></li>
+                <li><a href="./wifi.html">와이파이</a></li>
+                <li><a href="./device.html">디바이스</a></li>
+                <li><a href="./children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="./customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../advanced/internet.html">인터넷 연결정보</a></li>
+                <li><a href="../advanced/network_statistics.html">네트워크 통계</a></li>
+                <li><a href="../advanced/dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="../advanced/sysmte_log.html">시스템 로그</a></li>
+                <li><a href="../advanced/wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="../advanced/nat_setting.html">NAT 설정</a></li>
+                <li><a href="../advanced/detail_setting.html">세부 설정</a></li>
+                <li><a href="../advanced/router_setting.html">공유기 설정</a></li>
+                <li><a href="../advanced/diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network active">
+            <!-- <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div> -->
+            <!-- 연결된 경우 -->
+            <div class="network">
+              <p>U+Net1234</p>
+              <em class="connect">연결됨</em>
+            </div>
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="home">
+            <div class="home__main-title">
+              <h2 class="h2_tit">홈</h2>
+            </div>
+            <div class="home__grid flex mt24">
+              <div class="grid__box">
+                <div class="home__title">
+                  <div class="tit">
+                    <h2 class="h2_tit">
+                      <img src="../_img/icon/icon_router.svg" alt="공유기 아이콘">
+                      연결된 공유기
+                    </h2>
+                  </div>
+                  <a href="../advanced/router_setting.html" class="btn_link-more"><span>더보기</span></a>
+                </div>
+                <div class="connected__info router">
+                  <div class="router_name">
+                    <div class="router_img">
+                      <img src="../_img/router_img.png" alt="공유기 이미지">
+                    </div>
+                    <ul class="info__list">
+                      <li>
+                        <span class="info__tit tit1">공유기 이름</span>
+                        <div class="info__contents">TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT</div>
+                      </li>
+                      <li class="pc_show">
+                        <span class="info__tit tit1">모델명</span>
+                        <div class="info__contents">TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mo-modal__info mo_show">
+                    <ul class="info__list">
+                      <li>
+                        <span class="info__tit tit1">모델명</span>
+                        <div class="info__contents">TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="grid__box">
+                <div class="home__title">
+                  <div class="tit">
+                    <h2 class="h2_tit">
+                      <img src="../_img/icon/icon_wifi_active.svg" alt="와이파이 아이콘">
+                      연결된 와이파이
+                    </h2>
+                  </div>
+                  <a href="./wifi.html" class="btn_link-more"><span>더보기</span></a>
+                </div>
+                <div class="connected__info">
+                  <!-- 연결된 와이파이 없는 경우 -->
+                  <!-- <div class="no_data">
+                    <p>연결된 와이파이가 없습니다.</p>
+                  </div> -->
+                  <!-- 연결된 와이파이 있는 경우 -->
+                  <ul class="info__list">
+                    <li>
+                      <span class="info__tit tit2">네트워크 이름</span>
+                      <div class="info__contents">TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT</div>
+                    </li>
+                    <li>
+                      <span class="info__tit tit2">와이파이 비밀번호</span>
+                      <div class="info__contents">
+                        <div class="wifi__password">
+                          <span id="pwd" class="pwd">TEXTTEXTTEXT</span>
+                          <button type="button" class="btn_eye"></button>
+                          <button type="button" class="btn-textType btn_change" onclick="openModal('modal-change-pwd')">변경</button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="home__grid">
+              <div class="grid__box">
+                <div class="home__title">
+                  <div class="tit">
+                    <h2 class="h2_tit">
+                      <img src="../_img/icon/icon_device.svg" alt="디바이스 아이콘">
+                      디바이스
+                    </h2>
+                    <div class="tit_info blue">2대 연결됨 </div>
+                  </div>
+                  <a href="./device.html" class="btn_link-more"><span>더보기</span></a>
+                </div>
+                <div class="home__contents">
+                  <div class="table__wrap">
+                    <div class="tbl--typeA mt24">
+                      <table>
+                        <colgroup>
+                          <col style="width: 422px;">
+                          <col style="width: 509px;">
+                          <col style="width: 509px;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>디바이스</th>
+                            <th>IP주소</th>
+                            <th>MAC</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="tal">
+                              <div class="connected_status">
+                                <div class="dot green"></div>
+                                김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북김유플의 노트북
+                              </div>
+                            </td>
+                            <td><p class="ellipsis1">192. 168. 124. 115192. 168. 124. 115192. 168. 124. 115192. 168. 124. 115192. 168. 124. 115192. 168. 124. 115192. 168. 124. 115</p></td>
+                            <td><p class="ellipsis1">18:C5:01:CE:13:FE18:C5:01:CE:13:FE18:C5:01:CE:13:FE18:C5:01:CE:13:FE18:C5:01:CE:13:FE18:C5:01:CE:13:FE</p></td>
+                          </tr>
+                          <tr>
+                            <td class="tal">
+                              <div class="connected_status">
+                                <div class="dot green"></div>
+                                김유플의 iPhone 16
+                              </div>
+                            </td>
+                            <td><p class="ellipsis1">192. 168. 124. 115</p></td>
+                            <td><p class="ellipsis1">18:C5:01:CE:13:FE</p></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="table__wrap">
+                    <div class="tbl--typeA mt24">
+                      <table>
+                        <colgroup>
+                          <col style="width: 422px;">
+                          <col style="width: 509px;">
+                          <col style="width: 509px;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>디바이스</th>
+                            <th>IP주소</th>
+                            <th>MAC</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td colspan="3" class="tbl_nodata">
+                              <p>TBD</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home__grid">
+              <div class="grid__box">
+                <div class="home__title">
+                  <div class="tit">
+                    <h2 class="h2_tit">
+                      <img src="../_img/icon/icon_person.svg" alt="자녀 인터넷 아이콘">
+                      자녀 인터넷 관리
+                    </h2>
+                    <div class="tit_info">Mac filtering </div>
+                  </div>
+                  <a href="./children_internet.html" class="btn_link-more"><span>더보기</span></a>
+                </div>
+                <div class="children-internet__grid mt24">
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool pc on"></div>
+                      <div class="tool__info">
+                        <h3>김유플의 노트북</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,목,금
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool pad on"></div>
+                      <div class="tool__info">
+                        <h3>김유플의 iPhone 16</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,일
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool mobile on"></div>
+                      <div class="tool__info">
+                        <h3>이유플의 iPhone 13</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,목,금,토,일
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool pad off"></div>
+                      <div class="tool__info">
+                        <h3>이유플의 아이패드</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,목,금,토,일
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool mobile off"></div>
+                      <div class="tool__info">
+                        <h3>둘째의 휴대폰</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,목,금,토,일
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool mobile off"></div>
+                      <div class="tool__info">
+                        <h3>박유플의 iPhone 13</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,목,금,토,일
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="internet__item">
+                    <div class="tool__box">
+                      <div class="tool mobile on"></div>
+                      <div class="tool__info">
+                        <h3>둘째의 휴대폰</h3>
+                        <p class="limit_days">
+                          <span>이용 제한 설정됨</span>
+                          월,화,수,목,금,토,일
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- TBD -->
+                  <div class="internet__item tbd">
+                    <div class="tool__box">
+                      <p>TBD</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 비밀번호 재설정 모달 시작 -->
+  <div id="modal-change-pwd" class="modal modal_md">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>비밀번호 재설정</h3>
+        <p>공유기의 네트워크 통합 시스템에 접속하기 위한 관리자 암호를
+        재설정 합니다.</p>
+      </div>
+      <div class="modal__content">
+        <ul class="change-pwd__info">
+          <li>변경된 암호를 잊으셨을 경우, GAPD-7000을 초기화하면 최초 설정된
+              관리자 암호로 재설정됩니다.</li>
+          <li>최초 설정된 관리자 암호는 GAPD-7000 하단부에 기재되어있습니다.</li>
+        </ul>
+        <form action="" class="form_change_pwd mt24">
+          <fieldset>
+            <div class="input--typeA">
+              <label for="" class="input__label">기존 비밀번호</label>
+              <div class="input__contents">
+                <div class="input__box">
+                  <input type="password" class="form-control">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <button type="button" class="btn_eye"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input--typeA">
+              <label for="" class="input__label">변경할 비밀번호</label>
+              <div class="input__contents">
+                <div class="input__box">
+                  <input type="password" class="form-control">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <button type="button" class="btn_eye"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input--typeA">
+              <label for="" class="input__label">비밀번호 확인</label>
+              <div class="input__contents">
+                <div class="input__box">
+                  <input type="password" class="form-control">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <button type="button" class="btn_eye"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn-w100p btn_gray" onclick="closeModal('modal-change-pwd')">취소</button>
+        <button type="button" class="btn btn-modal btn-w100p btn_primary">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 비밀번호 재설정 모달 끝-->
+  <script>
+    let password = $('#pwd').text()
+    let passwordLenth = password.length;
+
+    $('.wifi__password .btn_eye').click(function () {
+      if (!$(this).hasClass("show")) {
+        // 텍스트형태로 보이고있는 상태
+        let passwordHide = ""
+
+        for (let index = 0; index < passwordLenth; index++) {
+          passwordHide += "*"
+        }
+
+        $(this).siblings('.pwd').text(passwordHide)
+        $(this).addClass('show')
+      } else {
+        // ** 형태로 보이고있는 상태
+        $(this).siblings('.pwd').text(password)
+        $(this).removeClass('show')
+      }
+    })
+  </script>
+</body>
+
+</html>

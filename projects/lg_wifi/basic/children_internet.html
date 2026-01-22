@@ -1,0 +1,2062 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="./home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link on" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./home.html">홈</a></li>
+                <li><a href="./wifi.html">와이파이</a></li>
+                <li><a href="./device.html">디바이스</a></li>
+                <li class="on"><a href="./children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="./customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../advanced/internet.html">인터넷 연결정보</a></li>
+                <li><a href="../advanced/network_statistics.html">네트워크 통계</a></li>
+                <li><a href="../advanced/dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="../advanced/sysmte_log.html">시스템 로그</a></li>
+                <li><a href="../advanced/wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="../advanced/nat_setting.html">NAT 설정</a></li>
+                <li><a href="../advanced/detail_setting.html">세부 설정</a></li>
+                <li><a href="../advanced/router_setting.html">공유기 설정</a></li>
+                <li><a href="../advanced/diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title basic__title children">
+            <h3>자녀 인터넷 관리 <span class="info">Mac filtering</span></h3>
+            <p>자녀의 PC나 휴대 디바이스를 등록하여 과도한 사용을 제한할 수 있습니다.<br>
+            대상 디바이스를 등록하여 요일별/시간대별 인터넷을 허용하거나 차단할 수 있습니다.</p>
+          </div>
+          <div class="children-internet">
+            <div class="children__title">
+              <h2 class="h2_tit">인터넷 이용 제한 설정</h2>
+              <div class="btn_area">
+                <button type="button"  class="btn btn-sm btn_icon btn_gray_outlined btn_p16 btn_more" onclick="openModal('modal-add-device')"><span>기기 추가하기</span></button>
+                <button type="button"  class="btn btn-sm btn_icon btn_gray_outlined btn_p16 btn_remove" onclick="openModal('modal-remove-device')"><span>기기 지우기</span></button>
+              </div>
+            </div>
+            <div class="children-internet__grid">
+              <div class="internet__item">
+                <div class="tool__box">
+                  <div class="tool pc off"></div>
+                  <div class="tool__info">
+                    <h3>김유플의 노트북</h3>
+                  </div>
+                </div>
+                <div class="tool__toggle">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="toggle1" checked>
+                    <label for="toggle1" class="switch_label">
+                      <span class="onoff_btn"></span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="tool__time">
+                  <li class="mac">
+                    <span class="tool_tit">MAC</span>
+                    <b>18:C5:01:CE:13:FE</b>
+                  </li>
+                  <li>
+                    <span class="tool_tit">월</span>
+                    <div>
+                      <p>오전 09시 30분~오후 03시 30분</p>
+                      <p>오후 05시 00분~오후 11시 00분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">화</span>
+                    <div>
+                      <p>오전 09시 30분~오후 03시 30분</p>
+                      <p>오후 06시 30분~오후 10시 00분</p>
+                      <p>오후 11시 00분~오후 11시 30분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">월</span>
+                    <div>
+                      <p>오전 09시 00분~오후 03시 00분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">외 5건</span>
+                  </li>
+                </ul>
+                <div class="tool__btns">
+                  <button type="button" class="btn btn-sm btn_gray btn_tool_setting btn_p16" onclick="openModal('modal-internet-limit')"><span>설정</span></button>
+                </div>
+              </div>
+              <div class="internet__item">
+                <div class="tool__box">
+                  <div class="tool mobile on"></div>
+                  <div class="tool__info">
+                    <h3>김유플의 노트북</h3>
+                  </div>
+                </div>
+                <div class="tool__toggle">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="toggle2" checked>
+                    <label for="toggle2" class="switch_label">
+                      <span class="onoff_btn"></span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="tool__time">
+                  <li class="mac">
+                    <span class="tool_tit">MAC</span>
+                    <b>18:C5:01:CE:13:FE</b>
+                  </li>
+                  <li>
+                    <span class="tool_tit">수</span>
+                    <div>
+                      <p>오전 09시 00분~오후 03시 00분</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="tool__btns">
+                  <button type="button" class="btn btn-sm btn_gray btn_tool_setting btn_p16" onclick="openModal('modal-internet-limit')"><span>설정</span></button>
+                </div>
+              </div>
+              <div class="internet__item">
+                <div class="tool__box">
+                  <div class="tool pad off"></div>
+                  <div class="tool__info">
+                    <h3>김유플의 노트북</h3>
+                  </div>
+                </div>
+                <div class="tool__toggle">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="toggle3" checked>
+                    <label for="toggle3" class="switch_label">
+                      <span class="onoff_btn"></span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="tool__time">
+                  <li class="mac">
+                    <span class="tool_tit">MAC</span>
+                    <b>18:C5:01:CE:13:FE</b>
+                  </li>
+                  <li>
+                    <span class="tool_tit">월</span>
+                    <div>
+                      <p>오전 09시 30분~오후 03시 30분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">화</span>
+                    <div>
+                      <p>오전 09시 30분~오후 03시 30분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">수</span>
+                    <div>
+                      <p>오전 09시 00분~오후 03시 00분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">목</span>
+                    <div>
+                      <p>오전 09시 00분~오후 03시 00분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">금</span>
+                    <div>
+                      <p>오전 09시 00분~오후 03시 00분</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="tool_tit">토</span>
+                    <div>
+                      <p>오전 09시 00분~오후 03시 00분</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="tool__btns">
+                  <button type="button" class="btn btn-sm btn_gray btn_tool_setting btn_p16" onclick="openModal('modal-internet-limit')"><span>설정</span></button>
+                </div>
+              </div>
+              <div class="internet__item">
+                <div class="tool__box">
+                  <div class="tool pc on"></div>
+                  <div class="tool__info">
+                    <h3>김유플의 노트북</h3>
+                  </div>
+                </div>
+                <div class="tool__toggle">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="toggle4">
+                    <label for="toggle4" class="switch_label">
+                      <span class="onoff_btn"></span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="tool__time">
+                  <li class="mac">
+                    <span class="tool_tit">MAC</span>
+                    <b>18:C5:01:CE:13:FE</b>
+                  </li>
+                  <li>
+                    <span class="tool_tit">매일</span>
+                    <div>
+                      <p>이용 제한 설정됨</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="tool__btns">
+                  <button type="button" class="btn btn-sm btn_gray btn_tool_setting btn_p16" onclick="openModal('modal-internet-limit')"><span>설정</span></button>
+                </div>
+              </div>
+              <div class="internet__item">
+                <div class="tool__box">
+                  <div class="tool pc on"></div>
+                  <div class="tool__info">
+                    <h3>김유플의 노트북</h3>
+                  </div>
+                </div>
+                <div class="tool__toggle">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="toggle5" checked>
+                    <label for="toggle5" class="switch_label">
+                      <span class="onoff_btn"></span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="tool__time">
+                  <li class="mac">
+                    <span class="tool_tit">MAC</span>
+                    <b>18:C5:01:CE:13:FE</b>
+                  </li>
+                  <li>
+                    <span class="tool_tit">평일</span>
+                    <div>
+                      <p>이용 제한 설정됨</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="tool__btns">
+                  <button type="button" class="btn btn-sm btn_gray btn_tool_setting btn_p16" onclick="openModal('modal-internet-limit')"><span>설정</span></button>
+                </div>
+              </div>
+              <div class="internet__item">
+                <div class="tool__box">
+                  <div class="tool pc on"></div>
+                  <div class="tool__info">
+                    <h3>김유플의 노트북</h3>
+                  </div>
+                </div>
+                <div class="tool__toggle">
+                  <div class="toggle-switch">
+                    <input type="checkbox" id="toggle6">
+                    <label for="toggle6" class="switch_label">
+                      <span class="onoff_btn"></span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="tool__time">
+                  <li class="mac">
+                    <span class="tool_tit">MAC</span>
+                    <b>18:C5:01:CE:13:FE</b>
+                  </li>
+                  <li>
+                    <div>
+                      <p>이용 제한 없음</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="tool__btns">
+                  <button type="button" class="btn btn-sm btn_gray btn_tool_setting btn_p16" onclick="openModal('modal-internet-limit')"><span>설정</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="btn_area right mt16">
+              <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting">설정 적용</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 기기 추가하기 모달 시작 -->
+  <div id="modal-add-device" class="modal modal_lg">
+    <div class="modal__inner no_scroll">
+      <div class="modal__header">
+        <h3>기기 추가하기</h3>
+        <p>자녀의 디바이스로 등록할 기기를<br class="mo_show"> 선택해 주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>새로고침</span></button>
+        </div>
+        <div class="table--scroll_y pc_show">
+          <div class="table__wrap">
+            <div class="tbl--typeA sm mt14">
+              <table>
+                <colgroup>
+                  <col style="width: 74px;">
+                  <col style="width: 158px;">
+                  <col style="width: 199px;">
+                  <col style="width: 199px;">
+                  <col style="width: 110px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="radio--typeA center">
+                        <label for="add_chkAll">
+                          <input type="radio" name="radio_add_device" id="add_chkAll"> <em></em>
+                        </label>
+                      </div>
+                    </th>
+                    <th>디바이스 명</th>
+                    <th>IP</th>
+                    <th>MAC 주소</th>
+                    <th>연결 정보</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="add_chk1">
+                          <input type="radio" name="radio_add_device" id="add_chk1"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="add_chk2">
+                          <input type="radio" name="radio_add_device" id="add_chk2"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot green"></div>
+                        홍길동의 iphone 16
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="add_chk3">
+                          <input type="radio" name="radio_add_device" id="add_chk3"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot gray"></div>
+                        홍길동의 아이패드
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="add_chk4">
+                          <input type="radio" name="radio_add_device" id="add_chk4"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot green"></div>
+                        김유플의 노트북
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="add_chk5">
+                          <input type="radio" name="radio_add_device" id="add_chk5"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div> 
+        </div>
+        <div class="mo_show mt12">
+          <div class="scroll__wrap custom_scroll">
+            <div class="info__box--B">
+              <div class="info__box">
+                <div class="info--checkbox">
+                  <div class="radio--typeA center">
+                    <label for="mo_radio1">
+                      <input type="radio" id="mo_radio1"> <em></em>
+                    </label>
+                  </div>
+                </div>
+                <ul class="info--item">
+                  <li>
+                    <span class="info_title">디바이스 명</span>
+                    <div class="info__cnts">
+                      <div class="connected_status">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">IP주소</span>
+                    <div class="info__cnts">
+                      <p>192.166.12.114</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">MAC</span>
+                    <div class="info__cnts">
+                      <p>18:C5:01:CE:13:FE</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">연결 정보</span>
+                    <div class="info__cnts">
+                      <p>Ethernet</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="info__box">
+                <div class="info--checkbox">
+                  <div class="radio--typeA center">
+                    <label for="mo_radio2">
+                      <input type="radio" id="mo_radio2"> <em></em>
+                    </label>
+                  </div>
+                </div>
+                <ul class="info--item">
+                  <li>
+                    <span class="info_title">디바이스 명</span>
+                    <div class="info__cnts">
+                      <div class="connected_status">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">IP주소</span>
+                    <div class="info__cnts">
+                      <p>192.166.12.114</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">MAC</span>
+                    <div class="info__cnts">
+                      <p>18:C5:01:CE:13:FE</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">연결 정보</span>
+                    <div class="info__cnts">
+                      <p>Ethernet</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="info__box">
+                <div class="info--checkbox">
+                  <div class="radio--typeA center">
+                    <label for="mo_radio3">
+                      <input type="radio" id="mo_radio3"> <em></em>
+                    </label>
+                  </div>
+                </div>
+                <ul class="info--item">
+                  <li>
+                    <span class="info_title">디바이스 명</span>
+                    <div class="info__cnts">
+                      <div class="connected_status">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">IP주소</span>
+                    <div class="info__cnts">
+                      <p>192.166.12.114</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">MAC</span>
+                    <div class="info__cnts">
+                      <p>18:C5:01:CE:13:FE</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">연결 정보</span>
+                    <div class="info__cnts">
+                      <p>Ethernet</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn_area right mt12">
+          <button type="button" class="btn btn-sm btn_secondary_outlined btn_p16" onclick="openModal('modal-input-mac')">MAC 주소 직접 입력하기</button>
+        </div> 
+        <div class="modal__btns center mt24">
+          <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-add-device')">취소</button>
+          <button type="button" class="btn btn-modal btn_primary">추가</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 기기 추가하기 모달 끝 -->
+  <!-- MAC 주소 직접 입력하기 모달 시작 -->
+  <div id="modal-input-mac" class="modal modal_sm">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>MAC 주소 직접 입력하기</h3>
+      </div>
+      <div class="modal__content">
+        <div class="input-security-code mt0">
+          <div class="security-code sm">
+            <input type="number" class="form-control" placeholder="00" value=""
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value=""
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value=""
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value=""
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value=""
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value="" oninput="handleOnInput(this, 2)">
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn-w100p btn_gray"
+          onclick="closeModal('modal-input-mac')">취소</button>
+        <button type="button" class="btn btn-modal btn-w100p btn_primary">추가</button>
+      </div>
+    </div>
+  </div>
+  <!-- MAC 주소 직접 입력하기 모달 끝 -->
+  <!-- 기기 지우기 모달 시작 -->
+  <div id="modal-remove-device" class="modal modal_lg">
+    <div class="modal__inner no_scroll">
+      <div class="modal__header">
+        <h3>기기 지우기</h3>
+        <p>자녀의 디바이스로 등록 해제할 기기를<br class="mo_show"> 선택해 주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>새로고침</span></button>
+        </div>
+        <div class="table--scroll_y pc_show">
+          <div class="table__wrap">
+            <div class="tbl--typeA sm mt14">
+              <table>
+                <colgroup>
+                  <col style="width: 74px;">
+                  <col style="width: 158px;">
+                  <col style="width: 199px;">
+                  <col style="width: 199px;">
+                  <col style="width: 110px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="checkbox--typeA center">
+                        <label for="remove_chkAll">
+                          <input type="checkbox" id="remove_chkAll"> <em></em>
+                        </label>
+                      </div>
+                    </th>
+                    <th>디바이스 명</th>
+                    <th>IP</th>
+                    <th>MAC 주소</th>
+                    <th>연결 정보</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="checkbox--typeA center">
+                        <label for="remove_chk1">
+                          <input type="checkbox" id="remove_chk1"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox--typeA center">
+                        <label for="remove_chk2">
+                          <input type="checkbox" id="remove_chk2"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot green"></div>
+                        홍길동의 iphone 16
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox--typeA center">
+                        <label for="remove_chk3">
+                          <input type="checkbox" id="remove_chk3"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot gray"></div>
+                        홍길동의 아이패드
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox--typeA center">
+                        <label for="remove_chk4">
+                          <input type="checkbox" id="remove_chk4"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot green"></div>
+                        김유플의 노트북
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="checkbox--typeA center">
+                        <label for="remove_chk5">
+                          <input type="checkbox" id="remove_chk5"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="connected_status pl0">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="mo_show mt12">
+          <div class="scroll__wrap custom_scroll">
+            <div class="info__box--B">
+              <div class="info__box">
+                <div class="info--checkbox">
+                  <div class="checkbox--typeA center">
+                    <label for="mo_chk1">
+                      <input type="checkbox" id="mo_chk1"> <em></em>
+                    </label>
+                  </div>
+                </div>
+                <ul class="info--item">
+                  <li>
+                    <span class="info_title">디바이스 명</span>
+                    <div class="info__cnts">
+                      <div class="connected_status">
+                        <div class="dot green"></div>
+                        김유플의 노트북
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">IP주소</span>
+                    <div class="info__cnts">
+                      <p>192.166.12.114</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">MAC</span>
+                    <div class="info__cnts">
+                      <p>18:C5:01:CE:13:FE</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">연결 정보</span>
+                    <div class="info__cnts">
+                      <p>Ethernet</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="info__box">
+                <div class="info--checkbox">
+                  <div class="checkbox--typeA center">
+                    <label for="mo_chk2">
+                      <input type="checkbox" id="mo_chk2"> <em></em>
+                    </label>
+                  </div>
+                </div>
+                <ul class="info--item">
+                  <li>
+                    <span class="info_title">디바이스 명</span>
+                    <div class="info__cnts">
+                      <div class="connected_status">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">IP주소</span>
+                    <div class="info__cnts">
+                      <p>192.166.12.114</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">MAC</span>
+                    <div class="info__cnts">
+                      <p>18:C5:01:CE:13:FE</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">연결 정보</span>
+                    <div class="info__cnts">
+                      <p>Ethernet</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="info__box">
+                <div class="info--checkbox">
+                  <div class="checkbox--typeA center">
+                    <label for="mo_chk3">
+                      <input type="checkbox" id="mo_chk3"> <em></em>
+                    </label>
+                  </div>
+                </div>
+                <ul class="info--item">
+                  <li>
+                    <span class="info_title">디바이스 명</span>
+                    <div class="info__cnts">
+                      <div class="connected_status">
+                        <div class="dot gray"></div>
+                        김유플의 노트북
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">IP주소</span>
+                    <div class="info__cnts">
+                      <p>192.166.12.114</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">MAC</span>
+                    <div class="info__cnts">
+                      <p>18:C5:01:CE:13:FE</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="info_title">연결 정보</span>
+                    <div class="info__cnts">
+                      <p>Ethernet</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns center mt24">
+          <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-remove-device')">취소</button>
+          <button type="button" class="btn btn-modal btn_primary">추가</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 기기 지우기 모달 끝 -->
+  <!-- 인터넷 이용 제한 설정 모달 시작 -->
+  <div id="modal-internet-limit" class="modal modal_lg">
+    <div class="modal__inner no_scroll">
+      <div class="modal__header">
+        <h3>인터넷 이용 제한 설정</h3>
+        <p>인터넷 이용을 제한할 시간대를 요일별로 선택해 주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="scroll__wrap custom_scroll">
+          <div class="limit_device">
+            <div class="device__inner">
+              <span>대상 디바이스</span><b>둘째의 휴대폰</b>
+            </div>
+          </div>
+          <div class="device-timetable">
+            <div class="timetable__day">
+              <div></div>
+              <div>일</div>
+              <div>월</div>
+              <div>화</div>
+              <div>수</div>
+              <div>목</div>
+              <div>금</div>
+              <div>토</div>
+            </div>
+            <div class="timetable__wrap custom_scroll">
+              <div class="timetable__contents">
+                <div class="timetable__time">
+                  <div class="time">0</div>
+                  <div class="time">1</div>
+                  <div class="time">2</div>
+                  <div class="time">3</div>
+                  <div class="time">4</div>
+                  <div class="time">5</div>
+                  <div class="time">6</div>
+                  <div class="time">7</div>
+                  <div class="time">8</div>
+                  <div class="time">9</div>
+                  <div class="time">10</div>
+                  <div class="time">11</div>
+                  <div class="time">12</div>
+                  <div class="time">13</div>
+                  <div class="time">14</div>
+                  <div class="time">15</div>
+                  <div class="time">16</div>
+                  <div class="time">17</div>
+                  <div class="time">18</div>
+                  <div class="time">19</div>
+                  <div class="time">20</div>
+                  <div class="time">21</div>
+                  <div class="time">22</div>
+                  <div class="time">23</div>
+                </div>
+                <!-- 일요일 -->
+                <div class="timetable__set" data-day="sun">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+                <!-- 월요일 -->
+                <div class="timetable__set" data-day="mon">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+                <!-- 화요일 -->
+                <div class="timetable__set" data-day="tue">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+                <!-- 수요일 -->
+                <div class="timetable__set" data-day="wed">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+                <!-- 목요일 -->
+                <div class="timetable__set" data-day="thu">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+                <!-- 금요일 -->
+                <div class="timetable__set" data-day="fri">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+                <!-- 토요일 -->
+                <div class="timetable__set" data-day="sat">
+                  <!-- <div class="selected_time">
+                            <em>21:00~09:30</em>
+                          </div> -->
+                  <div class="set_box">
+                    <span data-time="00:00"></span>
+                    <span data-time="00:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="01:00"></span>
+                    <span data-time="01:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="02:00"></span>
+                    <span data-time="02:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="03:00"></span>
+                    <span data-time="03:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="04:00"></span>
+                    <span data-time="04:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="05:00"></span>
+                    <span data-time="05:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="06:00"></span>
+                    <span data-time="06:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="07:00"></span>
+                    <span data-time="07:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="08:00"></span>
+                    <span data-time="08:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="09:00"></span>
+                    <span data-time="09:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="10:00"></span>
+                    <span data-time="10:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="11:00"></span>
+                    <span data-time="11:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="12:00"></span>
+                    <span data-time="12:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="13:00"></span>
+                    <span data-time="13:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="14:00"></span>
+                    <span data-time="14:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="15:00"></span>
+                    <span data-time="15:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="16:00"></span>
+                    <span data-time="16:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="17:00"></span>
+                    <span data-time="17:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="18:00"></span>
+                    <span data-time="18:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="19:00"></span>
+                    <span data-time="19:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="20:00"></span>
+                    <span data-time="20:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="21:00"></span>
+                    <span data-time="21:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="22:00"></span>
+                    <span data-time="22:30"></span>
+                  </div>
+                  <div class="set_box">
+                    <span data-time="23:00"></span>
+                    <span data-time="23:30"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-internet-limit')">취소</button>
+        <button type="button" class="btn btn-modal btn_primary">적용</button>
+      </div>
+    </div>
+  </div>
+  <!-- 인터넷 이용 제한 설정 모달 끝 -->
+  <script>
+    // 요일별 선택한 시간 리스트
+    let selectedList = [
+      {
+        day: "sun",
+        selectTimes: [],
+        // 현재 선택중인 시간
+        currentTime: {}
+      },
+      {
+        day: "mon",
+        selectTimes: [],
+        currentTime: {}
+      },
+      {
+        day: "tue",
+        selectTimes: [],
+        currentTime: {}
+      },
+      {
+        day: "wed",
+        selectTimes: [],
+        currentTime: {}
+      },
+      {
+        day: "thu",
+        selectTimes: [],
+        currentTime: {}
+      },
+      {
+        day: "fri",
+        selectTimes: [],
+        currentTime: {}
+      },
+      {
+        day: "sat",
+        selectTimes: [],
+        currentTime: {}
+      },
+    ];
+
+    $('.timetable__set .set_box span').click(function() {
+      // 선택한 요일에 active된게 없으면 노란색으로 시작 지점 클릭 (시작지점 클릭)
+      if($(this).parents('.timetable__set').find('.set_box span.active').length == 0) {
+        let day = $(this).parents('.timetable__set').data('day')
+
+        // 다른 요일의 currentTime 초기화
+        resetCurrentTime(day)
+        // yellow, active초기화
+        $('.timetable__set .set_box span').removeClass('yellow')
+        $('.timetable__set .set_box span').removeClass('active')
+        
+        selectedList[changeDaytoIndex(day)].currentTime.firstPick = $(this).data("time")
+        
+        $(this).addClass("active")
+        $(this).addClass("yellow")
+      } else {
+        let day = $(this).parents('.timetable__set').data('day')
+        // 범위 내에 이미 선택한 영역이 있으면 active되지못함
+
+        let [c_start, c_end] = comparePickTime(selectedList[changeDaytoIndex(day)].currentTime.firstPick, $(this).data("time"))
+
+        if(checkBetweenTime(selectedList[changeDaytoIndex(day)], comparePickTime(c_start, calculateLastTime(c_end)))) {
+          return false;
+        } else {
+          $(this).addClass("active")
+          selectedList[changeDaytoIndex(day)].currentTime.firstPick = c_start
+          selectedList[changeDaytoIndex(day)].currentTime.lastPick = calculateLastTime(c_end)
+
+          // 선택을 끝냈기 때문에 해당 요일의 selectTimes 리스트에 추가
+          let [start, end] = mergeTime(day, selectedList[changeDaytoIndex(day)].currentTime.firstPick, selectedList[changeDaytoIndex(day)].currentTime.lastPick)
+
+          // 초기화
+          $(`[data-day="${day}"]`).find('.set_box span').removeClass('active')
+          $(`[data-day="${day}"]`).find('.set_box span').removeClass('yellow')
+          selectedList[changeDaytoIndex(day)].currentTime = {}
+
+          // .selected_time 추가
+          let selectedLeft = calculateLeft(start, end)
+          let selectedWidth = calculateWidth(start, end)
+
+          let selectedTimeSrc = `
+          <div class="selected_time" style="left: ${selectedLeft}px; width: ${selectedWidth}px">
+            <em>${start} ~ ${end}</em>
+          </div>
+        `
+          $(this).parents('.timetable__set').append(selectedTimeSrc)
+        }
+
+        // 선택된 시간을 클릭하면 제거(취소) 된다.
+        $('.timetable__set .selected_time').click(function () {
+          let day = $(this).parents('.timetable__set').data('day')
+        
+          let deleteStartTime = $(this).children('em').text().split("~")[0].trim()
+          let deleteEndTime = $(this).children('em').text().split("~")[1].trim()
+
+          if(changeDaytoIndex(day) != null) {
+            let timeList = selectedList[changeDaytoIndex(day)].selectTimes
+            timeList.forEach((time, index) => {
+              if (time[0] == deleteStartTime) {
+                selectedList[changeDaytoIndex(day)].selectTimes.splice(index, 1)
+              }
+            });
+            console.log('제거');
+            console.log(selectedList[changeDaytoIndex(day)].selectTimes.length);
+          }
+          $(this).remove()
+        })
+      }
+    })
+
+    function calculateLastTime(time) {
+      let hour = Number(time.split(":")[0])
+      let minute = Number(time.split(":")[1])
+
+      if (minute != 0) {
+        return `${(hour+1 <= 9 ? `0${hour + 1}` : hour + 1)}:00`
+      } else {
+        return `${(hour < 10 ? `0${hour}` : hour)}:30`
+      }
+    }
+
+    function mergeTime(day, c_start, c_end) {
+      let [start, end] = comparePickTime(c_start, c_end)
+      // 픽한 시간 (값 변동 X)
+      let unchangedStart = start;
+      let unchangedEnd = end;
+      // 최종 선택 시간
+      let finalStart;
+      let finalEnd;
+      
+      // 배열 동등비교
+      const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+      // 선택한 요일의 시간 리스트 (변동 O)
+      let timeList = selectedList[changeDaytoIndex(day)].selectTimes
+      // 선택한 요일의 시간 리스트 (변동 X)
+      let copyTimeList = JSON.parse(JSON.stringify(selectedList[changeDaytoIndex(day)].selectTimes));
+
+      let indexList = []
+      if(timeList.length == 0) {
+        finalStart = start;
+        finalEnd = end
+
+        selectedList[changeDaytoIndex(day)].selectTimes.push([start, end])
+      } else {
+
+        copyTimeList.every((timeElement, index) => {
+          if (start == timeElement[1] || end == timeElement[0]) {
+            // 겹치는 게 있음
+            return false;
+          } else {
+            finalStart = start;
+            finalEnd = end;
+
+            selectedList[changeDaytoIndex(day)].selectTimes.push([finalStart, finalEnd])
+
+            return true;
+          }
+        })
+
+        copyTimeList.forEach((timeElement, index) => {
+          // 오른쪽에 붙어서 시간이 합쳐지는 경우 (01:00 - 03:00 이 있는데 03:00 - 04:00 추가)
+          if (start == timeElement[1]) {
+            finalStart = timeElement[0];
+            finalEnd = end
+            // 하나로 합치고 배열 추가
+            selectedList[changeDaytoIndex(day)].selectTimes.push([timeElement[0], end])
+
+            // 왼쪽 영역은 제거
+            // copyTimeList2 : 선택한 요일의 시간 리스트 (변동X)
+            let copyTimeList2 = JSON.parse(JSON.stringify(selectedList[changeDaytoIndex(day)].selectTimes));
+            
+            copyTimeList2.forEach((element, index) => {
+              if (element[1] == unchangedStart || element[0] == unchangedStart) {
+                for(let i = 0; i < copyTimeList2.length; i++) {
+                  if (equals(Array(timeList[i]), Array([element[0], element[1]]))) {
+                    timeList.splice(i, 1)
+                  }
+                }
+                $(`[data-day="${day}"] .selected_time em:contains('${element[0]} ~ ${element[1]}')`).parents('.selected_time').remove()
+              }
+            });
+
+            start = timeElement[0]
+          }
+          
+          // 왼쪽에 붙어서 시간이 합쳐지는 경우(03:00 - 04:00 이 있는데 01:00 - 03:00 추가)
+          if (end == timeElement[0]) {
+            finalStart = start;
+            finalEnd = timeElement[1]
+            // 하나로 합치고 배열 추가
+            selectedList[changeDaytoIndex(day)].selectTimes.push([start, timeElement[1]])
+            // 오른쪽 영역은 제거
+            // copyTimeList2 : 선택한 요일의 시간 리스트 (변동X)
+            let copyTimeList2 = JSON.parse(JSON.stringify(timeList));
+
+            copyTimeList2.forEach((element, index) => {
+              if (element[0] == unchangedEnd || element[1] == unchangedEnd) {
+                for(let i = 0; i < copyTimeList2.length; i++) {
+                  if (equals(Array(timeList[i]), Array([element[0], element[1]]))) {
+                    timeList.splice(i, 1)
+                  }
+                }
+                $(`[data-day="${day}"] .selected_time em:contains('${element[0]} ~ ${element[1]}')`).parents('.selected_time').remove()
+              }
+            });
+            end = timeElement[1]
+          }
+        });
+      }
+      
+      // 중복제거
+      let uniqueArr = [...new Map(timeList.map(obj => [JSON.stringify(obj), obj])).values()];
+      selectedList[changeDaytoIndex(day)].selectTimes = uniqueArr
+
+      console.log('추가');
+      console.log(selectedList[changeDaytoIndex(day)].selectTimes);
+      
+      return [finalStart, finalEnd]
+    }
+
+  
+    
+    function changeDaytoIndex(day) {
+      if(day == "sun") {
+        return 0
+      }
+      if (day == "mon") {
+        return 1
+      }
+      if (day == "tue") {
+        return 2
+      }
+      if (day == "wed") {
+        return 3
+      }
+      if (day == "thu") {
+        return 4
+      }
+      if (day == "fri") {
+        return 5
+      }
+      if (day == "sat") {
+        return 6
+      }
+    }
+
+    function resetCurrentTime(day) {
+      selectedList.forEach((s_day, index) => {
+        if (s_day != day) {
+          s_day.currentTime = {}
+        }
+      });
+    }
+
+    // true : 사이값임 (2번째 선택한거 취소) 
+    // false : 사이값 아님 (2번째 선택한거 가능)
+    function checkBetweenTime(dayInfo, picks) {
+      // 이미 선택된 타임 리스트
+      let selectTimes = dayInfo.selectTimes
+      let timeFirstHour = Number(picks[0].split(":")[0].trim()) + Number((picks[0].split(":")[1].trim() / 30) / 2)
+      let timeLastHour = Number(picks[1].split(":")[0].trim()) + Number((picks[1].split(":")[1].trim() / 30) / 2)
+      let returnValue = false;
+
+      selectTimes.forEach((time, index) => {
+        let sTimeFirstHour = Number(time[0].split(":")[0]) + Number((time[0].split(":")[1] / 30) / 2)
+        let sTimeLastHour = Number(time[1].split(":")[0]) + Number((time[1].split(":")[1] / 30) / 2)
+        
+        if(sTimeFirstHour >= timeFirstHour && sTimeLastHour <= timeLastHour) {
+          returnValue = true
+        }
+      });
+
+      return returnValue
+    }
+
+    function comparePickTime(first, last) {
+      let firstHour = Number(first.split(":")[0])
+      let firstMinute = Number(first.split(":")[1])
+      let lastHour = Number(last.split(":")[0])
+      let lastMinute = Number(last.split(":")[1])
+
+      // 첫번째 고른시간이 더 빠름 (09:00 10:00)
+      if(firstHour < lastHour) {
+        return [first, last]
+      } else if(firstHour > lastHour) {
+        return [last, first]
+      } else {
+        // 시간은 같고 30분차이 
+        if(firstMinute < lastMinute) {
+          // (09:00 09:30)
+          return [first, last]
+        } else {
+          // (09:30 09:00)
+          return [last, first]
+        }
+      }
+    }
+
+    function calculateLeft(startTime, endTime) {
+      let startHour = Number(startTime.split(":")[0])
+      let startMinute = Number(startTime.split(":")[1])
+
+      let endHour = Number(endTime.split(":")[0])
+      let endMinute = Number(endTime.split(":")[1])
+
+      if (startHour > endHour) {
+        // 종료시간이 다음날 새벽으로 넘어갔을 때
+        return 0
+      } else {
+        return calculateIndex(startTime) * 20
+      }
+    }
+
+    function calculateIndex(time) {
+      let hour = Number(time.split(":")[0])
+      let minute = Number(time.split(":")[1])
+
+      if (minute != 0) {
+        return hour * 2 + 1
+      } else {
+        return hour * 2
+      }
+    }
+
+    function calculateWidth(startTime, endTime) {
+      let startHour = Number(startTime.split(":")[0])
+      let startMinute = Number(startTime.split(":")[1])
+
+      let endHour = Number(endTime.split(":")[0])
+      let endMinute = Number(endTime.split(":")[1])
+
+      let minuteSpanCnt;
+
+      if (endMinute - startMinute == 30) {
+        minuteSpanCnt = 1
+      } else if (endMinute - startMinute == -30) {
+        minuteSpanCnt = -1
+      } else {
+        minuteSpanCnt = 0
+      }
+
+      if (startHour > endHour) {
+        // 종료시간이 다음날 새벽으로 넘어갔을 때
+        return (endHour * 2 + (endMinute == 30 ? 1 : 0)) * 20
+      } else {
+        return ((endHour - startHour) * 2 + minuteSpanCnt) * 20
+      }
+    }
+  </script>
+</body>
+
+</html>

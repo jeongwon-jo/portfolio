@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="./home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link on" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./home.html">홈</a></li>
+                <li class="on"><a href="./wifi.html">와이파이</a></li>
+                <li><a href="./device.html">디바이스</a></li>
+                <li><a href="./children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="./customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../advanced/internet.html">인터넷 연결정보</a></li>
+                <li><a href="../advanced/network_statistics.html">네트워크 통계</a></li>
+                <li><a href="../advanced/dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="../advanced/sysmte_log.html">시스템 로그</a></li>
+                <li><a href="../advanced/wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="../advanced/nat_setting.html">NAT 설정</a></li>
+                <li><a href="../advanced/detail_setting.html">세부 설정</a></li>
+                <li><a href="../advanced/router_setting.html">공유기 설정</a></li>
+                <li><a href="../advanced/diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title basic__title wifi">
+            <h3>와이파이</h3>
+            <p>무선 네트워크 연결 설정을 할 수 있습니다. 2.4 GHz와 5 GHz 대역을 별도로 구분하여 사용하실 수 있습니다.</p>
+            <p class="info">동일하게 입력 시 디바이스 설정에 따라 최적의 조건의 대역으로 연결됩니다.</p>
+          </div>
+          <div>
+            <h2 class="h2_tit">와이파이 연결 설정</h2>
+            <div class="table__wrap">
+              <div class="tbl--typeA tbl_connect_setting mt14">
+                <table>
+                  <colgroup>
+                    <col style="width: 250px;">
+                    <col style="width: 435px;">
+                    <col style="width: 330px;">
+                    <col style="width: 330px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="tal">네트워크 이름</th>
+                      <th>BSSID</th>
+                      <th>활성화 상태</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="connected_status">
+                          <div class="dot green"></div>
+                          U+Net13FC
+                        </div>
+                      </td>
+                      <td>18:C5:01:CE:13:FE</td>
+                      <td>
+                        <div class="toggle-switch">
+                          <input type="checkbox" id="chk1" checked>
+                          <label for="chk1" class="switch_label">
+                            <span class="onoff_btn"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="tar">
+                        <button type="button" class="btn btn_icon not_after btn_settings" onclick="openModal('modal-network-setting')"><span>설정</span></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="connected_status">
+                          <div class="dot green"></div>
+                          U+Net13FC
+                        </div>
+                      </td>
+                      <td>18:C5:01:CE:13:FE</td>
+                      <td>
+                        <div class="toggle-switch">
+                          <input type="checkbox" id="chk1" checked>
+                          <label for="chk1" class="switch_label">
+                            <span class="onoff_btn"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="tar">
+                        <button type="button" class="btn btn_icon not_after btn_settings" onclick="openModal('modal-network-setting')"><span>설정</span></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="connected_status">
+                          <div class="dot green"></div>
+                          U+Net13FC
+                        </div>
+                      </td>
+                      <td>18:C5:01:CE:13:FE</td>
+                      <td>
+                        <div class="toggle-switch">
+                          <input type="checkbox" id="chk1" checked>
+                          <label for="chk1" class="switch_label">
+                            <span class="onoff_btn"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="tar">
+                        <button type="button" class="btn btn_icon not_after btn_settings" onclick="openModal('modal-network-setting')"><span>설정</span></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mt36 mo_mt24">
+            <div class="wireless-device__title">
+              <h2 class="h2_tit">무선 기기 연결하기</h2>
+              <p>
+                WPS 기능을 제공하는 무선 기기와 쉽게 연결할 수 있습니다.<br>
+                아래의 원터치 연결하기(WPS) 버튼을 누른 후, 무선 기기의 WPS 버튼을 눌러주세요.
+              </p>
+            </div>
+            <div class="mt20">
+              <button type="button" id="btnOneTouchConnect" class="btn btn-sm btn_p16 btn_primary" onclick="openModal('modal-connect-ready'); calculate2Minute()">원터치 연결하기(WPS)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 원터치 연결하기(준비) 모달 시작 -->
+  <div id="modal-connect-ready" class="modal modal_md">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-connect-ready')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>원터치 연결하기 (WPS)</h3>
+        <p>메쉬 기기 연결 대기 중입니다.<br>
+        2분 안에 연결하고자 하는 단말의 원터치 버튼을 눌러주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="onetouch-wait__bar">
+          <div class="wait-bar">
+            <span class="bar" style="width: 0%;"></span>
+          </div>
+          <p class="remain_time">남은 시간: <span class="c_primary seconds">120초</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 원터치 연결하기(준비) 모달 끝-->
+  <!-- 원터치 연결하기(연결중) 모달 시작 -->
+  <div id="modal-connect-ing" class="modal modal_md">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-connect-ing')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>원터치 연결하기 (WPS)</h3>
+        <p>기기 연결 중입니다.<br>
+        연결이 완료될 때까지 기다려 주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="onetouch-loading__bar">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 원터치 연결하기(연결중) 모달 끝-->
+  <!-- 원터치 연결하기(완료) 모달 시작 -->
+  <div id="modal-connect-complete" class="modal modal_md">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-connect-complete')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>원터치 연결하기 (WPS)</h3>
+        <p>메쉬 기기가 연결되었습니다.<br>
+        다른 기기를 추가 연결하려면 원터치 연결하기 버튼을 눌러주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="tac mb24">
+          <button type="button" class="btn btn_primary btn-w100p btn_onetouch">원터치 연결하기 (WPS)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 원터치 연결하기(완료) 모달 끝-->
+  <!-- 원터치 연결하기(실패) 모달 시작 -->
+  <div id="modal-connect-fail" class="modal modal_md">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-connect-fail')"></button>
+      </div>
+      <div class="modal__header mb24">
+        <h3>원터치 연결하기 (WPS)</h3>
+        <p>무선보안 설정이 WEP나 미적용 상태에서는<br>
+        원터치 연결하기(WPS)가 동작하지 않습니다.<br>
+        무선보안 설정을 WPA-PSK/WPA2-PSK로 변경 후 사용하여 주세요.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 원터치 연결하기(실패) 모달 끝-->
+  <!-- 네트워크 설정 모달 시작 -->
+  <div id="modal-network-setting" class="modal modal_lg">
+    <div class="modal__inner no_scroll">
+      <div class="modal__header">
+        <h3>네트워크 설정</h3>
+        <p>2.4GHz, 5GHz 대역을 구분하여 설정할 수 있습니다.<br>
+        동일하게 입력 시 디바이스 설정에 따라 최적 조건의 대역으로 연결됩니다.</p>
+      </div>
+      <div class="modal__content">
+        <div class="network-setting__wrap custom_scroll">
+          <div class="network-setting">
+            <div class="network-setting--left">
+              <h5 class="h5_tit">무선 네트워크 설정</h5>
+              <div class="network__name">
+                <div class="input--typeA mt16">
+                  <label for="" class="input__label">네트워크 이름(SSID)</label>
+                  <div class="input__contents">
+                    <div class="input__box">
+                      <input type="text" class="form-control" value="U+Net13FC">
+                      <div class="btns">
+                        <button type="button" class="btn_delete"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="radio_box mt12">
+                <div class="checkbox--typeA">
+                  <label for="ssid_hidden">
+                    <input type="checkbox" id="ssid_hidden"> <em></em> SSID 숨김
+                  </label>
+                </div>
+                <div class="checkbox--typeA">
+                  <label for="ssid_disable">
+                    <input type="checkbox" id="ssid_disable"> <em></em> SSID 비활성화
+                  </label>
+                </div>
+              </div>
+              <div class="input--typeA mt16">
+                <label for="" class="input__label">네트워크 설명</label>
+                <div class="input__contents">
+                  <div class="input__box">
+                    <input type="text" class="form-control" value="LGU+">
+                    <div class="btns">
+                      <button type="button" class="btn_delete"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h5 class="h5_tit mt24">채널 설정</h5>
+              <div class="radio_box">
+                <div class="radio--typeA">
+                  <label for="channel1">
+                    <input type="radio" id="channel1" name="channel_setting" checked> <em></em> 수동으로 설정
+                  </label>
+                </div>
+                <div class="radio--typeA">
+                  <label for="channel2">
+                    <input type="radio" id="channel2" name="channel_setting"> <em></em> 자동으로 설정
+                  </label>
+                </div>
+              </div>
+              <div class="mt16">
+                <button type="button" id="channelReset" class="btn btn_mini--network btn_gray_outlined btn_p12" disabled>채널 재설정</button>
+              </div>
+              <div class="input--typeA mt16">
+                <label for="" class="input__label">채널</label>
+                <div class="input__contents">
+                  <div class="channel_flex_box">
+                    <select class="nice-select select-primary select_channel" id="" name="">
+                      <option value="">Mixed (B+G+N)</option>
+                      <option value="">Mixed (B+G+N)Mixed (B+G+N)</option>
+                      <option value="">Mixed (B+G+N)</option>
+                      <option value="">Mixed (B+G+N)</option>
+                    </select>
+                    <span></span>
+                    <select class="nice-select select-primary select_cnt" id="" name="">
+                      <option value="">4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="mt16">
+                <button type="button" class="btn btn_mini--network btn_gray_outlined btn_p12"
+                  onclick="openModal('modal-search-router')">공유기 검색</button>
+              </div>
+            </div>
+            <div class="network-setting--right">
+              <h5 class="h5_tit">보안 규칙 설정</h5>
+              <div class="radio_box">
+                <div class="radio--typeA">
+                  <label for="rule1">
+                    <input type="radio" id="rule1" name="security_rules" checked> <em></em> WPA-PSK/ WPA2-PSK
+                  </label>
+                </div>
+                <div class="radio--typeA">
+                  <label for="rule2">
+                    <input type="radio" id="rule2" name="security_rules"> <em></em> WEP
+                  </label>
+                </div>
+                <div class="radio--typeA">
+                  <label for="rule3">
+                    <input type="radio" id="rule3" name="security_rules"> <em></em> 사용안함
+                  </label>
+                </div>
+              </div>
+              <div id="securityRules1" class="mt24">
+                <h5 class="h5_tit">WPA-PSK 알고리즘</h5>
+                <div class="input--typeA">
+                  <label for="" class="input__label">WPA 모드</label>
+                  <div class="input__contents">
+                    <div class="radio_box">
+                      <div class="radio--typeA">
+                        <label for="wpa1">
+                          <input type="radio" id="wpa1" name="wpa_type" checked> <em></em> WPA-PSK
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="wpa2">
+                          <input type="radio" id="wpa2" name="wpa_type"> <em></em> WPA2-PSK
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input--typeA mt16">
+                  <label for="" class="input__label">암호화 방식</label>
+                  <div class="input__contents">
+                    <div class="radio_box">
+                      <div class="radio--typeA">
+                        <label for="encryption1">
+                          <input type="radio" id="encryption1" name="encryption_type" checked> <em></em> TKIP
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="encryption2">
+                          <input type="radio" id="encryption2" name="encryption_type"> <em></em> AES
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input--typeA mt16">
+                  <label for="" class="input__label">보안 암호</label>
+                  <div class="input__contents">
+                    <div class="input__box">
+                      <input type="password" class="form-control">
+                      <div class="btns">
+                        <button type="button" class="btn_delete"></button>
+                        <button type="button" class="btn_eye"></button>
+                      </div>
+                    </div>
+                    <p class="info_txt mt8 small">암호는 영문, 숫자, 특수문자를 포함하여 8자 이상으로 변경하여 이용해 주세요.</p>
+                  </div>
+                </div>
+              </div>
+              <div id="securityRules2" class="mt24 d-none">
+                <h5 class="h5_tit">WPA 알고리즘</h5>
+                <div class="input--typeA">
+                  <label for="" class="input__label">인증 방법</label>
+                  <div class="input__contents">
+                    <div class="radio_box">
+                      <div class="radio--typeA">
+                        <label for="way1">
+                          <input type="radio" id="way1" name="vertifyWays" checked> <em></em> Open System
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="way2">
+                          <input type="radio" id="way2" name="vertifyWays"> <em></em> Shared Key
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input--typeA mt16">
+                  <label for="" class="input__label">WEP 암호화 비트</label>
+                  <div class="input__contents">
+                    <div class="radio_box">
+                      <div class="radio--typeA">
+                        <label for="bit1">
+                          <input type="radio" id="bit1" name="vertifyBit" checked> <em></em> 64 bit WEP
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="bit2">
+                          <input type="radio" id="bit2" name="vertifyBit"> <em></em> 128 bit WEP
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input--typeA mt16">
+                  <label for="" class="input__label">WEP 키 생성</label>
+                  <div class="input__contents">
+                    <div class="generate_wep_key">
+                      <div class="input__box">
+                        <input type="text" class="form-control" placeholder="">
+                        <div class="btns">
+                          <button type="button" class="btn_delete"></button>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-mini btn_p12 btn_gray_outlined">생성</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="input--typeA mt16">
+                  <label for="" class="input__label">WEP 키 입력 방법</label>
+                  <div class="input__contents">
+                    <div class="radio_box">
+                      <div class="radio--typeA">
+                        <label for="wepKey1">
+                          <input type="radio" id="wepKey1" name="wepkeyInput" checked> <em></em> 자동 입력
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="wepKey2">
+                          <input type="radio" id="wepKey2" name="wepkeyInput"> <em></em> 수동 입력
+                        </label>
+                      </div>
+                    </div>
+                    <div class="wep_key_input mt12">
+                      <div class="checkbox--typeA">
+                        <label for="ascii">
+                          <input type="checkbox" id="ascii"> <em></em> ASCII
+                        </label>
+                      </div>
+                      <div class="wep_key_radios mt16">
+                        <div class="wep_key">
+                          <div class="radio--typeA center">
+                            <label for="key1">
+                              <input type="radio" id="key1" name="wepkey_radio"> <em></em>
+                            </label>
+                          </div>
+                          <span class="key_name">Key1</span>
+                          <div class="input__box">
+                            <input type="password" class="form-control" placeholder="" value="" disabled> 
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                              <button type="button" class="btn_eye"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wep_key">
+                          <div class="radio--typeA center">
+                            <label for="key2">
+                              <input type="radio" id="key2" name="wepkey_radio"> <em></em>
+                            </label>
+                          </div>
+                          <span class="key_name">Key2</span>
+                          <div class="input__box">
+                            <input type="password" class="form-control" placeholder="" value="" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                              <button type="button" class="btn_eye"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wep_key">
+                          <div class="radio--typeA center">
+                            <label for="key3">
+                              <input type="radio" id="key3" name="wepkey_radio"> <em></em>
+                            </label>
+                          </div>
+                          <span class="key_name">Key3</span>
+                          <div class="input__box">
+                            <input type="password" class="form-control" placeholder="" value="" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                              <button type="button" class="btn_eye"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="wep_key">
+                          <div class="radio--typeA center">
+                            <label for="key4">
+                              <input type="radio" id="key4" name="wepkey_radio"> <em></em>
+                            </label>
+                          </div>
+                          <span class="key_name">Key4</span>
+                          <div class="input__box">
+                            <input type="password" class="form-control" placeholder="" value="" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                              <button type="button" class="btn_eye"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="securityRules3" class="mt24 d-none">
+                <h5 class="h5_tit">Enhanced Open</h5>
+                <div class="input--typeA">
+                  <label for="" class="input__label">OWE</label>
+                  <div class="input__contents">
+                    <div class="radio_box">
+                      <div class="radio--typeA">
+                        <label for="owe_useY">
+                          <input type="radio" id="owe_useY" name="owe_use" checked> <em></em> 사용
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="owe_useN">
+                          <input type="radio" id="owe_useN" name="owe_use"> <em></em> 사용안함
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="open_advance_setting">
+            <button type="button" class="btn_open">고급 설정 보기</button>
+          </div>
+          <div class="advanced-setting">
+            <div class="advanced_flex_box">
+              <div class="input--typeA">
+                <label for="" class="input__label">동작 모드</label>
+                <div class="input__contents">
+                  <select class="nice-select select-primary w100p" id="" name="">
+                    <option value="">Mixed (A+N+AC+AX+BE)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">RTS Threshold</label>
+                <div class="input__contents">
+                  <div class="input__box">
+                    <input type="text" class="form-control" value="2347">
+                    <div class="btns">
+                      <button type="button" class="btn_delete"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">무선 대역폭</label>
+                <div class="input__contents">
+                  <select class="nice-select select-primary w100p" id="" name="">
+                    <option value="">20 MHz</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">Beacon Interval</label>
+                <div class="input__contents">
+                  <div class="input__box">
+                    <input type="text" class="form-control" value="100">
+                    <div class="btns">
+                      <button type="button" class="btn_delete"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">Channel Sideband</label>
+                <div class="input__contents">
+                  <select class="nice-select select-primary w100p" id="" name="">
+                    <option value="">-</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">DTIM</label>
+                <div class="input__contents">
+                  <div class="input__box">
+                    <input type="text" class="form-control" value="6">
+                    <div class="btns">
+                      <button type="button" class="btn_delete"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">무선 출력 세기</label>
+                <div class="input__contents">
+                  <select class="nice-select select-primary w100p" id="" name="">
+                    <option value="">100%</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">Preamble</label>
+                <div class="input__contents">
+                  <select class="nice-select select-primary w100p" id="" name="">
+                    <option value="">Long</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input--typeA">
+              </div>
+              <div class="input--typeA">
+                <label for="" class="input__label">단말 접속 허용 수</label>
+                <div class="input__contents">
+                  <div class="input__box">
+                    <input type="text" class="form-control" value="6">
+                    <div class="btns">
+                      <button type="button" class="btn_delete"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-network-setting')">취소</button>
+        <button type="button" class="btn btn-modal btn_primary">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 네트워크 설정 모달 끝-->
+  <!-- 공유기 검색 모달 시작 -->
+  <div id="modal-search-router" class="modal modal_lg">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-search-router')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>공유기 검색</h3>
+        <p>리스트에 AP가 보이지 않을 경우 [갱신]버튼을 눌러주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>갱신</span></button>
+        </div>
+        <div class="table--scroll_y mt20">
+          <div class="table__wrap">
+            <div class="tbl--typeA tbl_search_router sm">
+              <table>
+                <colgroup>
+                  <col style="width: 130px;">
+                  <col style="width: 148px;">
+                  <col style="width: 67px;">
+                  <col style="width: 95px;">
+                  <col style="width: 95px;">
+                  <col style="width: 118px;">
+                  <col style="width: 79px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>네트워크 이름</th>
+                    <th>하드웨어 주소</th>
+                    <th>채널</th>
+                    <th>동적 모드</th>
+                    <th>보안 설정</th>
+                    <th>무선신호세기</th>
+                    <th>RSSI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                  <tr>
+                    <td>{네트워크 이름}</td>
+                    <td>00:24:D6:46:5F:C8</td>
+                    <td>1</td>
+                    <td>AP</td>
+                    <td>사용함</td>
+                    <td>20%</td>
+                    <td>-82</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns center mt24">
+          <button type="button" class="btn btn-modal btn_primary" onclick="closeModal('modal-search-router')">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 공유기 검색 모달 끝-->
+  <!-- 공유기 비활성화 확인 모달 시작 -->
+  <div id="modal-confirm-router" class="modal modal_sm">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>알림</h3>
+        <p>Wi-fi 7 모드가 꺼지면<br>
+        U+NET8C20_MLO SSID가 비활성화 됩니다.</p>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn-w100p btn_gray"
+          onclick="closeModal('modal-confirm-router')">취소</button>
+        <button type="button" class="btn btn-modal btn-w100p btn_primary">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- 공유기 비활성화 확인 모달 끝-->
+  <script>
+    function calculate2Minute() {
+      let seconds = 119;
+      let timer = setInterval(() => {
+        if(seconds > 0) {
+          $('.remain_time .seconds').text(`${seconds}초`)
+          $('.wait-bar .bar').css("width", `${100 - ((100 / 120) * seconds)}%`)
+
+          // 임시 (약 2초 후 연결중 모달 띄우기)
+          if(seconds < 118) {
+            clearInterval(timer);
+            closeModal('modal-connect-ready')
+            openModal('modal-connect-ing')
+            connectIngOneTouch()
+          }
+        } else {
+          closeModal('modal-connect-ready')
+          clearInterval(timer);
+        }
+        seconds = seconds - 1;
+      }, 1000);
+    }
+
+    function connectIngOneTouch() {
+      setTimeout(() => {
+        closeModal('modal-connect-ing')
+        openModal('modal-connect-complete')
+      }, 2000);
+    }
+
+    $('.open_advance_setting .btn_open').click(function() {
+      $(this).toggleClass("open")
+      $('.advanced-setting').slideToggle()
+    })
+
+    $("input[name=channel_setting]").change(function () {
+      if ($("input[name='channel_setting']:checked")[0].id == 'channel1') {
+        $("#channelReset").attr("disabled", true)
+        $('.channel_flex_box select').attr("disabled", false)
+        $('.channel_flex_box select').removeClass("disabled")
+        $(".nice-select").niceSelect('update');
+      } else {
+        $("#channelReset").attr("disabled", false)
+        $('.channel_flex_box select').attr("disabled", true)
+        $('.channel_flex_box select').addClass("disabled")
+        $(".nice-select").niceSelect('update');
+      }
+    })
+
+    $("input[name=security_rules]").change(function () {
+      if ($("input[name='security_rules']:checked")[0].id == 'rule1') {
+        $("#securityRules1").show()
+        $("#securityRules2").hide()
+        $("#securityRules3").hide()
+      } else if ($("input[name='security_rules']:checked")[0].id == 'rule2') {
+        $("#securityRules2").show()
+        $("#securityRules1").hide()
+        $("#securityRules3").hide()
+      } else {
+        $("#securityRules3").show()
+        $("#securityRules1").hide()
+        $("#securityRules2").hide()
+      }
+    })
+
+    $("input[name=wepkeyInput]").change(function () {
+      if ($("input[name='wepkeyInput']:checked")[0].id == 'wepKey1') {
+        $('.wep_key_radios .input__box .form-control').attr('disabled', true)
+      } else {
+        $('.wep_key_radios .input__box .form-control').attr('disabled', false)
+      }
+    })
+  </script>
+</body>
+
+</html>

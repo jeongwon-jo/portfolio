@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="../basic/home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link on" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../basic/home.html">홈</a></li>
+                <li><a href="../basic/wifi.html">와이파이</a></li>
+                <li><a href="../basic/device.html">디바이스</a></li>
+                <li><a href="../basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="../basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./internet.html">인터넷 연결정보</a></li>
+                <li><a href="./network_statistics.html">네트워크 통계</a></li>
+                <li class="on"><a href="./dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./sysmte_log.html">시스템 로그</a></li>
+                <li><a href="./wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="./nat_setting.html">NAT 설정</a></li>
+                <li><a href="./detail_setting.html">세부 설정</a></li>
+                <li><a href="./router_setting.html">공유기 설정</a></li>
+                <li><a href="./diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title">
+            <h3>DHCP 할당정보</h3>
+            <p>DHCP 고정 할당을 추가하거나 할당 정보를 확인할 수 있습니다.</p>
+          </div>
+          <!-- 브릿지모드 : dhcp__contents에 dimmed 클래스 추가 -->
+          <div class="dhcp__contents">
+            <div class="dhcp_pad--layout">
+              <div class="dhcp-info">
+                <h2 class="h2_tit">DHCP 할당 목록</h2>
+                <div class="pc_show mt24">
+                  <div class="tbl--typeA">
+                    <table>
+                      <colgroup>
+                        <col style="width: 140px;">
+                        <col style="width: 354px;">
+                        <col style="width: 354px;">
+                        <col style="width: 354px;">
+                        <col style="width: 354px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>NO</th>
+                          <th>IP 주소</th>
+                          <th>호스트 정보</th>
+                          <th>맥 주소</th>
+                          <th>할당된 상태</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>192.168.124.115</td>
+                          <td>hostinfo</td>
+                          <td>14:18:C3:A5:76:52</td>
+                          <td>자동 할당</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>192.168.124.115</td>
+                          <td>hostinfo</td>
+                          <td>14:18:C3:A5:76:52</td>
+                          <td>자동 할당</td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>192.168.124.115</td>
+                          <td>hostinfo</td>
+                          <td>14:18:C3:A5:76:52</td>
+                          <td>자동 할당</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="mo_show mt8">
+                  <div class="info__box--A">
+                    <ul class="info__box">
+                      <li>
+                        <span class="info_title">NO</span>
+                        <div class="info__cnts">
+                          <p>1</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 주소</span>
+                        <div class="info__cnts">
+                          <p>192.168.124.115</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">호스트 정보</span>
+                        <div class="info__cnts">
+                          <p>hostinfo</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">맥 주소</span>
+                        <div class="info__cnts">
+                          <p>14:18:C3:A5:76:52</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">할당된 상태</span>
+                        <div class="info__cnts">
+                          <p>자동 할당</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="info__box">
+                      <li>
+                        <span class="info_title">NO</span>
+                        <div class="info__cnts">
+                          <p>2</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 주소</span>
+                        <div class="info__cnts">
+                          <p>192.168.124.115</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">호스트 정보</span>
+                        <div class="info__cnts">
+                          <p>hostinfo</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">맥 주소</span>
+                        <div class="info__cnts">
+                          <p>14:18:C3:A5:76:52</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">할당된 상태</span>
+                        <div class="info__cnts">
+                          <p>자동 할당</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="info__box">
+                      <li>
+                        <span class="info_title">NO</span>
+                        <div class="info__cnts">
+                          <p>3</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 주소</span>
+                        <div class="info__cnts">
+                          <p>192.168.124.115</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">호스트 정보</span>
+                        <div class="info__cnts">
+                          <p>hostinfo</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">맥 주소</span>
+                        <div class="info__cnts">
+                          <p>14:18:C3:A5:76:52</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">할당된 상태</span>
+                        <div class="info__cnts">
+                          <p>자동 할당</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="dhcp-fixed-allocation">
+                <div class="tit">
+                  <h2 class="h2_tit">DHCP 할당 목록</h2>
+                  <div class="btns">
+                    <p class="info_txt">최대 20개의 설정을 추가 할 수 있습니다.</p>
+                    <button type="button" class="btn btn-sm btn_secondary_outlined btn_p16 btn_icon btn_more"
+                      onclick="openModal('modal-add-fixed-allocation')"><span>추가</span></button>
+                  </div>
+                </div>
+                <div class="pc_show mt24">
+                  <div class="tbl--typeA">
+                    <table>
+                      <colgroup>
+                        <col style="width: 74px;">
+                        <col style="width: 358px;">
+                        <col style="width: 358px;">
+                        <col style="width: 358px;">
+                        <col style="width: 358px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="checkbox--typeA center">
+                              <label for="chk_All">
+                                <input type="checkbox" id="chk_All"> <em></em>
+                              </label>
+                            </div>
+                          </th>
+                          <th>NO</th>
+                          <th>ON/OFF</th>
+                          <th>MAC 주소</th>
+                          <th>IP 주소</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="checkbox--typeA center">
+                              <label for="chk1">
+                                <input type="checkbox" id="chk1"> <em></em>
+                              </label>
+                            </div>
+                          </td>
+                          <td>1</td>
+                          <td>
+                            <div class="toggle-switch">
+                              <input type="checkbox" id="toggle1">
+                              <label for="toggle1" class="switch_label">
+                                <span class="onoff_btn"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>18:C5:01:CE:13:FE</td>
+                          <td>text</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox--typeA center">
+                              <label for="chk2">
+                                <input type="checkbox" id="chk2"> <em></em>
+                              </label>
+                            </div>
+                          </td>
+                          <td>2</td>
+                          <td>
+                            <div class="toggle-switch">
+                              <input type="checkbox" id="toggle1">
+                              <label for="toggle1" class="switch_label">
+                                <span class="onoff_btn"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>18:C5:01:CE:13:FE</td>
+                          <td>text</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox--typeA center">
+                              <label for="chk3">
+                                <input type="checkbox" id="chk3"> <em></em>
+                              </label>
+                            </div>
+                          </td>
+                          <td>3</td>
+                          <td>
+                            <div class="toggle-switch">
+                              <input type="checkbox" id="toggle1">
+                              <label for="toggle1" class="switch_label">
+                                <span class="onoff_btn"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>18:C5:01:CE:13:FE</td>
+                          <td>text</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="mo_show mt8">
+                  <div class="info__box--A">
+                    <ul class="info__box">
+                      <li class="info--checkbox">
+                        <div class="checkbox--typeA center">
+                          <label for="mo_chk1">
+                            <input type="checkbox" id="mo_chk1"> <em></em>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">NO</span>
+                        <div class="info__cnts">
+                          <p>1</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 주소</span>
+                        <div class="info__cnts">
+                          <p>text</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">MAC 주소</span>
+                        <div class="info__cnts">
+                          <p>18:C5:01:CE:13:FE</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 고정 할당</span>
+                        <div class="info__cnts">
+                          <div class="toggle-switch">
+                            <input type="checkbox" id="mo_toggle1">
+                            <label for="mo_toggle1" class="switch_label">
+                              <span class="onoff_btn"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="info__box">
+                      <li class="info--checkbox">
+                        <div class="checkbox--typeA center">
+                          <label for="mo_chk2">
+                            <input type="checkbox" id="mo_chk2"> <em></em>
+                          </label>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">NO</span>
+                        <div class="info__cnts">
+                          <p>2</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 주소</span>
+                        <div class="info__cnts">
+                          <p>text</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">MAC 주소</span>
+                        <div class="info__cnts">
+                          <p>18:C5:01:CE:13:FE</p>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="info_title">IP 고정 할당</span>
+                        <div class="info__cnts">
+                          <div class="toggle-switch">
+                            <input type="checkbox" id="mo_toggle2">
+                            <label for="mo_toggle2" class="switch_label">
+                              <span class="onoff_btn"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="btn_area right mt16">
+                  <button type="button" class="btn btn-sm btn_gray_outlined btn_p16"
+                    onclick="openModal('modal-modify-fixed-allocation')">수정</button>
+                  <button type="button" class="btn btn-sm btn_gray_outlined btn_p16">삭제</button>
+                </div>
+              </div>
+            </div>
+            <div class="btn_dhcp btn_area right mt24 mo_mt12">
+              <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting" onclick="openModal('modal-confirm-save')">설정 적용</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 고정할당 추가하기 모달 시작 -->
+  <div id="modal-add-fixed-allocation" class="modal modal_sm modal_allocation">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>고정 할당 추가하기</h3>
+      </div>
+      <div class="modal__content mt24">
+        <div class="allocation_tit">
+          <h3>MAC 주소</h3>
+          <button type="button" class="btn btn-mini btn_p12 btn_gray_outlined" onclick="openModal('modal-search-mac')">맥주소 검색</button>
+        </div>
+        <div class="input-security-code mt0">
+          <div class="security-code">
+            <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2)">
+          </div>
+        </div>
+        <div class="checkbox--typeA mt12">
+          <label for="chk_mac">
+            <input type="checkbox" id="chk_mac"> <em></em> 현재 접속된 PC의 MAC 주소로 설정
+          </label>
+        </div>
+        <div class="allocation_tit mt16">
+          <h3>할당할 IP 주소</h3>
+        </div>
+        <div class="allocation_ip_address">
+          <p>192</p>
+          <p>168</p>
+          <p>124</p>
+          <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2)">
+        </div>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn-w100p btn_gray"
+          onclick="closeModal('modal-add-fixed-allocation')">취소</button>
+        <button type="button" class="btn btn-modal btn-w100p btn_primary">추가</button>
+      </div>
+    </div>
+  </div>
+  <!-- 고정할당 추가하기 모달 끝 -->
+  <!-- 고정할당 수정하기 모달 시작 -->
+  <div id="modal-modify-fixed-allocation" class="modal modal_sm modal_allocation">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>고정 할당 수정하기</h3>
+      </div>
+      <div class="modal__content mt24">
+        <div class="allocation_tit">
+          <h3>MAC 주소</h3>
+          <button type="button" class="btn btn-mini btn_p12 btn_gray_outlined" onclick="openModal('modal-search-mac')">맥주소 검색</button>
+        </div>
+        <div class="input-security-code mt0">
+          <div class="security-code">
+            <input type="number" class="form-control" placeholder="00" value="12"
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value="34"
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value="45"
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value="55"
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value="77"
+              oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+            <input type="number" class="form-control" placeholder="00" value="00" oninput="handleOnInput(this, 2)">
+          </div>
+        </div>
+        <div class="checkbox--typeA mt12">
+          <label for="chk_mac">
+            <input type="checkbox" id="chk_mac"> <em></em> 현재 접속된 PC의 MAC 주소로 설정
+          </label>
+        </div>
+        <div class="allocation_tit mt16">
+          <h3>할당할 IP 주소</h3>
+        </div>
+        <div class="allocation_ip_address">
+          <p>192</p>
+          <p>168</p>
+          <p>124</p>
+          <input type="number" class="form-control" placeholder="00" value="01" oninput="handleOnInput(this, 2)">
+        </div>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn-w100p btn_gray"
+          onclick="closeModal('modal-modify-fixed-allocation')">취소</button>
+        <button type="button" class="btn btn-modal btn-w100p btn_primary">수정</button>
+      </div>
+    </div>
+  </div>
+  <!-- 고정할당 추가하기 모달 끝 -->
+  <!-- 맥 주소 검색 모달 시작 -->
+  <div id="modal-search-mac" class="modal modal_lg">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-search-mac')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>맥주소 검색</h3>
+        <p>리스트에 적용할 PC가 보이지 않을 경우 갱신 버튼을 눌러주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>갱신</span></button>
+        </div>
+        <div class="table--scroll_y">
+          <div class="table__wrap">
+            <div class="tbl--typeA sm mt14">
+              <table>
+                <colgroup>
+                  <col style="width: 74px;">
+                  <col style="width: 222px;">
+                  <col style="width: 222px;">
+                  <col style="width: 222px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>IP</th>
+                    <th>프로토콜</th>
+                    <th>인터페이스</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk1">
+                          <input type="radio" name="radio_mac" id="mac_chk1"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk2">
+                          <input type="radio" name="radio_mac" id="mac_chk2"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk3">
+                          <input type="radio" name="radio_mac" id="mac_chk3"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk4">
+                          <input type="radio" name="radio_mac" id="mac_chk4"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk5">
+                          <input type="radio" name="radio_mac" id="mac_chk5"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk6">
+                          <input type="radio" name="radio_mac" id="mac_chk6"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk7">
+                          <input type="radio" name="radio_mac" id="mac_chk7"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk8">
+                          <input type="radio" name="radio_mac" id="mac_chk8"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk9">
+                          <input type="radio" name="radio_mac" id="mac_chk9"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns center mt24">
+          <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-search-mac')">닫기</button>
+          <button type="button" class="btn btn-modal btn_primary">선택</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 맥 주소 검색 모달 끝 -->
+  <script>
+    $(function () {
+      $('.security-code input').focus(function () {
+        $(this).siblings('input').addClass('focus')
+      }).focusout(function () {
+        $(this).siblings('input').removeClass('focus')
+      })
+    })
+  </script>
+</body>
+
+</html>

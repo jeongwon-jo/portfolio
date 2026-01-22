@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="../basic/home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link on" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../basic/home.html">홈</a></li>
+                <li><a href="../basic/wifi.html">와이파이</a></li>
+                <li><a href="../basic/device.html">디바이스</a></li>
+                <li><a href="../basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="../basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./internet.html">인터넷 연결정보</a></li>
+                <li><a href="./network_statistics.html">네트워크 통계</a></li>
+                <li><a href="./dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./sysmte_log.html">시스템 로그</a></li>
+                <li><a href="./wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="./nat_setting.html">NAT 설정</a></li>
+                <li><a href="./detail_setting.html">세부 설정</a></li>
+                <li class="on"><a href="./router_setting.html">공유기 설정</a></li>
+                <li><a href="./diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title">
+            <h3>공유기 설정</h3>
+            <p>접속한 공유기의 연결 설정을 변경할 수 있습니다.</p>
+          </div>
+          <div class="router-setting">
+            <div class="router-info_txt">
+              <h2 class="h2_tit">연결 상태 변경</h2>
+              <p>접속한 공유기의 정보 및 연결 상태를 변경할 수 있습니다.</p>
+              <ul class="router_info_list">
+                <li>공유기의 이름을 변경할 수 있습니다.</li>
+                <li>공유기의 상태를 수동(NAT), 브릿지 상태로 변경할 수 있습니다.</li>
+              </ul>
+            </div>
+            <div class="detail-box mt24">
+              <div class="detail-box__wrap">
+                <div class="detail-box__title">
+                  <h2 class="h2_tit">공유기 정보</h2>
+                </div>
+                <div class="detail-contents">
+                  <div class="detail-flex__box">
+                    <div class="input_detail">
+                      <label for="" class="input__label">공유기 이름</label>
+                      <div class="input__contents">
+                        <div class="input__box">
+                          <input type="text" class="form-control" placeholder="">
+                          <div class="btns">
+                            <button type="button" class="btn_delete"></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input_detail">
+                      <label for="" class="input__label">MAC</label>
+                      <div class="input__contents">
+                        <p class="only_text">98:77:E87:00:00:B7</p>
+                      </div>
+                    </div>
+                    <div class="input_detail">
+                      <label for="" class="input__label">모델명</label>
+                      <div class="input__contents">
+                        <p class="only_text">GAPK-7600</p>
+                      </div>
+                    </div>
+                    <div class="input_detail">
+                      <label for="" class="input__label">현재상태</label>
+                      <div class="input__contents">
+                        <div class="radio_box mt12">
+                          <div class="radio--typeA">
+                            <label for="status1">
+                              <input type="radio" id="status1" name="router_status" checked> <em></em> 자동
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="status2">
+                              <input type="radio" id="status2" name="router_status"> <em></em> 수동(NAT)
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="status3">
+                              <input type="radio" id="status3" name="router_status"> <em></em> 수동(NAT)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="wirelessBridge" class="d-none mt24">
+                  <div class="detail-box__title">
+                    <h2 class="h2_tit">무선 브릿지 설정</h2>
+                  </div>
+                  <div class="detail-contents">
+                    <div class="detail-flex__box">
+                      <div class="input_detail">
+                        <label for="" class="input__label">사용</label>
+                        <div class="input__contents">
+                          <div class="radio_box mt12">
+                            <div class="radio--typeA">
+                              <label for="useN">
+                                <input type="radio" id="useN" name="wireless_use" checked> <em></em> 사용하지않음
+                              </label>
+                            </div>
+                            <div class="radio--typeA">
+                              <label for="useY">
+                                <input type="radio" id="useY" name="wireless_use"> <em></em> 사용
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input_detail wirelessContents d-none">
+                        <label for="" class="input__label">무선 인터페이스</label>
+                        <div class="input__contents">
+                          <div class="radio_box mt12">
+                            <div class="radio--typeA">
+                              <label for="interface_2.4">
+                                <input type="radio" id="interface_2.4" name="wireless_interface" checked> <em></em> 2.4 GHz
+                              </label>
+                            </div>
+                            <div class="radio--typeA">
+                              <label for="interface_5">
+                                <input type="radio" id="interface_5" name="wireless_interface"> <em></em> 5 GHz
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input_detail wirelessContents d-none">
+                        <label for="" class="input__label">접속 SSID</label>
+                        <div class="input__box">
+                          <input type="text" class="form-control" placeholder="">
+                          <div class="btns">
+                            <button type="button" class="btn_delete"></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input_detail wirelessContents d-none">
+                        <label for="" class="input__label">보안 규칙</label>
+                        <div class="input__contents">
+                          <div class="radio_box mt12">
+                            <div class="radio--typeA">
+                              <label for="rules1">
+                                <input type="radio" id="rules1" name="securiry_rules" checked> <em></em> WPA-PSK/WPA2-PSK
+                              </label>
+                            </div>
+                            <div class="radio--typeA">
+                              <label for="rules2">
+                                <input type="radio" id="rules2" name="securiry_rules"> <em></em> 사용하지않음
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="wirelessBridgeStatus" class="mt24 d-none">
+                    <div class="detail-box__title">
+                      <h2 class="h2_tit">무선 브릿지 상태</h2>
+                    </div>
+                    <div class="detail-contents">
+                      <ul class="top-router__info">
+                        <li>
+                          <span>BSS ID</span>
+                          <div class="info__contents">
+                            <p>9A:FB:B2:02:22:F1</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span>접속한 시간</span>
+                          <div class="info__contents">
+                            <p>02:49:16</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span>모드</span>
+                          <div class="info__contents">
+                            <p>A+N+11AC</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span>신호 세기</span>
+                          <div class="info__contents">
+                            <p>-65 dBm</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span>인터페이스</span>
+                          <div class="info__contents">
+                            <p>5GHz</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span>SSID</span>
+                          <div class="info__contents">
+                            <p>U+ NET22F0_5G </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn_area right mt16">
+                <button type="button" class="btn btn-sm btn_p16 btn_primary">저장</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    $('input[name=router_status]').change(function() {
+      if ($("input[name='router_status']:checked")[0].id == 'status3') {
+        $('#wirelessBridge').show()
+      } else {
+        $('#wirelessBridge').hide()
+      }
+    })
+
+    $('input[name=wireless_use]').change(function () {
+      if ($("input[name='wireless_use']:checked")[0].id == 'useN') {
+        $('#wirelessBridgeStatus').hide()
+        $('.wirelessContents').hide()
+      } else {
+        $('#wirelessBridgeStatus').show()
+        $('.wirelessContents').show()
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="../basic/home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link on" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../basic/home.html">홈</a></li>
+                <li><a href="../basic/wifi.html">와이파이</a></li>
+                <li><a href="../basic/device.html">디바이스</a></li>
+                <li><a href="../basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="../basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./internet.html">인터넷 연결정보</a></li>
+                <li><a href="./network_statistics.html">네트워크 통계</a></li>
+                <li><a href="./dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./sysmte_log.html">시스템 로그</a></li>
+                <li><a href="./wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="./nat_setting.html">NAT 설정</a></li>
+                <li><a href="./detail_setting.html">세부 설정</a></li>
+                <li><a href="./router_setting.html">공유기 설정</a></li>
+                <li class="on"><a href="./diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="diagnose_contents">
+            <h2 class="h2_tit">진단하기</h2>
+            <div class="diagnose__info">
+              <div class="txt_btn">
+                <p>인터넷 이용에 문제가 있는 경우 <b>상태 확인 시작</b> 버튼을 눌러 증상에 맞는 해결 가이드를 확인해 보세요.</p>
+                <button type="button" class="btn btn-sm btn_p16 btn_primary_outlined">상태 확인 시작</button>
+              </div>
+              <ul class="info">
+                <li>상태를 확인하는 동안 인터넷 끊김이 발생할 수 있습니다.</li>
+                <li>네트워크 환경에 따라 NN초에서 NN초 정도 소요됩니다.</li>
+              </ul>
+            </div>
+            <div class="tbl_diagnose">
+              <div class="tbl_diagnose--thead">
+                <div class="tbl_diagnose--th">진단 항목</div>
+                <div class="tbl_diagnose--th">진단 결과</div>
+              </div>
+              <div class="tbl_diagnose--tbody">
+                <div class="tbl_diagnose--tr">
+                  <div class="tbl_diagnose--td">현재 네트워크 연결 상태</div>
+                  <div class="tbl_diagnose--td">네트워크 연결 상태 정상입니다. <br>
+                    공유기가 인터넷에 연결되어 있지 않습니다.</div>
+                </div>
+                <div class="tbl_diagnose--tr">
+                  <div class="tbl_diagnose--td">디바이스 내부 동작 상태</div>
+                  <div class="tbl_diagnose--td">공유기 내부 동작은 정상입니다.<br>
+                    공유기 교체가 필요합니다. 고객센터로 연락주세요.</div>
+                </div>
+                <div class="tbl_diagnose--tr">
+                  <div class="tbl_diagnose--td">채널 간섭</div>
+                  <div class="tbl_diagnose--td">
+                    <div class="flex_box">
+                      <p>
+                        현재 채널 간섭의 상태는 좋음/보통/나쁨 입니다.<br>
+                        자동채널의 변경을 원하시면 채널변경 버튼을 눌러주세요.
+                      </p>
+                      <button type="button" class="btn btn-mini btn_p12 btn_gray">채널  변경</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tbl_diagnose--tr">
+                  <div class="tbl_diagnose--td">커버리지</div>
+                  <div class="tbl_diagnose--td">현재 사용 중인 무선 단말 중 신호세기가 낮은 단말은 N대이며, 단말의 이름은 {단말명}(3c96.312d.ad3a) 입니다.<br>
+                    사용에 불편을 겪으신다면 AP의 위치변경이 필요합니다.</div>
+                </div>
+                <div class="tbl_diagnose--tr">
+                  <div class="tbl_diagnose--td">사용량</div>
+                  <div class="tbl_diagnose--td">2.4GHz - 단말 접속 수: NN개, 트래픽 사용량 : NNN개<br>
+                    5GHz - 단말 접속 수: NN개, 트래픽 사용량 : NNN개</div>
+                </div>
+              </div>
+            </div>
+            <div class="btn_area right mt16">
+              <button type="button" class="btn btn-sm btn_primary btn_p16 btn_setting">설정 적용</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

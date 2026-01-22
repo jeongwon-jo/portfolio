@@ -701,6 +701,24 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
       </main>
     </div>
   </div>
+  <div class="modal_recommend_pc">
+    <div class="modal__close">
+      <button type="button" onclick="closeModalA()"></button>
+    </div>
+    <div class="modal__inner">
+      <p>PC 사용을 권장드립니다</p>
+    </div>
+  </div>
 </body>
+<script>
+  $(function() {
+    if($(window).width() < 768) {
+      $('.modal_recommend_pc').css("display", "flex")
+    }
+  })
 
+  function closeModalA() {
+    $('.modal_recommend_pc').hide()
+  }
+</script>
 </html>

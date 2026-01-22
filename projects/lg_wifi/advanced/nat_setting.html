@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="../basic/home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link on" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../basic/home.html">홈</a></li>
+                <li><a href="../basic/wifi.html">와이파이</a></li>
+                <li><a href="../basic/device.html">디바이스</a></li>
+                <li><a href="../basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="../basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./internet.html">인터넷 연결정보</a></li>
+                <li><a href="./network_statistics.html">네트워크 통계</a></li>
+                <li><a href="./dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./sysmte_log.html">시스템 로그</a></li>
+                <li><a href="./wired_network.html">유선 네트워크 설정</a></li>
+                <li class="on"><a href="./nat_setting.html">NAT 설정</a></li>
+                <li><a href="./detail_setting.html">세부 설정</a></li>
+                <li><a href="./router_setting.html">공유기 설정</a></li>
+                <li><a href="./diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title">
+            <h3>NAT 설정</h3>
+            <p>외부에서 내부 네트워크로의 접속이 가능하도록 설정할 수 있습니다.</p>
+            <p class="info">설정에 따라 보안상 이슈가 있을 수 있으므로 사용에 주의해 주세요.</p>
+          </div>
+          <div class="nat-setting">
+            <div class="nat_pad--layout">
+              <div>
+                <div class="port-forwarding">
+                  <div class="port-forwarding__tit">
+                    <div class="tit_txt">
+                      <h2 class="h2_tit">포트 포워딩</h2>
+                      <p>외부에서 내부 네트워크로의 접속이 가능하도록 설정할 수 있습니다.<br>
+                        설정에 따라 보안상 이슈가 있을 수 있으므로 사용에 주의하세요.</p>
+                    </div>
+                    <div class="btns">
+                      <p class="info_txt">최대 64개를 설정할 수 있습니다.</p>
+                      <button type="button" class="btn btn-sm btn_secondary_outlined btn_p16 btn_icon btn_more"
+                        onclick="openModal('modal-add-fowarding')"><span>추가</span></button>
+                    </div>
+                  </div>
+                  <div class="pc_show mt24">
+                    <div class="tbl--typeA">
+                      <table>
+                        <colgroup>
+                          <col style="width: 170px;">
+                          <col style="width: 231px;">
+                          <col style="width: 231px;">
+                          <col style="width: 231px;">
+                          <col style="width: 231px;">
+                          <col style="width: 231px;">
+                          <col style="width: 231px;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th>
+                              <div class="checkbox--typeA center">
+                                <label for="chk_All">
+                                  <input type="checkbox" id="chk_All"> <em></em>
+                                </label>
+                              </div>
+                            </th>
+                            <th>NO</th>
+                            <th>ON/OFF</th>
+                            <th>서비스 포트</th>
+                            <th>프로토콜</th>
+                            <th>IP 주소</th>
+                            <th>내부 포트</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox--typeA center">
+                                <label for="chk1">
+                                  <input type="checkbox" id="chk1"> <em></em>
+                                </label>
+                              </div>
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="toggle-switch">
+                                <input type="checkbox" id="toggle_chk1" checked>
+                                <label for="toggle_chk1" class="switch_label">
+                                  <span class="onoff_btn"></span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>portname</td>
+                            <td>TEXT</td>
+                            <td>192.168.124.101</td>
+                            <td>text</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox--typeA center">
+                                <label for="chk2">
+                                  <input type="checkbox" id="chk2"> <em></em>
+                                </label>
+                              </div>
+                            </td>
+                            <td>1</td>
+                            <td>
+                              <div class="toggle-switch">
+                                <input type="checkbox" id="toggle_chk2" checked>
+                                <label for="toggle_chk2" class="switch_label">
+                                  <span class="onoff_btn"></span>
+                                </label>
+                              </div>
+                            </td>
+                            <td>portname</td>
+                            <td>TEXT</td>
+                            <td>192.168.124.101</td>
+                            <td>text</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="mo_show mt16">
+                    <div class="info__box--A">
+                      <ul class="info__box">
+                        <li class="info--checkbox">
+                          <div class="checkbox--typeA center">
+                            <label for="mo_chk1">
+                              <input type="checkbox" id="mo_chk1"> <em></em>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">NO</span>
+                          <div class="info__cnts">
+                            <p>1</p>
+                          </div>
+                        </li>
+                        <li class="center">
+                          <span class="info_title">ON/OFF</span>
+                          <div class="info__cnts center">
+                            <div class="toggle-switch">
+                              <input type="checkbox" id="mo_toggle_chk1" checked>
+                              <label for="mo_toggle_chk1" class="switch_label">
+                                <span class="onoff_btn"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">서비스 포트</span>
+                          <div class="info__cnts">
+                            <p>text</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">프로토콜</span>
+                          <div class="info__cnts">
+                            <p>text</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">IP 주소</span>
+                          <div class="info__cnts">
+                            <p>192.168.124.101</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">내부 포트</span>
+                          <div class="info__cnts">
+                            <p>text</p>
+                          </div>
+                        </li>
+                      </ul>
+                      <ul class="info__box">
+                        <li class="info--checkbox">
+                          <div class="checkbox--typeA center">
+                            <label for="mo_chk1">
+                              <input type="checkbox" id="mo_chk1"> <em></em>
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">NO</span>
+                          <div class="info__cnts">
+                            <p>2</p>
+                          </div>
+                        </li>
+                        <li class="center">
+                          <span class="info_title">ON/OFF</span>
+                          <div class="info__cnts center">
+                            <div class="toggle-switch">
+                              <input type="checkbox" id="mo_toggle_chk2" checked>
+                              <label for="mo_toggle_chk2" class="switch_label">
+                                <span class="onoff_btn"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">서비스 포트</span>
+                          <div class="info__cnts">
+                            <p>text</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">프로토콜</span>
+                          <div class="info__cnts">
+                            <p>text</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">IP 주소</span>
+                          <div class="info__cnts">
+                            <p>192.168.124.101</p>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="info_title">내부 포트</span>
+                          <div class="info__cnts">
+                            <p>text</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="btn_area between mt16 port-forwarding_btns ">
+                    <div class="btn_area">
+                      <button type="button" class="btn btn-sm btn_gray_outlined btn_p16"
+                        onclick="openModal('modal-add-fowarding')">수정</button>
+                      <button type="button" class="btn btn-sm btn_gray_outlined btn_p16">삭제</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting pc_show">설정 적용</button>
+                  </div>
+                </div>
+                <div class="btn_area right mt12">
+                  <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting mo_show">설정 적용</button>
+                </div>
+              </div>
+              <div>
+                <div class="dmz-server">
+                  <h2 class="h2_tit">DMZ 서버 포트포워딩</h2>
+                  <div class="dmz__contents">
+                    <div class="dmz-setting">
+                      <div class="tit">
+                        <h4>DMZ 사용 설정</h4>
+                      </div>
+                      <div class="radio_box">
+                        <div class="radio--typeA">
+                          <label for="dmz1">
+                            <input type="radio" id="dmz1" name="dmz_setting" checked> <em></em> DMZ 사용함
+                          </label>
+                        </div>
+                        <div class="radio--typeA">
+                          <label for="dmz2">
+                            <input type="radio" id="dmz2" name="dmz_setting"> <em></em> Super DMZ 사용함
+                          </label>
+                        </div>
+                        <div class="radio--typeA">
+                          <label for="dmz3">
+                            <input type="radio" id="dmz3" name="dmz_setting"> <em></em> DMZ 사용안함
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="dmzIpAddress" class="dmz-setting">
+                      <div class="tit">
+                        <h4>DMZ IP 주소</h4>
+                      </div>
+                      <div class="input-security-code mt0">
+                        <div class="security-code">
+                          <input type="number" class="form-control" placeholder="000"
+                            oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                          <input type="number" class="form-control" placeholder="000"
+                            oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                          <input type="number" class="form-control" placeholder="000"
+                            oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                          <input type="number" class="form-control" placeholder="000" oninput="handleOnInput(this, 3)">
+                        </div>
+                      </div>
+                    </div>
+                    <div id="superDmzHardward" class="dmz-setting d-none">
+                      <div class="tit">
+                        <h4>Super DMZ 하드웨어 등록</h4>
+                        <button type="button" class="btn-textType" onclick="openModal('modal-search-mac')">맥 주소
+                          검색</button>
+                      </div>
+                      <div class="input-security-code mt0">
+                        <div class="security-code">
+                          <input type="number" class="form-control" placeholder="00"
+                            oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+                          <input type="number" class="form-control" placeholder="00"
+                            oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+                          <input type="number" class="form-control" placeholder="00"
+                            oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+                          <input type="number" class="form-control" placeholder="00"
+                            oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+                          <input type="number" class="form-control" placeholder="00"
+                            oninput="handleOnInput(this, 2); inputNextStep(this, 2)">
+                          <input type="number" class="form-control" placeholder="00" oninput="handleOnInput(this, 2)">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- PC DMZ 서버 포트포워딩 설정 적용 버튼 -->
+                  <div class="btn_area right mt16">
+                    <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting pc_show">설정 적용</button>
+                  </div>
+                </div>
+                <!-- 모바일 DMZ 서버 포트포워딩 설정 적용 버튼 -->
+                <div class="btn_area right mt16">
+                  <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting mo_show">설정 적용</button>
+                </div>
+                <div class="nat-t">
+                  <h2 class="h2_tit">NAT - T</h2>
+                  <div class="nat-t__contents">
+                    <p>L2TP Passthrough</p>
+                    <p>NETMEET</p>
+                    <p>IPSec Passthrough</p>
+                    <p>BATTLE.NET (StarCraft, Diablo)</p>
+                    <p>PPTP Passthrough</p>
+                    <p>WINAMP</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 맥 주소 검색 모달 시작 -->
+  <div id="modal-search-mac" class="modal modal_lg">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-search-mac')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>맥주소 검색</h3>
+        <p>리스트에 적용할 PC가 보이지 않을 경우 갱신 버튼을 눌러주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>갱신</span></button>
+        </div>
+        <div class="table--scroll_y">
+          <div class="table__wrap">
+            <div class="tbl--typeA sm mt14">
+              <table>
+                <colgroup>
+                  <col style="width: 74px;">
+                  <col style="width: 222px;">
+                  <col style="width: 222px;">
+                  <col style="width: 222px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>IP</th>
+                    <th>프로토콜</th>
+                    <th>인터페이스</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk1">
+                          <input type="radio" name="radio_mac" id="mac_chk1"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk2">
+                          <input type="radio" name="radio_mac" id="mac_chk2"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk3">
+                          <input type="radio" name="radio_mac" id="mac_chk3"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk4">
+                          <input type="radio" name="radio_mac" id="mac_chk4"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk5">
+                          <input type="radio" name="radio_mac" id="mac_chk5"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk6">
+                          <input type="radio" name="radio_mac" id="mac_chk6"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk7">
+                          <input type="radio" name="radio_mac" id="mac_chk7"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk8">
+                          <input type="radio" name="radio_mac" id="mac_chk8"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk9">
+                          <input type="radio" name="radio_mac" id="mac_chk9"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns center mt24">
+          <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-search-mac')">닫기</button>
+          <button type="button" class="btn btn-modal btn_primary">선택</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 맥 주소 검색 모달 끝 -->
+  <!-- 포트포워딩 추가 모달 시작 -->
+  <div id="modal-add-fowarding" class="modal modal_sm">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>포트포워딩 추가</h3>
+      </div>
+      <div class="modal__content">
+        <form action="" class="form_forwarding">
+          <fieldset>
+            <div class="input_forwarding">
+              <label for="" class="input__label">서비스 포트</label>
+              <div class="input__contents">
+                <div class="service-port">
+                  <input type="number" id="servicePort1" class="form-control" placeholder="000" oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                  <input type="number" id="servicePort2" class="form-control" placeholder="000" oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                  <select class="nice-select select-primary" id="selectPort" name="" >
+                    <option value="0">포트선택</option>
+                    <option value="tcp">H.323전화기(TCP)</option>
+                    <option value="ucp">H.323전화기(UCP)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="input_forwarding">
+              <label for="" class="input__label">프로토콜</label>
+              <div class="input__contents">
+                <div class="service-port">
+                  <select class="nice-select select-primary max-w100p" id="selectProtocol" name="" >
+                    <option value="">TCP/IP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="input_forwarding">
+              <label for="" class="input__label">내부 IP 주소</label>
+              <div class="input__contents">
+                <div class="service-port">
+                  <input type="number" class="form-control" placeholder="000"
+                    oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                  <input type="number" class="form-control" placeholder="000"
+                    oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                  <input type="number" class="form-control" placeholder="000"
+                    oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                  <input type="number" class="form-control" placeholder="000" oninput="handleOnInput(this, 3); inputNextStep(this, 3)">
+                </div>
+              </div>
+            </div>
+            <div class="input_forwarding">
+              <label for="" class="input__label">내부 포트</label>
+              <div class="input__contents">
+                <div class="service-port">
+                  <input type="number" class="form-control" placeholder="000"
+                    oninput="handleOnInput(this, 3);">
+                </div>
+              </div>
+            </div>
+            <div class="modal__btns center mt24">
+              <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-add-fowarding')">취소</button>
+              <button type="button" class="btn btn-modal btn_primary">추가</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- 포트포워딩 추가 모달 시작 -->
+  <script>
+    $(function () {
+      $('.security-code input, .service-port input').focus(function () {
+        $(this).siblings('input').addClass('focus')
+        $(this).siblings('select').addClass('focus')
+        $(".nice-select").niceSelect('update');
+      }).focusout(function () {
+        $(this).siblings('input').removeClass('focus')
+        $(this).siblings('select').removeClass('focus')
+        $(".nice-select").niceSelect('update');
+      })
+
+      $('input[name=dmz_setting]').change(function () {
+        if ($("input[name='dmz_setting']:checked")[0].id == 'dmz1') {
+          $('#dmzIpAddress').show()
+          $('#superDmzHardward').hide()
+        } else if($("input[name='dmz_setting']:checked")[0].id == 'dmz2') {
+          $('#dmzIpAddress').hide()
+          $('#superDmzHardward').show()
+        } else {
+          $('#dmzIpAddress').hide()
+          $('#superDmzHardward').hide()
+        }
+      })
+
+      $('#selectPort').change(function() {
+        if($("#selectPort").val() == 0) {
+          $(this).siblings('#servicePort1').val("")
+          $(this).siblings('#servicePort2').val("")
+          $(this).siblings('input').attr('disabled', false)
+          $('#selectProtocol').removeClass("disabled").niceSelect('update');
+        } else {
+          if($("#selectPort").val() == "tcp") {
+            $(this).siblings('input').attr('disabled', true)
+            $(this).siblings('#servicePort1').val(1720)
+            $(this).siblings('#servicePort2').val(1720)
+            $('#selectProtocol').addClass("disabled").niceSelect('update');
+          }
+
+          if($("#selectPort").val() == "tcp") {
+            $(this).siblings('input').attr('disabled', true)
+            $(this).siblings('#servicePort1').val(1719)
+            $(this).siblings('#servicePort2').val(1719)
+            $('#selectProtocol').addClass("disabled").niceSelect('update');
+          }
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

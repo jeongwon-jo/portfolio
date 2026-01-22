@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="../basic/home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link on" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../basic/home.html">홈</a></li>
+                <li><a href="../basic/wifi.html">와이파이</a></li>
+                <li><a href="../basic/device.html">디바이스</a></li>
+                <li><a href="../basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="../basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li class="on"><a href="./internet.html">인터넷 연결정보</a></li>
+                <li><a href="./network_statistics.html">네트워크 통계</a></li>
+                <li><a href="./dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./sysmte_log.html">시스템 로그</a></li>
+                <li><a href="./wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="./nat_setting.html">NAT 설정</a></li>
+                <li><a href="./detail_setting.html">세부 설정</a></li>
+                <li><a href="./router_setting.html">공유기 설정</a></li>
+                <li><a href="./diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+              <p>U+Net1234</p>
+              <em class="connect">연결됨</em>
+            </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title">
+            <h3>인터넷 연결 정보</h3>
+            <p>공유기의 네트워크 설정 정보와 통계 정보를 확인할 수 있습니다.</p>
+          </div>
+          <div class="container">
+            <p class="info_txt">*이 영역은 10초마다 갱신됩니다</p>
+            <div class="internet-connected__grid">
+              <div class="info__wrap">
+                <div class="info__box--A mb24">
+                  <h3 class="tit">인터넷 연결 정보</h3>
+                  <ul class="info__box">
+                    <li>
+                      <span class="info_title">연결 모드</span>
+                      <div class="info__cnts">
+                        <p>유동 IP 사용</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">연결 모드</span>
+                      <div class="info__cnts">
+                        <div class="flex_box">
+                          <p>연결됨</p>
+                          <button type="button" class="btn btn-mini btn_gray btn_p12">IP 갱신</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">IP주소</span>
+                      <div class="info__cnts">
+                        <p>000.000.000.000</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">서브넷 마스크</span>
+                      <div class="info__cnts">
+                        <p>000.000.000.000</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">게이트 웨이</span>
+                      <div class="info__cnts">
+                        <p>000.000.000.000</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">DNS 서버</span>
+                      <div class="info__cnts">
+                        <p>000.000.000.000, 000.000.000.000</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">DHCP 임대기간</span>
+                      <div class="info__cnts">
+                        <p>21600</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">DHCP 만료기간</span>
+                      <div class="info__cnts">
+                        <p>21600</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">DDNS 상태</span>
+                      <div class="info__cnts">
+                        <div class="flex_box">
+                          <p>사용하지 않음</p>
+                          <div class="flex_box">
+                            <button type="button" class="btn btn-mini btn_gray btn_p12" onclick="openModal('modal-show-ip')">IP 보기</button>
+                            <button type="button" class="btn btn-mini btn_gray btn_p12" disabled>DDNS 갱신</button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">하드웨어 주소</span>
+                      <div class="info__cnts">
+                        <p>98:77:E7:00:00:87</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info__box--A">
+                  <h3 class="tit">내부 네트워크</h3>
+                  <ul class="info__box">
+                    <li>
+                      <span class="info_title">IP주소</span>
+                      <div class="info__cnts">
+                        <p>000.000.000.00</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">서브넷 마스크</span>
+                      <div class="info__cnts">
+                        <p>000.000.000.000</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">하드웨어 주소</span>
+                      <div class="info__cnts">
+                        <p>98:77:E7:00:00:87</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">DHCP 사용 여부</span>
+                      <div class="info__cnts">
+                        <p>사용</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="info__wrap">
+                <div class="info__box--A mb24">
+                  <h3 class="tit">무선 연결 상태</h3>
+                  <ul class="info__box">
+                    <li>
+                      <span class="info_title">무선 네트워크</span>
+                      <div class="info__cnts">
+                        <p>2.4 GHz</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">네트워크 이름<br> (SSID)</span>
+                      <div class="info__cnts">
+                        <p>mediadevice_2.4G</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">BISSID</span>
+                      <div class="info__cnts">
+                        <div class="flex_box">
+                          <p>98:77:E7:00:00:87</p>
+                          <button type="button" class="btn btn-mini btn_gray btn_p12" onclick="openModal('modal-wireless-client')">무선 Client 보기</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">채널</span>
+                      <div class="info__cnts">
+                        <p>149/80</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">무선 보안 설정</span>
+                      <div class="info__cnts">
+                        <p>WPA2-PSK</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="info__box">
+                    <li>
+                      <span class="info_title">무선 네트워크</span>
+                      <div class="info__cnts">
+                        <p>5 GHz</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">네트워크 이름<br> (SSID)</span>
+                      <div class="info__cnts">
+                        <p>mediadevice_2.4G</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">BISSID</span>
+                      <div class="info__cnts">
+                        <div class="flex_box">
+                          <p>98:77:E7:00:00:87</p>
+                          <button type="button" class="btn btn-mini btn_gray btn_p12" onclick="openModal('modal-wireless-client')">무선 Client 보기</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">채널</span>
+                      <div class="info__cnts">
+                        <p>149/80</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">무선 보안 설정</span>
+                      <div class="info__cnts">
+                        <p>WPA2-PSK</p>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="info__box">
+                    <li>
+                      <span class="info_title">무선 네트워크</span>
+                      <div class="info__cnts">
+                        <p>6 GHz</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">네트워크 이름<br> (SSID)</span>
+                      <div class="info__cnts">
+                        <p>mediadevice_2.4G</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">BISSID</span>
+                      <div class="info__cnts">
+                        <div class="flex_box">
+                          <p>98:77:E7:00:00:87</p>
+                          <button type="button" class="btn btn-mini btn_gray btn_p12" onclick="openModal('modal-wireless-client')">무선 Client 보기</button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">채널</span>
+                      <div class="info__cnts">
+                        <p>149/80</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">무선 보안 설정</span>
+                      <div class="info__cnts">
+                        <p>WPA2-PSK</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info__box--A">
+                  <h3 class="tit">소프트 웨어 정보</h3>
+                  <ul class="info__box">
+                    <li>
+                      <span class="info_title">소프트웨어 버전</span>
+                      <div class="info__cnts">
+                        <p>1.00.00(Dec 14 16:09:50 2020)</p>
+                      </div>
+                    </li>
+                    <li>
+                      <span class="info_title">시리얼 넘버</span>
+                      <div class="info__cnts">
+                        <p>KABGA782132543122</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- IP 보기 모달 시작 -->
+  <div id="modal-show-ip" class="modal modal_sm">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>알림</h3>
+      </div>
+      <div class="modal__content">
+        <div class="tac">
+          <p>DDNS IP 255.255.255.255</p>
+        </div>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn-w100p btn_primary" onclick="closeModal('modal-show-ip')">확인</button>
+      </div>
+    </div>
+  </div>
+  <!-- IP 보기 모달 끝 -->
+  <!-- 무선 Client 모달 시작 -->
+  <div id="modal-wireless-client" class="modal modal_lg">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-wireless-client')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>AP에 연결된 무선 Client</h3>
+        <p>*접속한 시간이 1분 이내인 무선 클라이언트의 신호 세기는 정확하지 않을 수 있습니다.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>갱신</span></button>
+        </div>
+        <div class="table__wrap">
+          <div class="tbl--typeA sm mt14">
+            <table>
+              <colgroup>
+                <col style="width: 160px;">
+                <col style="width: 116px;">
+                <col style="width: 116px;">
+                <col style="width: 116px;">
+                <col style="width: 116px;">
+                <col style="width: 116px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>하드웨어 주소</th>
+                  <th>접속한 시간</th>
+                  <th>종류</th>
+                  <th>신호 세기(dB)</th>
+                  <th>인터페이스</th>
+                  <th>SSID</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+                <tr>
+                  <td>00:00:00:00:00:00</td>
+                  <td>DD:HH:MM:SS</td>
+                  <td>무선 Client</td>
+                  <td>-58</td>
+                  <td>5 GHz</td>
+                  <td>U+Netxxxx_5G</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul class="pagination mt12">
+          <li class="first"><a href="#"></a></li>
+          <li class="prev"><a href="#"></a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li class="next"><a href="#"></a></li>
+          <li class="last"><a href="#"></a></li>
+        </ul>
+      </div>
+      <div class="modal__btns center mt24">
+        <button type="button" class="btn btn-modal btn_primary" onclick="closeModal('modal-wireless-client')">닫기</button>
+      </div>
+    </div>
+  </div>
+  <!-- 무선 Client 모달 끝 -->
+</body>
+
+</html>

@@ -1,0 +1,1662 @@
+@charset "UTF-8";
+@import url(./basic.css);
+/* #### 고급설정 #### */
+/* 인터넷 연결 정보 */
+.internet-connected__grid {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.internet-connected__grid .info__wrap {
+  flex: 1;
+}
+
+/* 네트워크 통계 */
+.network-statistics:not(:first-child) {
+  margin-top: 36px;
+}
+
+.network-statistics .tit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.network-statistics .tit span.period {
+  font-size: 18px;
+  font-weight: 500;
+  color: #a8b3bd;
+  display: inline-block;
+  padding-left: 15px;
+  border-left: 1px solid #dce0e5;
+}
+
+/* DHCP 할당 목록 */
+.dhcp__contents {
+  position: relative;
+}
+
+.dhcp-fixed-allocation {
+  margin-top: 36px;
+}
+
+.dhcp-fixed-allocation .tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dhcp-fixed-allocation .tit .btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dhcp-fixed-allocation .tit .btns .info_txt {
+  color: #525960;
+}
+
+.dhcp-fixed-allocation .tit .btns .btn span {
+  color: var(--color-secondary)
+}
+
+.dhcp-fixed-allocation .tit .btns .btn span:before {
+  background-image: url(../_img/icon/icon_add_black.svg);
+}
+
+.dhcp__contents .btn_dhcp .btn {
+  width: 126px;
+}
+
+/* 고정할당 모달 */
+.allocation_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allocation_tit h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #47484a;
+}
+
+.allocation_ip_address {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.allocation_ip_address p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #66707a;
+  min-width: 40px;
+}
+
+.allocation_ip_address .form-control {
+  width: 60px;
+  text-align: center;
+}
+
+.modal_allocation .input-security-code {
+  max-width: 100%;
+}
+
+.modal_allocation .input-security-code .form-control {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal_allocation .checkbox--typeA {
+  font-size: 14px;
+}
+
+/* 유선 네트워크 설정 */
+.wired-network__inner {
+  display: flex;
+  gap: 20px;
+}
+
+.wired-network__inner .left,
+.wired-network__inner .right {
+  width: 100%;
+  flex: 1;
+  align-self: stretch;
+}
+
+.wired-network__inner .network__box {
+  padding: 24px;
+  border: 1px solid #e7ebee;
+  border-radius: 12px;
+}
+
+.wired-network__inner .left .network__box:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.wired-network__inner .right .network__box {
+  height: 100%;
+}
+
+.current_hardware {
+  background-color: #f9fafb;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.current_hardware span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #181a1b;
+  display: inline-block;
+  margin-right: 14px;
+}
+
+.current_hardware b {
+  font-size: 16px;
+  font-weight: 500;
+  color: #525960;
+}
+
+.input_hardware_address {
+  margin-top: 20px;
+}
+
+.input_hardware_address .tit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input_hardware_address .tit h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #66707a;
+}
+
+.network__box .input-security-code {
+  margin: 0 0;
+  max-width: 374px;
+}
+
+.network__box .input-security-code .form-control {
+  font-size: 16px;
+}
+
+.network__box .flex_box {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.network__box .dns_box {
+  width: calc(50% - 25px);
+}
+
+.network__box .dns_box h5.tit {
+  font-size: 16px;
+  font-weight: 600;
+  color: #66707a;
+  margin-bottom: 8px;
+}
+
+.network__box .dns_box .input-security-code {
+  max-width: 335px;
+}
+
+/* 시스템 로그 */
+.mo_system_log {
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.mo_system_log::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.mo_system_log::-webkit-scrollbar-button:vertical:start:decrement,
+.mo_system_log::-webkit-scrollbar-button:vertical:start:increment {
+  display: block;
+  height: 10px;
+}
+
+.mo_system_log::-webkit-scrollbar-thumb {
+  height: 30%;
+  background: rgb(59, 64, 68, 0.5);
+  border-radius: 10px;
+}
+
+.mo_system_log::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+.mo_system_log .info__box--A {
+  max-height: calc(100dvh - 360px);
+}
+
+/* NAT 설정 */
+.port-forwarding__tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.port-forwarding__tit .tit_txt p {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #525960;
+}
+
+.port-forwarding__tit .btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.port-forwarding__tit .btns p.info_txt {
+  color: #525960;
+}
+
+.port-forwarding__tit .btns .btn_more span {
+  color: #000000;
+}
+
+.port-forwarding__tit .btns .btn_more span::before {
+  background-image: url(../_img/icon/icon_add_black.svg);
+}
+
+.dmz-server {
+  margin-top: 36px;
+}
+
+.dmz-server .dmz__contents {
+  display: flex;
+  border: 1px solid #e7ebee;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.dmz-server .dmz__contents .dmz-setting {
+  width: 50%
+}
+
+.dmz-server .dmz__contents .dmz-setting:nth-child(2) {
+  width: auto;
+}
+
+.dmz-server .dmz__contents .dmz-setting .btn-textType {
+  color: #66707a;
+}
+
+.dmz__contents .dmz-setting .tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 485px;
+}
+
+.dmz__contents .dmz-setting h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1d1d;
+  margin-bottom: 12px;
+}
+
+.dmz-setting .input-security-code {
+  margin: 0 0;
+  max-width: 100%;
+}
+
+.dmz-setting .input-security-code .security-code {
+  justify-content: flex-start;
+}
+
+.dmz-setting .input-security-code .form-control {
+  font-size: 16px;
+  width: 74px;
+  flex: none;
+}
+
+.nat-setting .nat-t {
+  margin-top: 36px;
+}
+
+.nat-t__contents {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 24px;
+  flex-wrap: wrap;
+  background-color: #f9fafb;
+}
+
+.nat-t__contents p {
+  width: calc(50% - 6px);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #7f8a94;
+}
+
+/* 포트포워딩 모달 */
+.input_forwarding {
+  margin-bottom: 20px;
+}
+
+.input_forwarding:last-child {
+  margin-bottom: 0px;
+}
+
+.input_forwarding .input__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #47484a;
+  margin-bottom: 8px;
+}
+
+.input_forwarding .service-port {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input_forwarding .service-port .form-control {
+  width: 100%;
+  text-align: center;
+  max-width: 64px;
+}
+
+.input_forwarding .service-port .select-primary {
+  flex: 1;
+  flex-shrink: 0;
+  max-width: 130px;
+}
+
+.input_forwarding .service-port .select-primary.max-w100p {
+  max-width: 100%;
+}
+
+/* 세부 설정 */
+.detail-box {
+  margin-bottom: 36px;
+}
+
+.detail-box .detail-box__wrap {
+  border: 1px solid #e7ebee;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.detail-box .detail-box__title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.detail-contents {
+  margin-top: 24px;
+}
+
+.detail-flex__box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 120px;
+  row-gap: 24px;
+}
+
+.detail-flex__box .input_detail {
+  width: calc(50% - 60px);
+}
+
+.input_detail .input__label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #3b4044;
+}
+
+.input_detail .input__contents .form-control,
+.input_detail .input__contents .select-primary {
+  width: 100%;
+}
+
+.input_detail .input__contents p.only_text {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #181a1b;
+}
+
+.input_detail .ddns_server {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.input_detail .ddns_server .btn {
+  flex-shrink: 0;
+}
+
+.wake-on-lan__wrap {
+  max-height: 60dvh;
+  overflow-y: auto;
+}
+
+.wake-on-lan__box:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.wake-on-lan__box .security-code .form-control {
+  font-size: 14px;
+}
+
+.wake-on-lan__box .input-security-code {
+  max-width: 100%;
+}
+
+.packet-filtering__wrap {
+  display: flex;
+  gap: 40px;
+}
+
+.wireless-setting,
+.departure-destination {
+  width: calc(50% - 20px);
+}
+
+.form-packet__wrap {
+  overflow-y: auto;
+  max-height: 60dvh;
+}
+
+.form_packet_filtering .packet_tit {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1d1d;
+}
+
+.form_packet_filtering .packet_sub_tit {
+  font-size: 12px;
+  font-weight: 600;
+  color: #66707a;
+}
+
+.form_packet_filtering .packet_sub_tit span.info {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a8b3bd;
+}
+
+.departure_contents,
+.destination_contents,
+.departure_contents2,
+.destination_contents2 {
+  margin-top: 16px;
+}
+
+.departure_contents .packet_box,
+.destination_contents .packet_box,
+.departure_contents2 .packet_box,
+.destination_contents2 .packet_box {
+  margin-bottom: 16px;
+}
+
+.packet_flex_box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.packet_flex_box .input-security-code {
+  margin-top: 0px;
+  max-width: 100%;
+}
+
+.packet_flex_box .input-security-code .security-code input {
+  font-size: 14px;
+}
+
+.packet_flex_box .form-control {
+  width: 100%;
+  font-size: 14px;
+}
+
+/* 공유기 설정 */
+.router-info_txt p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #525960;
+  margin-top: 14px;
+}
+
+.router_info_list {
+  padding-top: 20px;
+  border-top: 1px solid #e7ebee;
+  margin-top: 20px;
+}
+
+.router_info_list li {
+  font-size: 20px;
+  font-weight: 500;
+  color: #7f8a94;
+  line-height: 30px;
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 4px;
+}
+
+.router_info_list li:last-child {
+  margin-bottom: 0px;
+}
+
+.top-router {
+  margin-top: 24px;
+  border: 1px solid #dce0e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.top-router_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-router__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.top-router__info li {
+  display: flex;
+  align-items: baseline;
+  width: 50%;
+  margin-bottom: 8px;
+}
+
+.top-router__info li span {
+  display: inline-block;
+  width: 130px;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #181a1b;
+  line-height: 27px;
+}
+
+.top-router__info li .info__contents {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #3b4044;
+}
+
+.top-router__info li:last-child {
+  margin-bottom: 0px;
+}
+
+.top-router__info li .c_green {
+  width: auto;
+  color: #00aa02;
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+.router-updates {
+  margin-top: 24px;
+  background-color: #f9fafb;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.router-updates h5 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #66707a;
+  position: relative;
+  padding-left: 28px;
+}
+
+.router-updates h5::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../_img/icon/icon_info.svg) no-repeat center center / contain;
+}
+
+.router-updates .updates_info {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  row-gap: 8px;
+}
+
+.router-updates .updates_info li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.router-updates .updates_info li span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #7f8a94;
+  line-height: 27px;
+  display: inline-block;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.router-updates .updates_info li b {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #7f8a94; 
+  display: inline-block;
+  min-width: 190px;
+  flex-shrink: 0;
+}
+
+.bottom-router__info {
+  margin-top: 36px;
+}
+
+.bottom-router_tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-router__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.bottom-router__item {
+  width: calc(50% - 12px);
+  border: 1px solid #dce0e5;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.bottom-router__item .tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-router__item .tit h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #181a1b;
+}
+
+.bottom-router__item .bottom-router_info {
+  margin-top: 14px;
+}
+
+.bottom-router__item .bottom-router_info li {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.bottom-router__item .bottom-router_info li:last-child {
+  margin-bottom: 0;
+}
+
+.bottom-router__item .bottom-router_info li span {
+  display: inline-block;
+  width: 130px;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  color: #7f8a94;
+}
+
+.bottom-router__item .bottom-router_info li b {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #181a1b;
+}
+
+.bottom-router__item .bottom-router_info li .current {
+  display: inline-block;
+  margin-left: 4px;
+  color: #00aa02;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bottom-router_info .flex_box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bottom-router_info .btns .btn {
+  height: 25px;
+  line-height: 25px;
+}
+
+/* 네트워크 설정 모달 */
+.modal_network_setting .modal__inner{
+  padding-top: 24px;
+}
+
+.network__tab {
+  width: 100%;
+  display: flex;  
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.network__tab .tab__link {
+  display: inline-block;
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #66707a;
+  border-bottom: 1px solid #e7ebee;
+}
+
+.network__tab .tab__link.active {
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.network__tab .tab__link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.network-setting__info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1d1d;
+}
+
+.network-setting__info ul {
+  margin-top: 8px;
+}
+
+.network-setting__info ul li {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3b4044;
+  margin-bottom: 4px;
+  list-style: disc;
+  margin-left: 16px;
+}
+
+.network-setting__info ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.router__info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1d1d;
+}
+
+.form_router--grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  row-gap: 12px;
+}
+
+.form_router--grid .input--typeA {
+  width: calc(50% - 20px);
+}
+
+.router-info__wrap {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.router-info__wrap .form_router-info {
+  max-height: 500px;
+}
+
+/* 진단하기 */
+.diagnose__info {
+  margin-top: 36px;
+  background-color: #f9fafb;
+  padding: 32px 24px;
+  border-radius: 12px;
+}
+
+.diagnose__info .txt_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid  #e7ebee;
+}
+
+.diagnose__info .txt_btn p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #181a1b;
+}
+
+.diagnose__info ul.info {
+  margin-top: 20px;
+}
+
+.diagnose__info ul.info li {
+  font-size: 20px;
+  font-weight: 500;
+  color: #7f8a94;
+  line-height: 30px;
+  list-style: decimal;
+  margin-left: 24px;
+}
+
+.tbl_diagnose {
+  margin-top: 36px;
+  width: 100%;
+}
+
+.tbl_diagnose--thead {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+}
+
+.tbl_diagnose--thead .tbl_diagnose--th:nth-child(1),
+.tbl_diagnose--tbody .tbl_diagnose--tr .tbl_diagnose--td:nth-child(1) {
+  width: 400px;
+  background-color: #f5f8fe;
+  color: #181a1b;
+}
+
+.tbl_diagnose--th,
+.tbl_diagnose--td {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #181a1b;
+  padding: 0 24px;
+  background-color: #f5f8fe;
+  line-height: 24px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.tbl_diagnose--tr {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+}
+
+.tbl_diagnose--td {
+  font-weight: 500;
+  background-color: #fff;
+  color: #66707a;
+}
+
+.tbl_diagnose--td .flex_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PAD & Mobile */
+@media screen and (max-width:1200px) {
+  .network-statistics .tit {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4px;
+  }
+
+  .network-statistics .tit span.period {
+    font-size: 14px;
+    padding-left: 0px;
+    border-left: none;
+  }
+
+  .network-statistics:not(:first-child) {
+    margin-top: 0px;
+  }
+
+  .network-statistics__grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .network-statistics__grid .network-statistics {
+    flex: 1;
+    width: 100%;
+  }
+
+  .dhcp__contents .dhcp-info,
+  .system-log {
+    padding: 20px 16px;
+    border: 1px solid #e7ebee;
+    border-radius: 8px;
+  }
+
+  .dhcp__contents .dhcp-info .info__box--A,
+  .system-log .info__box--A {
+    border: none;
+    padding: 0;
+  }
+
+  .dhcp__contents .dhcp-info .info__box--A,
+  .system-log .info__box:first-child {
+    border-top: 1px solid #e7ebee;
+    padding-top: 12px;
+  }
+
+  .dhcp-fixed-allocation {
+    margin-top: 12px;
+    padding: 20px 16px;
+    border: 1px solid #dce0e5;
+    border-radius: 12px;
+  }
+
+  .dhcp-fixed-allocation .tit {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dhcp-fixed-allocation .tit .btns { 
+    width: 100%;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  .dhcp-fixed-allocation .tit .btns .btn {
+    padding: 0 12px;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  .dhcp-fixed-allocation .info__box--A {
+    border: none;
+    padding: 0;
+  }
+
+  .dhcp-fixed-allocation .info__box {
+    position: relative;
+  }
+
+  .dhcp-fixed-allocation .info__box:first-child {
+    border-top: 1px solid #e7ebee;
+    padding-top: 12px;
+  }
+
+  .dhcp-fixed-allocation .info__box:last-child {
+    border-bottom: 1px solid #e7ebee;
+    padding-bottom: 12px;
+  }
+
+  .dhcp-fixed-allocation .info__box .info--checkbox {
+    position: absolute;
+    top: 12px;
+    right: 0;
+  }
+
+  .wired-network__inner .left .network__box:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  .current_hardware {
+    padding: 8px;
+  }
+
+  .current_hardware span {
+    font-size: 12px;
+    margin-right: 6px;
+  }
+
+  .current_hardware b {
+    font-size: 12px;
+  }
+
+  .input_hardware_address {
+    margin-top: 8px;
+  }
+
+  .input_hardware_address .tit h4 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .network__box .flex_box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .network__box .flex_box .dns_box:nth-child(2n+1) {
+    order: 1;
+  }
+  .network__box .flex_box .dns_box:nth-child(2n) {
+    order: 2;
+  }
+
+  .network__box .dns_box {
+    width: 100%;
+  }
+
+  .network__box .dns_box h5.tit {
+    font-size: 14px;
+  }
+
+  .network__box .dns_box .input-security-code {
+    max-width: 100%;
+  }
+
+  .port-forwarding {
+    padding: 20px 16px;
+    border: 1px solid #e7ebee;
+    border-radius: 12px;
+  }
+
+  .port-forwarding__tit {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .port-forwarding__tit .tit_txt p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 8px;
+  }
+
+  .detail-box {
+    margin-bottom: 24px;
+  }
+
+  .detail-box .detail-box__wrap { 
+    padding: 20px 16px;
+  }
+
+  .detail-box .detail-box__title {
+    gap: 12px;
+  }
+
+  .detail-contents {
+    margin-top: 12px;
+  }
+
+  .detail-flex__box {
+    flex-direction: column;
+    gap: 12px;
+  }  
+
+  .detail-flex__box .input_detail {
+    width: 100%;
+  }
+
+  .input_detail .input__label {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .input_detail .input__contents .select-primary {
+    max-width: 300px;
+  }
+
+  .input_detail .ddns_server {  
+    gap: 8px;
+  }
+
+  .wake-on-lan__wrap {
+    max-height: 45dvh;
+  }
+  
+  .tbl_wakeonlan colgroup col:nth-child(2) {
+    width: 120px !important;
+  }
+
+  .tbl_wakeonlan colgroup col:nth-child(4) {
+    width: 380px !important;
+  }
+
+  .detail-box .port-forwarding__tit.row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .detail-box .port-forwarding__tit.row .tit_txt {
+    width: 100%;
+  }
+
+  .detail-box .port-forwarding__tit.row .btns {
+    width: auto;
+  }
+
+  .mo_packet_filtering_list {
+    border: 1px solid #e7ebee;
+    padding: 20px 16px;
+    margin-top: 12px;
+  }
+
+  .mo_packet_filtering_list .h4_sub_tit {
+    font-size: 16px;
+    color: #181a1b;
+  }
+
+  .mo_packet_filtering_list .info__box--A {
+    border: none;
+    padding: 0;
+  }
+
+  .mo_packet_filtering_list .info__box {
+    position: relative;
+  }
+
+  .mo_packet_filtering_list .info__box:first-child {
+    border-top: 1px solid #e7ebee;
+    padding-top: 12px;
+  }
+
+  .mo_packet_filtering_list .info__box:last-child {
+    border-bottom: 1px solid #e7ebee;
+    padding-bottom: 12px;
+  }
+
+  .mo_packet_filtering_list .info__box .info--checkbox {
+    position: absolute;
+    top: 12px;
+    right: 0;
+  }
+  
+  .mo_packet_filtering_list>.btn_area {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .packet-filtering__wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+
+  .form-packet__wrap {
+    max-height: 45dvh;
+  }
+
+  .wireless-setting,
+  .departure-destination {
+    width: 100%;
+  }
+
+  .packet_flex_box .input-security-code .security-code {
+    gap: 2px;
+  }
+
+  .packet_flex_box .input-security-code .form-control {
+    padding: 0 0;
+  }
+
+  .router-info_txt p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 8px;
+  }
+
+  .router_info_list {
+    padding-top: 14px;
+    margin-top: 14px;
+  }
+
+  .router_info_list li {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 2px;
+  }
+
+  .port-forwarding__tit .btns {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .port-forwarding__tit .btns p.info_txt {
+    color: #7f8a94;
+  }
+
+  .port-forwarding .info__box--A {
+    border: none;
+    padding: 0;
+  }
+
+  .port-forwarding .info__box {
+    position: relative;
+  }
+
+  .port-forwarding .info__box:first-child {
+    border-top: 1px solid #e7ebee;
+    padding-top: 12px;
+  }
+
+  .port-forwarding .info__box:last-child {
+    border-bottom: 1px solid #e7ebee;
+    padding-bottom: 12px;
+  }
+
+  .port-forwarding .info__box .info--checkbox {
+    position: absolute;
+    top: 12px;
+    right: 0;
+  }
+
+  .dmz-server {
+    margin-top: 24px;
+    border: 1px solid #e7ebee;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .dmz-server .dmz__contents {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 12px;
+    padding: 0;
+    border-radius: 0px;
+    border: none;
+    margin-top: 12px;
+  }
+
+  .dmz-server .dmz__contents .dmz-setting {
+    width: 100%;
+  }
+
+  .dmz__contents .dmz-setting h4 {
+    font-size: 14px;
+    color: #7f8a94;
+    margin-bottom: 8px;
+  }
+
+  .dmz-setting .input-security-code {
+    max-width: 100%;
+  }
+
+  .dmz-setting .input-security-code .form-control {
+    width: 40px;
+  }
+
+
+  .nat-setting .nat-t {
+    margin-top: 24px;
+    border: 1px solid #e7ebee;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .nat-t__contents {
+    align-items: flex-start;
+    row-gap: 12px;
+    padding: 0;
+    border-radius: 0px;
+    border: none;
+    margin-top: 12px;
+    background-color: #fff;
+  }
+
+  .nat-t__contents p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .nat-t__contents p:nth-child(2n) {
+    order: 2;
+  }
+
+  .nat-t__contents p:nth-child(2n + 1) {
+    order: 1;
+  }
+
+  .port-forwarding_btns.btn_area.between {
+    justify-content: flex-end;
+  }
+
+  .top-router { 
+    margin-top: 16px;
+    padding: 16px;
+  }
+
+  .top-router__info {
+    margin-top: 18px;
+  }
+
+  .top-router__info li {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .top-router__info li span {
+    width: auto;
+    font-size: 14px;
+    color: #66707a;
+    line-height: 21px;
+  }
+
+  .top-router__info li .info__contents {
+    font-size: 14px;
+    color: #181a1b;
+    text-align: right;
+  }
+
+  .top-router__info li .c_green { 
+    font-size: 14px;
+    margin-left: 3px;
+  }
+
+  .router-updates {
+    margin-top: 12px;
+  }
+
+  .router-updates h5 {
+    font-size: 18px;
+  }
+
+  .router-updates .updates_info {
+    gap: 16px 20px;
+  }
+
+  .router-updates .updates_info li {
+    width: calc(50% - 10px);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .router-updates .updates_info li span {
+    width: 100%;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .router-updates .updates_info li b {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .bottom-router__grid {
+    margin-top: 12px;
+  }
+
+  .bottom-router__item {  
+    padding: 16px;
+  }
+
+  .bottom-router__item .tit h5 {
+    font-size: 16px;
+  }
+
+  .bottom-router__item .bottom-router_info {
+    margin-top: 18px;
+  }
+
+  .bottom-router__item .bottom-router_info li { 
+    margin-bottom: 12px;
+  }
+
+  .bottom-router__item .bottom-router_info li span {
+    width: 70px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .bottom-router__item .bottom-router_info li b {
+    font-size: 14px;
+    line-height: 21px;
+    flex: 1;
+  }
+
+  .bottom-router__item .bottom-router_info li .current {
+    width: auto;
+    font-size: 14px;
+  }
+
+  .bottom-router_info .flex_box {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 6px;
+  }
+
+  .bottom-router_info .btns .btn {
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    padding: 0 4px;
+  }
+
+  .network-setting__info h4 {
+    font-size: 16px;
+  }
+
+  .network-setting__info ul li {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .router__info h4 {
+    font-size: 16px;
+  }
+
+  .form_router--grid {
+    row-gap: 16px;
+  }
+
+  .diagnose__info {
+    margin-top: 24px;
+    padding: 20px;
+    padding-bottom: 62px;
+    position: relative;
+  }
+  
+  .diagnose__info .txt_btn {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 14px;
+  }
+
+  .diagnose__info .txt_btn p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .diagnose__info ul.info {
+    margin-top: 14px;
+  }
+
+  .diagnose__info ul.info li {
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: 20px;
+  }
+
+  .diagnose__info .txt_btn .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  .tbl_diagnose {
+    margin-top: 24px;
+  }
+
+  .tbl_diagnose--thead {
+    display: none;
+  }
+
+  .tbl_diagnose--tbody .tbl_diagnose--tr .tbl_diagnose--td:nth-child(1) {
+    width: 100%;
+    height: 36px;
+  }
+
+  .tbl_diagnose--tr {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tbl_diagnose--th,
+  .tbl_diagnose--td {
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .tbl_diagnose--td {
+    padding: 12px;
+  }
+  
+  .tbl_diagnose--td .flex_box {
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}
+
+/* Pad */
+@media screen and (min-width: 744px) and (max-width:1200px) {
+  .dhcp_pad--layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dhcp_pad--layout .dhcp-info,
+  .dhcp_pad--layout .dhcp-fixed-allocation {
+    flex: 1;
+    width: 100%;
+    margin-top: 0;
+    align-self: stretch;
+  }
+
+  .nat_pad--layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nat_pad--layout>div {
+    flex: 1;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .dmz-server {
+    margin-top: 0px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width:743px) {
+  .internet-connected__grid {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+  }
+
+  .internet-connected__grid .info__wrap {
+    width: 100%;
+  }
+  
+  .internet-connected__grid .info__box--A {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+  .internet-connected__grid .info__box--A .info__box li {
+    gap: 30px;
+  }
+
+  .network-statistics__grid {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 24px;
+  }
+
+  .wired-network__inner {
+    flex-direction: column;
+  }
+
+  .bottom-router__item {
+    width: 100%;
+  }
+
+  .form_router--grid .input--typeA {
+    width: 100%;
+  }
+
+  .form_router--grid .input--typeA.order1 {
+    order: 1;
+  }
+
+  .form_router--grid .input--typeA.order2 {
+    order: 2;
+  }
+
+  .form_router--grid .input--typeA.order3 {
+    order: 3;
+  }
+
+  .form_router--grid .input--typeA.order4 {
+    order: 4;
+  }
+
+  .router-info__wrap .form_router-info {
+    max-height: 350px;
+  }
+
+
+  
+}

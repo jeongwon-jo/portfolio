@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/setting.css">
+  <link rel="stylesheet" href="./_css/common.css">
+  <link rel="stylesheet" href="./_css/sub.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="./basic/home.html" class="logo">
+            <img src="./_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="./search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link on" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./basic/home.html">홈</a></li>
+                <li><a href="./basic/wifi.html">와이파이</a></li>
+                <li><a href="./basic/device.html">디바이스</a></li>
+                <li><a href="./basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="./basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="./advanced/internet.html">인터넷 연결정보</a></li>
+                <li><a href="./advanced/network_statistics.html">네트워크 통계</a></li>
+                <li><a href="./advanced/dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./advanced/sysmte_log.html">시스템 로그</a></li>
+                <li><a href="./advanced/wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="./advanced/nat_setting.html">NAT 설정</a></li>
+                <li><a href="./advanced/detail_setting.html">세부 설정</a></li>
+                <li><a href="./advanced/router_setting.html">공유기 설정</a></li>
+                <li><a href="./advanced/">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="search-results">
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="./search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+            <div class="search-results__content">
+              <h2 class="h2_tit tac"><b class="c_primary">‘네트워크'</b> 에 대한 검색 결과는 총 10건 입니다.</h2>
+              <!-- 데이터 없을 때 -->
+              <!-- <div class="search_nodata">
+                <div class="nodata__contents">
+                  <div class="nodata_img">
+                    <img src="./_img/search_nodata.png" alt="결과없음">
+                  </div>
+                </div>
+              </div> -->
+              <!-- 데이터 있을 때 -->
+              <div class="results__box">
+                <h2 class="h2_tit">메뉴 바로가기 <b class="c_primary">2</b></h2>
+                <div class="results__link">
+                  <div class="link__item">
+                    <a href="#"><b class="c_primary">네트워크</b> 통계</a>
+                  </div>
+                  <div class="link__item">
+                    <a href="#">유선 <b class="c_primary">네트워크</b> 설정</a>
+                  </div>
+                </div>
+              </div>
+              <div class="results__box">
+                <h2 class="h2_tit">자주하는 질문 (FAQ)</h2>
+                <div class="faq__list">
+                  <div class="faq__item">
+                    <div class="faq__question">
+                      <span class="quest"></span>
+                      <h3><b class="c_primary">네트워크</b>가 불안정해요.</h3>
+                    </div>
+                    <div class="faq__answer">
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내안내
+                      문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                    </div>
+                  </div>
+                  <div class="faq__item">
+                    <div class="faq__question">
+                      <span class="quest"></span>
+                      <h3><b class="c_primary">네트워크</b> 통계를 관리하려면 어떻게 해야하나요?</h3>
+                    </div>
+                    <div class="faq__answer">
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                      문구
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구
+                      안내안내
+                      문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                    </div>
+                  </div>
+                  <div class="faq__item">
+                    <div class="faq__question">
+                      <span class="quest"></span>
+                      <h3>유선 <b class="c_primary">네트워크</b>와 무선 <b class="c_primary">네트워크</b>는 어떻게 구분하나요?</h3>
+                    </div>
+                    <div class="faq__answer">
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                      문구
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구
+                      안내안내
+                      문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                    </div>
+                  </div>
+                  <div class="faq__item">
+                    <div class="faq__question">
+                      <span class="quest"></span>
+                      <h3>공유기 설정을 위한 웹 관리자 페이지에 어떻게 로그인 하나요?</h3>
+                    </div>
+                    <div class="faq__answer">
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                      문구
+                      안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구
+                      안내안내
+                      문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내 문구 안내
+                    </div>
+                  </div>
+                  <div class="faq__btns">
+                    <button type="button" class="btn btn-lg btn_gray_outlined btn_p20 btn_icon btn_more"><span>10개 항목 더 보기</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    // FAQ 첫번째 아이템 열린 상태
+    $(".faq__item:nth-child(1) .faq__question").addClass('on')
+    $(".faq__item:nth-child(1) .faq__answer").slideToggle()
+
+    // FAQ 아코디언 스크립트
+    $(".faq__item .faq__question").click(function() {
+      $(".faq__answer").not($(this).siblings()).slideUp()
+      $(this).siblings().slideToggle()
+
+      $(".faq__question").not($(this)).removeClass('on')
+      $(this).toggleClass('on')
+    })
+  </script>
+</body>
+
+</html>

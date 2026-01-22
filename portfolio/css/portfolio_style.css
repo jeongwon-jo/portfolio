@@ -439,3 +439,34 @@ section.project__develop .sec__inner {
   left: 0;
   top: 10px;
 }
+.modal_recommend_pc {
+  width: 100%;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal_recommend_pc .modal__close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+.modal_recommend_pc .modal__close button {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url(../ey/img/icon_close_modal.svg) no-repeat center / contain;
+}
+.modal_recommend_pc .modal__inner p {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}

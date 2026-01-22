@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="../_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="../_css/reset.css">
+  <link rel="stylesheet" href="../_css/setting.css">
+  <link rel="stylesheet" href="../_css/common.css">
+  <link rel="stylesheet" href="../_css/sub.css">
+  <link rel="stylesheet" href="../_css/attribute.css">
+  <script src="../_js/common.js" defer></script>
+  <script src="../_js/modal.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <button type="button" class="btn_mo_menu"></button>
+          <a href="../basic/home.html" class="logo">
+            <img src="../_img/common/logo.png" alt="로고">
+          </a>
+        </div>
+        <div class="header__menu">
+          <button type="button" class="btn_search"></button>
+          <div class="mypage_menu">
+            <button type="button" class="btn_user"></button>
+            <ul class="user_menu">
+              <li class="change_pwd"><a href="javascript:void(0)">비밀번호 변경</a></li>
+              <li class="logout"><a href="javascript:void(0)">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-search__wrap">
+        <div class="header__search">
+          <div class="search__inner">
+            <button type="button" class="btn_close"></button>
+            <form action="" class="form_search">
+              <fieldset>
+                <div class="input__box">
+                  <input type="text" class="form-control" placeholder="검색어를 입력해 주세요.">
+                  <div class="btns">
+                    <button type="button" class="btn_delete"></button>
+                    <a href="../search.html" class="btn_search"></a>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <sidebar id="snb" class="sidebar_snb">
+        <div class="snb__inner">
+          <div class="snb__top">
+            <ul class="snb__tabs">
+              <li class="tabs__link" data-tab="basic"><span><b>기본 설정</b></span></li>
+              <li class="tabs__link on" data-tab="advanced"><span><b>고급 설정</b></span></li>
+            </ul>
+            <div id="basic" class="snb-tab__content">
+              <ul class="snb__menu">
+                <li><a href="../basic/home.html">홈</a></li>
+                <li><a href="../basic/wifi.html">와이파이</a></li>
+                <li><a href="../basic/device.html">디바이스</a></li>
+                <li><a href="../basic/children_internet.html">자녀 인터넷 관리</a></li>
+                <li><a href="../basic/customer.html">고객 지원</a></li>
+              </ul>
+            </div>
+            <div id="advanced" class="snb-tab__content on">
+              <ul class="snb__menu">
+                <li><a href="./internet.html">인터넷 연결정보</a></li>
+                <li><a href="./network_statistics.html">네트워크 통계</a></li>
+                <li><a href="./dhcp_info.html">DHCP 할당정보</a></li>
+                <li><a href="./sysmte_log.html">시스템 로그</a></li>
+                <li class="on"><a href="./wired_network.html">유선 네트워크 설정</a></li>
+                <li><a href="./nat_setting.html">NAT 설정</a></li>
+                <li><a href="./detail_setting.html">세부 설정</a></li>
+                <li><a href="./router_setting.html">공유기 설정</a></li>
+                <li><a href="./diagnose.html">진단하기</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- 연결된 경우 active 클래스 추가 -->
+          <div class="snb__network">
+            <div class="network">
+              <span>NAT</span>
+              <p>U+Net1234</p>
+            </div>
+            <!-- 연결된 경우 -->
+            <!-- <div class="network">
+                  <p>U+Net1234</p>
+                  <em class="connect">연결됨</em>
+                </div> -->
+          </div>
+        </div>
+      </sidebar>
+      <div class="page_contents">
+        <div class="page__inner">
+          <div class="page__title">
+            <h3>유선 네트워크 설정</h3>
+            <p>공유기를 통해 외부에 연결할 수 있도록 유선 네트워크 설정을 할 수 있습니다.</p>
+          </div>
+          <div class="wired-network">
+            <div class="wired-network__inner">
+              <div class="left">
+                <div class="network__box">
+                  <h2 class="h2_tit">WAN 설정</h2>
+                  <div class="mt24 mo_mt12">
+                    <h3 class="h5_sub_tit">WAN IP 사용 설정</h3>
+                    <div class="radio_box mt16 mo_mt8">
+                      <div class="radio--typeA">
+                        <label for="radio_wan_ip1">
+                          <input type="radio" id="radio_wan_ip1" name="radio_wan_ip" checked> <em></em> 자동
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="radio_wan_ip2">
+                          <input type="radio" id="radio_wan_ip2" name="radio_wan_ip"> <em></em> IPv4로만 연결
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="radio_wan_ip3">
+                          <input type="radio" id="radio_wan_ip3" name="radio_wan_ip"> <em></em> IPv6로만 연결
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="network__box">
+                  <h2 class="h2_tit">하드웨어 주소 설정</h2>
+                  <div class="mt24 mo_mt12">
+                    <div class="current_hardware">
+                      <span>현재 하드웨어 주소</span>
+                      <b>98 : 77 : E7 : 00 : 00 : 87</b>
+                    </div>
+                    <h3 class="h5_sub_tit mt24 mo_mt12">하드웨어 주소 사용</h3>
+                    <div class="radio_box mt16">
+                      <div class="radio--typeA">
+                        <label for="radio_hardware1">
+                          <input type="radio" id="radio_hardware1" name="radio_hardware" checked> <em></em> 장치 초기값 사용
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="radio_hardware2">
+                          <input type="radio" id="radio_hardware2" name="radio_hardware"> <em></em> 사용자 입력값 사용
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input_hardware_address">
+                    <div class="tit">
+                      <h4>하드웨어 주소</h4>
+                      <button type="button" id="btnSearchMac" class="btn btn-mini btn_gray_outlined btn_p12" onclick="openModal('modal-search-mac')" disabled>맥주소 검색</button>
+                    </div>
+                    <div class="input-security-code">
+                      <div class="security-code">
+                        <input type="text" class="form-control" oninput="handleOnInput(this, 2);" value="98" disabled>
+                        <span>:</span>
+                        <input type="text" class="form-control" oninput="handleOnInput(this, 2);" value="77" disabled>
+                        <span>:</span>
+                        <input type="text" class="form-control" oninput="handleOnInput(this, 2);" value="E7" disabled>
+                        <span>:</span>
+                        <input type="text" class="form-control" oninput="handleOnInput(this, 2);" value="00" disabled>
+                        <span>:</span>
+                        <input type="text" class="form-control" oninput="handleOnInput(this, 2);" value="00" disabled>
+                        <span>:</span>
+                        <input type="text" class="form-control" oninput="handleOnInput(this, 2)" value="87" disabled>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="ipv6LanSetting" class="network__box">
+                  <h2 class="h2_tit">IPv6 LAN 설정</h2>
+                  <div class="mt24">
+                    <h3 class="h5_sub_tit">WAN IP 사용 설정</h3>
+                    <div class="radio_box mt16">
+                      <div class="radio--typeA">
+                        <label for="radio_wan_on">
+                          <input type="radio" id="radio_wan_on" name="radio_wan_onoff" checked> <em></em> ON
+                        </label>
+                      </div>
+                      <div class="radio--typeA">
+                        <label for="radio_wan_off">
+                          <input type="radio" id="radio_wan_off" name="radio_wan_onoff"> <em></em> OFF
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="network__box">
+                  <h2 class="h2_tit">인터넷 연결 방법</h2>
+                  <div id="WANIP_auto" class="internet__connect">
+                    <div class="mt24">
+                      <h3 class="h5_sub_tit">DNS 서버</h3>
+                      <div class="radio_box mt16">
+                        <div class="radio--typeA">
+                          <label for="dns_auto">
+                            <input type="radio" id="dns_auto" name="radio_dns" checked> <em></em> 자동
+                          </label>
+                        </div>
+                        <div class="radio--typeA">
+                          <label for="dns_passivity">
+                            <input type="radio" id="dns_passivity" name="radio_dns"> <em></em> 수동
+                          </label>
+                        </div>
+                      </div>
+                      <div id="dnsServer" class="flex_box mt20">
+                        <div class="dns_box">
+                          <h5 class="tit">기본 DNS</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dns_box">
+                          <h5 class="tit">보조 DNS</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt24">
+                      <h3 class="h5_sub_tit">IPv6 DNS 서버</h3>
+                      <div class="radio_box mt16">
+                        <div class="radio--typeA">
+                          <label for="ipv6_dns_auto">
+                            <input type="radio" id="ipv6_dns_auto" name="radio_ipv6_dns" checked> <em></em> 자동
+                          </label>
+                        </div>
+                        <div class="radio--typeA">
+                          <label for="ipv6_dns_passivity">
+                            <input type="radio" id="ipv6_dns_passivity" name="radio_ipv6_dns"> <em></em> 수동
+                          </label>
+                        </div>
+                      </div>
+                      <div id="ipv6DnsServer" class="flex_box mt20">
+                        <div class="dns_box">
+                          <h5 class="tit">기본 DNS</h5>
+                          <div class="input__box">
+                            <input type="text" class="form-control w100p" placeholder="TEXT" value="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dns_box">
+                          <h5 class="tit">보조 DNS</h5>
+                          <div class="input__box">
+                            <input type="text" class="form-control w100p" placeholder="TEXT" value="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="WANIP_auto_ipv4" class="internet__connect d-none">
+                    <div class="mt24">
+                      <h3 class="h5_sub_tit">IPv4 DNS 서버</h3>
+                      <div class="radio_box mt16">
+                        <div class="radio--typeA">
+                          <label for="ipv4_dns_auto">
+                            <input type="radio" id="ipv4_dns_auto" name="radio_ipv4_dns" checked> <em></em> 자동
+                          </label>
+                        </div>
+                        <div class="radio--typeA">
+                          <label for="ipv4_dns_passivity">
+                            <input type="radio" id="ipv4_dns_passivity" name="radio_ipv4_dns"> <em></em> 수동
+                          </label>
+                        </div>
+                      </div>
+                      <div class="flex_box mt20">
+                        <div class="dns_box">
+                          <h5 class="tit">기본 DNS</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dns_box">
+                          <h5 class="tit">보조 DNS</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="WANIP_ipv4" class="internet__connect d-none">
+                    <div class="mt24">
+                      <h3 class="h5_sub_tit">IPv4</h3>
+                      <div class="radio_box mt16">
+                        <div class="radio--typeA">
+                          <label for="ipv4_1">
+                            <input type="radio" id="ipv4_1" name="radio_ipv4" checked> <em></em> 유동 IP
+                          </label>
+                        </div>
+                        <div class="radio--typeA">
+                          <label for="ipv4_2">
+                            <input type="radio" id="ipv4_2" name="radio_ipv4"> <em></em> 고정 IP
+                          </label>
+                        </div>
+                      </div>
+                      <div id="ipv4DnsServer" class="mt24">
+                        <h3 class="h5_sub_tit">DNS 서버</h3>
+                        <div class="radio_box mt16">
+                          <div class="radio--typeA">
+                            <label for="only_ipv4_dns_auto">
+                              <input type="radio" id="only_ipv4_dns_auto" name="radio_only_ipv4_dns" checked> <em></em> 자동
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="only_ipv4_dns_passivity">
+                              <input type="radio" id="only_ipv4_dns_passivity" name="radio_only_ipv4_dns"> <em></em> 수동
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="ipv4DnsServerInput" class="flex_box mt20" style="display: none;">
+                        <div class="dns_box">
+                          <h5 class="tit">외부 IP 주소</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dns_box">
+                          <h5 class="tit">서브넷 마스크</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dns_box">
+                          <h5 class="tit">게이트웨이</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex_box mt20">
+                        <div class="dns_box">
+                          <h5 class="tit">기본 DNS</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dns_box">
+                          <h5 class="tit">보조 DNS</h5>
+                          <div class="input-security-code">
+                            <div class="security-code">
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3); inputNextStep(this, 3)" value="000"
+                                disabled>
+                              <input type="number" class="form-control" oninput="handleOnInput(this, 3);" value="000" disabled>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="WANIP_ipv6" class="internet__connect d-none">
+                    <div class="flex_box mt20">
+                      <div class="dns_box">
+                        <h5 class="tit">IPv6</h5>
+                        <div class="radio_box mt16">
+                          <div class="radio--typeA">
+                            <label for="ipv6_1">
+                              <input type="radio" id="ipv6_1" name="radio_ipv6" checked> <em></em> 유동 IP
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="ipv6_2">
+                              <input type="radio" id="ipv6_2" name="radio_ipv6"> <em></em> 고정 IP
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">Prefix delegation</h5>
+                        <div class="radio_box mt16">
+                          <div class="radio--typeA">
+                            <label for="prefix1">
+                              <input type="radio" id="prefix1" name="radio_prefix" checked> <em></em> 자동
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="prefix2">
+                              <input type="radio" id="prefix2" name="radio_prefix"> <em></em> 수동
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">외부 IP 주소</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control ipv6_input w100p" placeholder="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">LAN Profix</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control prefix_input w100p" placeholder="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">게이트웨이</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control ipv6_input w100p" placeholder="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">DS-lite 설정</h5>
+                        <div class="radio_box mt16">
+                          <div class="radio--typeA">
+                            <label for="ds-lite1">
+                              <input type="radio" id="ds-lite1" name="radio_ds-lite" checked> <em></em> 자동
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="ds-lite2">
+                              <input type="radio" id="ds-lite2" name="radio_ds-lite"> <em></em> 수동
+                            </label>
+                          </div>
+                        </div>
+                      </div> 
+                      <div class="dns_box">
+                        <h5 class="tit">IPv6 DNS 서버</h5>
+                        <div class="radio_box mt16">
+                          <div class="radio--typeA">
+                            <label for="ipv6_dns_1">
+                              <input type="radio" id="ipv6_dns_1" name="radio_ipv6_dns" checked> <em></em> 자동
+                            </label>
+                          </div>
+                          <div class="radio--typeA">
+                            <label for="ipv6_dns_2">
+                              <input type="radio" id="ipv6_dns_2" name="radio_ipv6_dns"> <em></em> 수동
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">AFTR 주소</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control ds-lite_input w100p" placeholder="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">기본 DNS</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control ipv6_dns_input w100p" placeholder="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">RA Lifetime</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control w100p" placeholder="TEXT">
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dns_box">
+                        <h5 class="tit">보조 DNS</h5>
+                        <div class="mt8">
+                          <div class="input__box">
+                            <input type="text" class="form-control ipv6_dns_input w100p" placeholder="TEXT" disabled>
+                            <div class="btns">
+                              <button type="button" class="btn_delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn_area right mt16">
+              <button type="button" class="btn btn-sm btn_p16 btn_primary btn_setting">설정 적용</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <!-- 맥 주소 검색 모달 시작 -->
+  <div id="modal-search-mac" class="modal modal_lg">
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button type="button" class="btn_modal-close" onclick="closeModal('modal-search-mac')"></button>
+      </div>
+      <div class="modal__header">
+        <h3>맥주소 검색</h3>
+        <p>리스트에 적용할 PC가 보이지 않을 경우 갱신 버튼을 눌러주세요.</p>
+      </div>
+      <div class="modal__content">
+        <div class="btn_area right">
+          <button type="button" class="btn btn-sm btn_gray_outlined btn_p16 btn_icon btn_reset"><span>갱신</span></button>
+        </div>
+        <div class="table--scroll_y">
+          <div class="table__wrap">
+            <div class="tbl--typeA sm mt14">
+              <table>
+                <colgroup>
+                  <col style="width: 74px;">
+                  <col style="width: 222px;">
+                  <col style="width: 222px;">
+                  <col style="width: 222px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>IP</th>
+                    <th>프로토콜</th>
+                    <th>인터페이스</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk1">
+                          <input type="radio" name="radio_mac" id="mac_chk1"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk2">
+                          <input type="radio" name="radio_mac" id="mac_chk2"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk3">
+                          <input type="radio" name="radio_mac" id="mac_chk3"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk4">
+                          <input type="radio" name="radio_mac" id="mac_chk4"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk5">
+                          <input type="radio" name="radio_mac" id="mac_chk5"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk6">
+                          <input type="radio" name="radio_mac" id="mac_chk6"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk7">
+                          <input type="radio" name="radio_mac" id="mac_chk7"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk8">
+                          <input type="radio" name="radio_mac" id="mac_chk8"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="radio--typeA center">
+                        <label for="mac_chk9">
+                          <input type="radio" name="radio_mac" id="mac_chk9"> <em></em>
+                        </label>
+                      </div>
+                    </td>
+                    <td>192.169.12.114</td>
+                    <td>18:C5:01:CE:13:FE</td>
+                    <td>Wi-fi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal__btns center mt24">
+          <button type="button" class="btn btn-modal btn_gray" onclick="closeModal('modal-search-mac')">닫기</button>
+          <button type="button" class="btn btn-modal btn_primary">선택</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 맥 주소 검색 모달 끝 -->
+  <script>
+    $("input[name=radio_wan_ip]").change(function () {
+      // IPv4로만 연결
+      if ($("input[name='radio_wan_ip']:checked")[0].id == 'radio_wan_ip2') {
+        $('#ipv6LanSetting').hide()
+
+        $('.internet__connect').hide()
+        $('#WANIP_ipv4').show()
+      }  else {
+        // 자동, IPv6로만 연결
+        $('#ipv6LanSetting').show()
+        $('.internet__connect').hide()
+        // 자동
+        if($("input[name='radio_wan_ip']:checked")[0].id == 'radio_wan_ip1') {
+          $('#WANIP_auto').show()
+        } else {
+          $('#WANIP_ipv6').show()
+        }
+      }
+    })
+
+    $("input[name=radio_hardware]").change(function() {
+      // 장치 초기값 사용
+      if ($("input[name='radio_hardware']:checked")[0].id == 'radio_hardware1') {
+        $('.input_hardware_address .security-code .form-control').attr('disabled', true)
+        $('#btnSearchMac').attr('disabled', true)
+      } else {
+        // 사용자 입력값 사용
+        $('.input_hardware_address .security-code .form-control').attr('disabled', false)
+        $('#btnSearchMac').attr('disabled', false)
+      }
+    })
+    
+    //===== WAN 설정 : 자동
+    $("input[name=radio_dns]").change(function () {
+      // 자동
+      if ($("input[name='radio_dns']:checked")[0].id == 'dns_auto') {
+        $('#dnsServer .security-code .form-control').attr('disabled', true)
+      } else {
+        // 수동
+        $('#dnsServer .security-code .form-control').attr('disabled', false)
+      }
+    })
+
+    $("input[name=radio_ipv6_dns]").change(function () {
+      // 자동
+      if ($("input[name='radio_ipv6_dns']:checked")[0].id == 'ipv6_dns_auto') {
+        $('#ipv6DnsServer .form-control').attr('disabled', true)
+      } else {
+        // 수동
+        $('#ipv6DnsServer .form-control').attr('disabled', false)
+      }
+    })
+
+    //===== WAN 설정 : 자동 (유동IP)
+    $("input[name=radio_ipv4_dns]").change(function () {
+      // 자동
+      if ($("input[name='radio_ipv4_dns']:checked")[0].id == 'ipv4_dns_auto') {
+        $('#WANIP_auto_ipv4 .security-code .form-control').attr('disabled', true)
+      } else {
+        // 수동
+        $('#WANIP_auto_ipv4 .security-code .form-control').attr('disabled', false)
+      }
+    })
+
+    //===== WAN 설정 : IPv4로만 연결
+    $("input[name=radio_ipv4]").change(function () {
+      // 유동 IP
+      if ($("input[name='radio_ipv4']:checked")[0].id == 'ipv4_1') {
+        $('#ipv4DnsServer').show()
+        $('#ipv4DnsServerInput').hide()
+      } else {
+        // 고정 IP
+        $('#ipv4DnsServer').hide()
+        $('#ipv4DnsServerInput').show()
+      }
+    })
+
+    $("input[name=radio_only_ipv4_dns]").change(function () {
+      // 자동
+      if ($("input[name='radio_only_ipv4_dns']:checked")[0].id == 'only_ipv4_dns_auto') {
+        $('#WANIP_ipv4 .security-code .form-control').attr('disabled', true)
+      } else {
+        // 수동
+        $('#WANIP_ipv4 .security-code .form-control').attr('disabled', false)
+      }
+    })
+
+    //===== WAN 설정 : IPv6로만 연결
+    $("input[name=radio_ipv6]").change(function () {
+      // 유동 IP
+      if ($("input[name='radio_ipv6']:checked")[0].id == 'ipv6_1') {
+        $('.ipv6_input').attr('disabled', true)
+      } else {
+        // 고정 IP
+        $('.ipv6_input').attr('disabled', false)
+      }
+    })
+
+    $("input[name=radio_ipv6_dns]").change(function () {
+      // 자동
+      if ($("input[name='radio_ipv6_dns']:checked")[0].id == 'ipv6_dns_1') {
+        $('.ipv6_dns_input').attr('disabled', true)
+      } else {
+        // 수동
+        $('.ipv6_dns_input').attr('disabled', false)
+      }
+    })
+
+    $("input[name=radio_prefix]").change(function () {
+      // 자동
+      if ($("input[name='radio_prefix']:checked")[0].id == 'prefix1') {
+        $('.prefix_input').attr('disabled', true)
+      } else {
+        // 수동
+        $('.prefix_input').attr('disabled', false)
+      }
+    })
+
+    $("input[name=radio_ds-lite]").change(function () {
+      // 자동
+      if ($("input[name='radio_ds-lite']:checked")[0].id == 'ds-lite1') {
+        $('.ds-lite_input').attr('disabled', true)
+      } else {
+        // 수동
+        $('.ds-lite_input').attr('disabled', false)
+      }
+    })
+  </script>
+</body>
+
+</html>

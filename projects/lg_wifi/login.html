@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U+네트워크 관리자</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./_img/common/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="U+네트워크 관리자" />
+  <meta property="og:description" content="U+네트워크 관리자" />
+  <meta property="og:image" content="./_img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- NiceSelect -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="./_css/reset.css">
+  <link rel="stylesheet" href="./_css/setting.css">
+  <link rel="stylesheet" href="./_css/common.css">
+  <link rel="stylesheet" href="./_css/sub.css">
+  <link rel="stylesheet" href="./_css/attribute.css">
+  <script src="./_js/common.js" defer></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <main class="login">
+      <div class="login__wrap">
+        <div class="login__inner">
+          <div class="login__txt">
+            <div class="login__greeting">
+              <div class="logo">
+                <img src="./_img/common/logo.png" alt="로고">
+              </div>
+              <h2>
+                네트워크 설정 와이파이에<br>
+                로그인 하시려면<br>
+                암호를 입력해 주세요.
+              </h2>
+            </div>
+            <div class="login__connected">
+              <p class="tit">연결된 기기</p>
+              <div class="conneted_machine">
+                <div class="machine">
+                  <!-- 라우터 : router 클래스 -->
+                  <!-- 공유기 : broad 클래스 -->
+                  <!-- 매쉬 : mash 클래스 -->
+                  <!-- 활성화 : on 클래스 추가 -->
+                  <div class="machine_img router"></div>
+                  <span>라우터</span>
+                </div>
+                <span class="bar">
+                  <em></em><em></em><em></em>
+                </span>
+                <div class="machine">
+                  <div class="machine_img broad on"></div>
+                  <span>공유기</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="login__input">
+            <div class="login-input__guide">
+              <div class="img">
+                <img src="./_img/login_img.png" alt="암호 입력 이미지">
+              </div>
+              <p>* 와이파이 공유기 아랫면에 부착된 스티커의<br>
+                '관리자 웹 접속 암호'를 입력해 주세요.
+              </p>
+            </div>
+            <form action="" class="form_login">
+              <fieldset>
+                <div class="login_input">
+                  <div class="input__box">
+                    <input type="text" class="form-control" placeholder="암호를 입력해 주세요.">
+                    <div class="btns">
+                      <button type="button" class="btn_delete"></button>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-md btn-w100p btn_primary" onclick="openModal('modal-vertify-code')">로그인</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <ul class="login__info">
+          <li class="mo_info_tit">
+            <span>이용안내</span>
+          </li>
+          <li>
+            <span>외부 IP 정보</span>
+            <b>000.000.000.000</b>
+          </li>
+          <li>
+            <span>DNS 서버</span>
+            <b>000.000.000.000</b>
+          </li>
+          <li>
+            <span>인터넷 연결 방식</span>
+            <b>자동 IP 사용</b>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+  <!-- 인증번호 입력 모달 시작 -->
+  <div id="modal-vertify-code" class="modal modal_vertify_code">
+    <div class="modal__inner">
+      <div class="modal__header">
+        <h3>아래 이미지에 보이는 보안코드<br>
+        6자리를 입력해 주세요.</h3>
+        <p class="mo_show mt12">설명문구를 입력해주세요</p>
+      </div>
+      <div class="modal__content">
+        <div class="vertify-code__contents">
+          <div class="security-code">
+            <div class="security-code_img">
+              <!-- <img src="" alt="보안코드 이미지"> -->
+            </div>
+            <form class="security-code__form">
+              <fieldset>
+                <div class="input-security-code">
+                  <div class="security-code">
+                    <input type="number" class="form-control" oninput="handleOnInput(this, 1); inputNextStep(this, 1)">
+                    <input type="number" class="form-control" oninput="handleOnInput(this, 1); inputNextStep(this, 1)">
+                    <input type="number" class="form-control" oninput="handleOnInput(this, 1); inputNextStep(this, 1)">
+                    <input type="number" class="form-control" oninput="handleOnInput(this, 1); inputNextStep(this, 1)">
+                    <input type="number" class="form-control" oninput="handleOnInput(this, 1); inputNextStep(this, 1)">
+                    <input type="number" class="form-control" oninput="handleOnInput(this, 1)">
+                  </div>
+                </div>
+                <div class="security_btn">
+                  <button type="button" class="btn-textType">새 보안코드 받기</button>
+                </div>
+                <ul class="security-code__info">
+                  <li>보안을 위해 로그인 후 네트워크 관리자 비밀번호를 변경해 주세요.</li>
+                  <li>암호 분실 시 초기화 버튼을 5초 이상 누르면 초기 사용자 암호로 변경됩니다.</li>
+                </ul>
+                <div class="modal__btns center mt32">
+                  <button type="button" class="btn btn-modal btn-w100p btn_gray" onclick="closeModal('modal-vertify-code')">취소</button>
+                  <button type="button" class="btn btn-modal btn-w100p btn_primary">로그인</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 인증번호 입력 모달 끝 -->
+  <script>
+    $(function() {
+      $('.security-code input').focus(function() {
+        $(this).siblings('input').addClass('focus')
+      }).focusout(function() {
+        $(this).siblings('input').removeClass('focus')
+      })
+    })
+  </script>
+</body>
+
+</html>

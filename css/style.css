@@ -840,6 +840,10 @@ ul.portfolio__info li:before {
 }
 /* Mobile */
 @media screen and (max-width:767px) {
+    .loading .loading-text h1 {
+        font-size: 56px;
+    }
+
     .loading .text_box h1 {
         font-size: 56px;
         text-align: center;
@@ -847,6 +851,10 @@ ul.portfolio__info li:before {
 
     .sec__inner {
         padding: 0 20px;
+    }
+
+    .contact_me {
+        display: none;
     }
 
     /* 첫번째 섹션 - 소개 */
@@ -1061,6 +1069,16 @@ ul.portfolio__info li:before {
         height: 32px;
         line-height: 32px;
         padding: 0 12px;
+    }
+    .view-more__portfolio {
+        margin-top: 80px;
+    }
+    .view-more__link h2 {
+        font-size: 28px;
+    }
+    .button_circle {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -1337,6 +1355,7 @@ ul.portfolio__info li:before {
     font-size: 28px;
     font-weight: 600;
     margin-bottom: 18px;
+    color: #fff;
 }
 
 .my_history li {

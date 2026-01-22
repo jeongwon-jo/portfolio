@@ -1,0 +1,1213 @@
+@charset "UTF-8";
+/* #### 기본설정 #### */
+/* #### 홈 #### */
+.home__main-title .h2_tit {
+  color: #7f8a94;
+}
+
+.home__grid:not(:last-child) {
+  margin-bottom: 36px;
+}
+
+.home__grid.flex {
+  display: flex;
+  gap: 24px;
+}
+
+.home__grid.flex .grid__box {
+  flex: 1;
+  align-self: stretch;
+}
+
+.home__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__title .tit {
+  display: flex;
+  align-items: center;
+  gap: 16px
+}
+
+.home__title .tit h2.h2_tit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home__title .tit .tit_info {
+  padding-left: 16px;
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  color: #a8b3bd;
+}
+
+.home__title .tit .tit_info.blue {
+  color: #1662f8;
+}
+
+.home__title .tit .tit_info::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #dce0e5;
+}
+
+.connected__info {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dce0e5;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 24px;
+  height: 156px;
+}
+
+.connected__info .router_name {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.connected__info .router_img {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+
+.connected__info .router_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.connected__info .info__list {
+  width: 100%;
+}
+
+.connected__info .info__list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.connected__info .info__list li:last-child {
+  margin-bottom: 0px;
+}
+
+.connected__info .info__list li span.info__tit {
+  font-size: 18px;
+  font-weight: 500;
+  color: #7f8a94;
+  flex-shrink: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.connected__info .info__list li span.info__tit.tit1 {
+  width: 120px;
+}
+
+.connected__info .info__list li span.info__tit.tit2 {
+  width: 164px;
+}
+
+.connected__info .info__list li .info__contents {
+  font-size: 18px;
+  text-align: right;
+  color: #181a1b;
+  font-weight: normal;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+
+.connected__info .no_data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #7f8a94;
+}
+
+.wifi__password {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9px;
+}
+
+.wifi__password .btn_eye {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: url(../_img/icon/icon_eye_on.svg) no-repeat center center / contain;
+}
+
+.wifi__password .btn_eye.show {
+  background-image: url(../_img/icon/icon_eye_off.svg);
+}
+
+.wifi__password .btn_change {
+  color: #66707a;
+}
+
+.wifi__password span.pwd {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+
+.home__contents .table__wrap .tbl--typeA {
+  min-width: 700px;
+}
+
+.connected_status {
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px; */
+  font-size: 18px;
+  font-weight: 500;
+  /* padding-left: 30px; */
+  color: #181a1b;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  text-align: left;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+
+.connected_status.pl0 {
+  padding-left: 0;
+}
+
+.connected_status .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.connected_status .dot.green {
+  background-color: #00cc02;
+}
+
+.connected_status .dot.gray {
+  background-color: #a8b3bd;
+}
+
+.children-internet__grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.internet__item {
+  flex: 1;
+  border: 1px solid #e7ebee;
+  padding: 32px 40px;
+  width: calc(25% - 18px);
+  min-width: 312px;
+  border-radius: 12px;
+  align-self: stretch;
+}
+
+.internet__item.tbd {
+  border: 2px dashed #e7ebee;
+}
+
+.internet__item .tool__box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.internet__item.tbd .tool__box {
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #7f8a94;
+  height: 100%;
+}
+
+.internet__item .tool__box .tool {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.internet__item .tool__box .tool.on::after,
+.internet__item .tool__box .tool.off::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+}
+
+.internet__item .tool__box .tool.on:after {
+  background-color: #00CC02; 
+}
+
+.internet__item .tool__box .tool.off:after {
+  background-color: #A8B3BD;
+}
+
+.internet__item .tool__box .tool.pc {
+  background: url(../_img/icon/icon_pc.svg) no-repeat center center / contain;
+}
+
+.internet__item .tool__box .tool.pad {
+  background: url(../_img/icon/icon_pad.svg) no-repeat center center / contain;
+}
+
+.internet__item .tool__box .tool.mobile {
+  background: url(../_img/icon/icon_mobile.svg) no-repeat center center / contain;
+}
+
+.internet__item .tool__info {
+  width: calc(100% - 64px);
+}
+
+.internet__item .tool__info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #181a1b;
+  margin-bottom: 4px;
+}
+
+.internet__item .tool__info .limit_days {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  color: #e05e00;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.internet__item .tool__info .limit_days span {
+  display: inline-block;
+  color: #7f8a94;
+  position: relative;
+  padding-right: 4px;
+}
+
+.internet__item .tool__info .limit_days span::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(24, 26, 27, 0.4);
+}
+
+/* Pad & Mobile */
+@media screen and (max-width:1200px) {
+  .home__grid:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  .home__title .tit {
+    gap: 8px;
+  }
+
+  .home__title .tit .tit_info {
+    padding-left: 10px;
+    font-size: 14px;
+  }
+
+  .home__title .tit .tit_info::before {
+    height: 16px;
+  }
+
+  .home__title .tit h2.h2_tit img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .connected__info {
+    margin-top: 16px;
+    padding: 20px 16px;
+    height: 164px;
+    gap: 12px;
+  }
+
+  .connected__info.router {
+    display: block;
+    height: auto;
+  }
+
+  .connected__info.router .router_name {
+    gap: 24px;
+    padding-bottom: 20px;
+  }
+
+  .connected__info.router .router_name .info__list li {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4px;
+    margin-bottom: 0px;
+  }
+
+  .connected__info.router .info__list li.pc_show {
+    display: none;
+  }
+
+  .connected__info.router .mo-modal__info {
+    padding-top: 20px;
+    border-top: 1px solid #e7ebee;
+  }
+
+  .connected__info.router .router_name .info__list li .info__contents {
+    text-align: left;
+  }
+
+  .connected__info.router .info__list li .info__contents {
+    font-weight: 600;
+  }
+  .connected__info .router_img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .connected__info .info__list li { 
+    margin-bottom: 20px;
+  }
+
+  .connected__info .info__list li:last-child {
+    margin-bottom: 0px;
+  }
+
+  .connected__info .info__list li span.info__tit {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .connected__info .info__list li .info__contents {
+    font-size: 14px;
+  }
+
+  .connected__info .no_data {
+    font-size: 14px;
+  }
+
+  .wifi__password {
+    gap: 8px;
+  }
+
+  .wifi__password .btn_eye { 
+    width: 24px;
+    height: 24px;
+  }
+
+  .connected_status {
+    font-size: 14px;
+    padding-left: 24px;
+  }
+
+  .connected_status .dot {  
+    width: 8px;
+    height: 8px;
+  }
+
+  .children-internet__grid {
+    gap: 16px;
+  }
+
+  .internet__item {
+    max-width: none;
+    min-width: calc(50% - 18px);
+    width: calc(50% - 18px);
+  }
+
+  .internet__item .tool__box {
+    gap: 12px;
+  }
+
+  .internet__item .tool__box .tool {
+    width: 36px;
+    height: 36px;
+  }
+
+  .internet__item.tbd .tool__box {
+    font-size: 14px;
+  }
+
+  .internet__item .tool__box .tool.on::after,
+  .internet__item .tool__box .tool.off::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  .internet__item .tool__info {
+    width: calc(100% - 48px);
+  }
+
+  .internet__item .tool__info h3 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 2px;
+  }
+
+  .internet__item .tool__info .limit_days {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width:743px) {
+  .home__grid.flex {
+    flex-direction: column;
+  }
+  
+  .connected__info {
+    height: 120px;
+  }
+
+  .connected__info .info__list li {
+    margin-bottom: 16px;
+  }
+
+  .children-internet__grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .internet__item {
+    min-width: auto;
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+    padding: 20px 22px;
+  }
+
+  .internet__item.tbd {
+    height: 84px;
+  }
+}
+
+.page__title.basic__title h3 {
+  padding-left: 44px;
+  position: relative;
+}
+
+.page__title.basic__title h3:before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* #### Wifi #### */
+.page__title.wifi {
+  background-color: rgba(0, 204, 2, 0.05);
+}
+
+.page__title.wifi h3:before {
+  background: url(../_img/icon/icon_wifi_active.svg) no-repeat center center / contain;
+}
+
+.tbl_connect_setting table {
+  table-layout: fixed;
+}
+
+.tbl_connect_setting th.tal {
+  padding: 0 36px;
+}
+
+.tbl_connect_setting .connected_status {
+  padding-left: 14px;
+}
+
+.tbl_connect_setting .btn_settings span {
+  font-size: 18px;
+  color: #181a1b;
+  padding-right: 26px;
+  position: relative;
+}
+
+.tbl_connect_setting .btn_settings span::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../_img/icon/icon_settings_arrow.svg) no-repeat center center / contain;
+}
+
+.wireless-device__title p {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #525960;
+}
+
+.onetouch-wait__bar {
+  width: 100%;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.onetouch-wait__bar .remain_time {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+  color: #47484a;
+}
+
+.onetouch-wait__bar .wait-bar {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.onetouch-wait__bar .wait-bar span.bar {
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primary);
+}
+
+.onetouch-loading__bar {
+  margin: 24px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_onetouch {
+  max-width: 274px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+}
+
+/* 네트워크 설정 모달 */
+.network-setting__wrap {
+  max-height: 60vh;
+  overflow-y: auto;
+  min-height: 474px;
+}
+
+.network-setting {
+  display: flex;
+  gap: 40px; 
+}
+
+.network-setting--left,
+.network-setting--right {
+  flex: 1;
+}
+
+.network-setting h5.h5_tit {
+  margin-bottom: 18px;
+}
+
+.btn_mini--network {
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.channel_flex_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.channel_flex_box .select_channel {
+  flex: 1;
+}
+
+.channel_flex_box .select_cnt {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.channel_flex_box .select_cnt .option.selected {
+  padding: 0 8px;
+}
+
+.channel_flex_box .select_cnt .option.selected::after {
+  right: 8px;
+}
+
+.open_advance_setting {
+  margin-top: 24px;
+  height: 56px;
+  width: 100%;
+}
+
+.open_advance_setting .btn_open {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  color: #181a1b;
+  text-align: left;
+  border-bottom: 1px solid #e7ebee;
+}
+
+.open_advance_setting .btn_open::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../_img/icon/icon_faq_arrow.svg) no-repeat center center / contain;
+}
+
+.open_advance_setting .btn_open.open::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.open_advance_setting .btn_open.open {
+  border-bottom: none;
+}
+
+.advanced-setting {
+  display: none;
+}
+
+.advanced-setting .advanced_flex_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 60px;
+}
+
+.advanced-setting .advanced_flex_box .input--typeA {
+  width: calc(50% - 30px);
+}
+
+.generate_wep_key {
+  position: relative;
+}
+
+.generate_wep_key .input__box .btns {
+  right: 56px;
+}
+
+.generate_wep_key .btn {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+}
+
+/* 공유기 검색 모달 */
+.tbl_search_router table {
+  table-layout: fixed;
+}
+
+#modal-search-router .modal__inner {
+  max-width: 795px;
+}
+
+.wep_key_radios .wep_key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.wep_key_radios .wep_key:last-child {
+  margin-bottom: 0;
+}
+
+.wep_key_radios .wep_key .key_name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #181a1b;
+}
+
+/* Pad & Mobile */
+@media screen and (max-width:1200px) {
+  .tbl_connect_setting colgroup col:nth-child(1) {
+    width: 140px !important;
+  } 
+
+  .tbl_connect_setting colgroup col:nth-child(2) {
+    width: 250px !important;
+  }
+
+  .tbl_connect_setting colgroup col:nth-child(3),
+  .tbl_connect_setting colgroup col:nth-child(4) {
+    width: 120px !important;
+  }
+
+  .tbl_connect_setting th.tal {
+    padding: 0 24px;
+  }
+
+  .tbl_connect_setting .btn_settings span {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .tbl_connect_setting .btn_settings span::after {
+    width: 20px;
+    height: 20px;
+  } 
+
+  .wireless-device__title p {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 21px; 
+  }
+
+  .btn_onetouch {
+    max-width: 100%;
+    font-size: 14px;
+    height: 52px;
+    line-height: 52px;
+    margin-top: 32px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width:743px) {
+  .network-setting {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .network-setting--left, .network-setting--right {
+    flex: auto;
+    width: 100%;
+  }
+
+  .advanced-setting .advanced_flex_box .input--typeA {
+    width: 100%;
+  }
+
+  #btnOneTouchConnect {
+    width: 100%;
+  }
+}
+
+/* #### 디바이스 #### */
+.page__title.device {
+  background-color: rgba(22, 98, 248, 0.05);
+}
+
+.page__title.device h3:before {
+  background: url(../_img/icon/icon_device.svg) no-repeat center center / contain;
+}
+
+.btn_show_offline span {
+  position: relative;
+  padding-right: 32px;
+  color: #66707a;
+}
+
+.btn_show_offline span::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) rotate(90deg);
+  background: url(../_img/icon/icon_link_arrow.svg) no-repeat center center / contain;
+}
+
+.btn_show_offline.active span::after {
+  transform: translateY(-50%) rotate(270deg);
+}
+
+.tbl_wifi tr.offline {
+  display: none;
+}
+
+#modal-delete-device .connected_status {
+  padding-left: 0;
+  font-size: 14px;
+  padding-right: 12px;
+}
+
+/* Pad & Mobile */
+@media screen and (max-width:1200px) {
+  .page__title.basic__title h3 {
+    padding-left: 36px;
+  }
+
+  .page__title.basic__title h3:before {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .device .connected_status {
+    padding-left: 0px;
+  }
+  
+  .device .info__box--A .btn_show_offline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .device__grid.info__box--A {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border: none;
+    padding: 0;
+  }
+
+  .device__grid.info__box--A .info__box {
+    border: 1px solid #e7ebee;
+    padding: 20px 16px;
+    border-radius: 8px;
+    width: calc(50% - 10px);
+  }
+
+  .device .info__box--A .info__box.offline {
+    display: none;
+  }
+
+  .btn_show_offline span {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    color: #181a1b;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width:743px) {
+  .device__grid.info__box--A .info__box {
+    width: 100%;
+  }
+}
+
+/* #### 자녀 인터넷 관리 #### */
+.page__title.children {
+  background-color:rgba(255, 157, 87, 0.05);
+}
+
+.page__title.children h3 span.info {
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #a8b3bd;
+  position: relative;
+  padding-left: 16px;
+}
+
+.page__title.children h3 span.info::before{ 
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  background-color: #dce0e5;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page__title.children h3:before {
+  background: url(../_img/icon/icon_person.svg) no-repeat center center / contain;
+}
+
+.children__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.children-internet .children-internet__grid {
+  margin-top: 24px;
+  gap: 24px 22px;
+}
+
+.children-internet .internet__item {
+  padding: 20px 24px;
+  position: relative;
+  align-self: stretch;
+  max-width: calc(25% - 16px);
+}
+
+.internet__item .tool__toggle {
+  position: absolute;
+  top: 32px;
+  right: 24px;
+}
+
+.internet__item .tool__time {
+  margin-top: 12px;
+  min-height: 231px;
+}
+
+.internet__item .tool__time li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.internet__item .tool__time li.mac b {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7f8a94;
+  line-height: 24px;
+}
+
+.internet__item .tool__time li span.tool_tit {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e05e00;
+  line-height: 27px;
+}
+
+.internet__item .tool__time li>div {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7f8a94;
+  line-height: 24px;
+}
+
+.internet__item .tool__time li p {
+  line-height: 24px;
+}
+
+.internet__item .tool__btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.internet__item .btn_tool_setting span {
+  padding-right: 22px;
+  position: relative;
+}
+
+.internet__item .btn_tool_setting span:after {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../_img/icon/icon_link_arrow.svg) no-repeat center center / contain;
+}
+
+#modal-add-device .connected_status,
+#modal-remove-device .connected_status{
+  padding-left: 0;
+  font-size: 14px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+
+.limit_device {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.limit_device .device__inner {
+  background-color: #fff0f7;
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+.limit_device span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #47484a;
+}
+
+.limit_device b {
+  font-size: 14px;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-left: 4px;
+  padding-left: 7px;
+  position: relative;
+}
+
+.limit_device b:before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-color: rgb(24, 26, 27, 0.4);
+}
+
+/* Pad & Mobile */
+@media screen and (max-width:1200px) {
+  .page__title.children h3 span.info {
+    font-size: 14px;
+    margin-left: 10px;
+    padding-right: 10px;
+  }
+
+  .page__title.children h3 span.info::before {
+    height: 16px;
+  }
+
+  .children-internet .children-internet__grid {
+    margin-top: 12px;
+    gap: 12px;
+  }
+
+  .children-internet .internet__item {
+    min-width: calc(50% - 6px);
+    width: calc(50% - 6px);
+  }
+}
+
+@media screen and (max-width:743px) {
+  .children__title {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 16px;
+  }
+
+  .children__title .btn_area {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .children-internet .internet__item {
+    padding: 20px;
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .internet__item .tool__toggle {
+    right: 20px;
+    top: 30px;
+  }
+
+  .internet__item .tool__time {
+    min-height: auto;
+  }
+
+  .internet__item .tool__time li {
+    gap: 8px;
+  }
+
+  .internet__item .tool__time li.mac b {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .internet__item .tool__time li span.tool_tit {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .internet__item .tool__time li>div {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .internet__item .tool__time li p {
+    line-height: 21px;
+  }
+
+}
+/* #### 고객지원 #### */
+.page__title.customer h3:before {
+  background: url(../_img/icon/icon_customer.svg) no-repeat center center / contain;
+}
+
+.customer-faq .faq__title p {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #525960;
+}
+
+/* Pad & Mobile */
+@media screen and (max-width:1200px) {
+  .customer-faq .faq__title p {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 8px;
+  }
+}
