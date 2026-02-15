@@ -132,18 +132,18 @@ body {
 .footer__mylink li .link {
   text-decoration: underline;
 }
-.footer__slider {
+.footer_slider {
   overflow: hidden;
   display: flex;
   max-width: 100%;
   margin: 20px auto;
 }
-.footer__slider .list {
+.footer_slider .list {
   display: flex; 
   padding-top: 24px;
   padding-bottom: 24px;
 }
-.footer__slider .list > li {
+.footer_slider .list > li {
   font-size: 28px;
   padding: 0px 28px; 
   display: inline-block; 
@@ -151,7 +151,7 @@ body {
   font-weight: 800;
   color: #fff;
 }
-.footer__slider .list > li:hover {
+.footer_slider .list > li:hover {
   color: #595959;
 }
 @keyframes flowRolling {
@@ -218,14 +218,14 @@ body {
     font-size: 14px;
     line-height: 20px;
   }
-  .footer__slider {
+  .footer_slider {
     margin: 16px auto;
   }
-  .footer__slider .list {
+  .footer_slider .list {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-  .footer__slider .list > li {
+  .footer_slider .list > li {
     font-size: 20px;
     padding: 0 20px;
   }

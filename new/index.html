@@ -27,8 +27,9 @@
   <!-- Custom CSS & JS -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/attribute.css">
+  <link rel="stylesheet" href="./css/animation.css">
   <script src="./js/common.js" defer></script>
 </head>
 
@@ -42,7 +43,7 @@
             <img src="./img/common/logo_white.png" alt="로고">
           </a>
           <div class="header_menu-bar">
-            <a href="./file/resume_jjw.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
+            <a href="./file/resume.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
             <button type="button" class="btn_menu" onclick="toggleGnbMenu()"></button>
             <nav class="header_nav">
               <ul>
@@ -58,24 +59,32 @@
       <main class="main">
         <section class="section_intro">
           <div class="sec__inner">
+            <div class="scroll_down">
+              <span>SCROLL DOWN</span>
+            </div>
             <div class="txt1">
               <h1 class="intro_title">
-                <span>D</span>
-                <span>E</span>
                 <span>S</span>
-                <span>I</span>
-                <span>G</span>
-                <span>N</span>
+                <span>T</span>
+                <span>R</span>
+                <span>U</span>
+                <span>C</span>
+                <span>T</span>
                 <span class="divider">&nbsp;x</span>
                 <div class="image_slot">
-                  <img src="./img/sec_history_bg1.png" alt="">
+                  <img src="./img/intro_img.jpeg" alt="">
                   <p class="intro_desc">
-                    I build interfaces where design meets logic.
+                    구조 위에 감각을 더해, 더 나은 인터페이스를 만들어가고 있습니다.
                   </p>
                 </div>
+                <span>I</span>
+                <span>N</span>
+                <span>T</span>
+                <span>E</span>
+                <span>R</span>
+                <span>F</span>
+                <span>A</span>
                 <span>C</span>
-                <span>O</span>
-                <span>D</span>
                 <span>E</span>
               </h1>
             </div>
@@ -86,9 +95,19 @@
                   with a Foundation
                 </h2>
                 <p>
-                  <span>사용자 경험을 중심으로 인터페이스를 설계하고 구현해온 5년 차 웹 퍼블리셔 조정원입니다.</span><br><br> 
-                  <span>퍼블리싱을 기반으로 프론트엔드 개발 영역까지 확장하며 확장 가능하고 인터랙티브한 UI 구현을 지향합니다.</span><br><br>
-                  <span>퍼블리싱을 기반으로 프론트엔드 개발 영역까지 확장하며 확장 가능하고 인터랙티브한 UI 구현을 지향합니다.</span>
+                  <span>
+                    퍼블리싱으로 프로젝트의 구조를 설계해온 5년 차 웹 퍼블리셔 & 프론트엔드 개발자 조정원입니다.
+                  </span><br>
+
+                  <span>
+                  단순히 화면을 구현하는 것을 넘어,
+                  확장성과 유지보수를 고려한 견고한 골격을 만드는 데 집중해왔습니다.
+                  </span><br>
+
+                  <span>
+                  이제는 프론트엔드 개발로 영역을 확장하며
+                  구조 위에 로직과 인터랙션을 더해 완성도 높은 인터페이스를 만들어가고 있습니다.
+                  </span>
                 </p>
               </div>
             </div>
@@ -107,13 +126,13 @@
           </div>
           <ul class="footer__mylink">
             <li>jjeong1.jo@gmail.com</li>
-            <li><a href="./file/resume_jjw.pdf" class="link resume">RESUME</a></li>
+            <li><a href="./file/resume.pdf" class="link resume">RESUME</a></li>
             <li><a href="#" class="link notion">NOTION</a></li>
             <li><a href="https://github.com/jeongwon-jo" class="link github" target="_blank">GITHUB</a></li>
           </ul>
         </div>
       </footer>
-      <div class="footer__slider">
+      <div class="footer_slider">
         <ul class="list">
           <li>UI Developer</li>
           <li>Web Publisher</li>
@@ -180,12 +199,23 @@
   
   gsap.registerPlugin(ScrollTrigger);
 
+  const scrollDown = document.querySelector(".section_intro .scroll_down");
   const spans = document.querySelectorAll(".intro_title span:not(.image_slot)");
   const imageSlot = document.querySelector(".image_slot");
   const desc = document.querySelector(".intro_desc");
   const txt2 = document.querySelector(".txt2");
   const myselfH2 = document.querySelector(".intro_myself h2");
   const myselfP = document.querySelector(".intro_myself p");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      scrollDown.style.opacity = "0";
+      scrollDown.style.animation = "none";
+    } else {
+      scrollDown.style.opacity = "1";
+      scrollDown.style.animation = "fadeInOutScrollDown 1.4s linear infinite";
+    }
+  });
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -239,6 +269,7 @@
     width: "100vw",
     height: "100vh",
     scale: 1,
+    filter: "brightness(0.5)",
     duration: 3,
     ease: "power4.inOut",
   });
