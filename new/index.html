@@ -37,7 +37,7 @@
   <div id="wrap">
     <div id="cursor" class="cursor"></div>
     <div class="container">
-      <header class="header">
+      <header class="header hide">
         <div class="header__inner">
           <a href="./index.html" class="header_logo">
             <img src="./img/common/logo_white.png" alt="로고">
@@ -72,7 +72,7 @@
                 <span>T</span>
                 <span class="divider">&nbsp;x</span>
                 <div class="image_slot">
-                  <img src="./img/intro_img.jpeg" alt="">
+                  <img src="./img/intro_img.png" alt="">
                   <p class="intro_desc">
                     구조 위에 감각을 더해, 더 나은 인터페이스를 만들어가고 있습니다.
                   </p>
@@ -94,7 +94,7 @@
                   Frontend Engineer<br>
                   with a Foundation
                 </h2>
-                <p>
+                <div class="myself_text">
                   <span>
                     퍼블리싱으로 프로젝트의 구조를 설계해온 5년 차 웹 퍼블리셔 & 프론트엔드 개발자 조정원입니다.
                   </span><br>
@@ -108,16 +108,22 @@
                   이제는 프론트엔드 개발로 영역을 확장하며
                   구조 위에 로직과 인터랙션을 더해 완성도 높은 인터페이스를 만들어가고 있습니다.
                   </span>
-                </p>
+
+                  <div class="view-more__portfolio">
+                    <a href="./about.html" class="view-more__link">
+                      <h2>저를 소개합니다</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </얖>
               </div>
             </div>
           </div>
         </section>
-        <section class="section_portfolio">
-          <div class="sec__inner">
-            <h1>포트폴리오~~</h1>
-          </div>
-        </section>
+
       </main>
       <footer class="footer">
         <div class="footer__inner">
@@ -205,7 +211,7 @@
   const desc = document.querySelector(".intro_desc");
   const txt2 = document.querySelector(".txt2");
   const myselfH2 = document.querySelector(".intro_myself h2");
-  const myselfP = document.querySelector(".intro_myself p");
+  const myselfP = document.querySelector(".intro_myself .myself_text");
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -241,6 +247,7 @@
     opacity: 1,
     width: window.innerWidth > 768 ? 210 : "10vw",
     scale: 1,
+    margin: "0 24px",
     duration: 1.5,
   });
 
@@ -292,28 +299,35 @@
   }, "<");
 
   const fills = document.querySelectorAll(".letter .fill");
-  const pSpans = document.querySelectorAll(".intro_myself p span");
+  const pSpans = document.querySelectorAll(".intro_myself .myself_text span, .view-more__portfolio");
 
   gsap.set(fills, { width: "0%" });
 
   fills.forEach((fill, index) => {
 
-    tl.to(fill, {
-      width: "100%",
-      duration: 0.1,
-      ease: "none"
-    });
-
-    if (index === Math.floor(fills.length * 0.4)) {
-      tl.to(pSpans, {
-        opacity: 1,
-        y: 0,
-        stagger: 0.4,
-        duration: 0.8,
-        ease: "power3.out"
-      }, "<");
-    }
+  tl.to(fill, {
+    width: "100%",
+    duration: 0.1,
+    ease: "none"
   });
+
+  if (index === Math.floor(fills.length * 0.4)) {
+    tl.to(pSpans, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.4,
+      duration: 2,
+      ease: "power3.out"
+    }, "<");
+  }
+
+
+
+  });
+
+
+
+
 
 </script>
 
