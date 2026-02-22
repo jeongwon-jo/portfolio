@@ -335,7 +335,7 @@
     scrollTrigger: {
       trigger: ".section_intro",
       start: "top top",
-      end: "+=8000",
+      end: "+=9000",
       scrub: 1.5,
       pin: true,
       anticipatePin: 1,
@@ -347,7 +347,7 @@
     x: 0,
     y: 0,
     stagger: 0.12,
-    duration: 4,
+    duration: 6,
     ease: "power3.out",
   });
 
@@ -385,7 +385,7 @@
     height: "100vh",
     scale: 1,
     filter: "brightness(0.5)",
-    duration: 3,
+    duration: 5,
     ease: "power4.inOut",
   });
 
@@ -397,13 +397,13 @@
   tl.from(myselfH2, {
     x: -200,
     opacity: 0,
-    duration: 1.5,
+    duration: 1,
   }, "<");
 
   tl.from(myselfP, {
     x: 200,
     opacity: 0,
-    duration: 1.5,
+    duration: 1,
   }, "<");
 
   const fills = document.querySelectorAll(".letter .fill");
@@ -423,24 +423,24 @@
 
   fills.forEach((fill, index) => {
 
-    tl.to(fill, {
-      width: "100%",
-      duration: 0.4,
-      ease: "none"
-    });
+  tl.to(fill, {
+    width: "100%",
+    duration: 0.6,
+    ease: "none"
+  }, ">+=0.05");
 
-    triggerPoints.forEach((point, i) => {
-      if (index === point) {
-        tl.to(pSpans[i], {
-          opacity: 1,
-          y: 0,
-          duration: 10,
-          ease: "power3.out"
-        }, "<");
-      }
-    });
+  if (triggerPoints.includes(index)) {
+    const i = triggerPoints.indexOf(index);
 
-  });
+    tl.to(pSpans[i], {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: "power3.out"
+    }, "<");
+  }
+
+});
 </script>
 
 </html>
