@@ -325,28 +325,6 @@ h3.portfolio_title {
   font-size: 16px;
   color: #fff;
 }
-.portfolio-type .desc a.link {
-  display: inline-block;
-  margin-top: 20px;
-}
-.portfolio-type .desc a.link span {
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  padding-right: 24px;
-  position: relative;
-}
-.portfolio-type .desc a.link span::after {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: url(../img/icon_portfolio_arrow.svg) no-repeat center / contain;
-}
 .portfolio-type .thum {
   flex: 1;
   height: auto;
@@ -364,4 +342,36 @@ h3.portfolio_title {
   justify-content: center;
   opacity: 1;
   margin-top: 0;
+}
+.portfolio-type .view-more__portfolio {
+  display: inline-block;
+  margin-top: 20px;
+  transform: translateY(0px);
+}
+.portfolio-type .view-more__link h2 {
+  font-size: 20px;
+}
+.portfolio-type .button_circle {
+  width: 42px;
+  height: 42px;
+}
+.portfolio-type .button_circle .arrow {
+  width: 24px;
+  height: 16px;
+}
+.portfolio-type:hover .view-more__link {
+  gap: 12px;
+}
+.portfolio-type:hover .view-more__link .button_circle::before {
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+}
+.portfolio-type:hover .view-more__link .button_circle::after {
+  border-top: 1px solid #fff;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  transform: rotate(270deg);
+  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
 }
