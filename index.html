@@ -27,27 +27,23 @@
   <!-- Custom CSS & JS -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/attribute.css">
+  <link rel="stylesheet" href="./css/animation.css">
   <script src="./js/common.js" defer></script>
 </head>
+
 <body>
   <div id="wrap">
     <div id="cursor" class="cursor"></div>
-    <div class="loading">
-      <div class="bg"></div>
-      <div class="loading-text">
-        <h1>안녕하세요 조정원입니다.</h1>
-      </div>
-    </div>
     <div class="container">
-      <header class="header">
+      <header class="header hide">
         <div class="header__inner">
           <a href="./index.html" class="header_logo">
             <img src="./img/common/logo_white.png" alt="로고">
           </a>
           <div class="header_menu-bar">
-            <a href="./file/resume_jjw.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
+            <a href="./file/resume.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
             <button type="button" class="btn_menu" onclick="toggleGnbMenu()"></button>
             <nav class="header_nav">
               <ul>
@@ -61,376 +57,182 @@
         </div>
       </header>
       <main class="main">
-        <section class="section__greeting">
-          <div class="greeting__title">
-            <div class="greeting-text">
-              <h1>
-                <span class="txt">안</span>
-                <span class="txt">녕</span>
-                <span class="txt">하</span>
-                <span class="txt">세</span>
-                <span class="txt txt_space">요</span>
-                <span class="txt">조</span>
-                <span class="txt">정</span>
-                <span class="txt">원</span>
-                <span class="txt">입</span>
-                <span class="txt">니</span>
-                <span class="txt">다</span>
-                <span class="txt">.</span>
+        <section class="section_intro">
+          <div class="sec__inner">
+            <div class="scroll_down">
+              <span>SCROLL DOWN</span>
+            </div>
+            <div class="txt1">
+              <h1 class="intro_title">
+                <span>S</span>
+                <span>T</span>
+                <span>R</span>
+                <span>U</span>
+                <span>C</span>
+                <span>T</span>
+                <span class="divider">x</span>
+                <div class="image_slot">
+                  <img src="./img/intro_img.png" alt="">
+                  <p class="intro_desc">
+                    구조 위에 감각을 더해, 더 나은 인터페이스를 만들어가고 있습니다.
+                  </p>
+                </div>
+                <span>I</span>
+                <span>N</span>
+                <span>T</span>
+                <span>E</span>
+                <span>R</span>
+                <span>F</span>
+                <span>A</span>
+                <span>C</span>
+                <span>E</span>
               </h1>
             </div>
-            <div class="greeting-images">
-              <div class="img">
-                <img src="./img/sec_home_bg3.png" alt="">
-              </div>
-              <div class="img">
-                <img src="./img/sec_home_bg1.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="scroll_down">
-            <span>SCROLL DOWN</span>
-          </div>
-          <aside class="aside_portfoilo">
-            <h2>jjeong1 portfolio</h2>
-          </aside>
-          <div class="contact_me">
-            <span>CONTACT</span>
-            <h3>010-8949-4207</h3>
-            <h3>jjeong1.jo@gmail.com</h3>
-          </div>
-        </section>
-        <section class="section__introduce">
-          <div class="sec__inner">
-            <span class="top_bar"></span>
-            <div class="title">
-              <b>I AM</b>
-              <p>
-                동적이고 인터랙티브한 사용자 인터페이스(UI) 구현에 열정을 가지고 있는 경력 5년 차 웹 퍼블리셔 조정원입니다.<br class="pc_show"> 사용자 경험(UX)을 향상시키는 정교하고 창의적인 웹 퍼블리싱 작업을 수행해왔으며,<br class="pc_show"> 최신 웹 트렌드와 기술에 대한 이해를 바탕으로 프로젝트의 완성도를 높이고자 끊임없이 노력하고 있습니다.<br><br>
+            <div class="txt2">
+              <div class="intro_myself">
+                <h2>
+                  Frontend Engineer<br>
+                  with a Foundation
+                </h2>
+                <div class="myself_text">
+                  <span>
+                    퍼블리싱으로 프로젝트의 구조를 설계해온 5년 차 웹 퍼블리셔 & 프론트엔드 개발자 조정원입니다.
+                  </span><br>
 
-                특히 프론트엔드 개발 분야에 깊은 관심을 가지고 있으며, HTML, CSS, JavaScript와 같은 기본 기술을 넘어<br class="pc_show"> React, Vue.js와 같은 프레임워크 및 다양한 라이브러리에 대한 학습을 꾸준히 진행하고 있습니다.<br class="pc_show"> 이러한 노력을 통해 보다 확장 가능하고 효율적인 웹 애플리케이션 개발을 목표로 하고 있습니다.<br class="pc_show"> 앞으로도 사용자 중심의 웹 서비스를 구현하고 발전시키는 데 기여하고자 합니다. 
-              </p>
-            </div>
-            <div class="my_experience_year">
-              <h1>2020</h1>
-              <span class="bar">
-                <em class="bar__inner"></em>
-              </span>
-              <h1>2026</h1>
+                  <span>
+                  단순히 화면을 구현하는 것을 넘어,
+                  확장성과 유지보수를 고려한 견고한 골격을 만드는 데 집중해왔습니다.
+                  </span><br>
+
+                  <span>
+                  이제는 프론트엔드 개발로 영역을 확장하며
+                  구조 위에 로직과 인터랙션을 더해 완성도 높은 인터페이스를 만들어가고 있습니다.
+                  </span>
+
+                  <div class="view-more__portfolio">
+                    <a href="./about.html" class="view-more__link">
+                      <h2>저를 소개합니다</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </얖>
+              </div>
             </div>
           </div>
         </section>
-        <section class="section__portfolio">
+        <section class="section_portfolio">
           <div class="sec__inner">
-            <div class="portfolio__title">
-              <h2>PROJECTS</h1>
+            <h3 class="portfolio_title">다양한 프로젝트를 수행하며<br>
+            설계부터 인터랙션 구현까지 주도적으로 참여해 완성도 높은 프론트엔드 결과물을 만들어왔습니다.</h3>
+            <div class="portfolio_list">
+              <div class="portfolio-type">
+                <div class="desc">
+                  <h1>[별별하루]<span class="eng">Starry Diary</span></h1>
+                  <p>하루에 하나씩 별을 접어 작은 병에 차곡차곡 담아가는, 기록을 추억으로 남기는 감성 웹 애플리케이션입니다.<br> 일상의 조각을 별빛으로 바꾸어, 시간이 흐를수록 더 빛나는 나만의 우주를 만들어갑니다. ✨</p>
+                  <div class="view-more__portfolio">
+                    <a href="./portfolio/starry/index.html" class="view-more__link">
+                      <h2>상세 보러가기</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="thum">
+                  <img src="./img/portfolio/starry_screenshot.png" alt="">
+                </div>
+              </div>
+              <div class="portfolio-type">
+                <div class="desc">
+                  <h1>[EY한영]<span>급여관리 시스템</span></h1>
+                  <p>EY한영 급여·근태 관리 프로젝트는 구성원의 근무 기록을 체계적으로 관리하는 내부 운영 시스템입니다.<br>
+                  복잡한 급여 정산과 근태 흐름을 한눈에 파악할 수 있도록 정돈해, 조직의 신뢰와 효율을 함께 높이는 데 초점을 두었습니다.</p>
+                  <div class="view-more__portfolio">
+                    <a href="./portfolio/ey/index.html" class="view-more__link">
+                      <h2>상세 보러가기</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="thum">
+                  <img src="./img/portfolio/ey_screenshot2.png" alt="">
+                </div>
+              </div>
+              <div class="portfolio-type">
+                <div class="desc">
+                  <h1>[3D]<span>Three.js를 활용한 3D 구현</span></h1>
+                  <p>Three.js를 활용해 WebGL 기반의 3D 오브젝트 렌더링 및 인터랙션을 구현했습니다.<br>
+                  카메라·조명·애니메이션 제어를 통해 몰입감 있는 사용자 경험과 동적인 UI 연출을 완성했습니다.</p>
+                  <div class="view-more__portfolio">
+                    <a href="./portfolio/3d/index.html" class="view-more__link">
+                      <h2>상세 보러가기</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="thum">
+                  <img src="./img/portfolio/3d_screenshot.gif" alt="">
+                </div>
+              </div>
+              <div class="portfolio-type">
+                <div class="desc">
+                  <h1>[반응형웹]<span>모든 디바이스 유연 반응</span></h1>
+                  <p>
+                    모바일, 태블릿, 데스크톱 등 다양한 해상도에 대응하는 반응형 레이아웃을 설계했습니다.<br>
+                    미디어 쿼리와 유동 그리드 시스템을 기반으로 일관된 UI/UX와 최적의 가독성을 구현했습니다.
+                  </p>
+                  <div class="view-more__portfolio">
+                    <a href="./portfolio/responsive/index.html" class="view-more__link">
+                      <h2>상세 보러가기</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="thum">
+                  <img src="./img/portfolio/responsive_screenshot2.png" alt="">
+                </div>
+              </div>
+              <div class="portfolio-type">
+                <div class="desc">
+                  <h1>[모바일 앱]<span>모바일 전용 웹 애플리케이션</span></h1>
+                  <p>모바일 환경에 최적화된 전용 웹 애플리케이션을 설계·구현했습니다.<br>
+                  터치 인터랙션과 성능 최적화를 고려해 앱과 유사한 사용자 경험을 제공합니다.</p>
+                  <div class="view-more__portfolio">
+                    <a href="./portfolio/mobile/index.html" class="view-more__link">
+                      <h2>상세 보러가기</h2>
+                      <div class="button_circle">
+                        <div class="arrow">
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="thum">
+                  <img src="./img/portfolio/mobile_screenshot.png" alt="">
+                </div>
+              </div>
             </div>
-            <div class="portfolio__contents">
-              <div class="portfolio__list">
-                <!-- EY한영 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/ey_screenshot.png" alt="EY한영">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <li><a href="/portfolio/ey/index.html" target="_blank">상세정보</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>EY한영</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>Next.js</li>
-                      <li>Tailwind CSS</li>
-                      <li>Typescript</li>
-                      <li>Zustand</li>
-                      <li>TanStack Query</li>
-                    </ul>
+            <div class="view-more__portfolio">
+              <a href="./portfolio.html" class="view-more__link">
+                <h2>더 많은 프로젝트 보러가기</h2>
+                <div class="button_circle">
+                  <div class="arrow">
                   </div>
                 </div>
-                <!-- 이유씨앤씨 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/eucnc_screenshot.png" alt="이유씨앤씨">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="https://www.eucnc.co.kr/kr/index.php" target="_blank">사이트보기</a></li>
-                          <li><a href="https://github.com/jeongwon-jo/eucnc" target="_blank">GITHUB</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>이유씨앤씨</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>시맨틱 마크업</li>
-                      <li>swiper</li>
-                      <li>animation</li>
-                      <li>aos</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- 돈드로우 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/dontdraw_screenshot.png" alt="돈드로우" style="object-position: left;">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="https://dontdrawtest.com/">사이트보기</a></li>
-                          <li><a href="https://github.com/jeongwon-jo/dontdraw" target="_blank">GITHUB</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>돈드로우</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>공통 css 작업</li>
-                      <li>반응형 PC & PAD & MO</li>
-                      <li>쇼핑몰 사이트</li>
-                      <li>bootstrap</li>
-                      <li>swiper</li>
-                      <li>grid & flex</li>
-                      <li>jQuery</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- 도미노피자 키오스크 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/domino_screenshot.png" alt="도미노피자 키오스크">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="./projects/domino/index.html">사이트보기</a></li>
-                          <li><a href="https://github.com/jeongwon-jo/domino" target="_blank">GITHUB</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>도미노피자 키오스크</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>시맨틱 마크업</li>
-                      <li>키오스크</li>
-                      <li>swiper</li>
-                      <li>jQuery</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- 서울우유 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/seoul_milk_screenshot.png" alt="서울우유">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="./projects/seoul_milk/mobile-mockup/multiview.html" target="_blank">사이트보기</a></li>
-                          <!-- <li><a href="#" target="_blank">GITHUB</a></li> -->
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>서울우유</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>Figma</li>
-                      <li>Mobile Web</li>
-                      <li>UI Design</li>
-                      <li>Responsive</li>
-                      <li>CSS</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- CEK -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/cek_screenshot.png" alt="CEK">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="https://ce-korea.com/" target="_blank">사이트보기</a></li>
-                          <li><a href="https://github.com/jeongwon-jo/CEK" target="_blank">GITHUB</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>CEK</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>시맨틱 마크업</li>
-                      <li>Gsap</li>
-                      <li>Fullpage.js</li>
-                      <li>swiper</li>
-                      <li>jQuery</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- i보다 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/iboda_screenshot.png" alt="아이보다">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="./projects/iboda/저학년/초_저학년_결과지.html" target="_blank">사이트보기</a></li>
-                          <li><a href="https://github.com/jeongwon-jo/iboda" target="_blank">GITHUB</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>i보다</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>Custom Bar Chart</li>
-                      <li>초등, 중등, 고등에 따른 결과지</li>
-                      <li>@media print</li>
-                      <li>jQuery</li>
-                      <li>animation</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- 아사고 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/asago_screenshot.png" alt="아사고">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="https://www.asagopost.com/" target="_blank">사이트보기</a></li>
-                          <!-- <li><a href="#" target="_blank">GITHUB</a></li> -->
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>아사고(아주 사소한 고백)</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>신규 페이지 작업 + 메인페이지 유지보수</li>
-                      <li>그누보드</li>
-                      <li>animation</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- 닥터젠 -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/doctagen_screenshot.png" alt="닥터젠">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="https://doctagen.com/" target="_blank">사이트보기</a></li>
-                          <!-- <li><a href="#" target="_blank">GITHUB</a></li> -->
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>닥터젠</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>Vue.js</li>
-                      <li>vue-router</li>
-                      <li>flex</li>
-                      <li>반응형</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- GDL -->
-                <div class="portfolio__item--card">
-                  <div class="portfolio__thum">
-                    <img src="./img/portfolio/gdl_screenshot.png" alt="GDL">
-                    <div class="portfolio__link">
-                      <div class="link__info">
-                        <h2>이 프로젝트에 대한<br>
-                          상세 정보를 설명드릴게요.
-                        </h2>
-                        <ul>
-                          <!-- <li><a href="#" target="_blank">상세정보</a></li> -->
-                          <li><a href="./projects/gdl/index.html" target="_blank">사이트보기</a></li>
-                          <!-- <li><a href="#" target="_blank">GITHUB</a></li> -->
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="portfolio__desc">
-                    <div class="portfolio_tit">
-                      <h3>GDL</h3>
-                    </div>
-                    <ul class="portfolio__info">
-                      <li>EChart.js</li>
-                      <li>css</li>
-                      <li>SVG</li>
-                      <li>animation</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="view-more__portfolio">
-                <a href="./portfolio.html" class="view-more__link">
-                  <h2>더 많은 프로젝트 보기</h2>
-                  <div class="button_circle">
-                    <div class="arrow">
-                    </div>
-                  </div>
-                </a>
-              </div>
+              </a>
             </div>
           </div>
         </section>
@@ -442,13 +244,13 @@
           </div>
           <ul class="footer__mylink">
             <li>jjeong1.jo@gmail.com</li>
-            <li><a href="./file/resume_jjw.pdf" class="link resume">RESUME</a></li>
+            <li><a href="./file/resume.pdf" class="link resume">RESUME</a></li>
             <li><a href="#" class="link notion">NOTION</a></li>
             <li><a href="https://github.com/jeongwon-jo" class="link github" target="_blank">GITHUB</a></li>
           </ul>
         </div>
       </footer>
-      <div class="footer__slider">
+      <div class="footer_slider">
         <ul class="list">
           <li>UI Developer</li>
           <li>Web Publisher</li>
@@ -466,124 +268,183 @@
       </div>
     </div>
   </div>
-  
+
 </body>
 <script>
-  $(function() {
-    $(window).scrollTop(0)
-  })
+  const h2 = document.querySelector(".intro_myself h2");
 
-  setTimeout(() => {
-    $('.loading').fadeOut()
-    $('body').css('overflow-y', 'scroll')
-    $('.section__greeting').addClass('active')
-  }, 4600);
+  const nodes = Array.from(h2.childNodes);
+  h2.innerHTML = "";
 
+  nodes.forEach(node => {
+
+    // 줄바꿈 유지
+    if (node.nodeName === "BR") {
+      h2.appendChild(document.createElement("br"));
+      return;
+    }
+
+    // 텍스트 노드 처리
+    if (node.nodeType === 3) {
+      const text = node.textContent;
+
+      text.split("").forEach(char => {
+
+        // 줄바꿈 제거
+        if (char === "\n") return;
+
+        // 공백은 그냥 텍스트 노드로 유지
+        if (char === " ") {
+          h2.appendChild(document.createTextNode(" "));
+          return;
+        }
+
+        const letter = document.createElement("span");
+        letter.classList.add("letter");
+
+        const fill = document.createElement("span");
+        fill.classList.add("fill");
+        fill.textContent = char;
+
+        letter.appendChild(fill);
+        letter.appendChild(document.createTextNode(char));
+
+        h2.appendChild(letter);
+      });
+    }
+
+  });
   
+  gsap.registerPlugin(ScrollTrigger);
 
-  let mm = gsap.matchMedia();
-  
-  mm.add("(min-width: 768px)", () => {
-    // Section Scroll Gsap
-    const sectionTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.section__greeting',
-        pin: true,
-        start: 'top top',
-        end: '+300%',
-        scrub: 3,
-        markers: false,
-        once: false,
-        onEnter: () => {},
-        onLeave: () => {},
-      },
-    })
+  const scrollDown = document.querySelector(".section_intro .scroll_down");
+  const spans = document.querySelectorAll(".intro_title span:not(.image_slot)");
+  const imageSlot = document.querySelector(".image_slot");
+  const desc = document.querySelector(".intro_desc");
+  const txt2 = document.querySelector(".txt2");
+  const myselfH2 = document.querySelector(".intro_myself h2");
+  const myselfP = document.querySelector(".intro_myself .myself_text");
 
-    sectionTl.to($('.section__greeting .greeting-images'), { height: 380, marginTop: 40, opacity: 1, duration: 1.5, delay: 0.2 })
-    sectionTl.to($('.section__greeting .greeting-images .img:nth-child(2)'), { opacity: 1, duration: 1.5 })
-    sectionTl.to({}, {}, "+=0.2")
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      scrollDown.style.opacity = "0";
+      scrollDown.style.animation = "none";
+    } else {
+      scrollDown.style.opacity = "1";
+      scrollDown.style.animation = "fadeInOutScrollDown 1.4s linear infinite";
+    }
   });
 
-  mm.add("(max-width: 767px)", () => {
-    // Section Scroll Gsap
-    const sectionTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.section__greeting',
-        pin: true,
-        start: 'top top',
-        end: '+300%',
-        scrub: 3,
-        markers: false,
-        once: false,
-        onEnter: () => {},
-        onLeave: () => {},
-      },
-    })
-
-    sectionTl.to($('.section__greeting .greeting-images'), { height: 260, marginTop: 40, opacity: 1, duration: 2, delay: 0.2 })
-    sectionTl.to($('.section__greeting .greeting-images .img:nth-child(2)'), { opacity: 1, duration: 2 })
-    sectionTl.to({}, {}, "+=0.5")
-  });
-
-  gsap.timeline({
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.section__introduce',
-      pin: false,
-      start: '-=50%',
-      end: 'end end',
-      scrub: false,
-      markers: false,
-      once: true,
-      onEnter: () => {
-        $('.my_experience_year span.bar').addClass('active')
-      },
-    },
-  })
-
-  const sectionDreaming = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.dreaming_text_moving',
-      pin: false,
-      start: '-=120%',
-      end: '+=70%',
-      scrub: 3,
-      markers: false,
-      once: false,
-    },
-  })
-
-  sectionDreaming
-    .add('move1')
-    .to($('.section__dreaming .dreaming__title h1:nth-child(1)'), { left: '60%', duration: 1.5 }, "move1")
-    .to($('.section__dreaming .dreaming__title h1:nth-child(2)'), { left: '70%', duration: 1.5 }, "move1")
-    .to($('.section__dreaming .dreaming__title h1:nth-child(3)'), { left: '40%', duration: 1.5 }, "move1")
-
-  sectionDreaming
-    .add('move2')
-    .to($('.section__dreaming .dreaming__title h1:nth-child(1)'), { left: '50%', duration: 1.5 }, "move2")
-    .to($('.section__dreaming .dreaming__title h1:nth-child(2)'), { left: '50%', duration: 1.5 }, "move2")
-    .to($('.section__dreaming .dreaming__title h1:nth-child(3)'), { left: '50%', duration: 1.5 }, "move2")
-
-  const sectionStudying = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.study-project',
+      trigger: ".section_intro",
+      start: "top top",
+      end: "+=9000",
+      scrub: 1.5,
       pin: true,
-      start: 'top top',
-      end: '+=300%',
-      scrub: 3,
-      markers: false,
-      once: false,
-    },
-  })
+      anticipatePin: 1,
+    }
+  });
 
-  const studyingItemCnt = $('.study-project__list .study-project__item').length;
-  const studyingItemWidth = $('.study-project__list .study-project__item').width()
+  tl.to(spans, {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    stagger: 0.12,
+    duration: 6,
+    ease: "power3.out",
+  });
 
-  sectionStudying.to({}, {}, '+=1.5')
-  for(let i=0; i<studyingItemCnt-1;i++) {
-    sectionStudying.to($('.study-project__list'), { transform: `translateX(calc((-70vw - 100px) * ${i+1}))`, duration: 1.5 })
+  tl.to(imageSlot, {
+    opacity: 1,
+    width: window.innerWidth > 768 ? 210 : "10vw",
+    scale: 1,
+    margin: window.innerWidth > 768 ? "0 24px" : "0 8px",
+    duration: 1.5,
+  });
+
+  tl.to(desc, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+  });
+
+  tl.to(desc, {
+    opacity: 0,
+    duration: 1,
+  });
+
+  tl.to(spans, {
+    opacity: 0,
+    y: -100,
+    width: 0,
+    height: 0,
+    duration: 0.6,
+    ease: "power3.inOut",
+    stagger: 0,
+  }, "<");  
+
+  tl.to(imageSlot, {
+    width: "100vw",
+    height: "100vh",
+    scale: 1,
+    filter: "brightness(0.5)",
+    duration: 5,
+    ease: "power4.inOut",
+  });
+
+  tl.to(txt2, {
+    opacity: 1,
+    duration: 1,
+  });
+
+  tl.from(myselfH2, {
+    x: -200,
+    opacity: 0,
+    duration: 1,
+  }, "<");
+
+  tl.from(myselfP, {
+    x: 200,
+    opacity: 0,
+    duration: 1,
+  }, "<");
+
+  const fills = document.querySelectorAll(".letter .fill");
+  const pSpans = document.querySelectorAll(".intro_myself .myself_text span, .section_intro .view-more__portfolio");
+
+  gsap.set(fills, { width: "0%" });
+  gsap.set(pSpans, { opacity: 0, y: 30 });
+
+  const total = fills.length;
+
+  const triggerPoints = [
+    Math.floor(total * 0.25),
+    Math.floor(total * 0.5),
+    Math.floor(total * 0.75),
+    Math.floor(total * 0.9),
+  ];
+
+  fills.forEach((fill, index) => {
+
+  tl.to(fill, {
+    width: "100%",
+    duration: 0.6,
+    ease: "none"
+  }, ">+=0.05");
+
+  if (triggerPoints.includes(index)) {
+    const i = triggerPoints.indexOf(index);
+
+    tl.to(pSpans[i], {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: "power3.out"
+    }, "<");
   }
-  sectionStudying.to({}, {}, '+=1.5')
 
+});
 </script>
+
 </html>

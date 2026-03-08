@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/attribute.css">
+  <link rel="stylesheet" href="./css/animation.css">
+
   <script src="./js/common.js" defer></script>
 </head>
 <body>
@@ -41,7 +43,7 @@
             <img src="./img/common/logo_white.png" alt="로고">
           </a>
           <div class="header_menu-bar">
-            <a href="./file/resume_jjw.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
+            <a href="./file/resume.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
             <button type="button" class="btn_menu" onclick="toggleGnbMenu()"></button>
             <nav class="header_nav">
               <ul>
@@ -81,6 +83,33 @@
             <div class="sec__inner">
               <div class="portfolio__contents">
                 <div class="portfolio__list">
+                  <!-- 별별하루 -->
+                  <div class="portfolio__item--card">
+                    <div class="portfolio__thum">
+                      <img src="./img/portfolio/starry_screenshot.png" alt="별별하루">
+                      <div class="portfolio__link">
+                        <div class="link__info">
+                          <h2>이 프로젝트에 대한<br>
+                            상세 정보를 설명드릴게요.
+                          </h2>
+                          <ul>
+                            <li><a href="/portfolio/ey/index.html" target="_blank">상세정보</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio__desc">
+                      <div class="portfolio_tit">
+                        <h3>별별하루</h3>
+                      </div>
+                      <ul class="portfolio__info">
+                        <li>Next.js</li>
+                        <li>Tailwind CSS</li>
+                        <li>Typescript</li>
+                        <li>Supabase</li>
+                      </ul>
+                    </div>
+                  </div>
                   <!-- EY한영 -->
                   <div class="portfolio__item--card">
                     <div class="portfolio__thum">
@@ -657,13 +686,13 @@
           </div>
           <ul class="footer__mylink">
             <li>jjeong1.jo@gmail.com</li>
-            <li><a href="./file/resume_jjw.pdf" class="link resume">RESUME</a></li>
+            <li><a href="./file/resume.pdf" class="link resume">RESUME</a></li>
             <li><a href="#" class="link notion">NOTION</a></li>
             <li><a href="https://github.com/jeongwon-jo" class="link github" target="_blank">GITHUB</a></li>
           </ul>
         </div>
       </footer>
-      <div class="footer__slider">
+      <div class="footer_slider">
         <ul class="list">
           <li>UI Developer</li>
           <li>Web Publisher</li>

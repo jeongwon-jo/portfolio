@@ -97,4 +97,7 @@
   .pc_show { display: none; }
   .mo_show { display: block; }
   .pc_flex_show {display: none;}
+  .mo_mb40 {
+    margin-bottom: 40px;
+  }
 }

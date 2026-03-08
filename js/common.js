@@ -115,8 +115,8 @@ function toggleGnbMenu() {
 }
 
 function setFlowBanner() {
-	const $wrap = $('.footer__slider');
-	const $list = $('.footer__slider .list');
+	const $wrap = $('.footer_slider');
+	const $list = $('.footer_slider .list');
 	let wrapWidth = ''; //$wrap의 가로 크기
 	let listWidth = ''; //$list의 가로 크기
 	const speed = 48; //1초에 몇픽셀 이동하는지 설정

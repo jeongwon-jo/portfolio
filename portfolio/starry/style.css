@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'Hakgyoansim';
+  src: url('./fonts/Hakgyoansim_Nadeuri_L.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hakgyoansim';
+  src: url('./fonts/Hakgyoansim_Nadeuri_B.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+* {
+  font-family: "Hakgyoansim", serif !important;
+  color: #fff;
+}
+.project__title {
+  width: 100%;
+  height: 100dvh;
+  background: #1F0E22 url(./img/starry_bg.png) no-repeat center / cover;
+}
+@keyframes bottleShake {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(4deg); }
+  20%  { transform: rotate(-4deg); }
+  30%  { transform: rotate(4deg); }
+  40%  { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes starShake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  15%  { transform: translate(-5px, -1px) rotate(-6deg); }
+  30%  { transform: translate(2px, 1px) rotate(6deg); }
+  45%  { transform: translate(-1px, 5px) rotate(-4deg); }
+  60%  { transform: translate(1px, -3px) rotate(4deg); }
+  75%  { transform: translate(-2px, 1px) rotate(-2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.animate-bottle {
+  animation: bottleShake 2.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.animate-star {
+  animation:
+    starShake 2.5s ease-in-out infinite;
+  animation-delay: 0.15s;
+  transform-origin: center;
+  will-change: transform;
+}
+.starry_logo {
+  position: relative;
+  width: 73px;
+  margin: 0 auto;
+}
+.starry_logo .bottle {
+  width: 100%; 
+}
+.starry_star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 48px;
+}
+.starry_star img {
+  width: 100%;
+}
+.project__title .sec__inner .title h1.pj_title{
+  font-size: 48px;
+}
+.starry_content {
+  background: linear-gradient(to bottom, #040103, #2a1930);
+}
+.portfolio__page>section:not(.project__title),
+.portfolio__page>section:nth-of-type(2n) {
+  background-color: transparent;
+}
+/* 프로젝트 정보 */
+.thumbnail_main {
+  max-width: 540px;
+}
+.project_thumbnail img {
+  width: 100%;
+}
+.project__summary .project-summary_info {
+  flex: 1;
+}
+.project__summary .project-info li {
+  color: #fff;
+}
+.pj-sec__title span.no {
+  color: #6A4F81;
+}
+.color_system.starry_system {
+  flex-wrap: nowrap;
+}
+.color_system .color span {
+  width: 64px;
+  height: 64px;
+}
+.color_system.starry_system li .screenshot {
+  max-width: 240px;
+}
+.color_system.starry_system li .screenshot img {
+  width: 100%;
+}
+.color_system.starry_system li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 24px;
+  padding: 0;
+}
+.color_system.starry_system li .color {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  border:1px solid #E5E5EC;
+  padding: 16px;
+  border-radius: 8px;
+}
+.font_system .font_family {
+  background-color: #332937;
+}
+.tailwind_info {
+  padding: 40px 12px;
+  border-radius: 8px;
+  background-color: #FBF5FF;
+}
+.tailwindcss_list li b {
+  font-size: 22px;
+}
+.tailwindcss_list li {
+  font-size: 16px;
+}
+@media screen and (max-width:767px) {
+  .starry_logo {
+    width: 64px;
+  }
+  .starry_star {
+    width: 40px;
+  }
+  .project__title .sec__inner .title h1.pj_title {
+    font-size: 28px;
+  }
+  .thumbnail_main {
+    max-width: 340px;
+  }
+  .color_system .color span {
+    width: 32px;
+    height: 32px;
+  }
+  .color_system.starry_system {
+    flex-direction: column;
+    align-items: center;
+  }
+  .color_system.starry_system li .screenshot {
+    max-width: 200px;
+  }
+  .color_system.starry_system li {
+    gap: 12px;
+  }
+  .color_system.starry_system li .color {
+    padding: 8px;
+  }
+  .tailwind_info {
+    padding: 12px;
+  }
+  .tailwindcss_list li b {
+    font-size: 16px;
+  }
+  .tailwindcss_list li {
+    font-size: 14px;
+  }
+}
