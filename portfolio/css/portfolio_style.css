@@ -82,6 +82,11 @@ h5.h5_tit {
   position: absolute;
   top: 12px;
   left: -12px;
+  z-index: 1;
+}
+.pj-sec__title h2 {
+  position: relative;
+  z-index: 2;
 }
 .project__summary .sec__inner {
   display: flex;

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두쫀맵 상세페이지</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./img/favicon.ico">
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="두쫀맵 상세페이지" />
+  <meta property="og:description" content="두쫀맵 상세페이지" />
+  <meta property="og:image" content="./img/common/opengraph.png" />
+  <!-- jQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Smooth Scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+  <!-- gsap & TWEENMAX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="../css/portfolio_style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="/css/attribute.css">
+  <script src="/js/common.js" defer></script>
+  <script src="../js/portfolio_common.js" defer></script>
+</head>
+
+<body class="scroll">
+  <div id="wrap">
+    <div id="cursor" class="cursor"></div>
+    <div class="container">
+      <main class="main">
+        <div class="portfolio__page">
+          <section class="project__title">
+            <div class="sec__inner">
+              <div class="duzzon_logo">
+                <img src="./img/logo_icon.png" alt="duzzon" class="bottle animate-bottle">
+              </div>
+              <div class="title">
+                <h1 class="pj_title">두쫀맵</h1>
+              </div>
+              <div class="scroll_down">
+                <span>Scroll Down</span>
+              </div>
+            </div>
+          </section>
+          <section class="starry_content">
+            <section class="project__summary">
+              <div class="sec__inner">
+                <div class="project_thumbnail">
+                  <div class="thumbnail_main">
+                    <img src="./img/mockup.png" alt="">
+                  </div>
+                </div>
+                <div class="project-summary_info">
+                  <div class="pj-sec__title">
+                    <span class="no">01</span>
+                    <h2 class="h2_tit">About Project</h2>
+                  </div>
+                  <ul class="project-info">
+                    <li>
+                      <span>프로젝트 기간: </span>
+                      <p>26.03.09 ~ 26.03.13</p>
+                    </li>
+                    <li>
+                      <span>프로젝트 인원: </span>
+                      <p>1명(조정원)</p>
+                    </li>
+                    <li>
+                      <span>역할 (담당 업무): </span>
+                      <p>
+                        1. UI <b>퍼블리싱</b> 100%<br>
+                        2. 프론트엔드 개발 100%
+                        3. 백엔드 개발(firebase) 100%
+                    </li>
+                    <li>
+                      <span>프로젝트 설명: </span>
+                      <p>두쫀맵은 두쫀쿠를 판매하는 카페의 실시간 재고를 지도 위에서 한눈에 확인할 수 있는 서비스입니다.<br>
+                      사장님이 직접 재고·영업시간·영업 요일을 등록·관리하고, 손님은 지도에서 구매가능 / 마감임박 / 품절 상태를 보고 헛걸음 없이 방문할 수 있습니다.
+                      </p>
+                    </li>
+                    <li>
+                      <span>기술 스택: </span>
+                      <p>- React.js <br>- Firebase <br>-
+                        Scss(Sass) (UI 스타일링)</p>
+                    </li>
+                    <li>
+                      <span>URL: </span>
+                      <p>
+                        <a href="https://duzzonmap.vercel.app/" target="_blank" class="underline inline-block mr10">바로가기</a>
+                      <a href="https://www.notion.so/jjeong1jo/31f2c9ae108080c68c32c4aae0c6e9d0?source=copy_link" target="_blank" class="underline">Notion</a></p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            <section class="project__publishing">
+              <div class="sec__inner">
+                <div class="pj-sec__title">
+                  <span class="no">02</span>
+                  <h2 class="h2_tit">Publishing Guide</h2>
+                </div>
+                <div class="color_guide mb80">
+                  <div class="title_with_modal">
+                    <h3 class="h3_tit mb16"><a href="#" class="underline">(1) Color System</a></h3>
+                  </div>
+                  <ul class="color_system starry_system">
+                    <li>
+                      <div class="color">
+                        <span style="background-color: #6F8F2A;"></span>
+                        <span style="background-color: #8FAE3F;"></span>
+                        <span style="background-color: #4F681D;"></span>
+                        <span style="background-color: #FFD93D;"></span>
+                        <span style="background-color: #6BCB77;"></span>
+                        <span style="background-color: #faf5f1;"></span>
+                        <span style="background-color: #FFF5EE;"></span>
+                        <span style="background-color: #C4A882;"></span>
+                        <span style="background-color: #7A6555;"></span>
+                        <span style="background-color: #5A2A13;"></span>
+                        <span style="background-color: #7A3E1F;"></span>
+                        <span style="background-color: #999999;"></span>
+                        <span style="background-color: #1A1410;"></span>
+                        <span style="background-color: #202020;"></span>
+                        <span style="background-color: #2E2520;"></span>
+                      </div>
+                      <span class="color_text">_variables.scss</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="font_guide mb80 mo_mb40">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(2) Typography</h2>
+                    <div class="font_system">
+                      <h2 class="h2_tit font_family" style="font-family: 'YeogiOttaeJalnan', sans-serif;">여기어때 잘난체</h2>
+                      <h2 class="h2_tit font_family" style="font-family: 'Pretendard', sans-serif;">Pretendard</h2>
+                    </div>
+                </div>
+                <div class="publishing_guide mb80 mo_mb40">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(3) SCSS/SASS</h3>
+                  <div class="publishing_css">
+                    <div class="tailwind_info">
+                      <div class="tailwind_logo">
+                        <img src="./img/tailwind_logo.png" alt="Tailwind CSS">
+                      </div>
+                      <div class="version">v 4.0</div>
+                    </div>
+                    <ul class="tailwindcss_list">
+                      <li>
+                        <h4 class="h4_tit">Tailwind.css</h4>
+                      </li>
+                      <li><b>Dark Mode</b> <br>
+                        Tailwind CSS를 활용한 다크모드 구현은 단순한 색상 전환을 넘어, 구조적으로 확장 가능하고 유지보수에 강한 설계를 가능하게 합니다. dark: 유틸리티 기반의
+                        명시적인 스타일 분기 방식은 전역 상태 관리와의
+                        결합이 용이하며, 별도의 복잡한 CSS 분리 없이도 일관된 디자인 시스템을 유지할 수 있습니다. 또한 JIT 컴파일 방식으로 실제 사용되는 스타일만 생성되기 때문에 성능
+                        부담이 적고, 상태 조합(hover,
+                        focus 등)까지 자연스럽게 확장할 수 있어 대규모 프로젝트에서도 안정적인 테마 전략을 구축할 수 있습니다.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="component_guide mb80">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(4) 간단한 회원가입</h3>
+                  <div class="component_text mt20">
+                    <p>Toss 앱의 UX 패턴을 참고해, 입력 자리수가 고정된 정보의 경우 별도의 CTA 버튼 없이 즉시 다음 단계로 전환되도록 설계했습니다. 이를 통해 불필요한 클릭을 제거하고,
+                      퍼널 기반 흐름으로 사용자의 인지 부담과
+                      피로도를 최소화했습니다.<br>
+                      또한 입력 필드 진입 시점에 적절한 키보드 타입을 자동으로 호출하고 기본 Focus 상태로 설정해, 사용자가 추가 조작 없이 곧바로 입력에 집중할 수 있도록 구현했습니다.
+                    </p>
+                  </div>
+                  <div class="mobile_screenshots">
+                    <div class="screenshot">
+                      <img src="./img/signup_screenshot_01.png" alt="">
+                    </div>
+                    <div class="screenshot">
+                      <img src="./img/signup_screenshot_02.png" alt="">
+                    </div>
+                    <div class="screenshot">
+                      <img src="./img/signup_screenshot_03.png" alt="">
+                    </div>
+                    <div class="screenshot">
+                      <img src="./img/signup_screenshot_04.png" alt="">
+                    </div>
+                    <div class="screenshot">
+                      <img src="./img/signup_screenshot_05.png" alt="">
+                    </div>
+                    <div class="screenshot">
+                      <img src="./img/signup_screenshot_06.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
