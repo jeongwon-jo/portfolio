@@ -168,8 +168,12 @@ select {
   background-color: #6F8F2A;
 }
 .tailwind_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 40px 12px;
   border-radius: 8px;
+  min-width: 240px;
   background-color: #FBF5FF;
 }
 .tailwindcss_list li b {
