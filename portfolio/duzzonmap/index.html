@@ -171,27 +171,70 @@
                   <h3 class="h3_tit" style="text-decoration: underline;">(4) Firebase</h3>
                   <div class="component_text mt20">
                     <p>
+                      <b class="c_green">Firebase Auth</b> — 이메일/비밀번호 방식으로 가게 사장님 회원가입·로그인·로그아웃을 처리하고, onAuthStateChanged로 로그인 상태를 앱 전역에서 실시간 감지한다.<br>
+                      <b class="c_green">Firestore (stores 컬렉션)</b> — 가게 등록·수정·삭제와 두쫀쿠 재고(duzzonCount) 업데이트, 오늘 마감 여부(closedDate) 토글을 CRUD로 관리하며, onSnapshot으로 지도 화면에 실시간 반영한다.<br>
+                      <b class="c_green">권한 흐름</b> — 로그인한 사용자만 가게 등록/수정/삭제가 가능하고, 비로그인 사용자는 지도에서 가게 목록 조회만 할 수 있는 구조다.
                     </p>
                   </div>
                   <div class="mobile_screenshots">
                     <div class="screenshot">
-                      <img src="./img/signup_screenshot_01.png" alt="">
+                      <img src="./img/screenshot01.png" alt="">
                     </div>
                     <div class="screenshot">
-                      <img src="./img/signup_screenshot_02.png" alt="">
+                      <img src="./img/screenshot02.png" alt="">
                     </div>
                     <div class="screenshot">
-                      <img src="./img/signup_screenshot_03.png" alt="">
+                      <img src="./img/screenshot03.png" alt="">
                     </div>
                     <div class="screenshot">
-                      <img src="./img/signup_screenshot_04.png" alt="">
+                      <img src="./img/screenshot04.png" alt="">
                     </div>
+                  </div>
+                </div>
+                <div class="component_guide mb80">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(5) 직관적인 실시간 재고 지도</h3>
+                  <div class="component_text mt20">
+                    <p>
+                      지도 위 마커가 두쫀쿠 재고 수량에 따라 초록(구매가능) / 노랑(마감임박) / 빨강(품절) 색상으로 즉시 구분되어, 사용자가 별도 클릭 없이 한눈에 재고 상황을 파악할 수 있습니다. Firestore
+                      <b class="c_green">onSnapshot으로 실시간 동기화</b>되기 때문에 사장님이 재고를 수정하면 지도를 새로고침 없이 바로 반영됩니다.
+                    </p>
+                  </div>
+                  <div class="pc_screenshots">
                     <div class="screenshot">
-                      <img src="./img/signup_screenshot_05.png" alt="">
+                      <img src="./img/screenshot05.png" alt="">
                     </div>
+                  </div>
+                </div>
+                <div class="component_guide mb80">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(6) 사장님 전용 간편 매장 관리</h3>
+                  <div class="component_text mt20">
+                    <p>
+                      매장 등록 페이지에서 로그인/회원가입부터 매장 정보 입력, 카카오 지도 위치 지정까지 한 화면에서 모두 처리할 수 있습니다. 로그인한 사장님에게만 재고 수정·오늘 마감 토글·매장 삭제 버튼이 노출되고, 일반
+                      사용자에게는 전화하기 버튼만 보이는 권한 분리가 깔끔하게 구현되어 있습니다.
+                    </p>
+                  </div>
+                  <div class="pc_screenshots">
                     <div class="screenshot">
-                      <img src="./img/signup_screenshot_06.png" alt="">
+                      <img src="./img/screenshot06.png" alt="">
                     </div>
+                  </div>
+                </div>
+                <div class="component_guide mb80">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(7) 영업 상태 자동 판단 필터</h3>
+                  <div class="component_text mt20">
+                    <p>
+                      영업 요일·시간·오늘 마감 여부를 종합해서 지금 이 순간 영업 중인 가게만 필터링하는 기능이 있습니다. 단순 재고 필터(전체/구매가능/마감임박/품절)와 함께 "영업중" 필터를 제공하여, 재고가 있어도 문 닫은 가게를
+                      걸러낼 수 있어 <b class="c_green">사용자 경험이 더 실용적</b>입니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="component_guide mb80">
+                  <h3 class="h3_tit" style="text-decoration: underline;">(8) 디저트 트렌드에 맞춰 빠르게 재활용 가능한 구조</h3>
+                  <div class="component_text mt20">
+                    <p>
+                      두쫀쿠 외에도 버터떡등 유행하는 디저트가 생길 때마다 아이콘과 브랜드명만 교체하면 동일한 <b class="c_green">"재고 현황 지도 서비스"</b>로 즉시 재활용할 수 있습니다. 지도·인증·재고 관리 로직이 모두 범용적으로
+                      설계되어 있어, 특정 디저트에 종속되지 않고 어떤 한정 수량 판매 아이템에도 빠르게 적용할 수 있는 확장성이 이 프로젝트의 숨은 강점입니다.
+                    </p>
                   </div>
                 </div>
               </div>

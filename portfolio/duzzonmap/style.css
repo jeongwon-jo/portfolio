@@ -182,6 +182,13 @@ select {
 .tailwindcss_list li {
   font-size: 16px;
 }
+.mobile_screenshots .screenshot {
+  width: calc(25% - 20px);
+  height: auto;
+}
+.c_green {
+  color: #8FAE3F;
+}
 @media screen and (max-width:767px) {
   .starry_logo {
     width: 64px;
@@ -212,13 +219,19 @@ select {
   .color_system.starry_system li .color {
     padding: 8px;
   }
+  .tailwind_logo {
+    height: 38px;
+  }
   .tailwind_info {
-    padding: 12px;
+    padding: 18px 12px;
   }
   .tailwindcss_list li b {
     font-size: 16px;
   }
   .tailwindcss_list li {
     font-size: 14px;
+  }
+  .mobile_screenshots .screenshot {
+    width: calc(50% - 8px)
   }
 }
