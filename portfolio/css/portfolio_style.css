@@ -33,6 +33,7 @@ h5.h5_tit {
   height: 100%;
   position: relative;
   padding: 0 20px;
+  min-height: 100dvh;
 }
 .project__title .sec__inner {
   display: flex;
@@ -170,7 +171,8 @@ h5.h5_tit {
 .title_with_modal {
   display: flex;
   align-items: center;
-  gap: 12px ;
+  flex-wrap: wrap;
+  gap: 6px 12px ;
 }
 .title_with_modal h3.h3_tit {
   cursor: pointer;
@@ -264,6 +266,7 @@ section.project__develop .sec__inner {
 }
 .develop-stack__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   margin-top: 24px;
 }
@@ -286,6 +289,7 @@ section.project__develop .sec__inner {
   margin-top: 40px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 60px;
   padding: 0 40px;
 }
@@ -375,14 +379,16 @@ section.project__develop .sec__inner {
   width: 100%;
   object-fit: contain;
 }
-
-
 @media screen and (min-width: 768px) and (max-width:1200px) {
   .publishing_css {
     gap: 40px;
   }
   .tailwind_logo {
     height: 34px
+  }
+  .develop_flex_box {
+    gap: 32px;
+    padding: 0 20px;
   }
 }
 @media screen and (max-width:767px) {
@@ -400,6 +406,12 @@ section.project__develop .sec__inner {
   }
   .portfolio__page>section {
     padding: 40px 0;
+  }
+  .project__title .sec__inner {
+    row-gap: 20px;
+  }
+  .project__title .sec__inner .title h1.pj_title {
+    font-size: 28px;
   }
   .project__title .scroll_down {
     bottom: 0px;
@@ -420,6 +432,9 @@ section.project__develop .sec__inner {
     margin-bottom: 12px;
     gap: 12px;
   }
+  .pj-sec__title h2 {
+    font-size: 32px;
+  }
   .pj-sec__title span.no {
     font-size: 36px;
     font-weight: 600;
@@ -439,6 +454,30 @@ section.project__develop .sec__inner {
   .project__summary .project-info li p {
     font-size: 14px;
   }
+  .color_guide.mb80 {
+    margin-bottom: 40px;
+  }
+  .color_system {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  .color_system li {
+    padding: 12px;
+    width: calc(50% - 6px);
+  }
+  .color_system .color span {
+    width: 48px;
+    height: 48px;
+  }
+  .color_system .color_text {
+    font-size: 14px;
+  }
+  .color_system.ey_theme li .color {
+    gap: 4px;
+  }
+  .font_guide.mb80 {
+    margin-bottom: 40px;
+  }
   .font_system {
     flex-direction: column;
     gap: 24px;
@@ -446,6 +485,9 @@ section.project__develop .sec__inner {
   }
   .font_system ul.fonts li {
     margin-bottom: 8px;
+  }
+  .publishing_guide.mb80 {
+    margin-bottom: 60px;
   }
   .publishing_css {
     flex-direction: column;
@@ -479,5 +521,61 @@ section.project__develop .sec__inner {
   }
   .pc_screenshots .screenshot {
     width: calc(100% - 8px);
+  }
+  section.project__develop {
+    padding: 60px 0;
+  }
+  .develop_flex_box {
+    /* flex-direction: column; */
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 0 0px;
+  }
+  .develop_flex_box .develop_thumbnail {
+    width: calc(50% - 8px);
+  }
+  .develop_flex_box .develop_thumbnail .device {
+    width: 100%;
+  }
+  .develop_flex_box .develop_thumbnail .device .device_content {
+    border-radius: 24px;
+  }
+  .develop_description {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .components_example .example {
+    width: 100%;
+    padding: 16px;
+  }
+  .components_example .example .text p {
+    font-size: 14px;
+  }
+  .develop_stack .stack {
+    margin: 24px 0;
+  }
+  .develop-stack__list {
+    gap: 24px;
+    margin-top: 12px;
+  }
+  .develop-stack__list li img {
+    width: 48px;
+    height: 48px;
+  }
+  .develop-stack__list li span {
+    font-size: 14px;
+  }
+  .develop_description>div {
+    margin-bottom: 24px;
+  }
+  .develop_description>div ul li {
+    font-size: 14px;
+    padding-left: 12px;
+  }
+  .develop_description>div ul li:before {
+    width: 3px;
+    height: 3px;
   }
 }

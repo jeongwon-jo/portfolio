@@ -120,8 +120,8 @@
                 <h2 class="h2_tit">Publishing Guide</h2>
               </div>
               <div class="color_guide mb80">
-                <div class="title_with_modal">
-                  <h3 class="h3_tit mb16"><a href="#developThemeLanguage" class="underline">(1) Color System</a></h3>
+                <div class="title_with_modal mb16">
+                  <h3 class="h3_tit "><a href="#developThemeLanguage" class="underline">(1) Color System</a></h3>
                    <span>(클릭하여 ThemeProvider 구현 방식 보기)</span>
                 </div>
                 <h5 class="h5_tit mb20">Theme Color</h5>
@@ -701,24 +701,5 @@ start / end 변경을 부모 컴포넌트로 전달하는 구조(onChange) 덕�
       </main>
     </div>
   </div>
-  <div class="modal_recommend_pc">
-    <div class="modal__close">
-      <button type="button" onclick="closeModalA()"></button>
-    </div>
-    <div class="modal__inner">
-      <p>PC 사용을 권장드립니다</p>
-    </div>
-  </div>
 </body>
-<script>
-  $(function() {
-    if($(window).width() < 768) {
-      $('.modal_recommend_pc').css("display", "flex")
-    }
-  })
-
-  function closeModalA() {
-    $('.modal_recommend_pc').hide()
-  }
-</script>
 </html>
