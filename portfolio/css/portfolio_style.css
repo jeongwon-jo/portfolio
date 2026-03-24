@@ -433,10 +433,10 @@ section.project__develop .sec__inner {
     gap: 12px;
   }
   .pj-sec__title h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
   .pj-sec__title span.no {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
     position: static;
   }
