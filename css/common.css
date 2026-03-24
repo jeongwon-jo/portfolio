@@ -122,7 +122,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 24px;
+  gap: 12px;
 }
 .footer__mylink li {
   font-size: 18px;
@@ -212,7 +214,7 @@ body {
     margin-bottom: 32px;
   }
   .footer__title h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
   .footer__mylink li {
     font-size: 14px;
