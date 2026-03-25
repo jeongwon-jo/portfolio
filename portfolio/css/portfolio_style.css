@@ -428,6 +428,9 @@ section.project__develop .sec__inner {
     align-items: center;
     gap: 46px
   }
+  .project__summary .project-summary_info {
+    width: 100%;
+  }
   .pj-sec__title {
     display: flex;
     align-items: center;

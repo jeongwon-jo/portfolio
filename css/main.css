@@ -280,6 +280,7 @@ main {
   }
 
   .image_slot {
+    flex: 0 0 100%;
     margin: 8px 0;
   }
   .intro_desc {
