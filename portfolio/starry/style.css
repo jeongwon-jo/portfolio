@@ -14,6 +14,9 @@
   font-family: "Hakgyoansim", serif !important;
   color: #fff;
 }
+#wrap {
+  background-color: #1F0E22;
+}
 .project__title {
   width: 100%;
   height: 100dvh;

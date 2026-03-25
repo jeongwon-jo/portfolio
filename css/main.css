@@ -275,14 +275,19 @@ main {
   .intro_title {
     font-size: 6.6vw;
     gap: 2px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
   .image_slot {
-    margin: 0 8px;
+    margin: 8px 0;
   }
   .intro_desc {
     font-size: 13px;
-    left: -90px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: -28px;
+    width: max-content;
   }
   .section_intro .txt2 {
     gap: 40px;
@@ -421,7 +426,7 @@ h3.portfolio_title {
     padding-bottom: 60px;
   }
   .section_portfolio .sec__inner {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   h3.portfolio_title {
     font-size: 14px;
