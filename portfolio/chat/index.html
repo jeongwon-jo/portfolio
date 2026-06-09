@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hichat 상세페이지</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>"
+    />
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hichat 상세페이지" />
+    <meta property="og:description" content="Hichat 상세페이지" />
+    <meta property="og:image" content="./img/common/opengraph.png" />
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+    <!-- gsap & TWEENMAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <!-- Custom CSS & JS -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="../css/portfolio_style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/css/attribute.css" />
+    <script src="/js/common.js" defer></script>
+    <script src="../js/portfolio_common.js" defer></script>
+  </head>
+
+  <body class="scroll">
+    <div id="wrap">
+      <div id="cursor" class="cursor"></div>
+      <div class="container">
+        <header class="header hide">
+          <div class="header__inner">
+            <a href="/index.html" class="header_logo">
+              <img src="/img/common/logo_white.png" alt="로고" />
+            </a>
+            <div class="header_menu-bar">
+              <a href="/file/resume.pdf" target="_blank" class="btn_resume"
+                >이력서 다운로드</a
+              >
+              <button
+                type="button"
+                class="btn_menu"
+                onclick="toggleGnbMenu()"
+              ></button>
+              <nav class="header_nav">
+                <ul>
+                  <li class="home"><a href="/index.html">HOME</a></li>
+                  <li class="about"><a href="/about.html">ABOUT</a></li>
+                  <li class="portfolio">
+                    <a href="/portfolio.html">PORTFOLIO</a>
+                  </li>
+                  <li class="contact"><a href="/contact.html">CONTACT</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <main class="main">
+          <div class="portfolio__page">
+            <section class="project__title">
+              <div class="sec__inner">
+                <div class="hichat_logo">
+                  <span>💬</span>
+                </div>
+                <div class="title">
+                  <h1 class="pj_title">Hichat</h1>
+                </div>
+                <div class="scroll_down">
+                  <span>Scroll Down</span>
+                </div>
+              </div>
+            </section>
+            <section class="starry_content">
+              <section class="project__summary">
+                <div class="sec__inner">
+                  <div class="project_thumbnail">
+                    <div class="thumbnail_main">
+                      <img src="./img/mockup.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="project-summary_info">
+                    <div class="pj-sec__title">
+                      <span class="no">01</span>
+                      <h2 class="h2_tit">About Project</h2>
+                    </div>
+                    <ul class="project-info">
+                      <li>
+                        <span>프로젝트 기간: </span>
+                        <p>26.04.03 ~ 26.04.19</p>
+                      </li>
+                      <li>
+                        <span>프로젝트 인원: </span>
+                        <p>1명(조정원)</p>
+                      </li>
+                      <li>
+                        <span>역할 (담당 업무): </span>
+                        <p>
+                          1. 프론트엔드 개발 100%<br />
+                          2. 백엔드 개발(Next.js API · Prisma · MongoDB) 100%
+                        </p>
+                      </li>
+                      <li>
+                        <span>프로젝트 설명: </span>
+                        <p>
+                          Hichat은 Next.js App Router 기반의 풀스택 실시간 채팅
+                          애플리케이션입니다.<br />
+                          1:1 및 그룹 채팅, 이모지 반응, 메시지 답장, 메시지
+                          검색, 타이핑 인디케이터, 읽음 표시, 이미지 전송 등
+                          핵심 기능을 모두 구현했습니다.<br />
+                          사용자는 이메일/비밀번호으로 접속하며, Pusher를 통해
+                          모든 상태 변경이 페이지 새로고침 없이 실시간
+                          반영됩니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span>기술 스택: </span>
+                        <p>
+                          - Next.js 16 (App Router) · React 19 · TypeScript 5<br />
+                          - NextAuth 4 (Credentials)<br />
+                          - Prisma 6 ORM · MongoDB (Atlas)<br />
+                          - Pusher (실시간 WebSocket)<br />
+                          - Cloudinary (이미지 업로드 · CDN)<br />
+                          - Tailwind CSS v4 · Zustand · React Hook Form
+                        </p>
+                      </li>
+                      <li>
+                        <span>URL: </span>
+                        <p>
+                          <a
+                            href="https://chat-app-sand-eight-98.vercel.app/"
+                            target="_blank"
+                            class="underline inline-block mr10"
+                            >바로가기</a
+                          >
+                          <a
+                            href="https://github.com/jeongwon-jo/chat-app"
+                            target="_blank"
+                            class="underline"
+                            >GitHub</a
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section class="project__publishing">
+                <div class="sec__inner">
+                  <div class="pj-sec__title">
+                    <span class="no">02</span>
+                    <h2 class="h2_tit">Frontend Development</h2>
+                  </div>
+
+                  <div class="publishing_guide mb80 mo_mb40">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (1) 아키텍처 설계 - Next.js 16 App Router
+                    </h3>
+                    <div class="publishing_css">
+                      <ul class="tailwindcss_list">
+                        <li>
+                          <h4 class="h4_tit">
+                            Server Component / Client Component 역할 분리
+                          </h4>
+                        </li>
+                        <li>
+                          <b>서버 컴포넌트 - 데이터 패칭 전담</b><br />
+                          레이아웃과 페이지 컴포넌트는 서버에서 Prisma로 대화
+                          목록·메시지·유저 정보를 조회한 뒤 클라이언트
+                          컴포넌트에 초기 데이터를 props로 전달합니다. 별도의
+                          로딩 API 왕복 없이 첫 화면을 완성된 상태로 렌더링해
+                          초기 로드 성능을 확보했습니다.
+                        </li>
+                        <li>
+                          <b>클라이언트 컴포넌트 - 인터랙션 및 실시간 담당</b
+                          ><br />
+                          <code>"use client"</code> 지시자를 명시한
+                          컴포넌트(ConversationList, Body, Form 등)가 Pusher
+                          구독, 상태 업데이트, 폼 입력 등 모든 사이드이펙트를
+                          처리합니다. 서버/클라이언트 경계를 파일 단위로 명확히
+                          나눠 번들 크기를 최소화했습니다.
+                        </li>
+                        <li>
+                          <b>Server Actions - 인증된 서버 사이드 데이터 조회</b
+                          ><br />
+                          <code>getCurrentUser</code>,
+                          <code>getConversations</code>,
+                          <code>getMessages</code> 등 핵심 조회 로직을 Server
+                          Actions로 구성해, 클라이언트에서 세션 토큰을 직접
+                          다루지 않아도 되는 안전한 데이터 레이어를
+                          구축했습니다.
+                        </li>
+                        <li>
+                          <b>API Routes - 뮤테이션 전담 REST 엔드포인트</b
+                          ><br />
+                          메시지 전송·삭제, 반응 토글, 대화 생성, 타이핑 이벤트
+                          등 상태를 변경하는 모든 작업은
+                          <code>/app/api</code> Route Handler로 분리했습니다.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (2) 인증 시스템 - NextAuth 4 · Bcrypt · 다중 프로바이더
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="font_bold">Credentials Provider</b> -
+                        이메일/비밀번호 기반 자체 인증을 구현했습니다. 회원가입
+                        시 bcrypt로 비밀번호를 단방향 해싱해 MongoDB에 저장하고,
+                        로그인 시 <code>bcrypt.compare</code>로 검증합니다.
+                        서버에서만 실행되는 <code>authOptions</code>에 인증
+                        로직을 캡슐화해 클라이언트에 시크릿이 노출되지 않도록
+                        했습니다.<br /><br />
+
+                        <b class="font_bold">세션 전략</b> - JWT 세션 방식으로
+                        데이터베이스 조회 없이 인증 상태를 검증합니다.
+                        <code>getCurrentUser</code> Server Action이 세션의
+                        이메일로 Prisma 사용자를 조회해 서버 컴포넌트 어디서든
+                        인증된 유저 정보를 안전하게 제공합니다.
+                      </p>
+                    </div>
+                    <div class="pc_screenshots">
+                      <div class="screenshot">
+                        <img src="./img/signin.png" alt="" />
+                      </div>
+                      <div class="screenshot">
+                        <img src="./img/signup.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (3) 실시간 통신 아키텍처 - Pusher WebSocket
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        메시지 전송·수정·삭제, 대화 목록 업데이트, 타이핑
+                        인디케이터, 온라인 상태 등 앱의 모든 실시간 이벤트를
+                        Pusher 채널로 처리합니다.<br /><br />
+                        <b class="font_bold">채널 구조</b> - 유저 이메일을
+                        채널명으로 사용하는 개인 채널(대화 목록 업데이트)과 대화
+                        ID를 채널명으로 사용하는 대화 채널(메시지 이벤트)로
+                        이원화했습니다. 이를 통해 특정 대화의 참여자에게만
+                        이벤트가 전달되도록 스코프를 제어합니다.<br /><br />
+                        <b class="font_bold">이벤트 흐름</b> - API Route에서 DB
+                        뮤테이션 완료 후 즉시 <code>pusher.trigger()</code>를
+                        호출합니다. 클라이언트 컴포넌트는 마운트 시 채널을
+                        구독하고, 언마운트 시 <code>unsubscribe()</code>를
+                        호출해 메모리 누수를 방지합니다.
+                      </p>
+                    </div>
+                    <div class="pc_screenshots">
+                      <div class="screenshot">
+                        <img
+                          src="/img/portfolio/chat_app_screenshot.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (4) 데이터 모델 설계 - Prisma 6 · MongoDB
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="font_bold">User</b> -
+                        이메일(unique)·이름·해싱된 비밀번호·프로필 이미지를
+                        저장합니다. <code>conversationIds</code>로 다대다 관계의
+                        대화 목록을, <code>seenMessageIds</code>로 읽음 처리된
+                        메시지 목록을 배열로 참조합니다.<br /><br />
+                        <b class="font_bold">Conversation</b> -
+                        <code>isGroup</code> 플래그로 1:1 및 그룹 채팅을 단일
+                        컬렉션에서 관리합니다. <code>lastMessageAt</code>을
+                        갱신해 대화 목록을 최신 메시지 순으로 정렬하고,
+                        <code>userIds</code>로 참여자를 참조합니다.<br /><br />
+                        <b class="font_bold">Message</b> - 텍스트 body와 이미지
+                        URL을 함께 저장할 수 있으며, <code>deletedAt</code>을
+                        통한 소프트 삭제, <code>replyToId</code>를 통한 자기
+                        참조 답장, <code>reactions</code> 임베디드 배열을 통한
+                        이모지 반응을 지원합니다. 복잡한 메시지 기능을 추가
+                        컬렉션 없이 단일 문서 구조로 해결해 조회 비용을
+                        최소화했습니다.<br /><br />
+                        <b class="font_bold">Reaction (임베디드 타입)</b> -
+                        <code>emoji · userId · userName</code> 필드를 Message
+                        문서 안에 배열로 임베딩해 반응 조회 시 JOIN 없이 단일
+                        쿼리로 처리합니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (5) 메시지 핵심 기능 구현
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="font_bold">이모지 반응</b> - 6종(👍❤️😂😮😢😡)
+                        이모지를 메시지에 토글 방식으로 추가·제거합니다. 이미
+                        반응한 경우 동일 이모지 클릭 시 제거되며, 같은 이모지를
+                        반응한 유저 수를 묶어 표시합니다. 내가 반응한 이모지는
+                        배경색으로 시각적으로 구분됩니다.<br /><br />
+                        <b class="font_bold">답장(Reply Threading)</b> -
+                        메시지에 <code>replyToId</code>를 통한 자기 참조 구조로
+                        원본 메시지를 연결합니다. 전송 폼 위에 인용 프리뷰를
+                        표시해 답장 컨텍스트를 유지하고, 원본이 삭제되어도 답장
+                        체인이 끊기지 않도록 설계했습니다.<br /><br />
+                        <b class="font_bold">소프트 삭제</b> - 메시지를 DB에서
+                        제거하지 않고 <code>deletedAt</code> 타임스탬프를
+                        기록합니다. UI에서는 "삭제된 메시지입니다"
+                        플레이스홀더로 대체 렌더링해 답장 체인의 맥락을
+                        유지합니다.<br /><br />
+                        <b class="font_bold">메시지 검색</b> - 클라이언트 사이드
+                        필터링으로 입력값과 일치하는 메시지를 대소문자 구분 없이
+                        실시간으로 하이라이팅합니다. 검색 결과는 기존 시간순
+                        정렬을 유지한 채 노란 배경으로 매칭 텍스트를
+                        시각화합니다.<br /><br />
+                        <b class="font_bold">타이핑 인디케이터</b> - 사용자가
+                        입력할 때 <code>/api/typing</code>으로 이벤트를
+                        브로드캐스트하고, 2초간 추가 입력이 없으면 자동으로
+                        종료됩니다. 입력 중인 유저 이름을 실시간으로 표시해 대화
+                        참여감을 높입니다.<br /><br />
+                        <b class="font_bold">읽음 처리(Read Receipt)</b> -
+                        대화방 진입 시
+                        <code>/api/conversations/[id]/seen</code>을 호출해
+                        미확인 메시지를 일괄 처리하고, Pusher로 읽음 상태를
+                        실시간 갱신합니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (6) 상태 관리 전략 - Zustand · Context · LocalStorage
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        상태의 성격에 따라 관리 레이어를 분리해 불필요한 전역
+                        상태 의존을 제거했습니다.<br /><br />
+                        <b class="font_bold"
+                          >Zustand - 온라인 유저 목록(Active List)</b
+                        ><br />
+                        Pusher 프레즌스 채널에서 수신되는 접속/해제 이벤트를
+                        Zustand 스토어에 반영합니다. 컴포넌트가 스토어를 직접
+                        구독해 온라인 상태 뱃지를 자동 갱신합니다. Redux처럼
+                        보일러플레이트 없이 전역 실시간 상태를 최소 코드로
+                        관리할 수 있어 선택했습니다.<br /><br />
+                        <b class="font_bold"
+                          >React Context - 인증·테마·알림 토스트</b
+                        ><br />
+                        <code>AuthContext</code>(NextAuth SessionProvider),
+                        <code>ThemeContext</code>(다크 모드 토글),
+                        <code>ToasterContext</code>(react-hot-toast)를 루트
+                        레이아웃에서 주입해 앱 전역에서 접근 가능하도록
+                        했습니다.<br /><br />
+                        <b class="font_bold"
+                          >LocalStorage - 다크 모드 · 대화 고정</b
+                        ><br />
+                        페이지 새로고침 후에도 유지되어야 하는 UI 선호값(테마,
+                        고정된 대화 ID 배열)은 LocalStorage에 직렬화해
+                        영속합니다. 세션과 무관한 클라이언트 선호 정보를 DB에
+                        저장하지 않아 서버 부담을 줄였습니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (7) 이미지 업로드 - Cloudinary · Next.js Image 최적화
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="font_bold">Cloudinary CDN 연동</b> -
+                        <code>next-cloudinary</code>의
+                        <code>CldUploadButton</code>을 메시지 폼과 프로필 설정에
+                        삽입해, 클라이언트에서 파일 선택 즉시 Cloudinary 서버로
+                        직접 업로드(Unsigned Upload)됩니다. 반환된 Public ID를
+                        DB에 저장해 CDN URL을 동적으로 생성합니다.<br /><br />
+                        <b class="font_bold">Next.js Image 최적화</b> -
+                        <code>next.config.ts</code>에 Cloudinary 도메인을
+                        <code>remotePatterns</code>로 등록해
+                        <code>next/image</code>의 자동 WebP 변환, lazy loading,
+                        blur placeholder 등 이미지 최적화 기능을 외부 CDN
+                        이미지에도 적용했습니다.<br /><br />
+                        <b class="font_bold">이미지 뷰어 모달</b> - 채팅 내
+                        이미지 클릭 시 <code>ImageModal</code> 컴포넌트가 원본
+                        크기로 오버레이 표시됩니다.
+                        <code>@headlessui/react</code> Dialog를 기반으로 접근성
+                        규격에 맞는 포커스 트랩과 ESC 닫기를 지원합니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (8) 스타일 시스템 - Tailwind CSS v4 · 반응형
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="font_bold">Tailwind CSS v4 커스텀 테마</b> -
+                        <code>globals.css</code>의 <code>@theme</code> 블록에
+                        primary(#FFB84D), secondary(#FEE500) 등 브랜드 컬러를
+                        CSS Custom Properties로 정의해 Tailwind 유틸리티
+                        클래스(<code>bg-primary</code>,
+                        <code>text-primary</code>)로 바로 사용합니다. 디자인
+                        토큰이 단일 파일에서 관리되어 색상 수정 시 전체 UI에
+                        즉시 반영됩니다.<br /><br />
+                        <b class="font_bold">반응형 레이아웃</b> - 사이드바는
+                        <code>hidden lg:flex</code>로 데스크탑에서만 표시되고,
+                        모바일에서는 하단 MobileFooter가 네비게이션을
+                        대체합니다. 대화 목록(80px)과 채팅 영역은
+                        <code>lg:pl-80</code> / <code>lg:pl-20</code>으로
+                        사이드바 폭에 맞게 자동 보정됩니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (9) 그룹 채팅 · 대화 관리
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="font_bold">그룹 채팅 생성</b> - 이름 입력과
+                        2명 이상의 참여자 선택으로 그룹 대화를 생성합니다.
+                        <code>react-select</code> 멀티셀렉트로 유저 목록에서
+                        참여자를 선택하고, 현재 로그인 유저는 자동으로
+                        포함됩니다. 생성 완료 시 Pusher로 모든 참여자에게
+                        <code>conversation:new</code> 이벤트를 브로드캐스트해
+                        각자의 대화 목록에 즉시 반영합니다.<br /><br />
+                        <b class="font_bold">대화 고정(Pin)</b> - 자주 사용하는
+                        대화를 LocalStorage에 고정 등록하면 대화 목록 최상단에
+                        배치됩니다. 서버 요청 없이 클라이언트에서 정렬 로직을
+                        처리해 즉각적인 UX를 제공합니다.<br /><br />
+                        <b class="font_bold">대화 목록 실시간 업데이트</b> -
+                        <code>ConversationList</code>가 유저 채널을 구독해 새
+                        메시지가 도착하면 해당 대화의 lastMessageAt을 갱신하고
+                        목록 순서를 재정렬합니다. 페이지 이동 없이 사이드바가
+                        항상 최신 상태를 유지합니다.
+                      </p>
+                    </div>
+                    <div class="pc_screenshots">
+                      <div class="screenshot">
+                        <img src="/portfolio/chat/img/group_chat.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

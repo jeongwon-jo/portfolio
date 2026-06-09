@@ -356,7 +356,7 @@ h3.portfolio_title {
 .portfolio-type .thum {
   flex: 1;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 15 / 9;
   border-radius: 8px;
   overflow: hidden;
 }

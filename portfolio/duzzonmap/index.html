@@ -1,249 +1,394 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>두쫀맵 상세페이지</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon.ico" />
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="두쫀맵 상세페이지" />
+    <meta property="og:description" content="두쫀맵 상세페이지" />
+    <meta property="og:image" content="./img/common/opengraph.png" />
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+    <!-- gsap & TWEENMAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <!-- Custom CSS & JS -->
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="../css/portfolio_style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/css/attribute.css" />
+    <script src="/js/common.js" defer></script>
+    <script src="../js/portfolio_common.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>두쫀맵 상세페이지</title>
-  <!-- Favicon -->
-  <link rel="icon" href="./img/favicon.ico">
-  <!-- OpenGraph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="두쫀맵 상세페이지" />
-  <meta property="og:description" content="두쫀맵 상세페이지" />
-  <meta property="og:image" content="./img/common/opengraph.png" />
-  <!-- jQuery CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <!-- swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <!-- aos -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Smooth Scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-  <!-- gsap & TWEENMAX -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <!-- Custom CSS & JS -->
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="../css/portfolio_style.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="/css/attribute.css">
-  <script src="/js/common.js" defer></script>
-  <script src="../js/portfolio_common.js" defer></script>
-</head>
-
-<body class="scroll">
-  <div id="wrap">
-    <div id="cursor" class="cursor"></div>
-    <div class="container">
-      <main class="main">
-        <div class="portfolio__page">
-          <section class="project__title">
-            <div class="sec__inner">
-              <div class="duzzon_logo">
-                <img src="./img/logo_icon.png" alt="duzzon" class="bottle animate-bottle">
-              </div>
-              <div class="title">
-                <h1 class="pj_title">두쫀맵</h1>
-              </div>
-              <div class="scroll_down">
-                <span>Scroll Down</span>
-              </div>
+  <body class="scroll">
+    <div id="wrap">
+      <div id="cursor" class="cursor"></div>
+      <div class="container">
+        <header class="header hide">
+          <div class="header__inner">
+            <a href="/index.html" class="header_logo">
+              <img src="/img/common/logo_white.png" alt="로고" />
+            </a>
+            <div class="header_menu-bar">
+              <a href="/file/resume.pdf" target="_blank" class="btn_resume"
+                >이력서 다운로드</a
+              >
+              <button
+                type="button"
+                class="btn_menu"
+                onclick="toggleGnbMenu()"
+              ></button>
+              <nav class="header_nav">
+                <ul>
+                  <li class="home"><a href="/index.html">HOME</a></li>
+                  <li class="about"><a href="/about.html">ABOUT</a></li>
+                  <li class="portfolio">
+                    <a href="/portfolio.html">PORTFOLIO</a>
+                  </li>
+                  <li class="contact"><a href="/contact.html">CONTACT</a></li>
+                </ul>
+              </nav>
             </div>
-          </section>
-          <section class="starry_content">
-            <section class="project__summary">
+          </div>
+        </header>
+        <main class="main">
+          <div class="portfolio__page">
+            <section class="project__title">
               <div class="sec__inner">
-                <div class="project_thumbnail">
-                  <div class="thumbnail_main">
-                    <img src="./img/mockup.png" alt="">
-                  </div>
+                <div class="duzzon_logo">
+                  <img
+                    src="./img/logo_icon.png"
+                    alt="duzzon"
+                    class="bottle animate-bottle"
+                  />
                 </div>
-                <div class="project-summary_info">
-                  <div class="pj-sec__title">
-                    <span class="no">01</span>
-                    <h2 class="h2_tit">About Project</h2>
-                  </div>
-                  <ul class="project-info">
-                    <li>
-                      <span>프로젝트 기간: </span>
-                      <p>26.03.09 ~ 26.03.13</p>
-                    </li>
-                    <li>
-                      <span>프로젝트 인원: </span>
-                      <p>1명(조정원)</p>
-                    </li>
-                    <li>
-                      <span>역할 (담당 업무): </span>
-                      <p>
-                        1. UI <b>퍼블리싱</b> 100%<br>
-                        2. 프론트엔드 개발 100%
-                        3. 백엔드 개발(firebase) 100%
-                    </li>
-                    <li>
-                      <span>프로젝트 설명: </span>
-                      <p>두쫀맵은 두쫀쿠를 판매하는 카페의 실시간 재고를 지도 위에서 한눈에 확인할 수 있는 서비스입니다.<br>
-                      사장님이 직접 재고·영업시간·영업 요일을 등록·관리하고, 손님은 지도에서 구매가능 / 마감임박 / 품절 상태를 보고 헛걸음 없이 방문할 수 있습니다.
-                      </p>
-                    </li>
-                    <li>
-                      <span>기술 스택: </span>
-                      <p>- React.js <br>- Firebase <br>-
-                        Scss(Sass) (UI 스타일링)</p>
-                    </li>
-                    <li>
-                      <span>URL: </span>
-                      <p>
-                        <a href="https://duzzonmap.vercel.app/" target="_blank" class="underline inline-block mr10">바로가기</a>
-                      <a href="https://www.notion.so/jjeong1jo/31f2c9ae108080c68c32c4aae0c6e9d0?source=copy_link" target="_blank" class="underline">Notion</a></p>
-                    </li>
-                  </ul>
+                <div class="title">
+                  <h1 class="pj_title">두쫀맵</h1>
+                </div>
+                <div class="scroll_down">
+                  <span>Scroll Down</span>
                 </div>
               </div>
             </section>
-            <section class="project__publishing">
-              <div class="sec__inner">
-                <div class="pj-sec__title">
-                  <span class="no">02</span>
-                  <h2 class="h2_tit">Publishing Guide</h2>
-                </div>
-                <div class="color_guide mb80">
-                  <div class="title_with_modal">
-                    <h3 class="h3_tit mb16"><a href="#" class="underline">(1) Color System</a></h3>
+            <section class="starry_content">
+              <section class="project__summary">
+                <div class="sec__inner">
+                  <div class="project_thumbnail">
+                    <div class="thumbnail_main">
+                      <img src="./img/mockup.png" alt="" />
+                    </div>
                   </div>
-                  <ul class="color_system starry_system">
-                    <li>
-                      <div class="color">
-                        <span style="background-color: #6F8F2A;"></span>
-                        <span style="background-color: #8FAE3F;"></span>
-                        <span style="background-color: #4F681D;"></span>
-                        <span style="background-color: #FFD93D;"></span>
-                        <span style="background-color: #6BCB77;"></span>
-                        <span style="background-color: #faf5f1;"></span>
-                        <span style="background-color: #FFF5EE;"></span>
-                        <span style="background-color: #C4A882;"></span>
-                        <span style="background-color: #7A6555;"></span>
-                        <span style="background-color: #5A2A13;"></span>
-                        <span style="background-color: #7A3E1F;"></span>
-                        <span style="background-color: #999999;"></span>
-                        <span style="background-color: #1A1410;"></span>
-                        <span style="background-color: #202020;"></span>
-                        <span style="background-color: #2E2520;"></span>
-                      </div>
-                      <span class="color_text">_variables.scss</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="font_guide mb80 mo_mb40">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(2) Typography</h2>
-                    <div class="font_system">
-                      <h2 class="h2_tit font_family" style="font-family: 'YeogiOttaeJalnan', sans-serif;">여기어때 잘난체</h2>
-                      <h2 class="h2_tit font_family" style="font-family: 'Pretendard', sans-serif;">Pretendard</h2>
+                  <div class="project-summary_info">
+                    <div class="pj-sec__title">
+                      <span class="no">01</span>
+                      <h2 class="h2_tit">About Project</h2>
                     </div>
-                </div>
-                <div class="publishing_guide mb80 mo_mb40">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(3) SCSS/SASS</h3>
-                  <div class="publishing_css">
-                    <div class="tailwind_info">
-                      <div class="tailwind_logo">
-                        <img src="./img/sass_logo.png" alt="Sass">
-                      </div>
-                    </div>
-                    <ul class="tailwindcss_list">
+                    <ul class="project-info">
                       <li>
-                        <h4 class="h4_tit">SCSS/SASS</h4>
+                        <span>프로젝트 기간: </span>
+                        <p>26.03.09 ~ 26.03.13</p>
                       </li>
-                      <li><b>Dark Mode</b> <br>
-                        SCSS/SASS의 변수, 믹스인, 중첩 선택자, 파일 분리(@use/@forward)를 체계적으로 활용하면 반복되는 스타일 패턴을 재사용 가능한 단위로 추상화할 수 있으며, 디자인 토큰(색상, 간격, 폰트 등)을
-                        변수로 중앙 관리함으로써 수정 시 단 한 곳만 변경해도 프로젝트 전체에 일관되게 반영됩니다. 또한 컴포넌트 단위로 파일을 분리하여 관심사를 명확히 분리할 수 있고, 믹스인을 통해 미디어 쿼리나 반복 패턴을 함수처럼
-                        재사용할 수 있어 협업 환경에서도 스타일 규칙의 일관성을 유지하기 쉽습니다. 이러한 구조적 접근 방식은 프로젝트 규모가 커질수록 유지보수 비용을 낮추고, 새로운 기능 추가나 디자인 변경에도 빠르게 대응할 수 있는
-                        확장성 높은 스타일 아키텍처를 구축하게 해줍니다.</li>
+                      <li>
+                        <span>프로젝트 인원: </span>
+                        <p>1명(조정원)</p>
+                      </li>
+                      <li>
+                        <span>역할 (담당 업무): </span>
+                        <p>
+                          <!-- 1. UI <b>퍼블리싱</b> 100%<br> -->
+                          1. 프론트엔드 개발 100%<br />
+                          2. 백엔드 개발(Firebase) 100%
+                        </p>
+                      </li>
+                      <li>
+                        <span>프로젝트 설명: </span>
+                        <p>
+                          두쫀맵은 두쫀쿠를 판매하는 카페의 실시간 재고를 지도
+                          위에서 한눈에 확인할 수 있는 서비스입니다.<br />
+                          사장님이 직접 재고·영업시간·영업 요일을 등록·관리하고,
+                          손님은 지도에서 구매가능 / 마감임박 / 품절 상태를 보고
+                          헛걸음 없이 방문할 수 있습니다.
+                        </p>
+                      </li>
+                      <li>
+                        <span>기술 스택: </span>
+                        <p>
+                          - React.js <br />- Firebase (Auth · Firestore ·
+                          Realtime) <br />- SCSS/SASS <br />- Kakao Maps API
+                        </p>
+                      </li>
+                      <li>
+                        <span>URL: </span>
+                        <p>
+                          <a
+                            href="https://duzzonmap.vercel.app/"
+                            target="_blank"
+                            class="underline inline-block mr10"
+                            >바로가기</a
+                          >
+                          <a
+                            href="https://www.notion.so/jjeong1jo/31f2c9ae108080c68c32c4aae0c6e9d0?source=copy_link"
+                            target="_blank"
+                            class="underline"
+                            >Notion</a
+                          >
+                        </p>
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div class="component_guide mb80">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(4) Firebase</h3>
-                  <div class="component_text mt20">
-                    <p>
-                      <b class="c_green">Firebase Auth</b> — 이메일/비밀번호 방식으로 가게 사장님 회원가입·로그인·로그아웃을 처리하고, onAuthStateChanged로 로그인 상태를 앱 전역에서 실시간 감지한다.<br>
-                      <b class="c_green">Firestore (stores 컬렉션)</b> — 가게 등록·수정·삭제와 두쫀쿠 재고(duzzonCount) 업데이트, 오늘 마감 여부(closedDate) 토글을 CRUD로 관리하며, onSnapshot으로 지도 화면에 실시간 반영한다.<br>
-                      <b class="c_green">권한 흐름</b> — 로그인한 사용자만 가게 등록/수정/삭제가 가능하고, 비로그인 사용자는 지도에서 가게 목록 조회만 할 수 있는 구조다.
-                    </p>
+              </section>
+              <section class="project__publishing">
+                <div class="sec__inner">
+                  <div class="pj-sec__title">
+                    <span class="no">02</span>
+                    <h2 class="h2_tit">Frontend Development</h2>
                   </div>
-                  <div class="mobile_screenshots">
-                    <div class="screenshot">
-                      <img src="./img/screenshot01.png" alt="">
-                    </div>
-                    <div class="screenshot">
-                      <img src="./img/screenshot02.png" alt="">
-                    </div>
-                    <div class="screenshot">
-                      <img src="./img/screenshot03.png" alt="">
-                    </div>
-                    <div class="screenshot">
-                      <img src="./img/screenshot04.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="component_guide mb80">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(5) 직관적인 실시간 재고 지도</h3>
-                  <div class="component_text mt20">
-                    <p>
-                      지도 위 마커가 두쫀쿠 재고 수량에 따라 초록(구매가능) / 노랑(마감임박) / 빨강(품절) 색상으로 즉시 구분되어, 사용자가 별도 클릭 없이 한눈에 재고 상황을 파악할 수 있습니다. Firestore
-                      <b class="c_green">onSnapshot으로 실시간 동기화</b>되기 때문에 사장님이 재고를 수정하면 지도를 새로고침 없이 바로 반영됩니다.
-                    </p>
-                  </div>
-                  <div class="pc_screenshots">
-                    <div class="screenshot">
-                      <img src="./img/screenshot05.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="component_guide mb80">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(6) 사장님 전용 간편 매장 관리</h3>
-                  <div class="component_text mt20">
-                    <p>
-                      매장 등록 페이지에서 로그인/회원가입부터 매장 정보 입력, 카카오 지도 위치 지정까지 한 화면에서 모두 처리할 수 있습니다. 로그인한 사장님에게만 재고 수정·오늘 마감 토글·매장 삭제 버튼이 노출되고, 일반
-                      사용자에게는 전화하기 버튼만 보이는 권한 분리가 깔끔하게 구현되어 있습니다.
-                    </p>
-                  </div>
-                  <div class="pc_screenshots">
-                    <div class="screenshot">
-                      <img src="./img/screenshot06.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="component_guide mb80">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(7) 영업 상태 자동 판단 필터</h3>
-                  <div class="component_text mt20">
-                    <p>
-                      영업 요일·시간·오늘 마감 여부를 종합해서 지금 이 순간 영업 중인 가게만 필터링하는 기능이 있습니다. 단순 재고 필터(전체/구매가능/마감임박/품절)와 함께 "영업중" 필터를 제공하여, 재고가 있어도 문 닫은 가게를
-                      걸러낼 수 있어 <b class="c_green">사용자 경험이 더 실용적</b>입니다.
-                    </p>
-                  </div>
-                </div>
-                <div class="component_guide mb80">
-                  <h3 class="h3_tit" style="text-decoration: underline;">(8) 디저트 트렌드에 맞춰 빠르게 재활용 가능한 구조</h3>
-                  <div class="component_text mt20">
-                    <p>
-                      두쫀쿠 외에도 버터떡등 유행하는 디저트가 생길 때마다 아이콘과 브랜드명만 교체하면 동일한 <b class="c_green">"재고 현황 지도 서비스"</b>로 즉시 재활용할 수 있습니다. 지도·인증·재고 관리 로직이 모두 범용적으로
-                      설계되어 있어, 특정 디저트에 종속되지 않고 어떤 한정 수량 판매 아이템에도 빠르게 적용할 수 있는 확장성이 이 프로젝트의 숨은 강점입니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </section>
-        </div>
-      </main>
-    </div>
-  </div>
-</body>
 
+                  <!-- ===================== 퍼블리싱 가이드 START ===================== -->
+                  <div class="color_guide mb80">
+                    <div class="title_with_modal">
+                      <h3 class="h3_tit mb16">
+                        <a href="#" class="underline">(1) Color System</a>
+                      </h3>
+                    </div>
+                    <ul class="color_system starry_system">
+                      <li>
+                        <div class="color">
+                          <span style="background-color: #6f8f2a"></span>
+                          <span style="background-color: #8fae3f"></span>
+                          <span style="background-color: #4f681d"></span>
+                          <span style="background-color: #ffd93d"></span>
+                          <span style="background-color: #6bcb77"></span>
+                          <span style="background-color: #faf5f1"></span>
+                          <span style="background-color: #fff5ee"></span>
+                          <span style="background-color: #c4a882"></span>
+                          <span style="background-color: #7a6555"></span>
+                          <span style="background-color: #5a2a13"></span>
+                          <span style="background-color: #7a3e1f"></span>
+                          <span style="background-color: #999999"></span>
+                          <span style="background-color: #1a1410"></span>
+                          <span style="background-color: #202020"></span>
+                          <span style="background-color: #2e2520"></span>
+                        </div>
+                        <span class="color_text">_variables.scss</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="font_guide mb80 mo_mb40">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (2) Typography
+                    </h3>
+                    <div class="font_system">
+                      <h2
+                        class="h2_tit font_family"
+                        style="
+                          font-family: &quot;YeogiOttaeJalnan&quot;, sans-serif;
+                        "
+                      >
+                        여기어때 잘난체
+                      </h2>
+                      <h2
+                        class="h2_tit font_family"
+                        style="font-family: &quot;Pretendard&quot;, sans-serif"
+                      >
+                        Pretendard
+                      </h2>
+                    </div>
+                  </div>
+                  <!-- ===================== 퍼블리싱 가이드 END ===================== -->
+
+                  <div class="publishing_guide mb80 mo_mb40">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (1) 스타일 아키텍처 — SCSS/SASS
+                    </h3>
+                    <div class="publishing_css">
+                      <div class="tailwind_info">
+                        <div class="tailwind_logo">
+                          <img src="./img/sass_logo.png" alt="Sass" />
+                        </div>
+                      </div>
+                      <ul class="tailwindcss_list">
+                        <li>
+                          <h4 class="h4_tit">SCSS 구조 설계 전략</h4>
+                        </li>
+                        <li>
+                          <b>디자인 토큰 중앙화 — _variables.scss</b><br />
+                          색상·간격·폰트 등 디자인 시스템의 핵심 값을
+                          <code>_variables.scss</code>에 CSS Custom Properties로
+                          정의해 단일 출처(Single Source of Truth)를
+                          유지했습니다. 토큰 변경 시 한 파일만 수정하면 프로젝트
+                          전체에 즉시 반영됩니다.
+                        </li>
+                        <li>
+                          <b>컴포넌트 단위 파일 분리 — @use / @forward</b><br />
+                          SCSS의 <code>@use</code>와 <code>@forward</code>로
+                          컴포넌트별 스타일 파일을 모듈화해 전역 네임스페이스
+                          오염을 방지하고, 관심사 분리를 명확히 했습니다.
+                        </li>
+                        <li>
+                          <b>믹스인 기반 반응형 처리</b><br />
+                          미디어 쿼리를 믹스인으로 추상화해 반복되는
+                          브레이크포인트 코드를 제거하고, 새로운 컴포넌트 추가
+                          시 일관된 반응형 패턴을 빠르게 적용할 수 있도록
+                          했습니다.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (2) Firebase 아키텍처 — Auth · Firestore · Realtime
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        <b class="c_green">Firebase Auth</b> — 이메일/비밀번호
+                        방식으로 가게 사장님 회원가입·로그인·로그아웃을
+                        처리하고, <code>onAuthStateChanged</code>로 로그인
+                        상태를 앱 전역에서 실시간 감지합니다.<br />
+                        <b class="c_green">Firestore (stores 컬렉션)</b> — 가게
+                        등록·수정·삭제와 두쫀쿠 재고(duzzonCount) 업데이트, 오늘
+                        마감 여부(closedDate) 토글을 CRUD로 관리하며,
+                        <code>onSnapshot</code>으로 지도 화면에 실시간
+                        반영합니다.<br />
+                        <b class="c_green">권한 흐름</b> — 로그인한 사용자만
+                        가게 등록/수정/삭제가 가능하고, 비로그인 사용자는
+                        지도에서 가게 목록 조회만 할 수 있는 역할 기반 접근
+                        제어(RBAC) 구조입니다.
+                      </p>
+                    </div>
+                    <div class="mobile_screenshots">
+                      <div class="screenshot">
+                        <img src="./img/screenshot01.png" alt="" />
+                      </div>
+                      <div class="screenshot">
+                        <img src="./img/screenshot02.png" alt="" />
+                      </div>
+                      <div class="screenshot">
+                        <img src="./img/screenshot03.png" alt="" />
+                      </div>
+                      <div class="screenshot">
+                        <img src="./img/screenshot04.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (3) 실시간 재고 동기화 — Firestore onSnapshot
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        Firestore의 <code>onSnapshot</code> 리스너를 지도
+                        컴포넌트 마운트 시점에 등록해, 사장님이 재고를 수정하는
+                        즉시 페이지 새로고침 없이 지도 마커에 반영되는 실시간
+                        동기화를 구현했습니다.<br /><br />
+                        마커는 재고 수량에 따라
+                        <b class="c_green"
+                          >초록(구매가능) / 노랑(마감임박) / 빨강(품절)</b
+                        >
+                        세 가지 상태로 즉시 시각화되어, 사용자가 별도 인터랙션
+                        없이 한눈에 재고 상황을 파악할 수 있습니다. 컴포넌트
+                        언마운트 시 리스너를 정리(cleanup)해 메모리 누수를
+                        방지했습니다.
+                      </p>
+                    </div>
+                    <div class="pc_screenshots">
+                      <div class="screenshot">
+                        <img src="./img/screenshot05.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (4) 역할 기반 UI 분기 — 사장님 / 손님 권한 분리
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        Firebase Auth의 로그인 상태와 Firestore 문서의
+                        소유자(uid)를 클라이언트에서 대조해,
+                        <b
+                          >로그인한 사장님에게만 재고 수정·오늘 마감 토글·매장
+                          삭제 버튼</b
+                        >을 노출하고 일반 사용자에게는 전화하기 버튼만
+                        렌더링하는 조건부 UI를 구현했습니다.<br /><br />
+                        매장 등록 흐름은 로그인/회원가입 → 매장 정보 입력 →
+                        카카오 지도 위치 지정을 단일 페이지에서 스텝 형태로
+                        처리해, 외부 서비스 연동이 포함된 복잡한 폼을 UX 부담
+                        없이 완료할 수 있도록 설계했습니다.
+                      </p>
+                    </div>
+                    <div class="pc_screenshots">
+                      <div class="screenshot">
+                        <img src="./img/screenshot06.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (5) 복합 조건 영업 상태 판단 로직
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        단순 재고 여부를 넘어
+                        <b>영업 요일 · 영업시간 · 오늘 마감(closedDate)</b> 세
+                        가지 조건을 JavaScript Date 기반으로 조합해 현재 시점
+                        영업 여부를 클라이언트에서 계산하는 순수 함수를
+                        구현했습니다.<br /><br />
+                        재고 필터(전체 / 구매가능 / 마감임박 / 품절)와 "영업중"
+                        필터를 독립 상태로 관리하고 교집합으로 최종 리스트를
+                        도출해, 재고가 있어도 폐점한 가게를 걸러낼 수 있는
+                        실용적인 사용자 경험을 제공합니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="component_guide mb80">
+                    <h3 class="h3_tit" style="text-decoration: underline">
+                      (6) 범용 재고 지도 서비스 — 확장 가능한 아키텍처
+                    </h3>
+                    <div class="component_text mt20">
+                      <p>
+                        지도·인증·재고 관리 로직을 특정 디저트에 종속되지 않도록
+                        설계해, 아이콘과 브랜드명만 교체하면 동일한 서비스를
+                        어떤 한정 수량 판매 아이템에도 즉시 적용할 수 있는
+                        <b class="c_green">범용 재고 현황 지도 서비스</b> 구조를
+                        구축했습니다.<br /><br />
+                        단기 프로젝트(5일)임에도 재사용성과 확장성을 의도적으로
+                        고려해 설계한 점이 이 프로젝트의 기술적 강점입니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>

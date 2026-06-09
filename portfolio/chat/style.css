@@ -1,0 +1,209 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+cite,
+code,
+del,
+em,
+img,
+ins,
+q,
+small,
+strong,
+sub,
+sup,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+textarea,
+input,
+select {
+  font-family: "pretendard", sans-serif;
+}
+* {
+  color: #222;
+}
+.hichat_logo span {
+  font-size: 50px;
+}
+.project__title {
+  width: 100%;
+  height: 100dvh;
+  background: #121212;
+  padding: 0 !important;
+}
+.starry_content {
+  background: #fff !important;
+}
+.project__title .sec__inner {
+  gap: 12px;
+}
+/* 프로젝트 정보 */
+.thumbnail_main {
+  max-width: 400px;
+}
+.thumbnail_main img {
+  width: 100%;
+}
+.project_thumbnail img {
+  width: 100%;
+}
+.project__summary .project-summary_info {
+  flex: 1;
+}
+.project__summary .project-info li {
+  color: #222;
+  padding: 18px 0;
+}
+.pj-sec__title span.no {
+  color: #2222226e;
+  font-weight: 700;
+}
+.color_system.starry_system {
+  flex-wrap: nowrap;
+}
+.color_system .color span {
+  width: 64px;
+  height: 64px;
+}
+.color_system.starry_system li .screenshot {
+  max-width: 240px;
+}
+.color_system.starry_system li .screenshot img {
+  width: 100%;
+}
+.color_system.starry_system li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  gap: 24px;
+  padding: 0;
+}
+.color_system.starry_system li .color {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  border:1px solid #E5E5EC;
+  padding: 16px;
+  border-radius: 8px;
+}
+.font_system .font_family {
+  background-color: #6F8F2A;
+}
+.tailwind_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 12px;
+  border-radius: 8px;
+  min-width: 240px;
+  background-color: #FBF5FF;
+}
+.tailwindcss_list li b {
+  font-size: 22px;
+}
+.tailwindcss_list li {
+  font-size: 16px;
+}
+.mobile_screenshots .screenshot {
+  width: calc(25% - 20px);
+  height: auto;
+}
+.c_green {
+  color: #8FAE3F;
+}
+.font_bold {
+  font-weight: 700;
+}
+@media screen and (max-width:767px) {
+  .starry_logo {
+    width: 64px;
+  }
+  .starry_star {
+    width: 40px;
+  }
+  .project__title .sec__inner .title h1.pj_title {
+    font-size: 28px;
+  }
+  .thumbnail_main {
+    max-width: 340px;
+  }
+  .color_system .color span {
+    width: 32px;
+    height: 32px;
+  }
+  .color_system.starry_system {
+    flex-direction: column;
+    align-items: center;
+  }
+  .color_system.starry_system li .screenshot {
+    max-width: 200px;
+  }
+  .color_system.starry_system li {
+    gap: 12px;
+  }
+  .color_system.starry_system li .color {
+    padding: 8px;
+  }
+  .tailwind_logo {
+    height: 38px;
+  }
+  .tailwind_info {
+    padding: 18px 12px;
+  }
+  .tailwindcss_list li b {
+    font-size: 16px;
+  }
+  .tailwindcss_list li {
+    font-size: 14px;
+  }
+  .mobile_screenshots .screenshot {
+    width: calc(50% - 8px)
+  }
+}
