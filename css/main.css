@@ -19,7 +19,7 @@ main {
 .section_intro .sec__inner {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +61,10 @@ main {
   letter-spacing: 4.2px;
   word-spacing: 4.2px;
   font-family: "Outfit";
+}
+.intro_title span:nth-child(7) {
+  margin: 0 12px;
+  font-size: 4vw;
 }
 .intro_title span:nth-child(1) {
   transform: translate(-10px, 20px);
@@ -143,8 +147,8 @@ main {
   bottom: -40px;
 }
 .section_intro .txt2 {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   position: absolute;
   inset: 0;
   display: flex;
@@ -163,7 +167,7 @@ main {
   margin: 0 auto;
   gap: 40px;
 }
-.section_intro .intro_myself>h2 {
+.section_intro .intro_myself > h2 {
   font-family: "Outfit";
   font-size: 60px;
   font-weight: 700;
@@ -235,7 +239,7 @@ main {
 }
 .button_circle::before,
 .button_circle::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -253,7 +257,10 @@ main {
   border-top-color: #fff;
   border-right-color: #fff;
   border-bottom-color: #fff;
-  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+  transition:
+    border-top-color 0.15s linear,
+    border-right-color 0.15s linear 0.1s,
+    border-bottom-color 0.15s linear 0.2s;
 }
 .button_circle::after {
   border: 0 solid transparent;
@@ -263,20 +270,29 @@ main {
   border-left-width: 1px;
   border-right-width: 1px;
   transform: rotate(270deg);
-  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+  transition:
+    transform 0.4s linear 0s,
+    border-left-width 0s linear 0.35s,
+    -webkit-transform 0.4s linear 0s;
 }
 .button_circle .arrow {
   display: inline-block;
   width: 36px;
   height: 24px;
-  background: url(../img/common/more_arrow.png) no-repeat center center / contain;
+  background: url(../img/common/more_arrow.png) no-repeat center center /
+    contain;
 }
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .intro_title {
-    font-size: 6.6vw;
-    gap: 2px;
+    font-size: 11vw;
+    gap: 3px;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  /* 모바일: nth-child scatter 오프셋 제거 — flex-wrap 환경에서 글자 뒤섞임 방지 */
+  .intro_title span:not(.image_slot) {
+    transform: none;
   }
 
   .image_slot {
@@ -291,23 +307,48 @@ main {
     width: max-content;
   }
   .section_intro .txt2 {
-    gap: 40px;
+    padding: 60px 7% 48px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
   }
   .section_intro .intro_myself {
     flex-direction: column;
-    gap: 40px;
+    gap: 24px;
+    align-items: center;
+    width: 100%;
   }
-  .section_intro .intro_myself>h2 {
+  .section_intro .intro_myself > h2 {
     font-size: 32px;
+    text-align: center;
+    line-height: 1.35;
   }
   .section_intro .intro_myself .myself_text {
     font-size: 14px;
+    flex: none;
+    max-width: 100%;
+    text-align: center;
   }
   .intro_myself .myself_text span {
     text-align: center;
   }
   .view-more__portfolio {
     justify-content: center;
+    margin-top: 28px;
+  }
+  .view-more__link {
+    gap: 8px;
+  }
+  .view-more__link h2 {
+    font-size: 18px;
+  }
+  .button_circle {
+    width: 44px;
+    height: 44px;
+  }
+  .button_circle .arrow {
+    width: 28px;
+    height: 18px;
   }
 }
 /* Portfolio */
@@ -315,6 +356,7 @@ main {
   width: 100%;
   padding-top: 80px;
   padding-bottom: 160px;
+  overflow: hidden;
 }
 .section_portfolio .sec__inner {
   max-width: 100%;
@@ -398,14 +440,20 @@ h3.portfolio_title {
   border-top-color: #fff;
   border-right-color: #fff;
   border-bottom-color: #fff;
-  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+  transition:
+    border-top-color 0.15s linear,
+    border-right-color 0.15s linear 0.1s,
+    border-bottom-color 0.15s linear 0.2s;
 }
 .portfolio-type:hover .view-more__link .button_circle::after {
   border-top: 1px solid #fff;
   border-left-width: 1px;
   border-right-width: 1px;
   transform: rotate(270deg);
-  transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+  transition:
+    transform 0.4s linear 0s,
+    border-left-width 0s linear 0.35s,
+    -webkit-transform 0.4s linear 0s;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -421,7 +469,7 @@ h3.portfolio_title {
   }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .section_portfolio {
     padding-top: 40px;
     padding-bottom: 60px;

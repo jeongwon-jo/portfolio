@@ -7,12 +7,12 @@
   padding: 0 38px;
 }
 .section__greeting {
-  width: 100vw;
+  width: 100%;
   height: 100dvh;
   position: relative;
 }
 .section__greeting:before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 0px;
   height: 3px;
@@ -26,7 +26,7 @@
   top: 36px;
 }
 .section__greeting::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 3px;
   height: 0px;
@@ -65,7 +65,7 @@
   color: #fff;
   text-align: center;
   letter-spacing: -0.05em;
-  width: 100%
+  width: 100%;
 }
 .section__greeting .greeting-text .txt.txt_space {
   padding-right: 16px;
@@ -114,7 +114,7 @@
   bottom: 12px;
   left: 56px;
   transform: rotate(-90deg);
-  transform-origin: 0 0 ;
+  transform-origin: 0 0;
   transition: 0.35s ease-in-out 0.2s;
   opacity: 0;
 }
@@ -130,7 +130,7 @@
   opacity: 1;
 }
 /* Mobile */
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .about .sec__inner,
   .contact .sec__inner {
     padding: 0 20px;
@@ -206,7 +206,7 @@
   position: relative;
 }
 .introduce__myself:before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 200px;
   height: 64px;
@@ -232,7 +232,7 @@
   left: 30%;
   transform: rotate(45deg);
   background: url(../img/about_star2.svg) no-repeat center center / contain;
-  animation: rotatestar 9s linear infinite
+  animation: rotatestar 9s linear infinite;
 }
 .introduce__myself .star2 {
   display: inline-block;
@@ -265,7 +265,7 @@
   color: #fff;
 }
 .introduce_text h1:after {
-  content: 'aaaaaaaaaaaaaaaaaaaaaaaaaa';
+  content: "aaaaaaaaaaaaaaaaaaaaaaaaaa";
   position: absolute;
   bottom: 8px;
   left: 0;
@@ -306,11 +306,11 @@
 }
 .go_to_portfolio a span {
   font-size: 18px;
-  padding-left: 30px; 
+  padding-left: 30px;
   position: relative;
 }
 .go_to_portfolio a span:before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -318,11 +318,15 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background: url(../img/common/icon_search.svg) no-repeat center center /contain;
+  background: url(../img/common/icon_search.svg) no-repeat center center /
+    contain;
 }
 .introduce_img .profile_wrap {
   background-color: #fff;
   padding: 18px;
+}
+.introduce_img .profile_wrap .img img {
+  width: 100%;
 }
 .profile_info {
   margin-top: 12px;
@@ -392,7 +396,7 @@
   display: flex;
   align-items: flex-start;
 }
-.history_contents .flex_box>div {
+.history_contents .flex_box > div {
   flex: 1;
 }
 .history_contents h3 {
@@ -407,7 +411,7 @@
   position: relative;
 }
 .my_history li:after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 80%;
   height: 1px;
@@ -467,7 +471,7 @@
   object-fit: contain;
 }
 /* Mobile */
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .introduce__myself {
     padding: 80px 0;
   }
@@ -515,7 +519,7 @@
     height: 16px;
   }
   .introduce_img .profile_wrap {
-    max-width: 300px;
+    max-width: 260px;
     padding: 12px;
   }
   .profile_info .name h3 {
@@ -539,9 +543,9 @@
     gap: 48px;
   }
   .introduce_detail .star2 {
-    right: 40px;
-    width: 100px;
-    height: 100px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
   }
   .history_contents .flex_box {
     flex-direction: column;
@@ -552,8 +556,8 @@
     margin-bottom: 12px;
   }
   .my_history li {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
   .my_history li:after {
     width: 100%;
@@ -571,8 +575,17 @@
   .my_history .history_cnts p {
     margin-top: 8px;
   }
+  .skills_wrap {
+    margin-top: 48px;
+  }
   .my_skills {
     gap: 16px;
+  }
+  .introduce_detail .star {
+    width: 48px;
+    height: 48px;
+    right: 18px;
+    bottom: 18%;
   }
 }
 /* #### Portfolio #### */
@@ -677,9 +690,9 @@ ul.portfolio__info li {
   text-decoration: underline;
 }
 ul.portfolio__info li:before {
-  content: '#';
+  content: "#";
 }
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .section__portfolio {
     padding-top: 48px;
     padding-bottom: 60px;
@@ -726,6 +739,16 @@ ul.portfolio__info li:before {
     height: 32px;
     line-height: 32px;
     padding: 0 12px;
+  }
+  .portfolio__link h2 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .portfolio__link ul {
+    margin-top: 12px;
+  }
+  .portfolio__link ul li {
+    font-size: 14px;
   }
 }
 
@@ -793,7 +816,7 @@ ul.portfolio__info li:before {
   text-decoration: underline;
 }
 /* Mobile */
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .contact__contents {
     flex-direction: column;
     gap: 48px;

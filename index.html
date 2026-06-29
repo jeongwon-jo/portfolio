@@ -1,579 +1,714 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+    user-scalable=0"
+    />
+    <title>조정원 포트폴리오</title>
+    <!-- Favicon -->
+    <link rel="icon" href="./img/common/favicon.ico?" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./img/common/favicon.ico"
+    />
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="조정원 포트폴리오" />
+    <meta
+      property="og:description"
+      content="안녕하세요 5년차 웹 퍼블리셔, 프론트엔드 개발자 조정원입니다."
+    />
+    <meta property="og:image" content="./img/common/opengraph.png" />
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+    <!-- gsap & TWEENMAX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <!-- Custom CSS & JS -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/attribute.css" />
+    <link rel="stylesheet" href="./css/animation.css" />
+    <script src="./js/common.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>조정원 포트폴리오</title>
-  <!-- Favicon -->
-  <link rel="icon" href="./img/common/favicon.ico?">
-  <link rel="shortcut icon" type="image/x-icon" href="./img/common/favicon.ico">
-  <!-- OpenGraph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="조정원 포트폴리오" />
-  <meta property="og:description" content="안녕하세요 5년차 웹 퍼블리셔, 프론트엔드 개발자 조정원입니다." />
-  <meta property="og:image" content="./img/common/opengraph.png" />
-  <!-- jQuery CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <!-- swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <!-- aos -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Smooth Scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
-  <!-- gsap & TWEENMAX -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <!-- Custom CSS & JS -->
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/attribute.css">
-  <link rel="stylesheet" href="./css/animation.css">
-  <script src="./js/common.js" defer></script>
-</head>
-
-<body>
-  <div id="wrap">
-    <div id="cursor" class="cursor"></div>
-    <div class="container">
-      <header class="header hide">
-        <div class="header__inner">
-          <a href="./index.html" class="header_logo">
-            <img src="./img/common/logo_white.png" alt="로고">
-          </a>
-          <div class="header_menu-bar">
-            <a href="./file/resume_pub.pdf" target="_blank" class="btn_resume">이력서 다운로드</a>
-            <button type="button" class="btn_menu" onclick="toggleGnbMenu()"></button>
-            <nav class="header_nav">
-              <ul>
-                <li class="home"><a href="./index.html">HOME</a></li>
-                <li class="about"><a href="./about.html">ABOUT</a></li>
-                <li class="portfolio"><a href="./portfolio.html">PORTFOLIO</a></li>
-                <li class="contact"><a href="./contact.html">CONTACT</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-      <main class="main">
-        <section class="section_intro">
-          <div class="sec__inner">
-            <div class="scroll_down">
-              <span>SCROLL DOWN</span>
-            </div>
-            <div class="txt1">
-              <h1 class="intro_title">
-                <span>S</span>
-                <span>T</span>
-                <span>R</span>
-                <span>U</span>
-                <span>C</span>
-                <span>T</span>
-                <span class="divider">x</span>
-                <div class="image_slot">
-                  <img src="./img/intro_img.png" alt="">
-                  <p class="intro_desc">
-                    구조 위에 감각을 더해, 더 나은 인터페이스를 만들어가고 있습니다.
-                  </p>
-                </div>
-                <span>I</span>
-                <span>N</span>
-                <span>T</span>
-                <span>E</span>
-                <span>R</span>
-                <span>F</span>
-                <span>A</span>
-                <span>C</span>
-                <span>E</span>
-              </h1>
-            </div>
-            <div class="txt2">
-              <div class="intro_myself">
-                <h2>
-                  Frontend Engineer<br>
-                  with a Foundation
-                </h2>
-                <div class="myself_text">
-                  <span>
-                    퍼블리싱으로 프로젝트의 구조를 설계해온 5년 차 웹 퍼블리셔 조정원입니다.
-                  </span><br>
-
-                  <span>
-                  단순히 화면을 구현하는 것을 넘어,
-                  확장성과 유지보수를 고려한 견고한 골격을 만드는 데 집중해왔습니다.
-                  </span><br>
-
-                  <span>
-                  이제는 프론트엔드 개발로 영역을 확장하며
-                  구조 위에 로직과 인터랙션을 더해 완성도 높은 인터페이스를 만들어가고 있습니다.
-                  </span>
-
-                  <div class="view-more__portfolio">
-                    <a href="./about.html" class="view-more__link">
-                      <h2>저를 소개합니다</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </얖>
-              </div>
+  <body>
+    <div id="wrap">
+      <div id="cursor" class="cursor"></div>
+      <div class="container">
+        <header class="header hide">
+          <div class="header__inner">
+            <a href="./index.html" class="header_logo">
+              <img src="./img/common/logo_white.png" alt="로고" />
+            </a>
+            <div class="header_menu-bar">
+              <a href="./file/resume_pub.pdf" target="_blank" class="btn_resume"
+                >이력서 보기</a
+              >
+              <button
+                type="button"
+                class="btn_menu"
+                onclick="toggleGnbMenu()"
+              ></button>
+              <nav class="header_nav">
+                <ul>
+                  <li class="home"><a href="./index.html">HOME</a></li>
+                  <li class="about"><a href="./about.html">ABOUT</a></li>
+                  <li class="portfolio">
+                    <a href="./portfolio.html">PORTFOLIO</a>
+                  </li>
+                  <li class="contact"><a href="./contact.html">CONTACT</a></li>
+                </ul>
+              </nav>
             </div>
           </div>
-        </section>
-        <section class="section_portfolio">
-          <div class="sec__inner">
-            <h3 class="portfolio_title">다양한 프로젝트를 수행하며<br>
-            설계부터 인터랙션 구현까지 주도적으로 참여해 완성도 높은 프론트엔드 결과물을 만들어왔습니다.</h3>
-            <div class="portfolio_list">
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[별별하루]<span class="eng">Starry Diary</span></h1>
-                  <p>하루에 하나씩 별을 접어 작은 병에 차곡차곡 담아가는, 기록을 추억으로 남기는 감성 웹 애플리케이션입니다.<br> 일상의 조각을 별빛으로 바꾸어, 시간이 흐를수록 더 빛나는 나만의 우주를 만들어갑니다. ✨</p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/starry/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/starry_screenshot.png" alt="">
-                </div>
+        </header>
+        <main class="main">
+          <section class="section_intro">
+            <div class="sec__inner">
+              <div class="scroll_down">
+                <span>SCROLL DOWN</span>
               </div>
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[두쫀맵]<span class="eng">DuZzonMap</span></h1>
-                  <p>두쫀맵은 두쫀쿠를 판매하는 카페의 실시간 재고를 지도 위에서 한눈에 확인할 수 있는 서비스입니다.<br>
-                  사장님이 직접 재고·영업시간·영업 요일을 등록·관리하고, 손님은 지도에서 구매가능 / 마감임박 / 품절 상태를 보고 헛걸음 없이 방문할 수 있습니다.</p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/duzzonmap/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
+              <div class="txt1">
+                <h1 class="intro_title">
+                  <span>S</span>
+                  <span>T</span>
+                  <span>R</span>
+                  <span>U</span>
+                  <span>C</span>
+                  <span>T</span>
+                  <span class="divider">X</span>
+                  <div class="image_slot">
+                    <img src="./img/intro_img.png" alt="" />
+                    <p class="intro_desc">
+                      구조 위에 감각을 더해, 더 나은 인터페이스를 만들어가고
+                      있습니다.
+                    </p>
                   </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/duzzonmap_screenshot.png" alt="">
-                </div>
+                  <span>I</span>
+                  <span>N</span>
+                  <span>T</span>
+                  <span>E</span>
+                  <span>R</span>
+                  <span>F</span>
+                  <span>A</span>
+                  <span>C</span>
+                  <span>E</span>
+                </h1>
               </div>
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[하이챗]<span class="eng">Hi Chat</span></h1>
-                  <p>Next.js 기반의 실시간 1:1 및 그룹 채팅 앱으로, NextAuth를 통한 소셜/이메일 로그인과 Prisma + MongoDB를 사용한 메시지 및 사용자 관리를 지원합니다.</p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/chat/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
+              <div class="txt2">
+                <div class="intro_myself">
+                  <h2>
+                    Frontend Engineer<br />
+                    with a Foundation
+                  </h2>
+                  <div class="myself_text">
+                    <span>
+                      퍼블리싱으로 프로젝트의 구조를 설계해온 5년 차 웹 퍼블리셔
+                      조정원입니다. </span
+                    ><br />
+
+                    <span>
+                      단순히 화면을 구현하는 것을 넘어, 확장성과 유지보수를
+                      고려한 견고한 골격을 만드는 데 집중해왔습니다. </span
+                    ><br />
+
+                    <span>
+                      이제는 프론트엔드 개발로 영역을 확장하며 구조 위에 로직과
+                      인터랙션을 더해 완성도 높은 인터페이스를 만들어가고
+                      있습니다.
+                    </span>
+
+                    <div class="view-more__portfolio">
+                      <a href="./about.html" class="view-more__link">
+                        <h2>저를 소개합니다</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/chat_app_screenshot.png" alt="">
-                </div>
-              </div>
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[EY한영]<span>급여관리 시스템</span></h1>
-                  <p>EY한영 급여·근태 관리 프로젝트는 구성원의 근무 기록을 체계적으로 관리하는 내부 운영 시스템입니다.<br>
-                  복잡한 급여 정산과 근태 흐름을 한눈에 파악할 수 있도록 정돈해, 조직의 신뢰와 효율을 함께 높이는 데 초점을 두었습니다.</p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/ey/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/ey_screenshot2.png" alt="">
-                </div>
-              </div>
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[3D]<span>Three.js를 활용한 3D 구현</span></h1>
-                  <p>Three.js를 활용해 WebGL 기반의 3D 오브젝트 렌더링 및 인터랙션을 구현했습니다.<br>
-                  카메라·조명·애니메이션 제어를 통해 몰입감 있는 사용자 경험과 동적인 UI 연출을 완성했습니다.</p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/3d/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/3d_screenshot.gif" alt="">
-                </div>
-              </div>
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[반응형웹]<span>모든 디바이스 유연 반응</span></h1>
-                  <p>
-                    모바일, 태블릿, 데스크톱 등 다양한 해상도에 대응하는 반응형 레이아웃을 설계했습니다.<br>
-                    미디어 쿼리와 유동 그리드 시스템을 기반으로 일관된 UI/UX와 최적의 가독성을 구현했습니다.
-                  </p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/responsive/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/responsive_screenshot3.png" alt="">
-                </div>
-              </div>
-              <div class="portfolio-type">
-                <div class="desc">
-                  <h1>[모바일 앱]<span>모바일 전용 웹 애플리케이션</span></h1>
-                  <p>모바일 환경에 최적화된 전용 웹 애플리케이션을 설계·구현했습니다.<br>
-                  터치 인터랙션과 성능 최적화를 고려해 앱과 유사한 사용자 경험을 제공합니다.</p>
-                  <div class="view-more__portfolio">
-                    <a href="./portfolio/mobile/index.html" class="view-more__link">
-                      <h2>상세 보러가기</h2>
-                      <div class="button_circle">
-                        <div class="arrow">
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="thum">
-                  <img src="./img/portfolio/mobile_screenshot.png" alt="">
                 </div>
               </div>
             </div>
-            <div class="view-more__portfolio">
-              <a href="./portfolio.html" class="view-more__link">
-                <h2>더 많은 프로젝트 보러가기</h2>
-                <div class="button_circle">
-                  <div class="arrow">
+          </section>
+          <section class="section_portfolio">
+            <div class="sec__inner">
+              <h3 class="portfolio_title">
+                다양한 프로젝트를 수행하며<br />
+                설계부터 인터랙션 구현까지 주도적으로 참여해 완성도 높은
+                프론트엔드 결과물을 만들어왔습니다.
+              </h3>
+              <div class="portfolio_list">
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[별별하루]<span class="eng">Starry Diary</span></h1>
+                    <p>
+                      하루에 하나씩 별을 접어 작은 병에 차곡차곡 담아가는,
+                      기록을 추억으로 남기는 감성 웹 애플리케이션입니다.<br />
+                      일상의 조각을 별빛으로 바꾸어, 시간이 흐를수록 더 빛나는
+                      나만의 우주를 만들어갑니다. ✨
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/starry/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img src="./img/portfolio/starry_screenshot.png" alt="" />
                   </div>
                 </div>
-              </a>
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[두쫀맵]<span class="eng">DuZzonMap</span></h1>
+                    <p>
+                      두쫀맵은 두쫀쿠를 판매하는 카페의 실시간 재고를 지도
+                      위에서 한눈에 확인할 수 있는 서비스입니다.<br />
+                      사장님이 직접 재고·영업시간·영업 요일을 등록·관리하고,
+                      손님은 지도에서 구매가능 / 마감임박 / 품절 상태를 보고
+                      헛걸음 없이 방문할 수 있습니다.
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/duzzonmap/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img
+                      src="./img/portfolio/duzzonmap_screenshot.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[하이챗]<span class="eng">Hi Chat</span></h1>
+                    <p>
+                      Next.js 기반의 실시간 1:1 및 그룹 채팅 앱으로, NextAuth를
+                      통한 소셜/이메일 로그인과 Prisma + MongoDB를 사용한 메시지
+                      및 사용자 관리를 지원합니다.
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/chat/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img src="./img/portfolio/chat_app_screenshot.png" alt="" />
+                  </div>
+                </div>
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[EY한영]<span>급여관리 시스템</span></h1>
+                    <p>
+                      EY한영 급여·근태 관리 프로젝트는 구성원의 근무 기록을
+                      체계적으로 관리하는 내부 운영 시스템입니다.<br />
+                      복잡한 급여 정산과 근태 흐름을 한눈에 파악할 수 있도록
+                      정돈해, 조직의 신뢰와 효율을 함께 높이는 데 초점을
+                      두었습니다.
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/ey/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img src="./img/portfolio/ey_screenshot2.png" alt="" />
+                  </div>
+                </div>
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[3D]<span>Three.js를 활용한 3D 구현</span></h1>
+                    <p>
+                      Three.js를 활용해 WebGL 기반의 3D 오브젝트 렌더링 및
+                      인터랙션을 구현했습니다.<br />
+                      카메라·조명·애니메이션 제어를 통해 몰입감 있는 사용자
+                      경험과 동적인 UI 연출을 완성했습니다.
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/3d/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img src="./img/portfolio/3d_screenshot.gif" alt="" />
+                  </div>
+                </div>
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[반응형웹]<span>모든 디바이스 유연 반응</span></h1>
+                    <p>
+                      모바일, 태블릿, 데스크톱 등 다양한 해상도에 대응하는
+                      반응형 레이아웃을 설계했습니다.<br />
+                      미디어 쿼리와 유동 그리드 시스템을 기반으로 일관된 UI/UX와
+                      최적의 가독성을 구현했습니다.
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/responsive/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img
+                      src="./img/portfolio/responsive_screenshot3.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="portfolio-type">
+                  <div class="desc">
+                    <h1>[모바일 앱]<span>모바일 전용 웹 애플리케이션</span></h1>
+                    <p>
+                      모바일 환경에 최적화된 전용 웹 애플리케이션을
+                      설계·구현했습니다.<br />
+                      터치 인터랙션과 성능 최적화를 고려해 앱과 유사한 사용자
+                      경험을 제공합니다.
+                    </p>
+                    <div class="view-more__portfolio">
+                      <a
+                        href="./portfolio/mobile/index.html"
+                        class="view-more__link"
+                      >
+                        <h2>상세 보러가기</h2>
+                        <div class="button_circle">
+                          <div class="arrow"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="thum">
+                    <img src="./img/portfolio/mobile_screenshot.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="view-more__portfolio">
+                <a href="./portfolio.html" class="view-more__link">
+                  <h2>더 많은 프로젝트 보러가기</h2>
+                  <div class="button_circle">
+                    <div class="arrow"></div>
+                  </div>
+                </a>
+              </div>
             </div>
+          </section>
+        </main>
+        <footer class="footer">
+          <div class="footer__inner">
+            <div class="footer__title">
+              <h1>&copy; JJEONG1.JO</h1>
+            </div>
+            <ul class="footer__mylink">
+              <li>jjeong1.jo@gmail.com</li>
+              <li>
+                <a
+                  href="./file/resume_pub.pdf"
+                  target="_blank"
+                  class="link resume"
+                  >RESUME</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://app.notion.com/p/jjeong1jo/Study-Note-631652b095f940fab85fab07d55a2745?source=copy_link"
+                  class="link notion"
+                  >NOTION</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/jeongwon-jo"
+                  class="link github"
+                  target="_blank"
+                  >GITHUB</a
+                >
+              </li>
+            </ul>
           </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <div class="footer__inner">
-          <div class="footer__title">
-            <h1>&copy; JJEONG1.JO</h1>
-          </div>
-          <ul class="footer__mylink">
-            <li>jjeong1.jo@gmail.com</li>
-            <li><a href="./file/resume_pub.pdf" target="_blank" class="link resume">RESUME</a></li>
-            <li><a href="https://app.notion.com/p/jjeong1jo/Study-Note-631652b095f940fab85fab07d55a2745?source=copy_link" class="link notion">NOTION</a></li>
-            <li><a href="https://github.com/jeongwon-jo" class="link github" target="_blank">GITHUB</a></li>
+        </footer>
+        <div class="footer_slider">
+          <ul class="list">
+            <li>UI Developer</li>
+            <li>Web Publisher</li>
+            <li>Front-End Developer</li>
+            <li>UI Developer</li>
+            <li>Web Publisher</li>
+            <li>Front-End Developer</li>
+            <li>UI Developer</li>
+            <li>Web Publisher</li>
+            <li>Front-End Developer</li>
+            <li>UI Developer</li>
+            <li>Web Publisher</li>
+            <li>Front-End Developer</li>
           </ul>
         </div>
-      </footer>
-      <div class="footer_slider">
-        <ul class="list">
-          <li>UI Developer</li>
-          <li>Web Publisher</li>
-          <li>Front-End Developer</li>
-          <li>UI Developer</li>
-          <li>Web Publisher</li>
-          <li>Front-End Developer</li>
-          <li>UI Developer</li>
-          <li>Web Publisher</li>
-          <li>Front-End Developer</li>
-          <li>UI Developer</li>
-          <li>Web Publisher</li>
-          <li>Front-End Developer</li>
-        </ul>
       </div>
     </div>
-  </div>
+  </body>
+  <script>
+    // ── 6) 배경 파티클 ──────────────────────────────────────
+    // (function () {
+    //   const section = document.querySelector(".section_intro");
+    //   const canvas = document.createElement("canvas");
+    //   canvas.classList.add("bg-canvas");
+    //   section.prepend(canvas);
+    //   const ctx = canvas.getContext("2d");
 
-</body>
-<script>
-  // ── 6) 배경 파티클 ──────────────────────────────────────
-  (function () {
-    const section = document.querySelector('.section_intro');
-    const canvas = document.createElement('canvas');
-    canvas.classList.add('bg-canvas');
-    section.prepend(canvas);
-    const ctx = canvas.getContext('2d');
+    //   function resize() {
+    //     canvas.width = section.offsetWidth;
+    //     canvas.height = section.offsetHeight;
+    //   }
+    //   resize();
+    //   window.addEventListener("resize", resize);
 
-    function resize() {
-      canvas.width = section.offsetWidth;
-      canvas.height = section.offsetHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
+    //   const pts = Array.from({ length: 90 }, () => ({
+    //     x: Math.random() * canvas.width,
+    //     y: Math.random() * canvas.height,
+    //     r: Math.random() * 1.3 + 0.3,
+    //     vx: (Math.random() - 0.5) * 0.22,
+    //     vy: (Math.random() - 0.5) * 0.22,
+    //     a: Math.random() * 0.3 + 0.05,
+    //   }));
 
-    const pts = Array.from({ length: 90 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.3 + 0.3,
-      vx: (Math.random() - 0.5) * 0.22,
-      vy: (Math.random() - 0.5) * 0.22,
-      a: Math.random() * 0.3 + 0.05,
-    }));
+    //   (function tick() {
+    //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //     pts.forEach((p) => {
+    //       p.x = (p.x + p.vx + canvas.width) % canvas.width;
+    //       p.y = (p.y + p.vy + canvas.height) % canvas.height;
+    //       ctx.beginPath();
+    //       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    //       ctx.fillStyle = `rgba(255,255,255,${p.a})`;
+    //       ctx.fill();
+    //     });
+    //     requestAnimationFrame(tick);
+    //   })();
+    // })();
 
-    (function tick() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      pts.forEach(p => {
-        p.x = (p.x + p.vx + canvas.width) % canvas.width;
-        p.y = (p.y + p.vy + canvas.height) % canvas.height;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.a})`;
-        ctx.fill();
-      });
-      requestAnimationFrame(tick);
-    })();
-  })();
+    const h2 = document.querySelector(".intro_myself h2");
 
-  const h2 = document.querySelector(".intro_myself h2");
+    const nodes = Array.from(h2.childNodes);
+    h2.innerHTML = "";
 
-  const nodes = Array.from(h2.childNodes);
-  h2.innerHTML = "";
+    nodes.forEach((node) => {
+      // 줄바꿈 유지
+      if (node.nodeName === "BR") {
+        h2.appendChild(document.createElement("br"));
+        return;
+      }
 
-  nodes.forEach(node => {
+      // 텍스트 노드 처리
+      if (node.nodeType === 3) {
+        const text = node.textContent;
 
-    // 줄바꿈 유지
-    if (node.nodeName === "BR") {
-      h2.appendChild(document.createElement("br"));
-      return;
-    }
+        text.split("").forEach((char) => {
+          // 줄바꿈 제거
+          if (char === "\n") return;
 
-    // 텍스트 노드 처리
-    if (node.nodeType === 3) {
-      const text = node.textContent;
+          // 공백은 그냥 텍스트 노드로 유지
+          if (char === " ") {
+            h2.appendChild(document.createTextNode(" "));
+            return;
+          }
 
-      text.split("").forEach(char => {
+          const letter = document.createElement("span");
+          letter.classList.add("letter");
 
-        // 줄바꿈 제거
-        if (char === "\n") return;
+          const fill = document.createElement("span");
+          fill.classList.add("fill");
+          fill.textContent = char;
 
-        // 공백은 그냥 텍스트 노드로 유지
-        if (char === " ") {
-          h2.appendChild(document.createTextNode(" "));
-          return;
-        }
+          letter.appendChild(fill);
+          letter.appendChild(document.createTextNode(char));
 
-        const letter = document.createElement("span");
-        letter.classList.add("letter");
-
-        const fill = document.createElement("span");
-        fill.classList.add("fill");
-        fill.textContent = char;
-
-        letter.appendChild(fill);
-        letter.appendChild(document.createTextNode(char));
-
-        h2.appendChild(letter);
-      });
-    }
-
-  });
-  
-  gsap.registerPlugin(ScrollTrigger);
-
-  const scrollDown = document.querySelector(".section_intro .scroll_down");
-  const spans = document.querySelectorAll(".intro_title span:not(.image_slot)");
-  const imageSlot = document.querySelector(".image_slot");
-  const desc = document.querySelector(".intro_desc");
-  const txt2 = document.querySelector(".txt2");
-  const myselfH2 = document.querySelector(".intro_myself h2");
-  const myselfP = document.querySelector(".intro_myself .myself_text");
-
-  const isMobile = window.innerWidth <= 768;
-
-  // ── 2) intro 글자 초기 상태: CSS 위치 보존 + blur/rotation 추가 ──
-  const spanPositions = Array.from(spans).map(span => {
-    const m = new DOMMatrix(getComputedStyle(span).transform);
-    return { x: m.m41, y: m.m42 };
-  });
-  spans.forEach((span, i) => {
-    gsap.set(span, {
-      x: spanPositions[i].x,
-      y: spanPositions[i].y,
-      rotation: (Math.random() - 0.5) * 30,
-      filter: "blur(10px)",
-      scale: 0.65,
+          h2.appendChild(letter);
+        });
+      }
     });
-  });
 
-  // 모바일: imageSlot 너비를 미리 확보해 STRUCT/INTERFACE가 위아래로 분리되도록 고정
-  if (isMobile) {
-    gsap.set(imageSlot, { width: "94vw", height: 0, opacity: 0, borderRadius: "12px", margin: "8px 0" });
-  }
+    gsap.registerPlugin(ScrollTrigger);
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      scrollDown.style.opacity = "0";
-      scrollDown.style.animation = "none";
-    } else {
-      scrollDown.style.opacity = "1";
-      scrollDown.style.animation = "fadeInOutScrollDown 1.4s linear infinite";
+    const scrollDown = document.querySelector(".section_intro .scroll_down");
+    const spans = document.querySelectorAll(
+      ".intro_title span:not(.image_slot)",
+    );
+    const imageSlot = document.querySelector(".image_slot");
+    const sectionH = document.querySelector(".section_intro").offsetHeight;
+    const desc = document.querySelector(".intro_desc");
+    const txt2 = document.querySelector(".txt2");
+    const myselfH2 = document.querySelector(".intro_myself h2");
+    const myselfP = document.querySelector(".intro_myself .myself_text");
+
+    const isMobile = window.innerWidth <= 768;
+
+    // ── 2) intro 글자 초기 상태: CSS 위치 보존 + blur/rotation 추가 ──
+    const spanPositions = Array.from(spans).map((span) => {
+      const m = new DOMMatrix(getComputedStyle(span).transform);
+      return { x: m.m41, y: m.m42 };
+    });
+    spans.forEach((span, i) => {
+      if (isMobile) {
+        // 모바일: flex-wrap 줄바꿈 환경에서 scatter 오프셋이 글자를 뒤섞으므로 위치는 고정, 페이드/블러만 적용
+        gsap.set(span, {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          opacity: 0,
+          filter: "blur(4px)",
+        });
+      } else {
+        gsap.set(span, {
+          x: spanPositions[i].x,
+          y: spanPositions[i].y,
+          rotation: (Math.random() - 0.5) * 30,
+          filter: "blur(10px)",
+          scale: 0.65,
+        });
+      }
+    });
+
+    // 모바일: imageSlot 너비를 미리 확보해 STRUCT/INTERFACE가 위아래로 분리되도록 고정
+    if (isMobile) {
+      gsap.set(imageSlot, {
+        width: "94vw",
+        height: 0,
+        opacity: 0,
+        borderRadius: "12px",
+        margin: "8px 0",
+      });
     }
-  });
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section_intro",
-      start: "top top",
-      end: "+=9000",
-      scrub: 1.5,
-      pin: true,
-      anticipatePin: 1,
-    }
-  });
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        scrollDown.style.opacity = "0";
+        scrollDown.style.animation = "none";
+      } else {
+        scrollDown.style.opacity = "1";
+        scrollDown.style.animation = "fadeInOutScrollDown 1.4s linear infinite";
+      }
+    });
 
-  tl.to(spans, {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    rotation: 0,
-    filter: "blur(0px)",
-    scale: 1,
-    stagger: 0.12,
-    duration: 6,
-    ease: "power3.out",
-  });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section_intro",
+        start: "top top",
+        end: "+=9000",
+        scrub: 1.5,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
 
-  tl.to(imageSlot, {
-    opacity: 1,
-    width: isMobile ? "94vw" : 210,
-    height: isMobile ? "52vw" : 210,
-    scale: 1,
-    borderRadius: isMobile ? "12px" : "50%",
-    margin: isMobile ? "8px 0" : "0 24px",
-    duration: 1.5,
-  });
+    tl.to(spans, {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      rotation: 0,
+      filter: "blur(0px)",
+      scale: 1,
+      stagger: 0.12,
+      duration: 6,
+      ease: "power3.out",
+    });
 
-  tl.to(desc, {
-    opacity: 1,
-    y: 0,
-    duration: 1,
-  });
+    tl.to(imageSlot, {
+      opacity: 1,
+      width: isMobile ? "94vw" : 210,
+      height: isMobile ? "52vw" : 210,
+      scale: 1,
+      borderRadius: isMobile ? "12px" : "50%",
+      margin: isMobile ? "8px 0" : "0 24px",
+      duration: 1.5,
+    });
 
-  tl.to(desc, {
-    opacity: 0,
-    duration: 1,
-  });
-
-  tl.to(spans, {
-    opacity: 0,
-    y: -100,
-    width: 0,
-    height: 0,
-    duration: 0.6,
-    ease: "power3.inOut",
-    stagger: 0,
-  }, "<");  
-
-  tl.to(imageSlot, {
-    width: "100vw",
-    height: "100vh",
-    borderRadius: "0%",
-    scale: 1,
-    filter: "brightness(0.5)",
-    duration: 5,
-    ease: "power4.inOut",
-  });
-
-  tl.to(txt2, {
-    opacity: 1,
-    duration: 1,
-  });
-
-  tl.from(myselfH2, {
-    x: -200,
-    opacity: 0,
-    duration: 1,
-  }, "<");
-
-  tl.from(myselfP, {
-    x: 200,
-    opacity: 0,
-    duration: 1,
-  }, "<");
-
-  const fills = document.querySelectorAll(".letter .fill");
-  const pSpans = document.querySelectorAll(".intro_myself .myself_text span, .section_intro .view-more__portfolio");
-
-  gsap.set(fills, { width: "0%" });
-  gsap.set(pSpans, { opacity: 0, y: 30 });
-
-  const total = fills.length;
-
-  const triggerPoints = [
-    Math.floor(total * 0.25),
-    Math.floor(total * 0.5),
-    Math.floor(total * 0.75),
-    Math.floor(total * 0.9),
-  ];
-
-  fills.forEach((fill, index) => {
-
-  tl.to(fill, {
-    width: "100%",
-    duration: 0.6,
-    ease: "none"
-  }, ">+=0.05");
-
-  if (triggerPoints.includes(index)) {
-    const i = triggerPoints.indexOf(index);
-
-    tl.to(pSpans[i], {
+    tl.to(desc, {
       opacity: 1,
       y: 0,
-      duration: 1.5,
-      ease: "power3.out"
-    }, "<");
-  }
-
-});
-
-  // ── 4) section_portfolio 리스트 진입 애니메이션 ──────────
-  gsap.utils.toArray(".portfolio-type").forEach((item) => {
-    const trigCfg = { trigger: item, start: "top 88%", toggleActions: "play none none none" };
-    gsap.from(item.querySelector('.desc'), {
-      scrollTrigger: trigCfg,
-      opacity: 0,
-      x: -70,
-      duration: 0.85,
-      ease: "power3.out",
-      delay: 0.05,
+      duration: 1,
     });
-    gsap.from(item.querySelector('.thum'), {
-      scrollTrigger: trigCfg,
-      opacity: 0,
-      x: 70,
-      duration: 0.85,
-      ease: "power3.out",
-      delay: 0.18,
-    });
-  });
-</script>
 
+    tl.to(desc, {
+      opacity: 0,
+      duration: 1,
+    });
+
+    tl.to(
+      spans,
+      {
+        opacity: 0,
+        y: -100,
+        width: 0,
+        height: 0,
+        duration: 0.6,
+        ease: "power3.inOut",
+        stagger: 0,
+      },
+      "<",
+    );
+
+    tl.to(imageSlot, {
+      width: "100vw",
+      height: sectionH + "px",
+      borderRadius: "0%",
+      margin: 0,
+      scale: 1,
+      filter: "brightness(0.5)",
+      duration: 5,
+      ease: "power4.inOut",
+    });
+
+    tl.to(txt2, {
+      opacity: 1,
+      duration: 1,
+    });
+
+    tl.from(
+      myselfH2,
+      {
+        x: -200,
+        opacity: 0,
+        duration: 1,
+      },
+      "<",
+    );
+
+    tl.from(
+      myselfP,
+      {
+        x: 200,
+        opacity: 0,
+        duration: 1,
+      },
+      "<",
+    );
+
+    const fills = document.querySelectorAll(".letter .fill");
+    const pSpans = document.querySelectorAll(
+      ".intro_myself .myself_text span, .section_intro .view-more__portfolio",
+    );
+
+    gsap.set(fills, { width: "0%" });
+    gsap.set(pSpans, { opacity: 0, y: 30 });
+
+    const total = fills.length;
+
+    const triggerPoints = [
+      Math.floor(total * 0.25),
+      Math.floor(total * 0.5),
+      Math.floor(total * 0.75),
+      Math.floor(total * 0.9),
+    ];
+
+    fills.forEach((fill, index) => {
+      tl.to(
+        fill,
+        {
+          width: "100%",
+          duration: 0.6,
+          ease: "none",
+        },
+        ">+=0.05",
+      );
+
+      if (triggerPoints.includes(index)) {
+        const i = triggerPoints.indexOf(index);
+
+        tl.to(
+          pSpans[i],
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power3.out",
+          },
+          "<",
+        );
+      }
+    });
+
+    // ── 4) section_portfolio 리스트 진입 애니메이션 ──────────
+    gsap.utils.toArray(".portfolio-type").forEach((item) => {
+      const trigCfg = {
+        trigger: item,
+        start: "top 88%",
+        toggleActions: "play none none none",
+      };
+      gsap.from(item.querySelector(".desc"), {
+        scrollTrigger: trigCfg,
+        opacity: 0,
+        x: -70,
+        duration: 0.85,
+        ease: "power3.out",
+        delay: 0.05,
+      });
+      gsap.from(item.querySelector(".thum"), {
+        scrollTrigger: trigCfg,
+        opacity: 0,
+        x: 70,
+        duration: 0.85,
+        ease: "power3.out",
+        delay: 0.18,
+      });
+    });
+  </script>
 </html>
